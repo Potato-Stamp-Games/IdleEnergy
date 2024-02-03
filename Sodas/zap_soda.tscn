@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://xh42j4e26mhi"]
+
+[ext_resource type="Texture2D" uid="uid://d37e4gi1f82re" path="res://Sodas/ZapSoda.png" id="1_n602a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dm6ko"]
+size = Vector2(109, 238)
+
+[node name="ZapSoda" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_n602a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5.5, -6)
+shape = SubResource("RectangleShape2D_dm6ko")

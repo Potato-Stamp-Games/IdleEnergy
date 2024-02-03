@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ww00kfcioi7e"]
+
+[ext_resource type="Texture2D" uid="uid://dga1slulcvfkb" path="res://BerryBurstSodaSprite.png" id="1_vphrf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dm6ko"]
+size = Vector2(109, 238)
+
+[node name="BerryBurstSoda" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5.5, -6)
+shape = SubResource("RectangleShape2D_dm6ko")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, 11)
+scale = Vector2(1.21, 1.21)
+texture = ExtResource("1_vphrf")
