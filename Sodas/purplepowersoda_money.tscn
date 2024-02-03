@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqaq5ferpp2ju"]
+
+[ext_resource type="Texture2D" uid="uid://dnfjkwp8ct40e" path="res://PurplePowerSodaSprite.png" id="1_hrjmb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dm6ko"]
+size = Vector2(109, 172)
+
+[node name="PurplePowerSoda" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5.5, 13)
+shape = SubResource("RectangleShape2D_dm6ko")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, 11)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_hrjmb")
