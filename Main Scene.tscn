@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://hnbeifci25kh"]
+[gd_scene format=3 uid="uid://b56r0drnfyeq3"]
 
 [node name="Main Control" type="Control"]
 layout_mode = 3
@@ -10,5 +10,7 @@ grow_vertical = 2
 
 [node name="Main Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 506.0
+offset_top = 62.0
+offset_right = 546.0
+offset_bottom = 102.0
