@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dt3ay6u43aodc"]
+[gd_scene load_steps=4 format=3 uid="uid://dt3ay6u43aodc"]
 
 [ext_resource type="Texture2D" uid="uid://dv5qmdighj0mt" path="res://SodaSprite.png" id="1_7kb3o"]
+[ext_resource type="Script" path="res://Sodas/Sprite2D.gd" id="2_bwnfx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dm6ko"]
 size = Vector2(109, 172)
@@ -15,3 +16,4 @@ shape = SubResource("RectangleShape2D_dm6ko")
 position = Vector2(3, 11)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_7kb3o")
+script = ExtResource("2_bwnfx")
