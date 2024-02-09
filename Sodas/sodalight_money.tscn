@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bcvrssi6dvxlj"]
 
-[ext_resource type="Texture2D" uid="uid://dtm2rg3jkbm08" path="res://SodaLightSprite.png" id="1_vhkfp"]
+[ext_resource type="Texture2D" uid="uid://dtm2rg3jkbm08" path="res://Sodas/SodaSprites/SodaLightSprite.png" id="1_vhkfp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dm6ko"]
 size = Vector2(109, 172)

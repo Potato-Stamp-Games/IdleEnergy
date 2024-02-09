@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dv5qmdighj0mt"
-path="res://.godot/imported/SodaSprite.png-6150c16c004617c6a926088e0d42458f.ctex"
+path="res://.godot/imported/SodaSprite.png-7b68ee2fede58572da297d233621d57b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SodaSprite.png"
-dest_files=["res://.godot/imported/SodaSprite.png-6150c16c004617c6a926088e0d42458f.ctex"]
+source_file="res://Sodas/SodaSprites/SodaSprite.png"
+dest_files=["res://.godot/imported/SodaSprite.png-7b68ee2fede58572da297d233621d57b.ctex"]
 
 [params]
 

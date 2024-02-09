@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://xh42j4e26mhi"]
+
+[ext_resource type="Script" path="res://Sodas/zap_soda.gd" id="1_dpjqm"]
+[ext_resource type="Texture2D" uid="uid://d37e4gi1f82re" path="res://Sodas/ZapSoda.png" id="1_n602a"]
+
+[node name="zap_soda" type="Sprite2D"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_n602a")
+script = ExtResource("1_dpjqm")

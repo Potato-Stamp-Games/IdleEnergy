@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d37e4gi1f82re"
-path="res://.godot/imported/ZapSoda.png-2ebaa2e714d9f0d844a12dc33e11f436.ctex"
+uid="uid://dbejwkf5rnnxk"
+path="res://.godot/imported/PrestigeIcon.png-5268c4d5a1986c299ebae38a75108d74.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sodas/ZapSoda.png"
-dest_files=["res://.godot/imported/ZapSoda.png-2ebaa2e714d9f0d844a12dc33e11f436.ctex"]
+source_file="res://UI/PrestigeIcon.png"
+dest_files=["res://.godot/imported/PrestigeIcon.png-5268c4d5a1986c299ebae38a75108d74.ctex"]
 
 [params]
 
