@@ -1,17 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://ww00kfcioi7e"]
+[gd_scene load_steps=5 format=3 uid="uid://ww00kfcioi7e"]
 
-[ext_resource type="Texture2D" uid="uid://dga1slulcvfkb" path="res://BerryBurstSodaSprite.png" id="1_vphrf"]
+[ext_resource type="Script" path="res://Sodas/berryburst_soda.gd" id="1_cvqwe"]
+[ext_resource type="Script" path="res://Sodas/BerryBurstSodaCollision.gd" id="1_iw5xm"]
+[ext_resource type="Texture2D" uid="uid://dga1slulcvfkb" path="res://Sodas/SodaSprites/BerryBurstSodaSprite.png" id="1_vphrf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dm6ko"]
 size = Vector2(109, 238)
 
-[node name="BerryBurstSoda" type="CharacterBody2D"]
+[node name="BerryBurstSoda" type="Area2D"]
+script = ExtResource("1_cvqwe")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="BerryBurstSodaCollision" type="CollisionShape2D" parent="."]
 position = Vector2(5.5, -6)
 shape = SubResource("RectangleShape2D_dm6ko")
+script = ExtResource("1_iw5xm")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="BerryBurstSodaSprite" type="Sprite2D" parent="."]
 position = Vector2(3, 11)
 scale = Vector2(1.21, 1.21)
 texture = ExtResource("1_vphrf")
