@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b56r0drnfyeq3"]
+[gd_scene load_steps=3 format=3 uid="uid://b56r0drnfyeq3"]
 
-[ext_resource type="PackedScene" uid="uid://dt3ay6u43aodc" path="res://soda_money.tscn" id="1_ir8oa"]
+[ext_resource type="PackedScene" uid="uid://4f1g8hclro8c" path="res://UI/ui.tscn" id="1_qdxen"]
+[ext_resource type="PackedScene" uid="uid://ww00kfcioi7e" path="res://Sodas/berryburst_soda.tscn" id="2_tgw3d"]
 
 [node name="Main Control" type="Control"]
 layout_mode = 3
@@ -9,13 +10,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
-[node name="Main Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 11.0
-offset_top = 12.0
-offset_right = 423.0
-offset_bottom = 278.0
+[node name="BerryBurstSoda" parent="." instance=ExtResource("2_tgw3d")]
+position = Vector2(574, 390)
 
-[node name="SodaMoney" parent="." instance=ExtResource("1_ir8oa")]
-position = Vector2(84, 109)
+[node name="UI" parent="." instance=ExtResource("1_qdxen")]
