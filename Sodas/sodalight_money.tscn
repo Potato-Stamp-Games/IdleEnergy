@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcvrssi6dvxlj"]
+[gd_scene load_steps=4 format=3 uid="uid://bcvrssi6dvxlj"]
 
+[ext_resource type="Script" path="res://Sodas/sodalight_money.gd" id="1_k8dl1"]
 [ext_resource type="Texture2D" uid="uid://dtm2rg3jkbm08" path="res://Sodas/SodaSprites/SodaLightSprite.png" id="1_vhkfp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dm6ko"]
 size = Vector2(109, 172)
 
-[node name="SodaLight" type="StaticBody2D"]
+[node name="SodaLight" type="Area2D"]
+script = ExtResource("1_k8dl1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(5.5, 13)
