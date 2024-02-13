@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://b56r0drnfyeq3"]
+
+[ext_resource type="PackedScene" uid="uid://cgespow2hwr4k" path="res://Sodas/doubleplus_soda.tscn" id="1_8elwk"]
+[ext_resource type="PackedScene" uid="uid://ctxfgtgvi35df" path="res://Sodas/light_soda.tscn" id="2_yhlpn"]
+[ext_resource type="PackedScene" uid="uid://cqtrvtvbc2ng" path="res://Sodas/zap_soda.tscn" id="3_3sy2r"]
+[ext_resource type="PackedScene" uid="uid://ww00kfcioi7e" path="res://Sodas/berryburst_soda.tscn" id="4_0aqmg"]
+[ext_resource type="PackedScene" uid="uid://4f1g8hclro8c" path="res://UI/ui.tscn" id="5_8v3al"]
+
+[node name="MainControl" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="DoublePlusSoda" parent="Panel" instance=ExtResource("1_8elwk")]
+position = Vector2(654, 499)
+scale = Vector2(1.1, 1.1)
+
+[node name="SodaLight" parent="Panel" instance=ExtResource("2_yhlpn")]
+position = Vector2(225, 487)
+scale = Vector2(1.2, 1.2)
+
+[node name="ZapSoda" parent="Panel" instance=ExtResource("3_3sy2r")]
+position = Vector2(449, 486)
+scale = Vector2(1.1, 1.1)
+
+[node name="BerryBurstSoda" parent="Panel" instance=ExtResource("4_0aqmg")]
+position = Vector2(839, 502)
+scale = Vector2(0.8, 0.8)
+
+[node name="UI" parent="Panel" instance=ExtResource("5_8v3al")]
