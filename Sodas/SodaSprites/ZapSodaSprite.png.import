@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qwkul3xnjibu"
-path="res://.godot/imported/GodlySodaSprite.png-f463031daf0b36c88f1ccfbd4f3b01e2.ctex"
+uid="uid://d37e4gi1f82re"
+path="res://.godot/imported/ZapSodaSprite.png-e027c062fe9ff79cfa05179c8ae0cb4e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sodas/SodaSprites/GodlySodaSprite.png"
-dest_files=["res://.godot/imported/GodlySodaSprite.png-f463031daf0b36c88f1ccfbd4f3b01e2.ctex"]
+source_file="res://Sodas/SodaSprites/ZapSodaSprite.png"
+dest_files=["res://.godot/imported/ZapSodaSprite.png-e027c062fe9ff79cfa05179c8ae0cb4e.ctex"]
 
 [params]
 

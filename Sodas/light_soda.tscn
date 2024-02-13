@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctxfgtgvi35df"]
+
+[ext_resource type="Texture2D" uid="uid://ckj18udbcfdkr" path="res://Sodas/SodaSprites/sodaLightSprite.png" id="1_375vw"]
+[ext_resource type="Script" path="res://Sodas/light_soda.gd" id="1_mforc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_404gf"]
+radius = 54.5
+height = 194.0
+
+[node name="SodaLight" type="Area2D"]
+script = ExtResource("1_mforc")
+
+[node name="SodaLightCollision" type="CollisionShape2D" parent="."]
+position = Vector2(4.5, 13)
+shape = SubResource("CapsuleShape2D_404gf")
+
+[node name="SodaLightSprite" type="Sprite2D" parent="."]
+position = Vector2(11, 19)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_375vw")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
