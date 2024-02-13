@@ -14,3 +14,6 @@ func _process(delta):
 	%BerryBurstSodaLabel.text = str(Global.berryBurstSodaMoney)
 	%GodlySodaLabel.text = str(Global.godlySodaMoney)
 
+func _on_shop_button_pressed():
+	get_tree().change_scene_to_file("res://Scenes/shop_scene.tscn")
+
