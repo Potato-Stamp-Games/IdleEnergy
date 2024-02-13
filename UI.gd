@@ -1,12 +1,16 @@
 extends CanvasLayer
 class_name UI
-#Variable Intialized
-var money = 0
+
 
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	money = Global.berryBurstSodaMoney  #local variable money set to global variable
-	get_node("%Money").text = str(money)  #Money text box set to local variable
+	
+	%Money.text= str(Global.trueMoney)
+	%LightSodaLabel.text = str(Global.lightSodaMoney)
+	%SodaLabel.text = str(Global.sodaMoney)
+	%DoublePlusSodaLabel.text = str(Global.doublePlusSodaMoney)
+	%BerryBurstSodaLabel.text = str(Global.berryBurstSodaMoney)
+	%GodlySodaLabel.text = str(Global.godlySodaMoney)
 

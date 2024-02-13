@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv5qmdighj0mt"
-path="res://.godot/imported/SodaSprite.png-7b68ee2fede58572da297d233621d57b.ctex"
+uid="uid://dp7vhgx57qbwa"
+path="res://.godot/imported/DoublePlusSodaSprite_Money.png-1c2ad5355967a6f9fe677a0d0e59a6e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sodas/SodaSprites/SodaSprite.png"
-dest_files=["res://.godot/imported/SodaSprite.png-7b68ee2fede58572da297d233621d57b.ctex"]
+source_file="res://Sodas/SodaSprites/DoublePlusSodaSprite_Money.png"
+dest_files=["res://.godot/imported/DoublePlusSodaSprite_Money.png-1c2ad5355967a6f9fe677a0d0e59a6e9.ctex"]
 
 [params]
 

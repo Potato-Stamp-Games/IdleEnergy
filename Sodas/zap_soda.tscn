@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqtrvtvbc2ng"]
+
+[ext_resource type="Script" path="res://Sodas/zap_soda.gd" id="1_hkud6"]
+[ext_resource type="Texture2D" uid="uid://d37e4gi1f82re" path="res://Sodas/SodaSprites/ZapSodaSprite.png" id="1_krx17"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_404gf"]
+radius = 54.5
+height = 194.0
+
+[node name="ZapSoda" type="Area2D"]
+script = ExtResource("1_hkud6")
+
+[node name="ZapSodaCollision" type="CollisionShape2D" parent="."]
+position = Vector2(4.5, 13)
+shape = SubResource("CapsuleShape2D_404gf")
+
+[node name="ZapSodaSprite" type="Sprite2D" parent="."]
+position = Vector2(3.55271e-15, 32)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("1_krx17")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
