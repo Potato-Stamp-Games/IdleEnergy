@@ -1,7 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://bktf204prj7tk"]
+[gd_scene load_steps=11 format=3 uid="uid://bktf204prj7tk"]
 
 [ext_resource type="Script" path="res://UI/shop_back.gd" id="1_1r48s"]
 [ext_resource type="Texture2D" uid="uid://bofo3l5nscx5n" path="res://UI/BackButtonIcon.png" id="2_52daq"]
+[ext_resource type="Texture2D" uid="uid://nfwb5rkhpiwq" path="res://Shop/ClickPower1Sprite.png" id="3_lhyuv"]
+[ext_resource type="Script" path="res://Scenes/MoneyContainer.gd" id="4_apuet"]
+[ext_resource type="Texture2D" uid="uid://dtm2rg3jkbm08" path="res://Sodas/SodaSprites/SodaLightSprite_Money.png" id="4_xwt0g"]
+[ext_resource type="Texture2D" uid="uid://dv5qmdighj0mt" path="res://Sodas/SodaSprites/SodaSprite_Money.png" id="5_w6ntd"]
+[ext_resource type="Texture2D" uid="uid://krg22jfu2x18" path="res://Sodas/SodaSprites/DoublePlusSodaSprite.png" id="6_q11vw"]
+[ext_resource type="Texture2D" uid="uid://dnfjkwp8ct40e" path="res://Sodas/SodaSprites/BerryBurstSodaSprite_Money.png" id="7_qpgul"]
+[ext_resource type="Texture2D" uid="uid://qwkul3xnjibu" path="res://Sodas/SodaSprites/GodlySodaSprite_Money.png" id="8_s4ke8"]
+[ext_resource type="Texture2D" uid="uid://b6j2cir231g8x" path="res://UI/TrueMoneySprite.png" id="9_ypldn"]
 
 [node name="ShopScene" type="Control"]
 layout_mode = 3
@@ -12,21 +20,232 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1r48s")
 
-[node name="BoxContainer" type="BoxContainer" parent="."]
+[node name="BackButtonContainer" type="BoxContainer" parent="."]
 layout_mode = 0
 offset_left = 1020.0
 offset_top = 584.0
 offset_right = 1150.0
 offset_bottom = 644.0
 
-[node name="BackButton" type="Button" parent="BoxContainer"]
+[node name="BackButton" type="Button" parent="BackButtonContainer"]
+self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(130, 60)
 layout_mode = 2
 mouse_filter = 1
+action_mode = 0
 
-[node name="BackButtonSprite" type="Sprite2D" parent="BoxContainer/BackButton"]
+[node name="BackButtonSprite" type="Sprite2D" parent="BackButtonContainer/BackButton"]
 position = Vector2(66, 29.975)
 scale = Vector2(0.128031, 0.150129)
 texture = ExtResource("2_52daq")
 
-[connection signal="pressed" from="BoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[node name="ClickPower1" type="BoxContainer" parent="."]
+layout_direction = 2
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 261.0
+offset_bottom = 42.0
+
+[node name="SpriteContainer" type="HBoxContainer" parent="ClickPower1"]
+custom_minimum_size = Vector2(40, 0)
+layout_direction = 2
+layout_mode = 2
+
+[node name="ClickPower1Sprite" type="Sprite2D" parent="ClickPower1/SpriteContainer"]
+position = Vector2(22, 20)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("3_lhyuv")
+
+[node name="CP1_BuyButton" type="Button" parent="ClickPower1"]
+custom_minimum_size = Vector2(80, 0)
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.870588, 0.870588, 0, 1)
+action_mode = 0
+text = "BUY"
+
+[node name="CostLabelContainer" type="HBoxContainer" parent="ClickPower1"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+
+[node name="CostLabel" type="Label" parent="ClickPower1/CostLabelContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 10
+text = "Money Cost:
+Light Soda Cost:"
+horizontal_alignment = 2
+
+[node name="CostContainer" type="HBoxContainer" parent="ClickPower1"]
+custom_minimum_size = Vector2(40, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MoneyCostContainer" type="VBoxContainer" parent="ClickPower1/CostContainer"]
+custom_minimum_size = Vector2(40, 20)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="M_CP1_CostLabel" type="Label" parent="ClickPower1/CostContainer/MoneyCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "60"
+
+[node name="LightSodaCostContainer" type="VBoxContainer" parent="ClickPower1/CostContainer/MoneyCostContainer"]
+layout_mode = 2
+
+[node name="LS_CP1_CostLabel" type="Label" parent="ClickPower1/CostContainer/MoneyCostContainer/LightSodaCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 10
+text = "60"
+
+[node name="MoneyContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 409.0
+offset_right = 575.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("4_apuet")
+
+[node name="SodaLightSpriteMoney" type="Sprite2D" parent="MoneyContainer"]
+position = Vector2(20, 25)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_xwt0g")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MoneyContainer/SodaLightSpriteMoney"]
+offset_left = 115.0
+offset_top = -40.0
+offset_right = 150.0
+offset_bottom = 75.0
+
+[node name="LightSodaLabel" type="Label" parent="MoneyContainer/SodaLightSpriteMoney/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 75
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SodaSpriteMoney" type="Sprite2D" parent="MoneyContainer"]
+position = Vector2(20, 75)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_w6ntd")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MoneyContainer/SodaSpriteMoney"]
+offset_left = 115.0
+offset_top = -40.0
+offset_right = 150.0
+offset_bottom = 75.0
+
+[node name="SodaLabel" type="Label" parent="MoneyContainer/SodaSpriteMoney/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 75
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="DoublePlusSodaSpriteMoney" type="Sprite2D" parent="MoneyContainer"]
+position = Vector2(19, 125)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_q11vw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MoneyContainer/DoublePlusSodaSpriteMoney"]
+offset_left = 110.0
+offset_top = -55.0
+offset_right = 150.0
+offset_bottom = 63.0
+
+[node name="DoublePlusSodaLabel" type="Label" parent="MoneyContainer/DoublePlusSodaSpriteMoney/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 75
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="BerryBurstSodaSpriteMoney" type="Sprite2D" parent="MoneyContainer"]
+position = Vector2(19, 175)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_qpgul")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MoneyContainer/BerryBurstSodaSpriteMoney"]
+offset_left = 115.0
+offset_top = -40.0
+offset_right = 150.0
+offset_bottom = 75.0
+
+[node name="BerryBurstSodaLabel" type="Label" parent="MoneyContainer/BerryBurstSodaSpriteMoney/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 75
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="GodlySodaSpriteMoney" type="Sprite2D" parent="MoneyContainer"]
+position = Vector2(19, 225)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("8_s4ke8")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MoneyContainer/GodlySodaSpriteMoney"]
+offset_left = 115.0
+offset_top = -40.0
+offset_right = 150.0
+offset_bottom = 75.0
+
+[node name="GodlySodaLabel" type="Label" parent="MoneyContainer/GodlySodaSpriteMoney/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 75
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TrueMoneySprite" type="Sprite2D" parent="MoneyContainer"]
+position = Vector2(19, 275)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("9_ypldn")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MoneyContainer/TrueMoneySprite"]
+offset_left = 230.0
+offset_top = -120.0
+offset_right = 400.0
+offset_bottom = 170.0
+
+[node name="MoneyLabel" type="Label" parent="MoneyContainer/TrueMoneySprite/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 140
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[connection signal="pressed" from="BackButtonContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="ClickPower1/CP1_BuyButton" to="." method="_on_click_power_1_buy_pressed"]
+[connection signal="pressed" from="ClickPower1/CP1_BuyButton" to="." method="_on_cp_1_buy_button_pressed"]
