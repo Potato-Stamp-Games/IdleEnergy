@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://krg22jfu2x18" path="res://Sodas/SodaSprites/DoublePlusSodaSprite.png" id="5_y7xj2"]
 [ext_resource type="Texture2D" uid="uid://dnfjkwp8ct40e" path="res://Sodas/SodaSprites/BerryBurstSodaSprite_Money.png" id="6_ugtas"]
 [ext_resource type="Texture2D" uid="uid://qwkul3xnjibu" path="res://Sodas/SodaSprites/GodlySodaSprite_Money.png" id="7_wr61i"]
-[ext_resource type="Script" path="res://UI/ShopButton.gd" id="8_8qnlb"]
+[ext_resource type="Script" path="res://Shop/ShopButton.gd" id="8_8qnlb"]
 [ext_resource type="Texture2D" uid="uid://csbf0ebut366j" path="res://UI/ShopIcon.png" id="9_k8isr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6tmyr"]
