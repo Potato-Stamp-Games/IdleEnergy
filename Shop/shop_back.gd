@@ -46,3 +46,4 @@ func _on_cp_2_buy_button_pressed():
 			Global.sodaMoneyClickPower = Global.sodaMoneyClickPower + 1
 			%M_CP2_CostLabel.text = str(pow(2 + (2 * Global.sodaMoneyClickPower), 3))
 			%LS_CP2_CostLabel.text = str(pow(2 + Global.sodaMoneyClickPower, 3))
+			print("Button Clicked")

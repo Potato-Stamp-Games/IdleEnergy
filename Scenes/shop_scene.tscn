@@ -283,6 +283,7 @@ custom_minimum_size = Vector2(80, 0)
 layout_direction = 3
 layout_mode = 2
 size_flags_horizontal = 8
+mouse_filter = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.870588, 0.870588, 0, 1)
 action_mode = 0
@@ -528,7 +529,6 @@ text = "CANCEL"
 [connection signal="pressed" from="BackButton/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="ClickPower1/CP1_BuyButton" to="." method="_on_cp_1_buy_button_pressed"]
 [connection signal="pressed" from="ClickPower1/CP1_BuyButton" to="." method="_on_click_power_1_buy_pressed"]
-[connection signal="pressed" from="ClickPower2/CP2_BuyButton" to="." method="_on_click_power_1_buy_pressed"]
 [connection signal="pressed" from="ClickPower2/CP2_BuyButton" to="." method="_on_cp_2_buy_button_pressed"]
 [connection signal="pressed" from="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer/GodlyX1Button" to="GodlyConversionUI" method="_on_godly_x_1_button_pressed"]
 [connection signal="pressed" from="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer/GodlyX10Button" to="GodlyConversionUI" method="_on_godly_x_10_button_pressed"]
