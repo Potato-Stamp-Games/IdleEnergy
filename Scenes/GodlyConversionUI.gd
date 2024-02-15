@@ -4,7 +4,6 @@ class_name GodlyConversionUI
 var buyAmount = 0
 var buyMultiplied = 1
 
-
 func _on_godly_x_1_button_pressed():
 	buyAmount = buyAmount + (1 * buyMultiplied)
 
@@ -19,7 +18,6 @@ func _on_godly_x_1000_button_pressed():
 
 func _on_godly_x_10000_button_pressed():
 	buyAmount = buyAmount + (10000 * buyMultiplied)
-
 
 func _on_multiplier_godly_x_10_button_toggled(toggled_on):
 	if toggled_on == true:
@@ -56,7 +54,6 @@ func _process(delta):
 	%GodlySpentAmountLabel.text = str(buyAmount * 4)
 	%GodlyGainedAmountLabel.text = str(buyAmount)
 
-
 func _on_godly_convert_buy_button_pressed():
 	if(Global.lightSodaMoney >= buyAmount and Global.sodaMoney >= buyAmount and Global.doublePlusSodaMoney >= buyAmount and Global.berryBurstSodaMoney >= buyAmount):
 		Global.lightSodaMoney = Global.lightSodaMoney - buyAmount
@@ -65,7 +62,6 @@ func _on_godly_convert_buy_button_pressed():
 		Global.berryBurstSodaMoney = Global.berryBurstSodaMoney - buyAmount
 		
 		Global.godlySodaMoney = Global.godlySodaMoney + buyAmount
-
 
 func _on_godly_convert_cancel_button_pressed():
 	buyAmount = 0
