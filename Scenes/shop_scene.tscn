@@ -1,15 +1,28 @@
-[gd_scene load_steps=11 format=3 uid="uid://bktf204prj7tk"]
+[gd_scene load_steps=18 format=3 uid="uid://bktf204prj7tk"]
 
-[ext_resource type="Script" path="res://UI/shop_back.gd" id="1_1r48s"]
+[ext_resource type="Script" path="res://Shop/shop_back.gd" id="1_1r48s"]
 [ext_resource type="Texture2D" uid="uid://bofo3l5nscx5n" path="res://UI/BackButtonIcon.png" id="2_52daq"]
 [ext_resource type="Texture2D" uid="uid://nfwb5rkhpiwq" path="res://Shop/ClickPower1Sprite.png" id="3_lhyuv"]
-[ext_resource type="Script" path="res://Scenes/MoneyContainer.gd" id="4_apuet"]
+[ext_resource type="Script" path="res://Shop/MoneyContainer.gd" id="4_apuet"]
 [ext_resource type="Texture2D" uid="uid://dtm2rg3jkbm08" path="res://Sodas/SodaSprites/SodaLightSprite_Money.png" id="4_xwt0g"]
 [ext_resource type="Texture2D" uid="uid://dv5qmdighj0mt" path="res://Sodas/SodaSprites/SodaSprite_Money.png" id="5_w6ntd"]
 [ext_resource type="Texture2D" uid="uid://krg22jfu2x18" path="res://Sodas/SodaSprites/DoublePlusSodaSprite.png" id="6_q11vw"]
 [ext_resource type="Texture2D" uid="uid://dnfjkwp8ct40e" path="res://Sodas/SodaSprites/BerryBurstSodaSprite_Money.png" id="7_qpgul"]
 [ext_resource type="Texture2D" uid="uid://qwkul3xnjibu" path="res://Sodas/SodaSprites/GodlySodaSprite_Money.png" id="8_s4ke8"]
 [ext_resource type="Texture2D" uid="uid://b6j2cir231g8x" path="res://UI/TrueMoneySprite.png" id="9_ypldn"]
+[ext_resource type="Texture2D" uid="uid://bptuorlryql1c" path="res://Shop/ClickPower2Sprite.png" id="11_eimsq"]
+[ext_resource type="Script" path="res://Scenes/GodlyConversionUI.gd" id="12_mhtgi"]
+[ext_resource type="Texture2D" uid="uid://drdlqsrvuwo6y" path="res://Sodas/SodaSprites/GoldyEqualsSodaSprite.png" id="12_wakov"]
+[ext_resource type="Texture2D" uid="uid://ca3fspipw8awc" path="res://Sodas/SodaSprites/allMoneySprite.png" id="13_vxfcl"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_vt5oh"]
+allow_unpress = true
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_fx7ak"]
+allow_unpress = true
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_rsth0"]
+allow_unpress = true
 
 [node name="ShopScene" type="Control"]
 layout_mode = 3
@@ -19,99 +32,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1r48s")
+metadata/_edit_horizontal_guides_ = [-93.0]
 
-[node name="BackButtonContainer" type="BoxContainer" parent="."]
+[node name="BackButton" type="BoxContainer" parent="."]
 layout_mode = 0
 offset_left = 1020.0
 offset_top = 584.0
 offset_right = 1150.0
 offset_bottom = 644.0
 
-[node name="BackButton" type="Button" parent="BackButtonContainer"]
+[node name="BackButton" type="Button" parent="BackButton"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(130, 60)
 layout_mode = 2
 mouse_filter = 1
 action_mode = 0
 
-[node name="BackButtonSprite" type="Sprite2D" parent="BackButtonContainer/BackButton"]
+[node name="BackButtonSprite" type="Sprite2D" parent="BackButton/BackButton"]
 position = Vector2(66, 29.975)
 scale = Vector2(0.128031, 0.150129)
 texture = ExtResource("2_52daq")
-
-[node name="ClickPower1" type="BoxContainer" parent="."]
-layout_direction = 2
-layout_mode = 0
-offset_left = 1.0
-offset_top = 2.0
-offset_right = 261.0
-offset_bottom = 42.0
-
-[node name="SpriteContainer" type="HBoxContainer" parent="ClickPower1"]
-custom_minimum_size = Vector2(40, 0)
-layout_direction = 2
-layout_mode = 2
-
-[node name="ClickPower1Sprite" type="Sprite2D" parent="ClickPower1/SpriteContainer"]
-position = Vector2(22, 20)
-scale = Vector2(0.08, 0.08)
-texture = ExtResource("3_lhyuv")
-
-[node name="CP1_BuyButton" type="Button" parent="ClickPower1"]
-custom_minimum_size = Vector2(80, 0)
-layout_direction = 3
-layout_mode = 2
-size_flags_horizontal = 8
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.870588, 0.870588, 0, 1)
-action_mode = 0
-text = "BUY"
-
-[node name="CostLabelContainer" type="HBoxContainer" parent="ClickPower1"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
-custom_minimum_size = Vector2(75, 0)
-layout_mode = 2
-
-[node name="CostLabel" type="Label" parent="ClickPower1/CostLabelContainer"]
-custom_minimum_size = Vector2(0, 10)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_font_sizes/font_size = 10
-text = "Money Cost:
-Light Soda Cost:"
-horizontal_alignment = 2
-
-[node name="CostContainer" type="HBoxContainer" parent="ClickPower1"]
-custom_minimum_size = Vector2(40, 0)
-layout_direction = 2
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-
-[node name="MoneyCostContainer" type="VBoxContainer" parent="ClickPower1/CostContainer"]
-custom_minimum_size = Vector2(40, 20)
-layout_direction = 1
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-
-[node name="M_CP1_CostLabel" type="Label" parent="ClickPower1/CostContainer/MoneyCostContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_font_sizes/font_size = 10
-text = "60"
-
-[node name="LightSodaCostContainer" type="VBoxContainer" parent="ClickPower1/CostContainer/MoneyCostContainer"]
-layout_mode = 2
-
-[node name="LS_CP1_CostLabel" type="Label" parent="ClickPower1/CostContainer/MoneyCostContainer/LightSodaCostContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 0
-theme_override_font_sizes/font_size = 10
-text = "60"
 
 [node name="MoneyContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -246,6 +186,358 @@ text = "0"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[connection signal="pressed" from="BackButtonContainer/BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="ClickPower1/CP1_BuyButton" to="." method="_on_click_power_1_buy_pressed"]
+[node name="ClickPower1" type="BoxContainer" parent="."]
+layout_direction = 2
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 261.0
+offset_bottom = 42.0
+
+[node name="SpriteContainer" type="HBoxContainer" parent="ClickPower1"]
+custom_minimum_size = Vector2(40, 0)
+layout_direction = 2
+layout_mode = 2
+
+[node name="ClickPower1Sprite" type="Sprite2D" parent="ClickPower1/SpriteContainer"]
+position = Vector2(22, 20)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("3_lhyuv")
+
+[node name="CP1_BuyButton" type="Button" parent="ClickPower1"]
+custom_minimum_size = Vector2(80, 0)
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.870588, 0.870588, 0, 1)
+action_mode = 0
+text = "BUY"
+
+[node name="CostLabelContainer" type="HBoxContainer" parent="ClickPower1"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+
+[node name="CostLabel" type="Label" parent="ClickPower1/CostLabelContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 10
+text = "Money Cost:
+Light Soda Cost:"
+horizontal_alignment = 2
+
+[node name="CostContainer" type="HBoxContainer" parent="ClickPower1"]
+custom_minimum_size = Vector2(40, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MoneyCostContainer" type="VBoxContainer" parent="ClickPower1/CostContainer"]
+custom_minimum_size = Vector2(40, 20)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="M_CP1_CostLabel" type="Label" parent="ClickPower1/CostContainer/MoneyCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "60"
+
+[node name="LightSodaCostContainer" type="VBoxContainer" parent="ClickPower1/CostContainer/MoneyCostContainer"]
+layout_mode = 2
+
+[node name="LS_CP1_CostLabel" type="Label" parent="ClickPower1/CostContainer/MoneyCostContainer/LightSodaCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 10
+text = "60"
+
+[node name="ClickPower2" type="BoxContainer" parent="."]
+layout_direction = 2
+layout_mode = 0
+offset_left = 1.0
+offset_top = 50.0
+offset_right = 261.0
+offset_bottom = 90.0
+
+[node name="SpriteContainer" type="HBoxContainer" parent="ClickPower2"]
+custom_minimum_size = Vector2(40, 0)
+layout_direction = 2
+layout_mode = 2
+
+[node name="ClickPower1Sprite" type="Sprite2D" parent="ClickPower2/SpriteContainer"]
+position = Vector2(22, 20)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("11_eimsq")
+
+[node name="CP2_BuyButton" type="Button" parent="ClickPower2"]
+custom_minimum_size = Vector2(80, 0)
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.870588, 0.870588, 0, 1)
+action_mode = 0
+text = "BUY"
+
+[node name="CostLabelContainer" type="HBoxContainer" parent="ClickPower2"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+
+[node name="CostLabel" type="Label" parent="ClickPower2/CostLabelContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 10
+text = "Money Cost:
+Soda Cost:"
+horizontal_alignment = 2
+
+[node name="CostContainer" type="HBoxContainer" parent="ClickPower2"]
+custom_minimum_size = Vector2(40, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MoneyCostContainer" type="VBoxContainer" parent="ClickPower2/CostContainer"]
+custom_minimum_size = Vector2(40, 20)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="M_CP2_CostLabel" type="Label" parent="ClickPower2/CostContainer/MoneyCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "60"
+
+[node name="SodaCostContainer" type="VBoxContainer" parent="ClickPower2/CostContainer/MoneyCostContainer"]
+layout_mode = 2
+
+[node name="LS_CP2_CostLabel" type="Label" parent="ClickPower2/CostContainer/MoneyCostContainer/SodaCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 10
+text = "60"
+
+[node name="GodlyConversionUI" type="BoxContainer" parent="."]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.087
+anchor_right = 0.5
+anchor_bottom = 0.119407
+offset_left = -200.0
+offset_top = -56.376
+offset_right = 62.0
+offset_bottom = 64.624
+grow_horizontal = 2
+script = ExtResource("12_mhtgi")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GodlyConversionUI"]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+
+[node name="SpriteHolder" type="HBoxContainer" parent="GodlyConversionUI/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="GodlyEqualsSprite" type="Sprite2D" parent="GodlyConversionUI/VBoxContainer/SpriteHolder"]
+position = Vector2(148, 21)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("12_wakov")
+
+[node name="ButtonMultipierContainer" type="HBoxContainer" parent="GodlyConversionUI/VBoxContainer"]
+custom_minimum_size = Vector2(80, 25)
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 15
+text = "Amount:"
+
+[node name="GodlyX1Button" type="Button" parent="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 10
+action_mode = 0
+text = "1x"
+
+[node name="GodlyX10Button" type="Button" parent="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 10
+action_mode = 0
+text = "10x"
+
+[node name="GodlyX100Button" type="Button" parent="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 10
+action_mode = 0
+text = "100x"
+
+[node name="GodlyX1000Button" type="Button" parent="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 10
+action_mode = 0
+text = "1,000x"
+
+[node name="GodlyX10,000Button" type="Button" parent="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 10
+action_mode = 0
+text = "10,000x"
+
+[node name="GodlyMultiBuyContainer" type="BoxContainer" parent="GodlyConversionUI/VBoxContainer"]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_stretch_ratio = 1.88
+
+[node name="Label" type="Label" parent="GodlyConversionUI/VBoxContainer/GodlyMultiBuyContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Multiplier:"
+
+[node name="MultiplierGodlyx10Button" type="CheckBox" parent="GodlyConversionUI/VBoxContainer/GodlyMultiBuyContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 10
+action_mode = 0
+button_group = SubResource("ButtonGroup_vt5oh")
+text = "10x"
+
+[node name="MultiplierGodlyx100Button" type="CheckBox" parent="GodlyConversionUI/VBoxContainer/GodlyMultiBuyContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 10
+action_mode = 0
+button_group = SubResource("ButtonGroup_fx7ak")
+text = "100x"
+
+[node name="MultiplierGodlyx1000Button" type="CheckBox" parent="GodlyConversionUI/VBoxContainer/GodlyMultiBuyContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_direction = 3
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 10
+action_mode = 0
+button_group = SubResource("ButtonGroup_rsth0")
+text = "1000x"
+
+[node name="Line Break" type="HBoxContainer" parent="GodlyConversionUI/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GodlyConversionUI/VBoxContainer/Line Break"]
+layout_mode = 2
+text = "--------------------------------------------------------"
+
+[node name="SpentContainer" type="HBoxContainer" parent="GodlyConversionUI/VBoxContainer"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+
+[node name="SpriteHolder2" type="VBoxContainer" parent="GodlyConversionUI/VBoxContainer/SpentContainer"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="GodlyConversionUI/VBoxContainer/SpentContainer/SpriteHolder2"]
+position = Vector2(39, 11)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("13_vxfcl")
+
+[node name="SpentLabelContainer" type="VBoxContainer" parent="GodlyConversionUI/VBoxContainer/SpentContainer"]
+layout_mode = 2
+
+[node name="GodlySpentAmountLabel" type="Label" parent="GodlyConversionUI/VBoxContainer/SpentContainer/SpentLabelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "0"
+
+[node name="GainedContainer" type="HBoxContainer" parent="GodlyConversionUI/VBoxContainer"]
+layout_mode = 2
+
+[node name="SpriteContainer" type="VBoxContainer" parent="GodlyConversionUI/VBoxContainer/GainedContainer"]
+custom_minimum_size = Vector2(90, 35)
+layout_mode = 2
+
+[node name="GodlySodaMoneySprite" type="Sprite2D" parent="GodlyConversionUI/VBoxContainer/GainedContainer/SpriteContainer"]
+position = Vector2(39, 10)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("8_s4ke8")
+
+[node name="GainedLabelContainer" type="VBoxContainer" parent="GodlyConversionUI/VBoxContainer/GainedContainer"]
+layout_mode = 2
+
+[node name="GodlyGainedAmountLabel" type="Label" parent="GodlyConversionUI/VBoxContainer/GainedContainer/GainedLabelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "0"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GodlyConversionUI/VBoxContainer"]
+layout_mode = 2
+
+[node name="GodlyConvertBuyButton" type="Button" parent="GodlyConversionUI/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(80, 40)
+layout_mode = 2
+text = "BUY"
+
+[node name="GodlyConvertCancelButton" type="Button" parent="GodlyConversionUI/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "CANCEL"
+
+[connection signal="pressed" from="BackButton/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="ClickPower1/CP1_BuyButton" to="." method="_on_cp_1_buy_button_pressed"]
+[connection signal="pressed" from="ClickPower1/CP1_BuyButton" to="." method="_on_click_power_1_buy_pressed"]
+[connection signal="pressed" from="ClickPower2/CP2_BuyButton" to="." method="_on_cp_2_buy_button_pressed"]
+[connection signal="pressed" from="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer/GodlyX1Button" to="GodlyConversionUI" method="_on_godly_x_1_button_pressed"]
+[connection signal="pressed" from="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer/GodlyX10Button" to="GodlyConversionUI" method="_on_godly_x_10_button_pressed"]
+[connection signal="pressed" from="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer/GodlyX100Button" to="GodlyConversionUI" method="_on_godly_x_100_button_pressed"]
+[connection signal="pressed" from="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer/GodlyX1000Button" to="GodlyConversionUI" method="_on_godly_x_1000_button_pressed"]
+[connection signal="pressed" from="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer/GodlyX10,000Button" to="GodlyConversionUI" method="_on_godly_x_10000_button_pressed"]
+[connection signal="toggled" from="GodlyConversionUI/VBoxContainer/GodlyMultiBuyContainer/MultiplierGodlyx10Button" to="GodlyConversionUI" method="_on_multiplier_godly_x_10_button_toggled"]
+[connection signal="toggled" from="GodlyConversionUI/VBoxContainer/GodlyMultiBuyContainer/MultiplierGodlyx100Button" to="GodlyConversionUI" method="_on_multiplier_godly_x_100_button_toggled"]
+[connection signal="pressed" from="GodlyConversionUI/VBoxContainer/GodlyMultiBuyContainer/MultiplierGodlyx1000Button" to="GodlyConversionUI" method="_on_multiplier_godly_x_1000_button_pressed"]
+[connection signal="toggled" from="GodlyConversionUI/VBoxContainer/GodlyMultiBuyContainer/MultiplierGodlyx1000Button" to="GodlyConversionUI" method="_on_multiplier_godly_x_1000_button_toggled"]
+[connection signal="pressed" from="GodlyConversionUI/VBoxContainer/HBoxContainer/GodlyConvertBuyButton" to="GodlyConversionUI" method="_on_godly_convert_buy_button_pressed"]
+[connection signal="pressed" from="GodlyConversionUI/VBoxContainer/HBoxContainer/GodlyConvertCancelButton" to="GodlyConversionUI" method="_on_godly_convert_cancel_button_pressed"]

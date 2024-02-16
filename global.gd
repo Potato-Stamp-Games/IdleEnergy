@@ -15,3 +15,4 @@ var sodaMoneyClickPower = 1
 var doublePlusSodaClickPower = 1
 var berryBurstSodaClickPower = 1
 var godlySodaClickPower = 1
+var Test = 0
