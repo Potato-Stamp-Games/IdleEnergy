@@ -1,14 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://4f1g8hclro8c"]
+[gd_scene load_steps=15 format=3 uid="uid://4f1g8hclro8c"]
 
 [ext_resource type="Script" path="res://UI/UI.gd" id="1_te6a7"]
-[ext_resource type="Texture2D" uid="uid://cfqoqf35wm8dr" path="res://UI/MoneyBorder.png" id="2_qdt6k"]
+[ext_resource type="Texture2D" uid="uid://bysglgvqh2phg" path="res://UI/UISprites/Background.png" id="2_d8dpw"]
 [ext_resource type="Texture2D" uid="uid://dtm2rg3jkbm08" path="res://Sodas/SodaSprites/SodaLightSprite_Money.png" id="3_703tr"]
+[ext_resource type="Texture2D" uid="uid://cfqoqf35wm8dr" path="res://UI/UISprites/MoneyBorder.png" id="3_wnpwg"]
 [ext_resource type="Texture2D" uid="uid://dv5qmdighj0mt" path="res://Sodas/SodaSprites/SodaSprite_Money.png" id="4_mfixa"]
-[ext_resource type="Texture2D" uid="uid://krg22jfu2x18" path="res://Sodas/SodaSprites/DoublePlusSodaSprite.png" id="5_y7xj2"]
+[ext_resource type="Texture2D" uid="uid://ddk3urmvoqyxn" path="res://Sodas/SodaSprites/DoublePlusSodaMoneySprite.png" id="6_rmysn"]
 [ext_resource type="Texture2D" uid="uid://dnfjkwp8ct40e" path="res://Sodas/SodaSprites/BerryBurstSodaSprite_Money.png" id="6_ugtas"]
 [ext_resource type="Texture2D" uid="uid://qwkul3xnjibu" path="res://Sodas/SodaSprites/GodlySodaSprite_Money.png" id="7_wr61i"]
 [ext_resource type="Script" path="res://Shop/ShopButton.gd" id="8_8qnlb"]
-[ext_resource type="Texture2D" uid="uid://csbf0ebut366j" path="res://UI/ShopIcon.png" id="9_k8isr"]
+[ext_resource type="Texture2D" uid="uid://csbf0ebut366j" path="res://UI/UISprites/ShopIcon.png" id="10_e622p"]
+[ext_resource type="PackedScene" uid="uid://c568qlc5aq4cr" path="res://UI/style_center_menu_bar.tscn" id="11_vhvr6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6tmyr"]
 font_size = 50
@@ -24,14 +26,30 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 "
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0sckg"]
+blend_mode = 3
+light_mode = 1
+
 [node name="UI" type="CanvasLayer"]
+follow_viewport_enabled = true
 script = ExtResource("1_te6a7")
 
-[node name="Control" type="Control" parent="."]
+[node name="BackgroundImage" type="CanvasLayer" parent="."]
+layer = -2
+
+[node name="Background" type="Sprite2D" parent="BackgroundImage"]
+position = Vector2(960, 540)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("2_d8dpw")
+
+[node name="MainLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Control" type="Control" parent="MainLayer"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -40,7 +58,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Control"]
+[node name="MarginContainer" type="MarginContainer" parent="MainLayer/Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -49,16 +67,17 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainLayer/Control/MarginContainer"]
 layout_mode = 2
+size_flags_vertical = 0
 mouse_filter = 2
 
-[node name="MoneyBorderSprite" type="Sprite2D" parent="Control/MarginContainer/VBoxContainer"]
-position = Vector2(591.05, 138.2)
-scale = Vector2(0.58802, 0.500758)
-texture = ExtResource("2_qdt6k")
+[node name="MoneyBorderSprite" type="Sprite2D" parent="MainLayer/Control/MarginContainer/VBoxContainer"]
+position = Vector2(977, 133)
+scale = Vector2(0.7, 0.596)
+texture = ExtResource("3_wnpwg")
 
-[node name="Money" type="Label" parent="Control/MarginContainer/VBoxContainer/MoneyBorderSprite"]
+[node name="Money" type="Label" parent="MainLayer/Control/MarginContainer/VBoxContainer/MoneyBorderSprite"]
 unique_name_in_owner = true
 offset_left = -66.0
 offset_top = 26.0
@@ -70,31 +89,31 @@ label_settings = SubResource("LabelSettings_6tmyr")
 horizontal_alignment = 2
 script = SubResource("GDScript_22jcw")
 
-[node name="VerticalPadding" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
+[node name="VerticalPadding" type="HBoxContainer" parent="MainLayer/Control/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 mouse_filter = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer/VerticalPadding"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MainLayer/Control/MarginContainer/VBoxContainer/VerticalPadding"]
 custom_minimum_size = Vector2(600, 200)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
 
-[node name="SodaLightSpriteMoney" type="Sprite2D" parent="Control/MarginContainer"]
-position = Vector2(20, 25)
-scale = Vector2(0.2, 0.2)
+[node name="SodaLightSpriteMoney" type="Sprite2D" parent="MainLayer/Control/MarginContainer"]
+position = Vector2(50, 55)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_703tr")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/SodaLightSpriteMoney"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MainLayer/Control/MarginContainer/SodaLightSpriteMoney"]
 offset_left = 115.0
 offset_top = -40.0
 offset_right = 150.0
 offset_bottom = 75.0
 
-[node name="LightSodaLabel" type="Label" parent="Control/MarginContainer/SodaLightSpriteMoney/HBoxContainer"]
+[node name="LightSodaLabel" type="Label" parent="MainLayer/Control/MarginContainer/SodaLightSpriteMoney/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
@@ -102,18 +121,18 @@ theme_override_font_sizes/font_size = 75
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="SodaSpriteMoney" type="Sprite2D" parent="Control/MarginContainer"]
-position = Vector2(20, 75)
-scale = Vector2(0.2, 0.2)
+[node name="SodaSpriteMoney" type="Sprite2D" parent="MainLayer/Control/MarginContainer"]
+position = Vector2(50, 165)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_mfixa")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/SodaSpriteMoney"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MainLayer/Control/MarginContainer/SodaSpriteMoney"]
 offset_left = 115.0
 offset_top = -40.0
 offset_right = 150.0
 offset_bottom = 75.0
 
-[node name="SodaLabel" type="Label" parent="Control/MarginContainer/SodaSpriteMoney/HBoxContainer"]
+[node name="SodaLabel" type="Label" parent="MainLayer/Control/MarginContainer/SodaSpriteMoney/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
@@ -121,18 +140,18 @@ theme_override_font_sizes/font_size = 75
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="DoublePlusSodaSpriteMoney" type="Sprite2D" parent="Control/MarginContainer"]
-position = Vector2(19, 125)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("5_y7xj2")
+[node name="DoublePlusSodaSpriteMoney" type="Sprite2D" parent="MainLayer/Control/MarginContainer"]
+position = Vector2(50, 275)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_rmysn")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/DoublePlusSodaSpriteMoney"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MainLayer/Control/MarginContainer/DoublePlusSodaSpriteMoney"]
 offset_left = 110.0
 offset_top = -55.0
 offset_right = 150.0
 offset_bottom = 63.0
 
-[node name="DoublePlusSodaLabel" type="Label" parent="Control/MarginContainer/DoublePlusSodaSpriteMoney/HBoxContainer"]
+[node name="DoublePlusSodaLabel" type="Label" parent="MainLayer/Control/MarginContainer/DoublePlusSodaSpriteMoney/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
@@ -140,18 +159,18 @@ theme_override_font_sizes/font_size = 75
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="BerryBurstSodaSpriteMoney" type="Sprite2D" parent="Control/MarginContainer"]
-position = Vector2(19, 175)
-scale = Vector2(0.2, 0.2)
+[node name="BerryBurstSodaSpriteMoney" type="Sprite2D" parent="MainLayer/Control/MarginContainer"]
+position = Vector2(50, 385)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_ugtas")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/BerryBurstSodaSpriteMoney"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MainLayer/Control/MarginContainer/BerryBurstSodaSpriteMoney"]
 offset_left = 115.0
 offset_top = -40.0
 offset_right = 150.0
 offset_bottom = 75.0
 
-[node name="BerryBurstSodaLabel" type="Label" parent="Control/MarginContainer/BerryBurstSodaSpriteMoney/HBoxContainer"]
+[node name="BerryBurstSodaLabel" type="Label" parent="MainLayer/Control/MarginContainer/BerryBurstSodaSpriteMoney/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
@@ -159,18 +178,18 @@ theme_override_font_sizes/font_size = 75
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="GodlySodaSpriteMoney" type="Sprite2D" parent="Control/MarginContainer"]
-position = Vector2(19, 225)
-scale = Vector2(0.2, 0.2)
+[node name="GodlySodaSpriteMoney" type="Sprite2D" parent="MainLayer/Control/MarginContainer"]
+position = Vector2(50, 495)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_wr61i")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/GodlySodaSpriteMoney"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MainLayer/Control/MarginContainer/GodlySodaSpriteMoney"]
 offset_left = 115.0
 offset_top = -40.0
 offset_right = 150.0
 offset_bottom = 75.0
 
-[node name="GodlySodaLabel" type="Label" parent="Control/MarginContainer/GodlySodaSpriteMoney/HBoxContainer"]
+[node name="GodlySodaLabel" type="Label" parent="MainLayer/Control/MarginContainer/GodlySodaSpriteMoney/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
@@ -178,15 +197,16 @@ theme_override_font_sizes/font_size = 75
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="BoxContainer" type="BoxContainer" parent="Control"]
+[node name="ShopBoxContainer" type="BoxContainer" parent="MainLayer/Control"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-offset_left = 50.0
-offset_top = 500.0
-offset_right = 160.0
-offset_bottom = 610.0
+offset_left = 20.0
+offset_top = 800.0
+offset_right = 130.0
+offset_bottom = 910.0
+scale = Vector2(2.5, 2.5)
 
-[node name="ShopButton" type="TextureButton" parent="Control/BoxContainer"]
+[node name="ShopButton" type="TextureButton" parent="MainLayer/Control/ShopBoxContainer"]
 custom_minimum_size = Vector2(110, 110)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -194,9 +214,48 @@ action_mode = 0
 stretch_mode = 0
 script = ExtResource("8_8qnlb")
 
-[node name="ShopButtonSprite" type="Sprite2D" parent="Control/BoxContainer/ShopButton"]
-position = Vector2(50, 50)
+[node name="ShopButtonSprite" type="Sprite2D" parent="MainLayer/Control/ShopBoxContainer/ShopButton"]
+position = Vector2(52, 50)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("9_k8isr")
+texture = ExtResource("10_e622p")
 
-[connection signal="pressed" from="Control/BoxContainer/ShopButton" to="." method="_on_shop_button_pressed"]
+[node name="ExitBoxContainer" type="BoxContainer" parent="MainLayer/Control"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -202.0
+offset_top = -100.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="ExitButton" type="Button" parent="MainLayer/Control/ExitBoxContainer"]
+custom_minimum_size = Vector2(200, 20)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.854902, 0.741176, 0, 1)
+theme_override_font_sizes/font_size = 67
+action_mode = 0
+text = "EXIT"
+
+[node name="Panel" type="Panel" parent="MainLayer/Control/ExitBoxContainer/ExitButton"]
+show_behind_parent = true
+material = SubResource("CanvasItemMaterial_0sckg")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="StyleCenterMenu" parent="." instance=ExtResource("11_vhvr6")]
+offset = Vector2(1650, 0)
+scale = Vector2(1.2, 1.2)
+transform = Transform2D(1.2, 0, 0, 1.2, 1650, 0)
+
+[connection signal="pressed" from="MainLayer/Control/ShopBoxContainer/ShopButton" to="." method="_on_shop_button_pressed"]
+[connection signal="pressed" from="MainLayer/Control/ExitBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

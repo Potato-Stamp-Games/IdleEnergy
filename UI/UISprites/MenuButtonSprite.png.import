@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dp7vhgx57qbwa"
-path="res://.godot/imported/DoublePlusSodaSprite_Money.png-1c2ad5355967a6f9fe677a0d0e59a6e9.ctex"
+uid="uid://droj3s05taoeg"
+path="res://.godot/imported/MenuButtonSprite.png-46be831ad39fdd7d1ac85757481f7c01.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sodas/SodaSprites/DoublePlusSodaSprite_Money.png"
-dest_files=["res://.godot/imported/DoublePlusSodaSprite_Money.png-1c2ad5355967a6f9fe677a0d0e59a6e9.ctex"]
+source_file="res://UI/UISprites/MenuButtonSprite.png"
+dest_files=["res://.godot/imported/MenuButtonSprite.png-46be831ad39fdd7d1ac85757481f7c01.ctex"]
 
 [params]
 

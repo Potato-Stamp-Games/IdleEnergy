@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://okw6fgsmdf2j"
-path="res://.godot/imported/SettingsIcon.png-d00aa92347a17fce8b1c80f711f48235.ctex"
+uid="uid://tf28r3hhxval"
+path="res://.godot/imported/ExtrasMenuBarSprite.png-04a3339b7673fabac19b2ab3e209a5ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/SettingsIcon.png"
-dest_files=["res://.godot/imported/SettingsIcon.png-d00aa92347a17fce8b1c80f711f48235.ctex"]
+source_file="res://UI/UISprites/ExtrasMenuBarSprite.png"
+dest_files=["res://.godot/imported/ExtrasMenuBarSprite.png-04a3339b7673fabac19b2ab3e209a5ec.ctex"]
 
 [params]
 

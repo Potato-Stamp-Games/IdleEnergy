@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://c568qlc5aq4cr"]
+
+[ext_resource type="Script" path="res://Scenes/achievements_menu_bar.gd" id="1_3rh7j"]
+[ext_resource type="Texture2D" uid="uid://byayb1van3g1x" path="res://UI/AchievementsIcon.png" id="1_mhe8t"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_vo1ul"]
+specular_color = Color(0.627451, 0.521569, 0, 1)
+
+[node name="AchievementsMenuBar" type="Control"]
+custom_minimum_size = Vector2(47, 48)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 25.0
+offset_bottom = 20.0
+script = ExtResource("1_3rh7j")
+
+[node name="MenuButton" type="MenuButton" parent="."]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 47.0
+offset_bottom = 49.0
+item_count = 1
+popup/item_0/text = "Achievements"
+popup/item_0/icon = SubResource("CanvasTexture_vo1ul")
+popup/item_0/id = 0
+
+[node name="AchievmentsSprite" type="Sprite2D" parent="MenuButton"]
+position = Vector2(23, 23)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_mhe8t")
+
+[node name="PopupPanel" type="Window" parent="."]
+position = Vector2i(0, 36)
+visible = false
+
+[node name="Camera2D" type="Camera2D" parent="PopupPanel"]
+
+[node name="Panel" type="Panel" parent="PopupPanel/Camera2D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

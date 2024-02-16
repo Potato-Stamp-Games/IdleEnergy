@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlbstht3t2v28"
-path="res://.godot/imported/ZapSodaSprite.png-e027c062fe9ff79cfa05179c8ae0cb4e.ctex"
+uid="uid://bbqht10v3jjd7"
+path="res://.godot/imported/LightSodaSprite.png-40a013abe69b40270391cab012e6fb71.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sodas/SodaSprites/ZapSodaSprite.png"
-dest_files=["res://.godot/imported/ZapSodaSprite.png-e027c062fe9ff79cfa05179c8ae0cb4e.ctex"]
+source_file="res://Sodas/SodaSprites/LightSodaSprite.png"
+dest_files=["res://.godot/imported/LightSodaSprite.png-40a013abe69b40270391cab012e6fb71.ctex"]
 
 [params]
 

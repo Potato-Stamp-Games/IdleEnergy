@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csbf0ebut366j"
-path="res://.godot/imported/ShopIcon.png-dfb25c153e9ba6ea0b5cb2859b5db552.ctex"
+uid="uid://bofo3l5nscx5n"
+path="res://.godot/imported/BackButtonSprite.png-3ec590d404d7c0444b67149a34f4a41c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/ShopIcon.png"
-dest_files=["res://.godot/imported/ShopIcon.png-dfb25c153e9ba6ea0b5cb2859b5db552.ctex"]
+source_file="res://UI/UISprites/BackButtonSprite.png"
+dest_files=["res://.godot/imported/BackButtonSprite.png-3ec590d404d7c0444b67149a34f4a41c.ctex"]
 
 [params]
 

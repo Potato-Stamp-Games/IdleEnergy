@@ -1,17 +1,17 @@
 [gd_scene load_steps=18 format=3 uid="uid://bktf204prj7tk"]
 
 [ext_resource type="Script" path="res://Shop/shop_back.gd" id="1_1r48s"]
-[ext_resource type="Texture2D" uid="uid://bofo3l5nscx5n" path="res://UI/BackButtonIcon.png" id="2_52daq"]
+[ext_resource type="Texture2D" uid="uid://bofo3l5nscx5n" path="res://UI/UISprites/BackButtonSprite.png" id="2_52daq"]
 [ext_resource type="Texture2D" uid="uid://nfwb5rkhpiwq" path="res://Shop/ClickPower1Sprite.png" id="3_lhyuv"]
 [ext_resource type="Script" path="res://Shop/MoneyContainer.gd" id="4_apuet"]
 [ext_resource type="Texture2D" uid="uid://dtm2rg3jkbm08" path="res://Sodas/SodaSprites/SodaLightSprite_Money.png" id="4_xwt0g"]
 [ext_resource type="Texture2D" uid="uid://dv5qmdighj0mt" path="res://Sodas/SodaSprites/SodaSprite_Money.png" id="5_w6ntd"]
-[ext_resource type="Texture2D" uid="uid://krg22jfu2x18" path="res://Sodas/SodaSprites/DoublePlusSodaSprite.png" id="6_q11vw"]
+[ext_resource type="Texture2D" uid="uid://ddk3urmvoqyxn" path="res://Sodas/SodaSprites/DoublePlusSodaMoneySprite.png" id="6_kxep2"]
 [ext_resource type="Texture2D" uid="uid://dnfjkwp8ct40e" path="res://Sodas/SodaSprites/BerryBurstSodaSprite_Money.png" id="7_qpgul"]
 [ext_resource type="Texture2D" uid="uid://qwkul3xnjibu" path="res://Sodas/SodaSprites/GodlySodaSprite_Money.png" id="8_s4ke8"]
-[ext_resource type="Texture2D" uid="uid://b6j2cir231g8x" path="res://UI/TrueMoneySprite.png" id="9_ypldn"]
+[ext_resource type="Texture2D" uid="uid://b6j2cir231g8x" path="res://Sodas/SodaSprites/TrueMoneySprite.png" id="9_ypldn"]
 [ext_resource type="Texture2D" uid="uid://bptuorlryql1c" path="res://Shop/ClickPower2Sprite.png" id="11_eimsq"]
-[ext_resource type="Script" path="res://Scenes/GodlyConversionUI.gd" id="12_mhtgi"]
+[ext_resource type="Script" path="res://UI/GodlyConversionUI.gd" id="12_mhtgi"]
 [ext_resource type="Texture2D" uid="uid://drdlqsrvuwo6y" path="res://Sodas/SodaSprites/GoldyEqualsSodaSprite.png" id="12_wakov"]
 [ext_resource type="Texture2D" uid="uid://ca3fspipw8awc" path="res://Sodas/SodaSprites/allMoneySprite.png" id="13_vxfcl"]
 
@@ -36,33 +36,27 @@ metadata/_edit_horizontal_guides_ = [-93.0]
 
 [node name="BackButton" type="BoxContainer" parent="."]
 layout_mode = 0
-offset_left = 1020.0
-offset_top = 584.0
-offset_right = 1150.0
-offset_bottom = 644.0
+offset_left = 1690.0
+offset_top = 978.0
+offset_right = 1919.0
+offset_bottom = 1080.0
 
 [node name="BackButton" type="Button" parent="BackButton"]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(130, 60)
+custom_minimum_size = Vector2(230, 60)
 layout_mode = 2
 mouse_filter = 1
 action_mode = 0
 
 [node name="BackButtonSprite" type="Sprite2D" parent="BackButton/BackButton"]
-position = Vector2(66, 29.975)
-scale = Vector2(0.128031, 0.150129)
+position = Vector2(114, 52)
+scale = Vector2(0.223144, 0.261658)
 texture = ExtResource("2_52daq")
 
 [node name="MoneyContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 409.0
-offset_right = 575.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 166.0
+scale = Vector2(2, 2)
 mouse_filter = 2
 script = ExtResource("4_apuet")
 
@@ -109,7 +103,7 @@ vertical_alignment = 1
 [node name="DoublePlusSodaSpriteMoney" type="Sprite2D" parent="MoneyContainer"]
 position = Vector2(19, 125)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("6_q11vw")
+texture = ExtResource("6_kxep2")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MoneyContainer/DoublePlusSodaSpriteMoney"]
 offset_left = 110.0
@@ -188,11 +182,15 @@ vertical_alignment = 1
 
 [node name="ClickPower1" type="BoxContainer" parent="."]
 layout_direction = 2
-layout_mode = 0
-offset_left = 1.0
-offset_top = 2.0
-offset_right = 261.0
-offset_bottom = 42.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -420.0
+offset_right = -160.0
+offset_bottom = 40.0
+grow_horizontal = 0
+scale = Vector2(1.5, 1.5)
 
 [node name="SpriteContainer" type="HBoxContainer" parent="ClickPower1"]
 custom_minimum_size = Vector2(40, 0)
@@ -262,11 +260,16 @@ text = "60"
 
 [node name="ClickPower2" type="BoxContainer" parent="."]
 layout_direction = 2
-layout_mode = 0
-offset_left = 1.0
-offset_top = 50.0
-offset_right = 261.0
-offset_bottom = 90.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -420.0
+offset_top = 65.0
+offset_right = -160.0
+offset_bottom = 105.0
+grow_horizontal = 0
+scale = Vector2(1.5, 1.5)
 
 [node name="SpriteContainer" type="HBoxContainer" parent="ClickPower2"]
 custom_minimum_size = Vector2(40, 0)
@@ -339,15 +342,16 @@ text = "60"
 layout_direction = 2
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.087
-anchor_right = 0.5
-anchor_bottom = 0.119407
+anchor_left = 0.490104
+anchor_top = 0.0873852
+anchor_right = 0.509896
+anchor_bottom = 0.203126
 offset_left = -200.0
 offset_top = -56.376
 offset_right = 62.0
 offset_bottom = 64.624
 grow_horizontal = 2
+scale = Vector2(2, 2)
 script = ExtResource("12_mhtgi")
 metadata/_edit_use_anchors_ = true
 
