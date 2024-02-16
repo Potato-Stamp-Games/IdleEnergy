@@ -16,6 +16,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Panel" type="Panel" parent="."]
+visibility_layer = 15
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,20 +25,20 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="UI" parent="Panel" instance=ExtResource("5_8v3al")]
+
 [node name="DoublePlusSoda" parent="Panel" instance=ExtResource("1_8elwk")]
-position = Vector2(729, 418)
-scale = Vector2(1.1, 1.1)
+position = Vector2(1201, 776)
+scale = Vector2(1.8, 1.8)
 
 [node name="SodaLight" parent="Panel" instance=ExtResource("2_yhlpn")]
-position = Vector2(300, 406)
-scale = Vector2(1.2, 1.2)
+position = Vector2(421, 744)
+scale = Vector2(3.8, 3.8)
 
 [node name="ZapSoda" parent="Panel" instance=ExtResource("3_3sy2r")]
-position = Vector2(524, 405)
-scale = Vector2(1.1, 1.1)
+position = Vector2(830, 762)
+scale = Vector2(2.1, 2.1)
 
 [node name="BerryBurstSoda" parent="Panel" instance=ExtResource("4_0aqmg")]
-position = Vector2(914, 421)
-scale = Vector2(0.8, 0.8)
-
-[node name="UI" parent="Panel" instance=ExtResource("5_8v3al")]
+position = Vector2(1560, 807)
+scale = Vector2(1.8, 1.8)

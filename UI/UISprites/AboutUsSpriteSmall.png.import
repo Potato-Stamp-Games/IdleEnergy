@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfqoqf35wm8dr"
-path="res://.godot/imported/MoneyBorder.png-ecb944a1d4ae386f41afca929d12514d.ctex"
+uid="uid://cql82k7b2kj15"
+path="res://.godot/imported/AboutUsSpriteSmall.png-b5d96d61a473572e155c7ce0c956f2a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/MoneyBorder.png"
-dest_files=["res://.godot/imported/MoneyBorder.png-ecb944a1d4ae386f41afca929d12514d.ctex"]
+source_file="res://UI/UISprites/AboutUsSpriteSmall.png"
+dest_files=["res://.godot/imported/AboutUsSpriteSmall.png-b5d96d61a473572e155c7ce0c956f2a5.ctex"]
 
 [params]
 

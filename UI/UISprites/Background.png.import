@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6j2cir231g8x"
-path="res://.godot/imported/TrueMoneySprite.png-67fe04a63783220c46de724106b1b925.ctex"
+uid="uid://bysglgvqh2phg"
+path="res://.godot/imported/Background.png-54423987c4d4be93509599d9f15ec7ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/TrueMoneySprite.png"
-dest_files=["res://.godot/imported/TrueMoneySprite.png-67fe04a63783220c46de724106b1b925.ctex"]
+source_file="res://UI/UISprites/Background.png"
+dest_files=["res://.godot/imported/Background.png-54423987c4d4be93509599d9f15ec7ff.ctex"]
 
 [params]
 

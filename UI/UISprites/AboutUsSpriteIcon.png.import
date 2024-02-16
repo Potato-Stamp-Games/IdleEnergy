@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byayb1van3g1x"
-path="res://.godot/imported/AchievementsIcon.png-b3f1c37d62f93c51601b1aa5d17b2a1d.ctex"
+uid="uid://cur8026dbfqa1"
+path="res://.godot/imported/AboutUsSpriteIcon.png-1c9b6d3be978a81f442f15ce5b071b89.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/AchievementsIcon.png"
-dest_files=["res://.godot/imported/AchievementsIcon.png-b3f1c37d62f93c51601b1aa5d17b2a1d.ctex"]
+source_file="res://UI/UISprites/AboutUsSpriteIcon.png"
+dest_files=["res://.godot/imported/AboutUsSpriteIcon.png-1c9b6d3be978a81f442f15ce5b071b89.ctex"]
 
 [params]
 

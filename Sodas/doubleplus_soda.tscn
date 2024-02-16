@@ -1,21 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://cgespow2hwr4k"]
 
 [ext_resource type="Script" path="res://Sodas/doubleplus_soda.gd" id="1_utsjc"]
-[ext_resource type="Texture2D" uid="uid://dp7vhgx57qbwa" path="res://Sodas/SodaSprites/DoublePlusSodaSprite_Money.png" id="2_iyl2d"]
+[ext_resource type="Texture2D" uid="uid://krg22jfu2x18" path="res://Sodas/SodaSprites/DoublePlusSodaSprite.png" id="2_itdu8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22a5w"]
-size = Vector2(110, 203)
+size = Vector2(129, 272)
 
 [node name="DoublePlusSoda" type="Area2D"]
 script = ExtResource("1_utsjc")
 
 [node name="DoublePlusSodaCollision" type="CollisionShape2D" parent="."]
-position = Vector2(5, 12.5)
+position = Vector2(3.5, 31)
 shape = SubResource("RectangleShape2D_22a5w")
 
 [node name="DoublePlusSodaSprite" type="Sprite2D" parent="."]
-position = Vector2(6, 2)
-scale = Vector2(0.19, 0.19)
-texture = ExtResource("2_iyl2d")
+position = Vector2(2, 34)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_itdu8")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

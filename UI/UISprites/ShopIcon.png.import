@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbejwkf5rnnxk"
-path="res://.godot/imported/PrestigeIcon.png-5268c4d5a1986c299ebae38a75108d74.ctex"
+uid="uid://csbf0ebut366j"
+path="res://.godot/imported/ShopIcon.png-0117bd57e9932c7d39883c24d5ff359a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/PrestigeIcon.png"
-dest_files=["res://.godot/imported/PrestigeIcon.png-5268c4d5a1986c299ebae38a75108d74.ctex"]
+source_file="res://UI/UISprites/ShopIcon.png"
+dest_files=["res://.godot/imported/ShopIcon.png-0117bd57e9932c7d39883c24d5ff359a.ctex"]
 
 [params]
 

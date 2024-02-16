@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlbstht3t2v28"
-path="res://.godot/imported/ZapSodaSprite.png-e027c062fe9ff79cfa05179c8ae0cb4e.ctex"
+uid="uid://dd7f31p5weru8"
+path="res://.godot/imported/AchievementsIcon.png-cfa7193ed06a7be3348d18e11edac332.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sodas/SodaSprites/ZapSodaSprite.png"
-dest_files=["res://.godot/imported/ZapSodaSprite.png-e027c062fe9ff79cfa05179c8ae0cb4e.ctex"]
+source_file="res://UI/UISprites/AchievementsIcon.png"
+dest_files=["res://.godot/imported/AchievementsIcon.png-cfa7193ed06a7be3348d18e11edac332.ctex"]
 
 [params]
 

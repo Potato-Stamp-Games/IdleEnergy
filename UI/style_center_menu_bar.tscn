@@ -1,0 +1,126 @@
+[gd_scene load_steps=8 format=3 uid="uid://c568qlc5aq4cr"]
+
+[ext_resource type="Script" path="res://UI/style_center_menu_bar.gd" id="1_cqdsd"]
+[ext_resource type="Texture2D" uid="uid://droj3s05taoeg" path="res://UI/UISprites/MenuButtonSprite.png" id="2_nx8lg"]
+[ext_resource type="Texture2D" uid="uid://dd7f31p5weru8" path="res://UI/UISprites/AchievementsIcon.png" id="3_7h32v"]
+[ext_resource type="Texture2D" uid="uid://bl0tuq47vwtyy" path="res://UI/UISprites/StatsSpriteIcon.png" id="4_evcr1"]
+[ext_resource type="Texture2D" uid="uid://cur8026dbfqa1" path="res://UI/UISprites/AboutUsSpriteIcon.png" id="5_vhmnu"]
+[ext_resource type="Texture2D" uid="uid://bvxu1f8j2mfr0" path="res://UI/UISprites/SettingsSpriteIcon.png" id="6_uek6a"]
+[ext_resource type="PackedScene" uid="uid://d57vdv10n0ts" path="res://UI/your_stats_canvas.tscn" id="7_88dtj"]
+
+[node name="StyleCenterMenuBar" type="CanvasLayer"]
+script = ExtResource("1_cqdsd")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 268.0
+offset_bottom = 130.0
+
+[node name="CoolMenuButton" type="MenuButton" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 1.0
+offset_right = 220.0
+offset_bottom = 121.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_hover_color = Color(0.956863, 0.796078, 0, 1)
+theme_override_font_sizes/font_size = 130
+text = "Style
+Center"
+icon = ExtResource("2_nx8lg")
+item_count = 4
+popup/item_0/text = "Achievements"
+popup/item_0/icon = ExtResource("3_7h32v")
+popup/item_0/id = 0
+popup/item_1/text = "Your Stats"
+popup/item_1/icon = ExtResource("4_evcr1")
+popup/item_1/id = 1
+popup/item_2/text = "About Us"
+popup/item_2/icon = ExtResource("5_vhmnu")
+popup/item_2/id = 2
+popup/item_3/text = "Settings"
+popup/item_3/icon = ExtResource("6_uek6a")
+popup/item_3/id = 3
+
+[node name="AchievementsPopUp" type="Window" parent="Control"]
+unique_name_in_owner = true
+title = "Achievements"
+initial_position = 2
+size = Vector2i(1000, 600)
+visible = false
+
+[node name="Camera2D" type="Camera2D" parent="Control/AchievementsPopUp"]
+
+[node name="Panel" type="Panel" parent="Control/AchievementsPopUp/Camera2D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="YourStatsPopUp" type="Window" parent="Control"]
+unique_name_in_owner = true
+title = "Your Personal Stats"
+position = Vector2i(0, 25)
+size = Vector2i(1920, 1055)
+visible = false
+
+[node name="Camera2D" type="Camera2D" parent="Control/YourStatsPopUp"]
+
+[node name="Panel" type="Panel" parent="Control/YourStatsPopUp/Camera2D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="YourStatsCanvas" parent="Control/YourStatsPopUp/Camera2D/Panel" instance=ExtResource("7_88dtj")]
+
+[node name="AboutUsPopUp" type="Window" parent="Control"]
+unique_name_in_owner = true
+title = "About Us"
+initial_position = 2
+size = Vector2i(1000, 600)
+visible = false
+
+[node name="Camera2D" type="Camera2D" parent="Control/AboutUsPopUp"]
+
+[node name="Panel" type="Panel" parent="Control/AboutUsPopUp/Camera2D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SettingsPopUp" type="Window" parent="Control"]
+unique_name_in_owner = true
+title = "Settings"
+initial_position = 2
+size = Vector2i(1000, 600)
+visible = false
+
+[node name="Camera2D" type="Camera2D" parent="Control/SettingsPopUp"]
+
+[node name="Panel" type="Panel" parent="Control/SettingsPopUp/Camera2D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="Control/CoolMenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="close_requested" from="Control/AchievementsPopUp" to="." method="_on_achievements_pop_up_close_requested"]
+[connection signal="close_requested" from="Control/AchievementsPopUp" to="." method="_on_your_stats_pop_up_close_requested"]
+[connection signal="go_back_requested" from="Control/AchievementsPopUp" to="." method="_on_achievements_pop_up_go_back_requested"]
+[connection signal="go_back_requested" from="Control/AchievementsPopUp" to="." method="_on_your_stats_pop_up_go_back_requested"]
+[connection signal="close_requested" from="Control/YourStatsPopUp" to="." method="_on_your_stats_pop_up_close_requested"]
+[connection signal="go_back_requested" from="Control/YourStatsPopUp" to="." method="_on_your_stats_pop_up_go_back_requested"]
+[connection signal="close_requested" from="Control/AboutUsPopUp" to="." method="_on_your_stats_pop_up_close_requested"]
+[connection signal="close_requested" from="Control/AboutUsPopUp" to="." method="_on_about_us_pop_up_close_requested"]
+[connection signal="go_back_requested" from="Control/AboutUsPopUp" to="." method="_on_about_us_pop_up_go_back_requested"]
+[connection signal="go_back_requested" from="Control/AboutUsPopUp" to="." method="_on_your_stats_pop_up_go_back_requested"]
+[connection signal="close_requested" from="Control/SettingsPopUp" to="." method="_on_your_stats_pop_up_close_requested"]
+[connection signal="close_requested" from="Control/SettingsPopUp" to="." method="_on_settings_pop_up_close_requested"]
+[connection signal="go_back_requested" from="Control/SettingsPopUp" to="." method="_on_settings_pop_up_go_back_requested"]
+[connection signal="go_back_requested" from="Control/SettingsPopUp" to="." method="_on_your_stats_pop_up_go_back_requested"]
