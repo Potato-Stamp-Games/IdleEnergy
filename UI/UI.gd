@@ -3,7 +3,6 @@ class_name UI
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	
 	%Money.text= str(Global.trueMoney)
 	%LightSodaLabel.text = str(Global.lightSodaMoney)
 	%ZapSodaLabel.text = str(Global.zapSodaMoney)
