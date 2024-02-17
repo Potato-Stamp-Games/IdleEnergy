@@ -55,9 +55,9 @@ func _process(delta):
 	%GodlyGainedAmountLabel.text = str(buyAmount)
 
 func _on_godly_convert_buy_button_pressed():
-	if(Global.lightSodaMoney >= buyAmount and Global.sodaMoney >= buyAmount and Global.doublePlusSodaMoney >= buyAmount and Global.berryBurstSodaMoney >= buyAmount):
+	if(Global.lightSodaMoney >= buyAmount and Global.zapSodaMoney >= buyAmount and Global.doublePlusSodaMoney >= buyAmount and Global.berryBurstSodaMoney >= buyAmount):
 		Global.lightSodaMoney = Global.lightSodaMoney - buyAmount
-		Global.sodaMoney = Global.sodaMoney - buyAmount
+		Global.zapSodaMoney = Global.zapSodaMoney - buyAmount
 		Global.doublePlusSodaMoney = Global.doublePlusSodaMoney - buyAmount
 		Global.berryBurstSodaMoney = Global.berryBurstSodaMoney - buyAmount
 		

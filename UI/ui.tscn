@@ -132,7 +132,7 @@ offset_top = -40.0
 offset_right = 150.0
 offset_bottom = 75.0
 
-[node name="SodaLabel" type="Label" parent="MainLayer/Control/MarginContainer/SodaSpriteMoney/HBoxContainer"]
+[node name="ZapSodaLabel" type="Label" parent="MainLayer/Control/MarginContainer/SodaSpriteMoney/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
