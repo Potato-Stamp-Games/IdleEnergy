@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ww00kfcioi7e"]
+[gd_scene load_steps=6 format=3 uid="uid://ww00kfcioi7e"]
 
 [ext_resource type="Script" path="res://Sodas/berryburst_soda.gd" id="1_cvqwe"]
 [ext_resource type="Texture2D" uid="uid://837hktbq5mpp" path="res://Sodas/SodaSprites/BerryBurstSodaSprite.png" id="1_vphrf"]
+[ext_resource type="Texture2D" uid="uid://bg0wegu0r0yq4" path="res://Sodas/SodaSprites/BerryBurstSodaClickedSprite.png" id="3_uy2hu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dm6ko"]
 size = Vector2(137, 271)
@@ -22,5 +23,11 @@ script = SubResource("GDScript_41385")
 position = Vector2(-6, 9)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_vphrf")
+
+[node name="BerryBurstSodaClickedSprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-6, 9)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("3_uy2hu")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

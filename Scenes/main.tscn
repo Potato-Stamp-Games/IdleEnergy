@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b56r0drnfyeq3"]
+[gd_scene load_steps=7 format=3 uid="uid://b56r0drnfyeq3"]
 
 [ext_resource type="PackedScene" uid="uid://cgespow2hwr4k" path="res://Sodas/doubleplus_soda.tscn" id="1_8elwk"]
 [ext_resource type="PackedScene" uid="uid://ctxfgtgvi35df" path="res://Sodas/light_soda.tscn" id="2_yhlpn"]
 [ext_resource type="PackedScene" uid="uid://cqtrvtvbc2ng" path="res://Sodas/zap_soda.tscn" id="3_3sy2r"]
 [ext_resource type="PackedScene" uid="uid://ww00kfcioi7e" path="res://Sodas/berryburst_soda.tscn" id="4_0aqmg"]
 [ext_resource type="PackedScene" uid="uid://4f1g8hclro8c" path="res://UI/ui.tscn" id="5_8v3al"]
+[ext_resource type="Script" path="res://Scenes/SessionTimer.gd" id="6_hhxbr"]
 
 [node name="MainControl" type="Control"]
 layout_mode = 3
@@ -28,17 +29,23 @@ mouse_filter = 2
 [node name="UI" parent="Panel" instance=ExtResource("5_8v3al")]
 
 [node name="DoublePlusSoda" parent="Panel" instance=ExtResource("1_8elwk")]
-position = Vector2(1201, 776)
+position = Vector2(1214, 755)
 scale = Vector2(1.8, 1.8)
 
 [node name="SodaLight" parent="Panel" instance=ExtResource("2_yhlpn")]
-position = Vector2(421, 744)
+position = Vector2(434, 717)
 scale = Vector2(3.8, 3.8)
 
 [node name="ZapSoda" parent="Panel" instance=ExtResource("3_3sy2r")]
-position = Vector2(830, 762)
+position = Vector2(843, 741)
 scale = Vector2(2.1, 2.1)
 
 [node name="BerryBurstSoda" parent="Panel" instance=ExtResource("4_0aqmg")]
-position = Vector2(1560, 807)
+position = Vector2(1573, 786)
 scale = Vector2(1.8, 1.8)
+
+[node name="SessionTimer" type="Timer" parent="."]
+autostart = true
+script = ExtResource("6_hhxbr")
+
+[connection signal="timeout" from="SessionTimer" to="SessionTimer" method="_on_timeout"]

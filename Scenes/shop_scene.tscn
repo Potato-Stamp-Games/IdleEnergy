@@ -41,6 +41,7 @@ offset_left = 1690.0
 offset_top = 978.0
 offset_right = 1919.0
 offset_bottom = 1080.0
+mouse_filter = 2
 
 [node name="BackButton" type="Button" parent="BackButton"]
 self_modulate = Color(1, 1, 1, 0)
@@ -58,7 +59,6 @@ texture = ExtResource("2_52daq")
 layout_mode = 1
 offset_right = 166.0
 scale = Vector2(2, 2)
-mouse_filter = 2
 script = ExtResource("4_apuet")
 
 [node name="SodaLightSpriteMoney" type="Sprite2D" parent="MoneyContainer"]
@@ -192,6 +192,7 @@ offset_right = -160.0
 offset_bottom = 40.0
 grow_horizontal = 0
 scale = Vector2(1.5, 1.5)
+mouse_filter = 2
 
 [node name="SpriteContainer" type="HBoxContainer" parent="LightSodaClickPower1"]
 custom_minimum_size = Vector2(40, 0)
@@ -220,7 +221,7 @@ custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 
 [node name="CostLabel" type="Label" parent="LightSodaClickPower1/CostLabelContainer"]
-custom_minimum_size = Vector2(0, 10)
+custom_minimum_size = Vector2(78, 10)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -271,6 +272,7 @@ offset_right = -160.0
 offset_bottom = 105.0
 grow_horizontal = 0
 scale = Vector2(1.5, 1.5)
+mouse_filter = 2
 
 [node name="SpriteContainer" type="HBoxContainer" parent="ZapSodaClickPower1"]
 custom_minimum_size = Vector2(40, 0)
@@ -300,13 +302,13 @@ custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 
 [node name="CostLabel" type="Label" parent="ZapSodaClickPower1/CostLabelContainer"]
-custom_minimum_size = Vector2(0, 10)
+custom_minimum_size = Vector2(78, 10)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 10
 text = "Money Cost:
-Soda Cost:"
+Zap Soda Cost:"
 horizontal_alignment = 2
 
 [node name="CostContainer" type="HBoxContainer" parent="ZapSodaClickPower1"]
@@ -339,198 +341,6 @@ size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 10
 text = "60"
 
-[node name="GodlyConversionUI" type="BoxContainer" parent="."]
-layout_direction = 2
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.490104
-anchor_top = 0.0873852
-anchor_right = 0.509896
-anchor_bottom = 0.203126
-offset_left = -200.0
-offset_top = -56.376
-offset_right = 62.0
-offset_bottom = 64.624
-grow_horizontal = 2
-scale = Vector2(2, 2)
-script = ExtResource("12_mhtgi")
-metadata/_edit_use_anchors_ = true
-
-[node name="VBoxContainer" type="VBoxContainer" parent="GodlyConversionUI"]
-custom_minimum_size = Vector2(300, 200)
-layout_mode = 2
-
-[node name="SpriteHolder" type="HBoxContainer" parent="GodlyConversionUI/VBoxContainer"]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-
-[node name="GodlyEqualsSprite" type="Sprite2D" parent="GodlyConversionUI/VBoxContainer/SpriteHolder"]
-position = Vector2(148, 21)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("12_wakov")
-
-[node name="ButtonMultipierContainer" type="HBoxContainer" parent="GodlyConversionUI/VBoxContainer"]
-custom_minimum_size = Vector2(80, 25)
-layout_direction = 2
-layout_mode = 2
-size_flags_vertical = 4
-
-[node name="Label" type="Label" parent="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-theme_override_font_sizes/font_size = 15
-text = "Amount:"
-
-[node name="GodlyX1Button" type="Button" parent="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer"]
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_font_sizes/font_size = 10
-action_mode = 0
-text = "1x"
-
-[node name="GodlyX10Button" type="Button" parent="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer"]
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_font_sizes/font_size = 10
-action_mode = 0
-text = "10x"
-
-[node name="GodlyX100Button" type="Button" parent="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer"]
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_font_sizes/font_size = 10
-action_mode = 0
-text = "100x"
-
-[node name="GodlyX1000Button" type="Button" parent="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer"]
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_font_sizes/font_size = 10
-action_mode = 0
-text = "1,000x"
-
-[node name="GodlyX10,000Button" type="Button" parent="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer"]
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_font_sizes/font_size = 10
-action_mode = 0
-text = "10,000x"
-
-[node name="GodlyMultiBuyContainer" type="BoxContainer" parent="GodlyConversionUI/VBoxContainer"]
-layout_direction = 2
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_stretch_ratio = 1.88
-
-[node name="Label" type="Label" parent="GodlyConversionUI/VBoxContainer/GodlyMultiBuyContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 14
-text = "Multiplier:"
-
-[node name="MultiplierGodlyx10Button" type="CheckBox" parent="GodlyConversionUI/VBoxContainer/GodlyMultiBuyContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(60, 0)
-layout_direction = 3
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 8
-theme_override_font_sizes/font_size = 10
-action_mode = 0
-button_group = SubResource("ButtonGroup_vt5oh")
-text = "10x"
-
-[node name="MultiplierGodlyx100Button" type="CheckBox" parent="GodlyConversionUI/VBoxContainer/GodlyMultiBuyContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(60, 0)
-layout_direction = 3
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 8
-theme_override_font_sizes/font_size = 10
-action_mode = 0
-button_group = SubResource("ButtonGroup_fx7ak")
-text = "100x"
-
-[node name="MultiplierGodlyx1000Button" type="CheckBox" parent="GodlyConversionUI/VBoxContainer/GodlyMultiBuyContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(60, 0)
-layout_direction = 3
-layout_mode = 2
-size_flags_vertical = 8
-theme_override_font_sizes/font_size = 10
-action_mode = 0
-button_group = SubResource("ButtonGroup_rsth0")
-text = "1000x"
-
-[node name="Line Break" type="HBoxContainer" parent="GodlyConversionUI/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="GodlyConversionUI/VBoxContainer/Line Break"]
-layout_mode = 2
-text = "--------------------------------------------------------"
-
-[node name="SpentContainer" type="HBoxContainer" parent="GodlyConversionUI/VBoxContainer"]
-custom_minimum_size = Vector2(0, 35)
-layout_mode = 2
-
-[node name="SpriteHolder2" type="VBoxContainer" parent="GodlyConversionUI/VBoxContainer/SpentContainer"]
-custom_minimum_size = Vector2(90, 0)
-layout_mode = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="GodlyConversionUI/VBoxContainer/SpentContainer/SpriteHolder2"]
-position = Vector2(39, 11)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("13_vxfcl")
-
-[node name="SpentLabelContainer" type="VBoxContainer" parent="GodlyConversionUI/VBoxContainer/SpentContainer"]
-layout_mode = 2
-
-[node name="GodlySpentAmountLabel" type="Label" parent="GodlyConversionUI/VBoxContainer/SpentContainer/SpentLabelContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "0"
-
-[node name="GainedContainer" type="HBoxContainer" parent="GodlyConversionUI/VBoxContainer"]
-layout_mode = 2
-
-[node name="SpriteContainer" type="VBoxContainer" parent="GodlyConversionUI/VBoxContainer/GainedContainer"]
-custom_minimum_size = Vector2(90, 35)
-layout_mode = 2
-
-[node name="GodlySodaMoneySprite" type="Sprite2D" parent="GodlyConversionUI/VBoxContainer/GainedContainer/SpriteContainer"]
-position = Vector2(39, 10)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("8_s4ke8")
-
-[node name="GainedLabelContainer" type="VBoxContainer" parent="GodlyConversionUI/VBoxContainer/GainedContainer"]
-layout_mode = 2
-
-[node name="GodlyGainedAmountLabel" type="Label" parent="GodlyConversionUI/VBoxContainer/GainedContainer/GainedLabelContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "0"
-
-[node name="HBoxContainer" type="HBoxContainer" parent="GodlyConversionUI/VBoxContainer"]
-layout_mode = 2
-
-[node name="GodlyConvertBuyButton" type="Button" parent="GodlyConversionUI/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(80, 40)
-layout_mode = 2
-text = "BUY"
-
-[node name="GodlyConvertCancelButton" type="Button" parent="GodlyConversionUI/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(80, 0)
-layout_mode = 2
-text = "CANCEL"
-
 [node name="DoublePlusSodaClickPower1" type="BoxContainer" parent="."]
 layout_direction = 2
 layout_mode = 1
@@ -543,6 +353,7 @@ offset_right = -160.0
 offset_bottom = 171.0
 grow_horizontal = 0
 scale = Vector2(1.5, 1.5)
+mouse_filter = 2
 
 [node name="SpriteContainer" type="HBoxContainer" parent="DoublePlusSodaClickPower1"]
 custom_minimum_size = Vector2(40, 0)
@@ -572,13 +383,13 @@ custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 
 [node name="CostLabel" type="Label" parent="DoublePlusSodaClickPower1/CostLabelContainer"]
-custom_minimum_size = Vector2(0, 10)
+custom_minimum_size = Vector2(78, 10)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 10
 text = "Money Cost:
-Soda Cost:"
+DP Soda Cost:"
 horizontal_alignment = 2
 
 [node name="CostContainer" type="HBoxContainer" parent="DoublePlusSodaClickPower1"]
@@ -611,9 +422,199 @@ size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 10
 text = "60"
 
+[node name="GodlyConversionUI" type="BoxContainer" parent="."]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -327.0
+offset_right = -27.0
+offset_bottom = 246.0
+grow_horizontal = 2
+script = ExtResource("12_mhtgi")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GodlyConversionUI"]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+
+[node name="SpriteHolder" type="HBoxContainer" parent="GodlyConversionUI/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="GodlyEqualsSprite" type="Sprite2D" parent="GodlyConversionUI/VBoxContainer/SpriteHolder"]
+position = Vector2(134, 42)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_wakov")
+
+[node name="ButtonMultipierContainer" type="HBoxContainer" parent="GodlyConversionUI/VBoxContainer"]
+custom_minimum_size = Vector2(80, 25)
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 26
+text = "Amount:"
+
+[node name="GodlyX1Button" type="Button" parent="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 21
+action_mode = 0
+text = "1x"
+
+[node name="GodlyX10Button" type="Button" parent="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 21
+action_mode = 0
+text = "10x"
+
+[node name="GodlyX100Button" type="Button" parent="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 21
+action_mode = 0
+text = "100x"
+
+[node name="GodlyX1000Button" type="Button" parent="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 21
+action_mode = 0
+text = "1,000x"
+
+[node name="GodlyX10,000Button" type="Button" parent="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 21
+action_mode = 0
+text = "10,000x"
+
+[node name="GodlyMultiBuyContainer" type="BoxContainer" parent="GodlyConversionUI/VBoxContainer"]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_stretch_ratio = 1.88
+
+[node name="Label" type="Label" parent="GodlyConversionUI/VBoxContainer/GodlyMultiBuyContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Multiplier:"
+
+[node name="MultiplierGodlyx10Button" type="CheckBox" parent="GodlyConversionUI/VBoxContainer/GodlyMultiBuyContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 21
+action_mode = 0
+button_group = SubResource("ButtonGroup_vt5oh")
+text = "10x"
+
+[node name="MultiplierGodlyx100Button" type="CheckBox" parent="GodlyConversionUI/VBoxContainer/GodlyMultiBuyContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 21
+action_mode = 0
+button_group = SubResource("ButtonGroup_fx7ak")
+text = "100x"
+
+[node name="MultiplierGodlyx1000Button" type="CheckBox" parent="GodlyConversionUI/VBoxContainer/GodlyMultiBuyContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_direction = 3
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 21
+action_mode = 0
+button_group = SubResource("ButtonGroup_rsth0")
+text = "1000x"
+
+[node name="Line Break" type="HBoxContainer" parent="GodlyConversionUI/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GodlyConversionUI/VBoxContainer/Line Break"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.862745, 0.698039, 0.12549, 1)
+theme_override_font_sizes/font_size = 26
+text = "--------------------------------------------------------"
+
+[node name="SpentContainer" type="HBoxContainer" parent="GodlyConversionUI/VBoxContainer"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+
+[node name="SpriteHolder2" type="VBoxContainer" parent="GodlyConversionUI/VBoxContainer/SpentContainer"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="GodlyConversionUI/VBoxContainer/SpentContainer/SpriteHolder2"]
+position = Vector2(36, 22)
+scale = Vector2(0.210922, 0.210922)
+texture = ExtResource("13_vxfcl")
+
+[node name="SpentLabelContainer" type="VBoxContainer" parent="GodlyConversionUI/VBoxContainer/SpentContainer"]
+layout_mode = 2
+
+[node name="GodlySpentAmountLabel" type="Label" parent="GodlyConversionUI/VBoxContainer/SpentContainer/SpentLabelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "0"
+
+[node name="GainedContainer" type="HBoxContainer" parent="GodlyConversionUI/VBoxContainer"]
+layout_mode = 2
+
+[node name="SpriteContainer" type="VBoxContainer" parent="GodlyConversionUI/VBoxContainer/GainedContainer"]
+custom_minimum_size = Vector2(90, 35)
+layout_mode = 2
+
+[node name="GodlySodaMoneySprite" type="Sprite2D" parent="GodlyConversionUI/VBoxContainer/GainedContainer/SpriteContainer"]
+position = Vector2(34, 20)
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("8_s4ke8")
+
+[node name="GainedLabelContainer" type="VBoxContainer" parent="GodlyConversionUI/VBoxContainer/GainedContainer"]
+layout_mode = 2
+
+[node name="GodlyGainedAmountLabel" type="Label" parent="GodlyConversionUI/VBoxContainer/GainedContainer/GainedLabelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "0"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GodlyConversionUI/VBoxContainer"]
+layout_mode = 2
+
+[node name="GodlyConvertBuyButton" type="Button" parent="GodlyConversionUI/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(120, 60)
+layout_mode = 2
+text = "BUY"
+
+[node name="GodlyConvertCancelButton" type="Button" parent="GodlyConversionUI/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(120, 60)
+layout_mode = 2
+text = "CANCEL"
+
 [connection signal="pressed" from="BackButton/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="LightSodaClickPower1/LightSoda_CP1_BuyButton" to="." method="_on_light_soda_click_power_plus1"]
 [connection signal="pressed" from="ZapSodaClickPower1/ZapSoda_CP1_BuyButton" to="." method="_on_zap_soda_click_power_plus1"]
+[connection signal="pressed" from="DoublePlusSodaClickPower1/DoublePlus_CP1_BuyButton" to="." method="_on_double_plus_soda_click_power_plus1"]
 [connection signal="pressed" from="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer/GodlyX1Button" to="GodlyConversionUI" method="_on_godly_x_1_button_pressed"]
 [connection signal="pressed" from="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer/GodlyX10Button" to="GodlyConversionUI" method="_on_godly_x_10_button_pressed"]
 [connection signal="pressed" from="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer/GodlyX100Button" to="GodlyConversionUI" method="_on_godly_x_100_button_pressed"]
@@ -625,4 +626,3 @@ text = "60"
 [connection signal="toggled" from="GodlyConversionUI/VBoxContainer/GodlyMultiBuyContainer/MultiplierGodlyx1000Button" to="GodlyConversionUI" method="_on_multiplier_godly_x_1000_button_toggled"]
 [connection signal="pressed" from="GodlyConversionUI/VBoxContainer/HBoxContainer/GodlyConvertBuyButton" to="GodlyConversionUI" method="_on_godly_convert_buy_button_pressed"]
 [connection signal="pressed" from="GodlyConversionUI/VBoxContainer/HBoxContainer/GodlyConvertCancelButton" to="GodlyConversionUI" method="_on_godly_convert_cancel_button_pressed"]
-[connection signal="pressed" from="DoublePlusSodaClickPower1/DoublePlus_CP1_BuyButton" to="." method="_on_double_plus_soda_click_power_plus1"]

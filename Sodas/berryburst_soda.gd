@@ -1,9 +1,16 @@
 extends Area2D
 class_name BerryBurstSoda
 
+var BerryBurstSodaClickedSprite
+var BerryBurstSodaSprite
+func _ready():
+	BerryBurstSodaClickedSprite = get_node("BerryBurstSodaClickedSprite")
+	BerryBurstSodaSprite = get_node("BerryBurstSodaSprite")
 #When input is mouse, when mouse button left click, when pressed 
 func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisionshape2d signal
 	if  event is InputEventMouseButton:
+		BerryBurstSodaClickedSprite.hide()
+		BerryBurstSodaSprite.show()
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			#Creates values based on most recent in global.gd
 			var trueMoney = Global.trueMoney
@@ -17,4 +24,9 @@ func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisi
 			#Sets the new value for each money type
 			Global.berryBurstSodaMoney = berryMoney
 			Global.trueMoney = trueMoney
-			print("Berry Burst Soda Clicked")
+			Global.ttlAllClicks += 1
+			Global.ttlBerryBurstSodaMoney += berryBurstSodaClickPower
+			Global.ttlTrueMoney = Global.ttlTrueMoney + (berryBurstSodaClickPower * 4)
+			
+			BerryBurstSodaClickedSprite.show()
+			BerryBurstSodaSprite.hide()
