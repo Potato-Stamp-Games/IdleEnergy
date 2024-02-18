@@ -65,37 +65,12 @@ func _process(_delta):
 
 <<<<<<< Updated upstream
 	#Double Plus Soda Click Power Labels
-	%DPM_CP_CostLabel.text = str(pow(25 + (3 * Global.doublePlusSodaClickPower), 2))
+	%DPM_CP_CostLabel.text = str(pow(10 + (3 * Global.doublePlusSodaClickPower), 2))
 	%DPS_CP_CostLabel.text = str(pow(3 + Global.doublePlusSodaClickPower, 2))
 	
 	#Berry Burst Soda Click Power Labels
-	%BBPM_CP_CostLabel.text = str(pow(50 + (4 * Global.berryBurstSodaClickPower), 2))
+	%BBPM_CP_CostLabel.text = str(pow(10 + (4 * Global.berryBurstSodaClickPower), 2))
 	%BBPS_CP_CostLabel.text = str(pow(4 + Global.berryBurstSodaClickPower, 2))
-=======
-	#Double Plus Soda Click Cost Labels
-	%DPM_CP_CostLabel.text = str(FuncGlobal.round_to_dec(dpm_CP_CostEq))
-	%DPS_CP_CostLabel.text = str(FuncGlobal.round_to_dec(dps_CP_CostEq))
-	
-	#Berry Burst Soda Click Cost Labels
-	%BBM_CP_CostLabel.text = str(FuncGlobal.round_to_dec(bbm_CP_CostEq))
-	%BBS_CP_CostLabel.text = str(FuncGlobal.round_to_dec(bbs_CP_CostEq))
-	
-	#Light Soda Auto Click Cost Labels
-	%LM_AC_CostLabel.text = str(FuncGlobal.round_to_dec(lm_AC_CostEq))
-	%LS_AC_CostLabel.text = str(FuncGlobal.round_to_dec(ls_AC_CostEq))
-	
-	#Zap Soda Auto Click Cost Labels
-	%ZM_AC_CostLabel.text = str(FuncGlobal.round_to_dec(zm_AC_CostEq))
-	%ZS_AC_CostLabel.text = str(FuncGlobal.round_to_dec(zs_AC_CostEq))
-	
-	#DP Soda Auto Click Cost Labels
-	%DPM_AC_CostLabel.text = str(FuncGlobal.round_to_dec(dpm_AC_CostEq))
-	%DPS_AC_CostLabel.text = str(FuncGlobal.round_to_dec(dps_AC_CostEq))
-	
-	#BB Soda Auto Click Cost Labels
-	%BBM_AC_CostLabel.text = str(FuncGlobal.round_to_dec(bbm_AC_CostEq))
-	%BBS_AC_CostLabel.text = str(FuncGlobal.round_to_dec(bbs_AC_CostEq))
->>>>>>> Stashed changes
 
 #Change scence back to main & deletes this scene
 func _on_back_button_pressed():
@@ -131,6 +106,7 @@ func _on_light_soda_click_power_plus1():
 func _on_zap_soda_click_power_plus1():	
 <<<<<<< Updated upstream
 	var moneyCostOfUpgrade = pow(10 + (2 * Global.zapSodaClickPower), 2)
+	var moneyCostOfUpgrade = pow(10 + (2 * Global.zapSodaClickPower), 3)
 	var sodaCostOfUpgrade = pow(2 + Global.zapSodaClickPower, 2)
 =======
 	var moneyCostOfUpgrade = zm_CP_CostEq

@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=20 format=3 uid="uid://bktf204prj7tk"]
-=======
-[gd_scene load_steps=26 format=3 uid="uid://bktf204prj7tk"]
->>>>>>> Stashed changes
+[gd_scene load_steps=19 format=3 uid="uid://bktf204prj7tk"]
 
 [ext_resource type="Script" path="res://Shop/shop_back.gd" id="1_1r48s"]
 [ext_resource type="Texture2D" uid="uid://bofo3l5nscx5n" path="res://UI/UISprites/BackButtonSprite.png" id="2_52daq"]
@@ -19,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://bjkxjgln1m710" path="res://Shop/DoublePlusClickPower1Sprite.png" id="12_lc66e"]
 [ext_resource type="Script" path="res://UI/GodlyConversionUI.gd" id="12_mhtgi"]
 [ext_resource type="Texture2D" uid="uid://drdlqsrvuwo6y" path="res://Sodas/SodaSprites/GoldyEqualsSodaSprite.png" id="12_wakov"]
-[ext_resource type="Texture2D" uid="uid://etqjsn0ygy27" path="res://Shop/ClickPower4Sprite.png" id="13_kks38"]
 [ext_resource type="Texture2D" uid="uid://ca3fspipw8awc" path="res://Sodas/SodaSprites/allMoneySprite.png" id="13_vxfcl"]
 [ext_resource type="Texture2D" uid="uid://cyv6l3qoarw6g" path="res://Shop/ZapClickPower1Sprite.png" id="15_tqsbh"]
 [ext_resource type="Texture2D" uid="uid://h3vxvuu05w81" path="res://Shop/BerryBurstClickPower1Sprite.png" id="16_egs01"]
@@ -373,9 +368,9 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -420.0
-offset_top = 130.0
+offset_top = 131.0
 offset_right = -160.0
-offset_bottom = 170.0
+offset_bottom = 171.0
 grow_horizontal = 0
 scale = Vector2(1.5, 1.5)
 mouse_filter = 2
@@ -528,8 +523,6 @@ size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 10
 text = "60"
 
-=======
->>>>>>> Stashed changes
 [node name="GodlyConversionUI" type="BoxContainer" parent="."]
 layout_direction = 2
 layout_mode = 1
@@ -1372,9 +1365,6 @@ text = "60"
 [connection signal="pressed" from="LightSodaClickPower1/LightSoda_CP1_BuyButton" to="." method="_on_light_soda_click_power_plus1"]
 [connection signal="pressed" from="ZapSodaClickPower1/ZapSoda_CP1_BuyButton" to="." method="_on_zap_soda_click_power_plus1"]
 [connection signal="pressed" from="DoublePlusSodaClickPower1/DoublePlus_CP1_BuyButton" to="." method="_on_double_plus_soda_click_power_plus1"]
-[connection signal="pressed" from="BerryBurstSodaClickPower1/BerryBurst_CP1_BuyButton" to="." method="_on_berry_burst_soda_click_power_plus1"]
-=======
->>>>>>> Stashed changes
 [connection signal="pressed" from="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer/GodlyX1Button" to="GodlyConversionUI" method="_on_godly_x_1_button_pressed"]
 [connection signal="pressed" from="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer/GodlyX10Button" to="GodlyConversionUI" method="_on_godly_x_10_button_pressed"]
 [connection signal="pressed" from="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer/GodlyX100Button" to="GodlyConversionUI" method="_on_godly_x_100_button_pressed"]

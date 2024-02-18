@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://qwkul3xnjibu" path="res://Sodas/SodaSprites/GodlySodaSprite_Money.png" id="7_wr61i"]
 [ext_resource type="Script" path="res://Shop/ShopButton.gd" id="8_8qnlb"]
 [ext_resource type="Texture2D" uid="uid://csbf0ebut366j" path="res://UI/UISprites/ShopIcon.png" id="10_e622p"]
-[ext_resource type="Theme" uid="uid://ictmoqkv3k4w" path="res://UI/back_button_theme.tres" id="10_tm141"]
+[ext_resource type="Theme" uid="uid://c565vyrtdd3es" path="res://UI/back_button_theme.tres" id="10_tm141"]
 [ext_resource type="PackedScene" uid="uid://c568qlc5aq4cr" path="res://UI/style_center_menu_bar.tscn" id="11_vhvr6"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p66b4"]
