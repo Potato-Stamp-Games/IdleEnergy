@@ -37,16 +37,16 @@ func _process(_delta):
 	bbs_CP_CostEq = pow(12 + (2 * Global.berryBurstSodaClickPower), 2)
 	#Light Soda Auto Click 1
 	lm_AC_CostEq = pow(3 + (2 * Global.lightSodaAutoClick), 3)
-	ls_AC_CostEq = pow(2 + (2 * Global.lightSodaAutoClick), 2)
+	ls_AC_CostEq = pow(2 + Global.lightSodaAutoClick, 2)
 	#Zap Soda Auto Click 1
-	zm_AC_CostEq = pow(5 + (3 * Global.zapSodaAutoClick), 3)
-	zs_AC_CostEq = pow(4 + (3 * Global.zapSodaAutoClick), 2)
+	zm_AC_CostEq = pow(4 + (2 * Global.zapSodaAutoClick), 3)
+	zs_AC_CostEq = pow(2 + Global.zapSodaAutoClick, 2)
 	#DP Soda Auto Click 1
-	dpm_AC_CostEq = pow(7 + (4 * Global.doublePlusSodaAutoClick), 3)
-	dps_AC_CostEq = pow(8 + (4 * Global.doublePlusSodaAutoClick), 2)
+	dpm_AC_CostEq = pow(5 + (2 * Global.doublePlusSodaClickPower), 3)
+	dps_AC_CostEq = pow(3 + Global.doublePlusSodaClickPower, 2)
 	#BB Soda Auto Click 1
-	bbm_AC_CostEq = pow(10 + (5 * Global.berryBurstSodaAutoClick), 3)
-	bbs_AC_CostEq = pow(16 + (5 * Global.berryBurstSodaAutoClick), 2)
+	bbm_AC_CostEq = pow(8 + (2 * Global.berryBurstSodaClickPower), 3)
+	bbs_AC_CostEq = pow(4 + Global.berryBurstSodaClickPower, 2)
 	#END OF: Shop Equations
 	%MoneyLabel.text= str(FuncGlobal.round_to_dec(Global.trueMoney))
 	%LightSodaLabel.text = str(FuncGlobal.round_to_dec(Global.lightSodaMoney))
@@ -63,22 +63,37 @@ func _process(_delta):
 	%ZM_CP_CostLabel.text = str(FuncGlobal.round_to_dec(zm_CP_CostEq))
 	%ZS_CP_CostLabel.text = str(FuncGlobal.round_to_dec(zs_CP_CostEq))
 
-<<<<<<< Updated upstream
+
 	#Double Plus Soda Click Power Labels
-	%DPM_CP_CostLabel.text = str(pow(10 + (3 * Global.doublePlusSodaClickPower), 2))
-	%DPS_CP_CostLabel.text = str(pow(3 + Global.doublePlusSodaClickPower, 2))
+	%DPM_CP_CostLabel.text = str(FuncGlobal.round_to_dec(dpm_CP_CostEq))
+	%DPS_CP_CostLabel.text = str(FuncGlobal.round_to_dec(dps_CP_CostEq))
 	
 	#Berry Burst Soda Click Power Labels
-	%BBPM_CP_CostLabel.text = str(pow(10 + (4 * Global.berryBurstSodaClickPower), 2))
-	%BBPS_CP_CostLabel.text = str(pow(4 + Global.berryBurstSodaClickPower, 2))
+	%BBM_CP_CostLabel.text = str(FuncGlobal.round_to_dec(bbm_CP_CostEq))
+	%BBS_CP_CostLabel.text = str(FuncGlobal.round_to_dec(bbs_CP_CostEq))
+	
+	#Light Soda Auto Click Cost labels
+	%LM_AC_CostLabel.text = str(FuncGlobal.round_to_dec(lm_AC_CostEq))
+	%LS_AC_CostLabel.text = str(FuncGlobal.round_to_dec(ls_AC_CostEq))
+
+	#Zap Soda Auto Click Cost labels
+	%ZM_AC_CostLabel.text = str(FuncGlobal.round_to_dec(zm_AC_CostEq))
+	%ZS_AC_CostLabel.text = str(FuncGlobal.round_to_dec(zs_AC_CostEq))
+
+
+	#Double Plus Soda Auto Click Power Labels
+	%DPM_AC_CostLabel.text = str(FuncGlobal.round_to_dec(dpm_AC_CostEq))
+	%DPS_AC_CostLabel.text = str(FuncGlobal.round_to_dec(dps_AC_CostEq))
+	
+	#Berry Burst Soda Auto Click Power Labels
+	%BBM_AC_CostLabel.text = str(FuncGlobal.round_to_dec(bbm_AC_CostEq))
+	%BBS_AC_CostLabel.text = str(FuncGlobal.round_to_dec(bbs_AC_CostEq))
 
 #Change scence back to main & deletes this scene
 func _on_back_button_pressed():
 	Global.ttlAllClicks += 1
 	get_tree().change_scene_to_file("res://Scenes/main.tscn")
-<<<<<<< Updated upstream
 
-=======
 #changes backbutton sprite when mouse hovers over
 func _on_back_button_mouse_entered():
 	%BackButtonHoverSprite.show()
@@ -86,7 +101,7 @@ func _on_back_button_mouse_entered():
 func _on_back_button_mouse_exited():
 	%BackButtonHoverSprite.hide()
 	%BackButtonSprite.show()
->>>>>>> Stashed changes
+
 #STORE UPGRADES--------------------------------------------------------------------------------------------
 #Light Soda Click Power +1
 func _on_light_soda_click_power_plus1():
@@ -104,14 +119,8 @@ func _on_light_soda_click_power_plus1():
 
 #Zap Soda Click Power +1
 func _on_zap_soda_click_power_plus1():	
-<<<<<<< Updated upstream
-	var moneyCostOfUpgrade = pow(10 + (2 * Global.zapSodaClickPower), 2)
-	var moneyCostOfUpgrade = pow(10 + (2 * Global.zapSodaClickPower), 3)
-	var sodaCostOfUpgrade = pow(2 + Global.zapSodaClickPower, 2)
-=======
 	var moneyCostOfUpgrade = zm_CP_CostEq
 	var sodaCostOfUpgrade = zs_CP_CostEq
->>>>>>> Stashed changes
 	
 	if Global.trueMoney >= moneyCostOfUpgrade:
 		if Global.zapSodaMoney >= sodaCostOfUpgrade:
@@ -124,13 +133,8 @@ func _on_zap_soda_click_power_plus1():
 
 #Double Plus Soda Click Power +1
 func _on_double_plus_soda_click_power_plus1():
-<<<<<<< Updated upstream
-	var moneyCostOfUpgrade = pow(10 + (3 * Global.doublePlusSodaClickPower), 2)
-	var sodaCostOfUpgrade = pow(3 + Global.doublePlusSodaClickPower, 2)
-=======
 	var moneyCostOfUpgrade = dpm_CP_CostEq
 	var sodaCostOfUpgrade = dps_CP_CostEq
->>>>>>> Stashed changes
 	
 	if Global.trueMoney >=  moneyCostOfUpgrade:
 		if Global.doublePlusSodaMoney >= sodaCostOfUpgrade:
@@ -140,7 +144,6 @@ func _on_double_plus_soda_click_power_plus1():
 			%DPM_CP_CostLabel.text = str(FuncGlobal.round_to_dec(dpm_CP_CostEq))
 			%DPS_CP_CostLabel.text = str(FuncGlobal.round_to_dec(dps_CP_CostEq))
 			Global.ttlAllClicks += 1
-<<<<<<< Updated upstream
 			
 
 #Berry Burst Soda Click Power +1
@@ -156,7 +159,6 @@ func _on_berry_burst_soda_click_power_plus1():
 			%BBPM_CP_CostLabel.text = str(moneyCostOfUpgrade)
 			%BBPS_CP_CostLabel.text = str(sodaCostOfUpgrade)
 			Global.ttlAllClicks += 1
-=======
 
 #Berry Burst Soda Click Power +1
 func _on_berry_burst_cp_1_buy_button_pressed():
@@ -231,5 +233,4 @@ func _on_bb_soda_ac_1_buy_button_pressed():
 			%BBS_AC_CostLabel.text = str(FuncGlobal.round_to_dec(bbs_AC_CostEq))
 			Global.ttlAllClicks += 1
 			Global.berryBurstSodaAuto = true
->>>>>>> Stashed changes
 #END OF STORE UPGRADES ------------
