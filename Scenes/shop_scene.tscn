@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bktf204prj7tk"]
+[gd_scene load_steps=20 format=3 uid="uid://bktf204prj7tk"]
 
 [ext_resource type="Script" path="res://Shop/shop_back.gd" id="1_1r48s"]
 [ext_resource type="Texture2D" uid="uid://bofo3l5nscx5n" path="res://UI/UISprites/BackButtonSprite.png" id="2_52daq"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bjkxjgln1m710" path="res://Shop/ClickPower3Sprite.png" id="12_lc66e"]
 [ext_resource type="Script" path="res://UI/GodlyConversionUI.gd" id="12_mhtgi"]
 [ext_resource type="Texture2D" uid="uid://drdlqsrvuwo6y" path="res://Sodas/SodaSprites/GoldyEqualsSodaSprite.png" id="12_wakov"]
+[ext_resource type="Texture2D" uid="uid://etqjsn0ygy27" path="res://Shop/ClickPower4Sprite.png" id="13_kks38"]
 [ext_resource type="Texture2D" uid="uid://ca3fspipw8awc" path="res://Sodas/SodaSprites/allMoneySprite.png" id="13_vxfcl"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_vt5oh"]
@@ -348,9 +349,9 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -420.0
-offset_top = 131.0
+offset_top = 130.0
 offset_right = -160.0
-offset_bottom = 171.0
+offset_bottom = 170.0
 grow_horizontal = 0
 scale = Vector2(1.5, 1.5)
 mouse_filter = 2
@@ -416,6 +417,87 @@ text = "60"
 layout_mode = 2
 
 [node name="DPS_CP_CostLabel" type="Label" parent="DoublePlusSodaClickPower1/CostContainer/MoneyCostContainer/SodaCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 10
+text = "60"
+
+[node name="BerryBurstSodaClickPower1" type="BoxContainer" parent="."]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -420.0
+offset_top = 195.0
+offset_right = -160.0
+offset_bottom = 235.0
+grow_horizontal = 0
+scale = Vector2(1.5, 1.5)
+mouse_filter = 2
+
+[node name="SpriteContainer" type="HBoxContainer" parent="BerryBurstSodaClickPower1"]
+custom_minimum_size = Vector2(40, 0)
+layout_direction = 2
+layout_mode = 2
+
+[node name="ClickPower1Sprite" type="Sprite2D" parent="BerryBurstSodaClickPower1/SpriteContainer"]
+position = Vector2(22, 20)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("13_kks38")
+
+[node name="BerryBurst_CP1_BuyButton" type="Button" parent="BerryBurstSodaClickPower1"]
+custom_minimum_size = Vector2(80, 0)
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.870588, 0.870588, 0, 1)
+action_mode = 0
+text = "BUY"
+
+[node name="CostLabelContainer" type="HBoxContainer" parent="BerryBurstSodaClickPower1"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+
+[node name="CostLabel" type="Label" parent="BerryBurstSodaClickPower1/CostLabelContainer"]
+custom_minimum_size = Vector2(78, 10)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 10
+text = "Money Cost:
+DP Soda Cost:"
+horizontal_alignment = 2
+
+[node name="CostContainer" type="HBoxContainer" parent="BerryBurstSodaClickPower1"]
+custom_minimum_size = Vector2(40, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MoneyCostContainer" type="VBoxContainer" parent="BerryBurstSodaClickPower1/CostContainer"]
+custom_minimum_size = Vector2(40, 20)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="BBPM_CP_CostLabel" type="Label" parent="BerryBurstSodaClickPower1/CostContainer/MoneyCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "60"
+
+[node name="SodaCostContainer" type="VBoxContainer" parent="BerryBurstSodaClickPower1/CostContainer/MoneyCostContainer"]
+layout_mode = 2
+
+[node name="BBPS_CP_CostLabel" type="Label" parent="BerryBurstSodaClickPower1/CostContainer/MoneyCostContainer/SodaCostContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
@@ -615,6 +697,7 @@ text = "CANCEL"
 [connection signal="pressed" from="LightSodaClickPower1/LightSoda_CP1_BuyButton" to="." method="_on_light_soda_click_power_plus1"]
 [connection signal="pressed" from="ZapSodaClickPower1/ZapSoda_CP1_BuyButton" to="." method="_on_zap_soda_click_power_plus1"]
 [connection signal="pressed" from="DoublePlusSodaClickPower1/DoublePlus_CP1_BuyButton" to="." method="_on_double_plus_soda_click_power_plus1"]
+[connection signal="pressed" from="BerryBurstSodaClickPower1/BerryBurst_CP1_BuyButton" to="." method="_on_berry_burst_soda_click_power_plus1"]
 [connection signal="pressed" from="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer/GodlyX1Button" to="GodlyConversionUI" method="_on_godly_x_1_button_pressed"]
 [connection signal="pressed" from="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer/GodlyX10Button" to="GodlyConversionUI" method="_on_godly_x_10_button_pressed"]
 [connection signal="pressed" from="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer/GodlyX100Button" to="GodlyConversionUI" method="_on_godly_x_100_button_pressed"]

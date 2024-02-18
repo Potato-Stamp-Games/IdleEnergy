@@ -20,13 +20,18 @@ func _process(delta):
 	%ZS_CP_CostLabel.text = str(pow(2 + Global.zapSodaClickPower, 2))
 
 	#Double Plus Soda Click Power Labels
-	%DPM_CP_CostLabel.text = str(pow(100 + (3 * Global.doublePlusSodaClickPower), 2))
+	%DPM_CP_CostLabel.text = str(pow(10 + (3 * Global.doublePlusSodaClickPower), 2))
 	%DPS_CP_CostLabel.text = str(pow(3 + Global.doublePlusSodaClickPower, 2))
+	
+	#Berry Burst Soda Click Power Labels
+	%BBPM_CP_CostLabel.text = str(pow(10 + (4 * Global.berryBurstSodaClickPower), 2))
+	%BBPS_CP_CostLabel.text = str(pow(4 + Global.berryBurstSodaClickPower, 2))
 
 #Change scence back to main & deletes this scene
 func _on_back_button_pressed():
 	Global.ttlAllClicks += 1
 	get_tree().change_scene_to_file("res://Scenes/main.tscn")
+
 #STORE UPGRADES--------------------------------------------------------------------------------------------
 #Light Soda Click Power +1
 func _on_light_soda_click_power_plus1():
@@ -44,7 +49,7 @@ func _on_light_soda_click_power_plus1():
 
 #Zap Soda Click Power +1
 func _on_zap_soda_click_power_plus1():	
-	var moneyCostOfUpgrade = pow(10 + (2 * Global.zapSodaClickPower), 3)
+	var moneyCostOfUpgrade = pow(10 + (2 * Global.zapSodaClickPower), 2)
 	var sodaCostOfUpgrade = pow(2 + Global.zapSodaClickPower, 2)
 	
 	if Global.trueMoney >= moneyCostOfUpgrade:
@@ -58,7 +63,7 @@ func _on_zap_soda_click_power_plus1():
 
 #Double Plus Soda Click Power +1
 func _on_double_plus_soda_click_power_plus1():
-	var moneyCostOfUpgrade = pow(100 + (3 * Global.doublePlusSodaClickPower), 2)
+	var moneyCostOfUpgrade = pow(10 + (3 * Global.doublePlusSodaClickPower), 2)
 	var sodaCostOfUpgrade = pow(3 + Global.doublePlusSodaClickPower, 2)
 	
 	if Global.trueMoney >=  moneyCostOfUpgrade:
@@ -68,5 +73,18 @@ func _on_double_plus_soda_click_power_plus1():
 			Global.doublePlusSodaClickPower += 1
 			%DPM_CP_CostLabel.text = str(moneyCostOfUpgrade)
 			%DPS_CP_CostLabel.text = str(sodaCostOfUpgrade)
+			Global.ttlAllClicks += 1
+			
+func _on_berry_burst_soda_click_power_plus1():
+	var moneyCostOfUpgrade = pow(10 + (4 * Global.berryBurstSodaClickPower), 2)
+	var sodaCostOfUpgrade = pow(4 + Global.berryBurstSodaClickPower, 2)
+	
+	if Global.trueMoney >=  moneyCostOfUpgrade:
+		if Global.berryBurstSodaMoney >= sodaCostOfUpgrade:
+			Global.trueMoney = Global.trueMoney - moneyCostOfUpgrade
+			Global.berryBurstSodaMoney = Global.berryBurstSodaMoney - sodaCostOfUpgrade
+			Global.berryBurstSodaClickPower += 1
+			%BBPM_CP_CostLabel.text = str(moneyCostOfUpgrade)
+			%BBPS_CP_CostLabel.text = str(sodaCostOfUpgrade)
 			Global.ttlAllClicks += 1
 #END OF STORE UPGRADES ------------
