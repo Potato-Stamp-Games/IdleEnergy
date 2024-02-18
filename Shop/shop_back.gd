@@ -2,6 +2,8 @@ extends Control
 class_name shop_back
 
 #Local Equation Variables
+
+#Click Power
 var lm_CP_CostEq = 0
 var ls_CP_CostEq = 0
 var zm_CP_CostEq = 0
@@ -10,6 +12,8 @@ var dpm_CP_CostEq = 0
 var dps_CP_CostEq = 0
 var bbm_CP_CostEq = 0
 var bbs_CP_CostEq = 0
+
+#Auto Click
 var lm_AC_CostEq = 0
 var ls_AC_CostEq = 0
 var zm_AC_CostEq = 0
@@ -144,24 +148,9 @@ func _on_double_plus_soda_click_power_plus1():
 			%DPM_CP_CostLabel.text = str(FuncGlobal.round_to_dec(dpm_CP_CostEq))
 			%DPS_CP_CostLabel.text = str(FuncGlobal.round_to_dec(dps_CP_CostEq))
 			Global.ttlAllClicks += 1
-			
 
 #Berry Burst Soda Click Power +1
 func _on_berry_burst_soda_click_power_plus1():
-	var moneyCostOfUpgrade = pow(10 + (4 * Global.berryBurstSodaClickPower), 2)
-	var sodaCostOfUpgrade = pow(4 + Global.berryBurstSodaClickPower, 2)
-	
-	if Global.trueMoney >=  moneyCostOfUpgrade:
-		if Global.berryBurstSodaMoney >= sodaCostOfUpgrade:
-			Global.trueMoney = Global.trueMoney - moneyCostOfUpgrade
-			Global.berryBurstSodaMoney = Global.berryBurstSodaMoney - sodaCostOfUpgrade
-			Global.berryBurstSodaClickPower += 1
-			%BBPM_CP_CostLabel.text = str(moneyCostOfUpgrade)
-			%BBPS_CP_CostLabel.text = str(sodaCostOfUpgrade)
-			Global.ttlAllClicks += 1
-
-#Berry Burst Soda Click Power +1
-func _on_berry_burst_cp_1_buy_button_pressed():
 	var moneyCostOfUpgrade = bbm_CP_CostEq
 	var sodaCostOfUpgrade = bbs_CP_CostEq
 	

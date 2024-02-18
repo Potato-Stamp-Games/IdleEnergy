@@ -1041,7 +1041,7 @@ text = "60"
 [connection signal="pressed" from="LightSodaSodaClickPower/LightSoda_CP1_BuyButton" to="." method="_on_light_soda_click_power_plus1"]
 [connection signal="pressed" from="ZapSodaSodaClickPower1/ZapSoda_CP1_BuyButton" to="." method="_on_zap_soda_click_power_plus1"]
 [connection signal="pressed" from="DoublePlusSodaClickPower1/DoublePlusSoda_CP1_BuyButton" to="." method="_on_double_plus_soda_click_power_plus1"]
-[connection signal="pressed" from="BerryBurstSodaClickPower1/BerryBurstSoda_CP1_BuyButton" to="." method="_on_light_soda_click_power_plus1"]
+[connection signal="pressed" from="BerryBurstSodaClickPower1/BerryBurstSoda_CP1_BuyButton" to="." method="_on_berry_burst_soda_click_power_plus1"]
 [connection signal="pressed" from="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer/GodlyX1Button" to="GodlyConversionUI" method="_on_godly_x_1_button_pressed"]
 [connection signal="pressed" from="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer/GodlyX10Button" to="GodlyConversionUI" method="_on_godly_x_10_button_pressed"]
 [connection signal="pressed" from="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer/GodlyX100Button" to="GodlyConversionUI" method="_on_godly_x_100_button_pressed"]
