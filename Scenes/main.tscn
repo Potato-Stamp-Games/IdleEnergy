@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b56r0drnfyeq3"]
+[gd_scene load_steps=8 format=3 uid="uid://b56r0drnfyeq3"]
 
 [ext_resource type="PackedScene" uid="uid://cgespow2hwr4k" path="res://Sodas/doubleplus_soda.tscn" id="1_8elwk"]
 [ext_resource type="PackedScene" uid="uid://ctxfgtgvi35df" path="res://Sodas/light_soda.tscn" id="2_yhlpn"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ww00kfcioi7e" path="res://Sodas/berryburst_soda.tscn" id="4_0aqmg"]
 [ext_resource type="PackedScene" uid="uid://4f1g8hclro8c" path="res://UI/ui.tscn" id="5_8v3al"]
 [ext_resource type="Script" path="res://Scenes/SessionTimer.gd" id="6_hhxbr"]
+[ext_resource type="AudioStream" uid="uid://ct1ycfmhfoft" path="res://audio/Music/IdleEnergyMusic.mp3" id="7_l3eyg"]
 
 [node name="MainControl" type="Control"]
 layout_mode = 3
@@ -47,5 +48,11 @@ scale = Vector2(1.8, 1.8)
 [node name="SessionTimer" type="Timer" parent="."]
 autostart = true
 script = ExtResource("6_hhxbr")
+
+[node name="Music Player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_l3eyg")
+volume_db = -20.8
+autoplay = true
+bus = &"Music"
 
 [connection signal="timeout" from="SessionTimer" to="SessionTimer" method="_on_timeout"]
