@@ -1,8 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://4f1g8hclro8c"]
+[gd_scene load_steps=16 format=3 uid="uid://4f1g8hclro8c"]
 
 [ext_resource type="Script" path="res://UI/UI.gd" id="1_te6a7"]
-[ext_resource type="Texture2D" uid="uid://bysglgvqh2phg" path="res://UI/UISprites/Background.png" id="2_d8dpw"]
 [ext_resource type="Texture2D" uid="uid://dtm2rg3jkbm08" path="res://Sodas/SodaSprites/SodaLightSprite_Money.png" id="3_703tr"]
+[ext_resource type="Texture2D" uid="uid://b6j2cir231g8x" path="res://Sodas/SodaSprites/TrueMoneySprite.png" id="3_qrsc5"]
 [ext_resource type="Texture2D" uid="uid://cfqoqf35wm8dr" path="res://UI/UISprites/MoneyBorder.png" id="3_wnpwg"]
 [ext_resource type="Texture2D" uid="uid://dv5qmdighj0mt" path="res://Sodas/SodaSprites/SodaSprite_Money.png" id="4_mfixa"]
 [ext_resource type="Texture2D" uid="uid://ddk3urmvoqyxn" path="res://Sodas/SodaSprites/DoublePlusSodaMoneySprite.png" id="6_rmysn"]
@@ -10,7 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://qwkul3xnjibu" path="res://Sodas/SodaSprites/GodlySodaSprite_Money.png" id="7_wr61i"]
 [ext_resource type="Script" path="res://Shop/ShopButton.gd" id="8_8qnlb"]
 [ext_resource type="Texture2D" uid="uid://csbf0ebut366j" path="res://UI/UISprites/ShopIcon.png" id="10_e622p"]
+[ext_resource type="Theme" uid="uid://c565vyrtdd3es" path="res://UI/back_button_theme.tres" id="10_tm141"]
 [ext_resource type="PackedScene" uid="uid://c568qlc5aq4cr" path="res://UI/style_center_menu_bar.tscn" id="11_vhvr6"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p66b4"]
+load_path = "res://.godot/imported/Background.jpg-38a741ca1169ea4715ade994210b5dd9.ctex"
 
 [sub_resource type="LabelSettings" id="LabelSettings_6tmyr"]
 font_size = 50
@@ -30,10 +34,6 @@ func _process(_delta):
 	pass
 "
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0sckg"]
-blend_mode = 3
-light_mode = 1
-
 [node name="UI" type="CanvasLayer"]
 follow_viewport_enabled = true
 script = ExtResource("1_te6a7")
@@ -43,8 +43,8 @@ layer = -2
 
 [node name="Background" type="Sprite2D" parent="BackgroundImage"]
 position = Vector2(960, 540)
-scale = Vector2(1.6, 1.6)
-texture = ExtResource("2_d8dpw")
+scale = Vector2(1.25, 1.25)
+texture = SubResource("CompressedTexture2D_p66b4")
 
 [node name="MainLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
@@ -86,8 +86,19 @@ offset_bottom = 139.0
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 500
 label_settings = SubResource("LabelSettings_6tmyr")
-horizontal_alignment = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 script = SubResource("GDScript_22jcw")
+
+[node name="BoxContainer" type="BoxContainer" parent="MainLayer/Control/MarginContainer/VBoxContainer/MoneyBorderSprite/Money"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MoneySprite" type="Sprite2D" parent="MainLayer/Control/MarginContainer/VBoxContainer/MoneyBorderSprite/Money/BoxContainer"]
+position = Vector2(-80, 30)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_qrsc5")
 
 [node name="VerticalPadding" type="HBoxContainer" parent="MainLayer/Control/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 200)
@@ -104,7 +115,7 @@ size_flags_vertical = 4
 
 [node name="SodaLightSpriteMoney" type="Sprite2D" parent="MainLayer/Control/MarginContainer"]
 position = Vector2(50, 55)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("3_703tr")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MainLayer/Control/MarginContainer/SodaLightSpriteMoney"]
@@ -122,8 +133,8 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="SodaSpriteMoney" type="Sprite2D" parent="MainLayer/Control/MarginContainer"]
-position = Vector2(50, 165)
-scale = Vector2(0.5, 0.5)
+position = Vector2(50, 145)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("4_mfixa")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MainLayer/Control/MarginContainer/SodaSpriteMoney"]
@@ -141,8 +152,8 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="DoublePlusSodaSpriteMoney" type="Sprite2D" parent="MainLayer/Control/MarginContainer"]
-position = Vector2(50, 275)
-scale = Vector2(0.5, 0.5)
+position = Vector2(50, 235)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("6_rmysn")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MainLayer/Control/MarginContainer/DoublePlusSodaSpriteMoney"]
@@ -160,8 +171,8 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="BerryBurstSodaSpriteMoney" type="Sprite2D" parent="MainLayer/Control/MarginContainer"]
-position = Vector2(50, 385)
-scale = Vector2(0.5, 0.5)
+position = Vector2(50, 325)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("6_ugtas")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MainLayer/Control/MarginContainer/BerryBurstSodaSpriteMoney"]
@@ -179,8 +190,8 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="GodlySodaSpriteMoney" type="Sprite2D" parent="MainLayer/Control/MarginContainer"]
-position = Vector2(50, 495)
-scale = Vector2(0.5, 0.5)
+position = Vector2(50, 415)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("7_wr61i")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MainLayer/Control/MarginContainer/GodlySodaSpriteMoney"]
@@ -232,25 +243,36 @@ offset_top = -100.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="ExitButton" type="Button" parent="MainLayer/Control/ExitBoxContainer"]
-custom_minimum_size = Vector2(200, 20)
+[node name="Panel" type="Panel" parent="MainLayer/Control"]
+show_behind_parent = true
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+offset_left = 1718.0
+offset_top = 980.0
+offset_right = 1918.0
+offset_bottom = 1080.0
+theme = ExtResource("10_tm141")
+
+[node name="ExitButton" type="Button" parent="MainLayer/Control/Panel"]
+light_mask = 0
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 37.0
+offset_top = -52.0
+offset_right = 200.0
+offset_bottom = 52.0
+grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.854902, 0.741176, 0, 1)
-theme_override_font_sizes/font_size = 67
+theme_override_font_sizes/font_size = 70
 action_mode = 0
-text = "EXIT"
-
-[node name="Panel" type="Panel" parent="MainLayer/Control/ExitBoxContainer/ExitButton"]
-show_behind_parent = true
-material = SubResource("CanvasItemMaterial_0sckg")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
+text = "EXIT
+"
+flat = true
+alignment = 0
 
 [node name="StyleCenterMenu" parent="." instance=ExtResource("11_vhvr6")]
 offset = Vector2(1650, 0)
@@ -258,4 +280,4 @@ scale = Vector2(1.2, 1.2)
 transform = Transform2D(1.2, 0, 0, 1.2, 1650, 0)
 
 [connection signal="pressed" from="MainLayer/Control/ShopBoxContainer/ShopButton" to="." method="_on_shop_button_pressed"]
-[connection signal="pressed" from="MainLayer/Control/ExitBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="MainLayer/Control/Panel/ExitButton" to="." method="_on_exit_button_pressed"]

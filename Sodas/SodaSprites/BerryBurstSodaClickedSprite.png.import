@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bysglgvqh2phg"
-path="res://.godot/imported/Background.png-54423987c4d4be93509599d9f15ec7ff.ctex"
+uid="uid://bg0wegu0r0yq4"
+path="res://.godot/imported/BerryBurstSodaClickedSprite.png-f46a83e9990a13ce047412b931917935.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/UISprites/Background.png"
-dest_files=["res://.godot/imported/Background.png-54423987c4d4be93509599d9f15ec7ff.ctex"]
+source_file="res://Sodas/SodaSprites/BerryBurstSodaClickedSprite.png"
+dest_files=["res://.godot/imported/BerryBurstSodaClickedSprite.png-f46a83e9990a13ce047412b931917935.ctex"]
 
 [params]
 

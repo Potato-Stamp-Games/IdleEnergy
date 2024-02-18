@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://d57vdv10n0ts"]
+[gd_scene load_steps=7 format=3 uid="uid://d57vdv10n0ts"]
 
+[ext_resource type="Script" path="res://UI/your_stats_canvas.gd" id="1_8rf5l"]
 [ext_resource type="Texture2D" uid="uid://dtm2rg3jkbm08" path="res://Sodas/SodaSprites/SodaLightSprite_Money.png" id="1_glcbm"]
 [ext_resource type="Texture2D" uid="uid://dv5qmdighj0mt" path="res://Sodas/SodaSprites/SodaSprite_Money.png" id="2_5dk3p"]
-[ext_resource type="Texture2D" uid="uid://krg22jfu2x18" path="res://Sodas/SodaSprites/DoublePlusSodaSprite.png" id="3_8b67s"]
+[ext_resource type="Texture2D" uid="uid://ddk3urmvoqyxn" path="res://Sodas/SodaSprites/DoublePlusSodaMoneySprite.png" id="3_v0ubx"]
 [ext_resource type="Texture2D" uid="uid://dnfjkwp8ct40e" path="res://Sodas/SodaSprites/BerryBurstSodaSprite_Money.png" id="4_x46ee"]
 [ext_resource type="Texture2D" uid="uid://qwkul3xnjibu" path="res://Sodas/SodaSprites/GodlySodaSprite_Money.png" id="5_1alns"]
 
 [node name="YourStatsCanvas" type="CanvasLayer"]
+script = ExtResource("1_8rf5l")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchors_preset = 15
@@ -30,9 +32,10 @@ size_flags_horizontal = 4
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Title+Headers/Title"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+theme_override_colors/font_color = Color(0.784314, 0.694118, 0.333333, 1)
+theme_override_font_sizes/font_size = 110
 text = "|All Time Statistics|
-|-------------------------|"
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -46,8 +49,13 @@ theme_override_font_sizes/font_size = 48
 text = "Sodas Collected:"
 
 [node name="padding" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/Title+Headers/Headers"]
-custom_minimum_size = Vector2(280, 0)
+custom_minimum_size = Vector2(215, 0)
 layout_mode = 2
+
+[node name="Panel" type="Panel" parent="HBoxContainer/VBoxContainer/Title+Headers/Headers/padding"]
+custom_minimum_size = Vector2(10, 80)
+layout_mode = 2
+size_flags_horizontal = 8
 
 [node name="ShopItemsLbl" type="Label" parent="HBoxContainer/VBoxContainer/Title+Headers/Headers"]
 layout_mode = 2
@@ -55,19 +63,28 @@ theme_override_font_sizes/font_size = 48
 text = "Shop Items Collected:"
 
 [node name="padding2" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/Title+Headers/Headers"]
-custom_minimum_size = Vector2(280, 0)
+custom_minimum_size = Vector2(63, 0)
 layout_mode = 2
+
+[node name="Panel" type="Panel" parent="HBoxContainer/VBoxContainer/Title+Headers/Headers/padding2"]
+custom_minimum_size = Vector2(10, 80)
+layout_mode = 2
+size_flags_horizontal = 8
 
 [node name="SpecialStatsLbl" type="Label" parent="HBoxContainer/VBoxContainer/Title+Headers/Headers"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "Special Stats"
 
+[node name="Panel" type="Panel" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+
 [node name="Stats" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="SodaCollect" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Stats"]
-custom_minimum_size = Vector2(640, 560)
+custom_minimum_size = Vector2(580, 560)
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Stats/SodaCollect"]
@@ -80,6 +97,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_glcbm")
 
 [node name="TtlSodaLightLbl" type="Label" parent="HBoxContainer/VBoxContainer/Stats/SodaCollect/HBoxContainer/SodaLightSprite"]
+unique_name_in_owner = true
 offset_left = 104.0
 offset_top = -86.0
 offset_right = 144.0
@@ -93,7 +111,8 @@ position = Vector2(56, 165)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_5dk3p")
 
-[node name="TtlSodaLbl" type="Label" parent="HBoxContainer/VBoxContainer/Stats/SodaCollect/HBoxContainer/SodaSprite"]
+[node name="TtlZapSodaLbl" type="Label" parent="HBoxContainer/VBoxContainer/Stats/SodaCollect/HBoxContainer/SodaSprite"]
+unique_name_in_owner = true
 offset_left = 104.0
 offset_top = -86.0
 offset_right = 144.0
@@ -105,9 +124,10 @@ vertical_alignment = 2
 [node name="DoublePlusSodaSprite" type="Sprite2D" parent="HBoxContainer/VBoxContainer/Stats/SodaCollect/HBoxContainer"]
 position = Vector2(56, 274)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_8b67s")
+texture = ExtResource("3_v0ubx")
 
-[node name="TtlDoublePlusSodaLightLbl" type="Label" parent="HBoxContainer/VBoxContainer/Stats/SodaCollect/HBoxContainer/DoublePlusSodaSprite"]
+[node name="TtlDoublePlusSodaLbl" type="Label" parent="HBoxContainer/VBoxContainer/Stats/SodaCollect/HBoxContainer/DoublePlusSodaSprite"]
+unique_name_in_owner = true
 offset_left = 104.0
 offset_top = -86.0
 offset_right = 144.0
@@ -122,6 +142,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_x46ee")
 
 [node name="TtlBerryBurstSodaLbl" type="Label" parent="HBoxContainer/VBoxContainer/Stats/SodaCollect/HBoxContainer/BerryBurstSodaSprite"]
+unique_name_in_owner = true
 offset_left = 104.0
 offset_top = -86.0
 offset_right = 144.0
@@ -136,6 +157,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_1alns")
 
 [node name="TtlGodlySodaLbl" type="Label" parent="HBoxContainer/VBoxContainer/Stats/SodaCollect/HBoxContainer/GoldySodaSprite"]
+unique_name_in_owner = true
 offset_left = 104.0
 offset_top = -86.0
 offset_right = 144.0
@@ -144,8 +166,23 @@ theme_override_font_sizes/font_size = 125
 text = "0"
 vertical_alignment = 2
 
+[node name="Divider" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Stats"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="HBoxContainer/VBoxContainer/Stats/Divider"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
 [node name="ShopItemCollect" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Stats"]
 custom_minimum_size = Vector2(550, 0)
+layout_mode = 2
+
+[node name="Divider2" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Stats"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="HBoxContainer/VBoxContainer/Stats/Divider2"]
+custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
 [node name="SpecStats" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Stats"]
@@ -164,7 +201,7 @@ text = "Total Clicks:
 
 Money Made:
 
-Time Spent This Session:
+Session Time:
 
 Longest Session:
 
@@ -187,7 +224,8 @@ custom_minimum_size = Vector2(400, 45)
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="TotalClicksLabel" type="Label" parent="HBoxContainer/VBoxContainer/Stats/SpecStats/HBoxContainer2/VBoxContainer"]
+[node name="TtlClicksLbl" type="Label" parent="HBoxContainer/VBoxContainer/Stats/SpecStats/HBoxContainer2/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "0"
@@ -197,7 +235,8 @@ custom_minimum_size = Vector2(0, 31)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="TotalMoneyLabel" type="Label" parent="HBoxContainer/VBoxContainer/Stats/SpecStats/HBoxContainer2/VBoxContainer"]
+[node name="TtlMoneyLbl" type="Label" parent="HBoxContainer/VBoxContainer/Stats/SpecStats/HBoxContainer2/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "0"
@@ -207,7 +246,8 @@ custom_minimum_size = Vector2(0, 31)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="ThisSessionTimeLabel" type="Label" parent="HBoxContainer/VBoxContainer/Stats/SpecStats/HBoxContainer2/VBoxContainer"]
+[node name="ThisSessionTimeLbl" type="Label" parent="HBoxContainer/VBoxContainer/Stats/SpecStats/HBoxContainer2/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "0"
@@ -217,7 +257,8 @@ custom_minimum_size = Vector2(0, 31)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="LongestSessionLabel" type="Label" parent="HBoxContainer/VBoxContainer/Stats/SpecStats/HBoxContainer2/VBoxContainer"]
+[node name="LongestSessionLbl" type="Label" parent="HBoxContainer/VBoxContainer/Stats/SpecStats/HBoxContainer2/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "0"
@@ -228,6 +269,9 @@ layout_mode = 2
 size_flags_vertical = 4
 
 [node name="PrestiegesDoneLabel" type="Label" parent="HBoxContainer/VBoxContainer/Stats/SpecStats/HBoxContainer2/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "0"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

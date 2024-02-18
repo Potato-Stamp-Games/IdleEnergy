@@ -11,7 +11,9 @@ func _process(_delta):
 	%GodlySodaLabel.text = str(Global.godlySodaMoney)
 
 func _on_shop_button_pressed():
+	Global.ttlAllClicks += 1
 	get_tree().change_scene_to_file("res://Scenes/shop_scene.tscn")
 #Quits game
 func _on_exit_button_pressed():
+	Global.ttlAllClicks += 1
 	get_tree().quit()
