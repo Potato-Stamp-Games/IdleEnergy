@@ -44,13 +44,13 @@ func _process(_delta):
 	ls_AC_CostEq = pow(2 + Global.lightSodaAutoClick, 2)
 	#Zap Soda Auto Click 1
 	zm_AC_CostEq = pow(4 + (2 * Global.zapSodaAutoClick), 3)
-	zs_AC_CostEq = pow(2 + Global.zapSodaAutoClick, 2)
+	zs_AC_CostEq = pow(3 + Global.zapSodaAutoClick, 2)
 	#DP Soda Auto Click 1
-	dpm_AC_CostEq = pow(5 + (2 * Global.doublePlusSodaClickPower), 3)
-	dps_AC_CostEq = pow(3 + Global.doublePlusSodaClickPower, 2)
+	dpm_AC_CostEq = pow(5 + (2 * Global.doublePlusSodaAutoClick), 3)
+	dps_AC_CostEq = pow(4 + Global.doublePlusSodaAutoClick, 2)
 	#BB Soda Auto Click 1
-	bbm_AC_CostEq = pow(8 + (2 * Global.berryBurstSodaClickPower), 3)
-	bbs_AC_CostEq = pow(4 + Global.berryBurstSodaClickPower, 2)
+	bbm_AC_CostEq = pow(8 + (2 * Global.berryBurstSodaAutoClick), 3)
+	bbs_AC_CostEq = pow(5 + Global.berryBurstSodaAutoClick, 2)
 	#END OF: Shop Equations
 	%MoneyLabel.text= str(FuncGlobal.round_to_dec(Global.trueMoney))
 	%LightSodaLabel.text = str(FuncGlobal.round_to_dec(Global.lightSodaMoney))
