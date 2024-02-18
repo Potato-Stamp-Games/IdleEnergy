@@ -61,7 +61,7 @@ func _on_multiplier_godly_x_1000_button_toggled(toggled_on):
 		Global.ttlAllClicks += 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	%GodlySpentAmountLabel.text = str(buyAmount * 4)
 	%GodlyGainedAmountLabel.text = str(buyAmount)
 

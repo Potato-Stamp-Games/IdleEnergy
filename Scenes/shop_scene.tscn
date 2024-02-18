@@ -1,8 +1,14 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=20 format=3 uid="uid://bktf204prj7tk"]
+=======
+[gd_scene load_steps=26 format=3 uid="uid://bktf204prj7tk"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" path="res://Shop/shop_back.gd" id="1_1r48s"]
 [ext_resource type="Texture2D" uid="uid://bofo3l5nscx5n" path="res://UI/UISprites/BackButtonSprite.png" id="2_52daq"]
-[ext_resource type="Texture2D" uid="uid://nfwb5rkhpiwq" path="res://Shop/ClickPower1Sprite.png" id="3_lhyuv"]
+[ext_resource type="Script" path="res://Scenes/SessionTimer.gd" id="2_t02tp"]
+[ext_resource type="Texture2D" uid="uid://nfwb5rkhpiwq" path="res://Shop/LightClickPower1Sprite.png" id="3_lhyuv"]
+[ext_resource type="Texture2D" uid="uid://30dqtb8660af" path="res://UI/UISprites/BackButtonHoverIcon.png" id="3_uxxo2"]
 [ext_resource type="Script" path="res://Shop/MoneyContainer.gd" id="4_apuet"]
 [ext_resource type="Texture2D" uid="uid://dtm2rg3jkbm08" path="res://Sodas/SodaSprites/SodaLightSprite_Money.png" id="4_xwt0g"]
 [ext_resource type="Texture2D" uid="uid://dv5qmdighj0mt" path="res://Sodas/SodaSprites/SodaSprite_Money.png" id="5_w6ntd"]
@@ -10,12 +16,17 @@
 [ext_resource type="Texture2D" uid="uid://dnfjkwp8ct40e" path="res://Sodas/SodaSprites/BerryBurstSodaSprite_Money.png" id="7_qpgul"]
 [ext_resource type="Texture2D" uid="uid://qwkul3xnjibu" path="res://Sodas/SodaSprites/GodlySodaSprite_Money.png" id="8_s4ke8"]
 [ext_resource type="Texture2D" uid="uid://b6j2cir231g8x" path="res://Sodas/SodaSprites/TrueMoneySprite.png" id="9_ypldn"]
-[ext_resource type="Texture2D" uid="uid://bptuorlryql1c" path="res://Shop/ClickPower2Sprite.png" id="11_eimsq"]
-[ext_resource type="Texture2D" uid="uid://bjkxjgln1m710" path="res://Shop/ClickPower3Sprite.png" id="12_lc66e"]
+[ext_resource type="Texture2D" uid="uid://bjkxjgln1m710" path="res://Shop/DoublePlusClickPower1Sprite.png" id="12_lc66e"]
 [ext_resource type="Script" path="res://UI/GodlyConversionUI.gd" id="12_mhtgi"]
 [ext_resource type="Texture2D" uid="uid://drdlqsrvuwo6y" path="res://Sodas/SodaSprites/GoldyEqualsSodaSprite.png" id="12_wakov"]
 [ext_resource type="Texture2D" uid="uid://etqjsn0ygy27" path="res://Shop/ClickPower4Sprite.png" id="13_kks38"]
 [ext_resource type="Texture2D" uid="uid://ca3fspipw8awc" path="res://Sodas/SodaSprites/allMoneySprite.png" id="13_vxfcl"]
+[ext_resource type="Texture2D" uid="uid://cyv6l3qoarw6g" path="res://Shop/ZapClickPower1Sprite.png" id="15_tqsbh"]
+[ext_resource type="Texture2D" uid="uid://h3vxvuu05w81" path="res://Shop/BerryBurstClickPower1Sprite.png" id="16_egs01"]
+[ext_resource type="Texture2D" uid="uid://4r86rmqko6tu" path="res://Shop/LightSodaAutoClickSprite.png" id="17_36chg"]
+[ext_resource type="Texture2D" uid="uid://dwwf37oqu8x1d" path="res://Shop/ZapAutoClickSprite.png" id="19_cmtwr"]
+[ext_resource type="Texture2D" uid="uid://5u220j4eu2fg" path="res://Shop/DPAutoClickSprite.png" id="20_c0ruk"]
+[ext_resource type="Texture2D" uid="uid://dwbj3lvg6hwmp" path="res://Shop/BerryBurstAutoClickSprite.png" id="22_qrlnr"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_vt5oh"]
 allow_unpress = true
@@ -36,6 +47,10 @@ grow_vertical = 2
 script = ExtResource("1_1r48s")
 metadata/_edit_horizontal_guides_ = [-93.0]
 
+[node name="SessionTimer" type="Timer" parent="."]
+autostart = true
+script = ExtResource("2_t02tp")
+
 [node name="BackButton" type="BoxContainer" parent="."]
 layout_mode = 0
 offset_left = 1690.0
@@ -52,9 +67,17 @@ mouse_filter = 1
 action_mode = 0
 
 [node name="BackButtonSprite" type="Sprite2D" parent="BackButton/BackButton"]
+unique_name_in_owner = true
 position = Vector2(114, 52)
 scale = Vector2(0.223144, 0.261658)
 texture = ExtResource("2_52daq")
+
+[node name="BackButtonHoverSprite" type="Sprite2D" parent="BackButton/BackButton"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(111.5, 49.5)
+scale = Vector2(0.224927, 0.260745)
+texture = ExtResource("3_uxxo2")
 
 [node name="MoneyContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -182,6 +205,7 @@ text = "0"
 horizontal_alignment = 2
 vertical_alignment = 1
 
+<<<<<<< Updated upstream
 [node name="LightSodaClickPower1" type="BoxContainer" parent="."]
 layout_direction = 2
 layout_mode = 1
@@ -504,16 +528,17 @@ size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 10
 text = "60"
 
+=======
+>>>>>>> Stashed changes
 [node name="GodlyConversionUI" type="BoxContainer" parent="."]
 layout_direction = 2
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -327.0
-offset_right = -27.0
-offset_bottom = 246.0
-grow_horizontal = 2
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -374.0
+offset_right = 448.0
+grow_vertical = 0
 script = ExtResource("12_mhtgi")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="GodlyConversionUI"]
@@ -693,11 +718,663 @@ custom_minimum_size = Vector2(120, 60)
 layout_mode = 2
 text = "CANCEL"
 
+[node name="LightSodaClickPower1" type="BoxContainer" parent="."]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -520.0
+offset_bottom = 72.0
+grow_horizontal = 0
+tooltip_text = "+1 Light Soda Click Power"
+
+[node name="SpriteContainer" type="HBoxContainer" parent="LightSodaClickPower1"]
+custom_minimum_size = Vector2(60, 0)
+layout_direction = 2
+layout_mode = 2
+
+[node name="ClickPower1Sprite" type="Sprite2D" parent="LightSodaClickPower1/SpriteContainer"]
+position = Vector2(32, 35)
+scale = Vector2(0.149785, 0.149785)
+texture = ExtResource("3_lhyuv")
+
+[node name="LightSoda_CP1_BuyButton" type="Button" parent="LightSodaClickPower1"]
+custom_minimum_size = Vector2(80, 0)
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.870588, 0.870588, 0, 1)
+theme_override_font_sizes/font_size = 45
+action_mode = 0
+text = "BUY"
+
+[node name="CostLabelContainer" type="HBoxContainer" parent="LightSodaClickPower1"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+
+[node name="CostLabel" type="Label" parent="LightSodaClickPower1/CostLabelContainer"]
+custom_minimum_size = Vector2(78, 10)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Money Cost:
+Light Soda Cost:"
+horizontal_alignment = 2
+
+[node name="CostContainer" type="HBoxContainer" parent="LightSodaClickPower1"]
+custom_minimum_size = Vector2(40, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MoneyCostContainer" type="VBoxContainer" parent="LightSodaClickPower1/CostContainer"]
+custom_minimum_size = Vector2(40, 20)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="LM_CP_CostLabel" type="Label" parent="LightSodaClickPower1/CostContainer/MoneyCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "60"
+
+[node name="SodaCostContainer" type="VBoxContainer" parent="LightSodaClickPower1/CostContainer/MoneyCostContainer"]
+layout_mode = 2
+
+[node name="LS_CP_CostLabel" type="Label" parent="LightSodaClickPower1/CostContainer/MoneyCostContainer/SodaCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 24
+text = "60"
+
+[node name="ZapSodaSodaClickPower1" type="BoxContainer" parent="."]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -520.0
+offset_top = 80.0
+offset_bottom = 152.0
+grow_horizontal = 0
+tooltip_text = "+1 Zap Soda Click Power"
+
+[node name="SpriteContainer" type="HBoxContainer" parent="ZapSodaSodaClickPower1"]
+custom_minimum_size = Vector2(60, 0)
+layout_direction = 2
+layout_mode = 2
+
+[node name="ClickPower1Sprite" type="Sprite2D" parent="ZapSodaSodaClickPower1/SpriteContainer"]
+position = Vector2(32, 35)
+scale = Vector2(0.149785, 0.149785)
+texture = ExtResource("15_tqsbh")
+
+[node name="ZapSoda_CP1_BuyButton" type="Button" parent="ZapSodaSodaClickPower1"]
+custom_minimum_size = Vector2(80, 0)
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.870588, 0.870588, 0, 1)
+theme_override_font_sizes/font_size = 45
+action_mode = 0
+text = "BUY"
+
+[node name="CostLabelContainer" type="HBoxContainer" parent="ZapSodaSodaClickPower1"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+
+[node name="CostLabel" type="Label" parent="ZapSodaSodaClickPower1/CostLabelContainer"]
+custom_minimum_size = Vector2(78, 10)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Money Cost:
+Zap Soda Cost:"
+horizontal_alignment = 2
+
+[node name="CostContainer" type="HBoxContainer" parent="ZapSodaSodaClickPower1"]
+custom_minimum_size = Vector2(40, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MoneyCostContainer" type="VBoxContainer" parent="ZapSodaSodaClickPower1/CostContainer"]
+custom_minimum_size = Vector2(40, 20)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="ZM_CP_CostLabel" type="Label" parent="ZapSodaSodaClickPower1/CostContainer/MoneyCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "60"
+
+[node name="SodaCostContainer" type="VBoxContainer" parent="ZapSodaSodaClickPower1/CostContainer/MoneyCostContainer"]
+layout_mode = 2
+
+[node name="ZS_CP_CostLabel" type="Label" parent="ZapSodaSodaClickPower1/CostContainer/MoneyCostContainer/SodaCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 24
+text = "60"
+
+[node name="DoublePlusSodaClickPower1" type="BoxContainer" parent="."]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -520.0
+offset_top = 160.0
+offset_bottom = 232.0
+grow_horizontal = 0
+tooltip_text = "+1 Double Plus Soda Click Power"
+
+[node name="SpriteContainer" type="HBoxContainer" parent="DoublePlusSodaClickPower1"]
+custom_minimum_size = Vector2(60, 0)
+layout_direction = 2
+layout_mode = 2
+
+[node name="ClickPower1Sprite" type="Sprite2D" parent="DoublePlusSodaClickPower1/SpriteContainer"]
+position = Vector2(32, 35)
+scale = Vector2(0.149785, 0.149785)
+texture = ExtResource("12_lc66e")
+
+[node name="DoublePlus_CP1_BuyButton" type="Button" parent="DoublePlusSodaClickPower1"]
+custom_minimum_size = Vector2(80, 0)
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.870588, 0.870588, 0, 1)
+theme_override_font_sizes/font_size = 45
+action_mode = 0
+text = "BUY"
+
+[node name="CostLabelContainer" type="HBoxContainer" parent="DoublePlusSodaClickPower1"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+
+[node name="CostLabel" type="Label" parent="DoublePlusSodaClickPower1/CostLabelContainer"]
+custom_minimum_size = Vector2(78, 10)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Money Cost:
+DP Soda Cost:"
+horizontal_alignment = 2
+
+[node name="CostContainer" type="HBoxContainer" parent="DoublePlusSodaClickPower1"]
+custom_minimum_size = Vector2(40, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MoneyCostContainer" type="VBoxContainer" parent="DoublePlusSodaClickPower1/CostContainer"]
+custom_minimum_size = Vector2(40, 20)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="DPM_CP_CostLabel" type="Label" parent="DoublePlusSodaClickPower1/CostContainer/MoneyCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "60"
+
+[node name="SodaCostContainer" type="VBoxContainer" parent="DoublePlusSodaClickPower1/CostContainer/MoneyCostContainer"]
+layout_mode = 2
+
+[node name="DPS_CP_CostLabel" type="Label" parent="DoublePlusSodaClickPower1/CostContainer/MoneyCostContainer/SodaCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 24
+text = "60"
+
+[node name="BerryBurstSodaClickPower1" type="BoxContainer" parent="."]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -520.0
+offset_top = 240.0
+offset_bottom = 312.0
+grow_horizontal = 0
+tooltip_text = "+1 Double Plus Soda Click Power"
+
+[node name="SpriteContainer" type="HBoxContainer" parent="BerryBurstSodaClickPower1"]
+custom_minimum_size = Vector2(60, 0)
+layout_direction = 2
+layout_mode = 2
+
+[node name="ClickPower1Sprite" type="Sprite2D" parent="BerryBurstSodaClickPower1/SpriteContainer"]
+position = Vector2(32, 35)
+scale = Vector2(0.149785, 0.149785)
+texture = ExtResource("16_egs01")
+
+[node name="BerryBurst_CP1_BuyButton" type="Button" parent="BerryBurstSodaClickPower1"]
+custom_minimum_size = Vector2(80, 0)
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.870588, 0.870588, 0, 1)
+theme_override_font_sizes/font_size = 45
+action_mode = 0
+text = "BUY"
+
+[node name="CostLabelContainer" type="HBoxContainer" parent="BerryBurstSodaClickPower1"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+
+[node name="CostLabel" type="Label" parent="BerryBurstSodaClickPower1/CostLabelContainer"]
+custom_minimum_size = Vector2(78, 10)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Money Cost:
+BB Soda Cost:"
+horizontal_alignment = 2
+
+[node name="CostContainer" type="HBoxContainer" parent="BerryBurstSodaClickPower1"]
+custom_minimum_size = Vector2(40, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MoneyCostContainer" type="VBoxContainer" parent="BerryBurstSodaClickPower1/CostContainer"]
+custom_minimum_size = Vector2(40, 20)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="BBM_CP_CostLabel" type="Label" parent="BerryBurstSodaClickPower1/CostContainer/MoneyCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "60"
+
+[node name="SodaCostContainer" type="VBoxContainer" parent="BerryBurstSodaClickPower1/CostContainer/MoneyCostContainer"]
+layout_mode = 2
+
+[node name="BBS_CP_CostLabel" type="Label" parent="BerryBurstSodaClickPower1/CostContainer/MoneyCostContainer/SodaCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 24
+text = "60"
+
+[node name="LightSodaAutoClick1" type="BoxContainer" parent="."]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1045.0
+offset_right = -525.0
+offset_bottom = 72.0
+grow_horizontal = 0
+tooltip_text = "1 C/s Using Click Power
+20% Auto Click Production Per Upgrade"
+
+[node name="SpriteContainer" type="HBoxContainer" parent="LightSodaAutoClick1"]
+custom_minimum_size = Vector2(60, 0)
+layout_direction = 2
+layout_mode = 2
+
+[node name="ClickPower1Sprite" type="Sprite2D" parent="LightSodaAutoClick1/SpriteContainer"]
+position = Vector2(32, 35)
+scale = Vector2(0.149785, 0.149785)
+texture = ExtResource("17_36chg")
+
+[node name="LightSoda_AC1_BuyButton" type="Button" parent="LightSodaAutoClick1"]
+custom_minimum_size = Vector2(80, 0)
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.870588, 0.870588, 0, 1)
+theme_override_font_sizes/font_size = 45
+action_mode = 0
+text = "BUY"
+
+[node name="CostLabelContainer" type="HBoxContainer" parent="LightSodaAutoClick1"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+
+[node name="CostLabel" type="Label" parent="LightSodaAutoClick1/CostLabelContainer"]
+custom_minimum_size = Vector2(78, 10)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Money Cost:
+Godly Soda Cost:"
+horizontal_alignment = 2
+
+[node name="CostContainer" type="HBoxContainer" parent="LightSodaAutoClick1"]
+custom_minimum_size = Vector2(40, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MoneyCostContainer" type="VBoxContainer" parent="LightSodaAutoClick1/CostContainer"]
+custom_minimum_size = Vector2(40, 20)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="LM_AC_CostLabel" type="Label" parent="LightSodaAutoClick1/CostContainer/MoneyCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "60"
+
+[node name="SodaCostContainer" type="VBoxContainer" parent="LightSodaAutoClick1/CostContainer/MoneyCostContainer"]
+layout_mode = 2
+
+[node name="LS_AC_CostLabel" type="Label" parent="LightSodaAutoClick1/CostContainer/MoneyCostContainer/SodaCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 24
+text = "60"
+
+[node name="ZapSodaAutoClick1" type="BoxContainer" parent="."]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1045.0
+offset_top = 80.0
+offset_right = -525.0
+offset_bottom = 152.0
+grow_horizontal = 0
+tooltip_text = "1 C/s Using Click Power
+20% Auto Click Production Per Upgrade"
+
+[node name="SpriteContainer" type="HBoxContainer" parent="ZapSodaAutoClick1"]
+custom_minimum_size = Vector2(60, 0)
+layout_direction = 2
+layout_mode = 2
+
+[node name="ClickPower1Sprite" type="Sprite2D" parent="ZapSodaAutoClick1/SpriteContainer"]
+position = Vector2(32, 35)
+scale = Vector2(0.149785, 0.149785)
+texture = ExtResource("19_cmtwr")
+
+[node name="ZapSoda_AC1_BuyButton" type="Button" parent="ZapSodaAutoClick1"]
+custom_minimum_size = Vector2(80, 0)
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.870588, 0.870588, 0, 1)
+theme_override_font_sizes/font_size = 45
+action_mode = 0
+text = "BUY"
+
+[node name="CostLabelContainer" type="HBoxContainer" parent="ZapSodaAutoClick1"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+
+[node name="CostLabel" type="Label" parent="ZapSodaAutoClick1/CostLabelContainer"]
+custom_minimum_size = Vector2(78, 10)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Money Cost:
+Godly Soda Cost:"
+horizontal_alignment = 2
+
+[node name="CostContainer" type="HBoxContainer" parent="ZapSodaAutoClick1"]
+custom_minimum_size = Vector2(40, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MoneyCostContainer" type="VBoxContainer" parent="ZapSodaAutoClick1/CostContainer"]
+custom_minimum_size = Vector2(40, 20)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="ZM_AC_CostLabel" type="Label" parent="ZapSodaAutoClick1/CostContainer/MoneyCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "60"
+
+[node name="SodaCostContainer" type="VBoxContainer" parent="ZapSodaAutoClick1/CostContainer/MoneyCostContainer"]
+layout_mode = 2
+
+[node name="ZS_AC_CostLabel" type="Label" parent="ZapSodaAutoClick1/CostContainer/MoneyCostContainer/SodaCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 24
+text = "60"
+
+[node name="DPSodaAutoClick1" type="BoxContainer" parent="."]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1045.0
+offset_top = 160.0
+offset_right = -525.0
+offset_bottom = 232.0
+grow_horizontal = 0
+tooltip_text = "1 C/s Using Click Power
+20% Auto Click Production Per Upgrade"
+
+[node name="SpriteContainer" type="HBoxContainer" parent="DPSodaAutoClick1"]
+custom_minimum_size = Vector2(60, 0)
+layout_direction = 2
+layout_mode = 2
+
+[node name="ClickPower1Sprite" type="Sprite2D" parent="DPSodaAutoClick1/SpriteContainer"]
+position = Vector2(32, 35)
+scale = Vector2(0.149785, 0.149785)
+texture = ExtResource("20_c0ruk")
+
+[node name="DPSoda_AC1_BuyButton" type="Button" parent="DPSodaAutoClick1"]
+custom_minimum_size = Vector2(80, 0)
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.870588, 0.870588, 0, 1)
+theme_override_font_sizes/font_size = 45
+action_mode = 0
+text = "BUY"
+
+[node name="CostLabelContainer" type="HBoxContainer" parent="DPSodaAutoClick1"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+
+[node name="CostLabel" type="Label" parent="DPSodaAutoClick1/CostLabelContainer"]
+custom_minimum_size = Vector2(78, 10)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Money Cost:
+Godly Soda Cost:"
+horizontal_alignment = 2
+
+[node name="CostContainer" type="HBoxContainer" parent="DPSodaAutoClick1"]
+custom_minimum_size = Vector2(40, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MoneyCostContainer" type="VBoxContainer" parent="DPSodaAutoClick1/CostContainer"]
+custom_minimum_size = Vector2(40, 20)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="DPM_AC_CostLabel" type="Label" parent="DPSodaAutoClick1/CostContainer/MoneyCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "60"
+
+[node name="SodaCostContainer" type="VBoxContainer" parent="DPSodaAutoClick1/CostContainer/MoneyCostContainer"]
+layout_mode = 2
+
+[node name="DPS_AC_CostLabel" type="Label" parent="DPSodaAutoClick1/CostContainer/MoneyCostContainer/SodaCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 24
+text = "60"
+
+[node name="BBSodaAutoClick1" type="BoxContainer" parent="."]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1045.0
+offset_top = 240.0
+offset_right = -525.0
+offset_bottom = 312.0
+grow_horizontal = 0
+tooltip_text = "1 C/s Using Click Power
+20% Auto Click Production Per Upgrade"
+
+[node name="SpriteContainer" type="HBoxContainer" parent="BBSodaAutoClick1"]
+custom_minimum_size = Vector2(60, 0)
+layout_direction = 2
+layout_mode = 2
+
+[node name="ClickPower1Sprite" type="Sprite2D" parent="BBSodaAutoClick1/SpriteContainer"]
+position = Vector2(32, 35)
+scale = Vector2(0.149785, 0.149785)
+texture = ExtResource("22_qrlnr")
+
+[node name="BBSoda_AC1_BuyButton" type="Button" parent="BBSodaAutoClick1"]
+custom_minimum_size = Vector2(80, 0)
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.870588, 0.870588, 0, 1)
+theme_override_font_sizes/font_size = 45
+action_mode = 0
+text = "BUY"
+
+[node name="CostLabelContainer" type="HBoxContainer" parent="BBSodaAutoClick1"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+
+[node name="CostLabel" type="Label" parent="BBSodaAutoClick1/CostLabelContainer"]
+custom_minimum_size = Vector2(78, 10)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Money Cost:
+Godly Soda Cost:"
+horizontal_alignment = 2
+
+[node name="CostContainer" type="HBoxContainer" parent="BBSodaAutoClick1"]
+custom_minimum_size = Vector2(40, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MoneyCostContainer" type="VBoxContainer" parent="BBSodaAutoClick1/CostContainer"]
+custom_minimum_size = Vector2(40, 20)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="BBM_AC_CostLabel" type="Label" parent="BBSodaAutoClick1/CostContainer/MoneyCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "60"
+
+[node name="SodaCostContainer" type="VBoxContainer" parent="BBSodaAutoClick1/CostContainer/MoneyCostContainer"]
+layout_mode = 2
+
+[node name="BBS_AC_CostLabel" type="Label" parent="BBSodaAutoClick1/CostContainer/MoneyCostContainer/SodaCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 24
+text = "60"
+
+[connection signal="timeout" from="SessionTimer" to="SessionTimer" method="_on_timeout"]
+[connection signal="mouse_entered" from="BackButton/BackButton" to="." method="_on_back_button_mouse_entered"]
+[connection signal="mouse_exited" from="BackButton/BackButton" to="." method="_on_back_button_mouse_exited"]
 [connection signal="pressed" from="BackButton/BackButton" to="." method="_on_back_button_pressed"]
+<<<<<<< Updated upstream
 [connection signal="pressed" from="LightSodaClickPower1/LightSoda_CP1_BuyButton" to="." method="_on_light_soda_click_power_plus1"]
 [connection signal="pressed" from="ZapSodaClickPower1/ZapSoda_CP1_BuyButton" to="." method="_on_zap_soda_click_power_plus1"]
 [connection signal="pressed" from="DoublePlusSodaClickPower1/DoublePlus_CP1_BuyButton" to="." method="_on_double_plus_soda_click_power_plus1"]
 [connection signal="pressed" from="BerryBurstSodaClickPower1/BerryBurst_CP1_BuyButton" to="." method="_on_berry_burst_soda_click_power_plus1"]
+=======
+>>>>>>> Stashed changes
 [connection signal="pressed" from="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer/GodlyX1Button" to="GodlyConversionUI" method="_on_godly_x_1_button_pressed"]
 [connection signal="pressed" from="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer/GodlyX10Button" to="GodlyConversionUI" method="_on_godly_x_10_button_pressed"]
 [connection signal="pressed" from="GodlyConversionUI/VBoxContainer/ButtonMultipierContainer/GodlyX100Button" to="GodlyConversionUI" method="_on_godly_x_100_button_pressed"]
@@ -709,3 +1386,11 @@ text = "CANCEL"
 [connection signal="toggled" from="GodlyConversionUI/VBoxContainer/GodlyMultiBuyContainer/MultiplierGodlyx1000Button" to="GodlyConversionUI" method="_on_multiplier_godly_x_1000_button_toggled"]
 [connection signal="pressed" from="GodlyConversionUI/VBoxContainer/HBoxContainer/GodlyConvertBuyButton" to="GodlyConversionUI" method="_on_godly_convert_buy_button_pressed"]
 [connection signal="pressed" from="GodlyConversionUI/VBoxContainer/HBoxContainer/GodlyConvertCancelButton" to="GodlyConversionUI" method="_on_godly_convert_cancel_button_pressed"]
+[connection signal="pressed" from="LightSodaClickPower1/LightSoda_CP1_BuyButton" to="." method="_on_light_soda_click_power_plus1"]
+[connection signal="pressed" from="ZapSodaSodaClickPower1/ZapSoda_CP1_BuyButton" to="." method="_on_zap_soda_click_power_plus1"]
+[connection signal="pressed" from="DoublePlusSodaClickPower1/DoublePlus_CP1_BuyButton" to="." method="_on_double_plus_soda_click_power_plus1"]
+[connection signal="pressed" from="BerryBurstSodaClickPower1/BerryBurst_CP1_BuyButton" to="." method="_on_berry_burst_cp_1_buy_button_pressed"]
+[connection signal="pressed" from="LightSodaAutoClick1/LightSoda_AC1_BuyButton" to="." method="_on_light_soda_ac_1_buy_button_pressed"]
+[connection signal="pressed" from="ZapSodaAutoClick1/ZapSoda_AC1_BuyButton" to="." method="_on_zap_soda_ac_1_buy_button_pressed"]
+[connection signal="pressed" from="DPSodaAutoClick1/DPSoda_AC1_BuyButton" to="." method="_on_dp_soda_ac_1_buy_button_pressed"]
+[connection signal="pressed" from="BBSodaAutoClick1/BBSoda_AC1_BuyButton" to="." method="_on_bb_soda_ac_1_buy_button_pressed"]

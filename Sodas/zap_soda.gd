@@ -6,6 +6,8 @@ var ZapSodaSprite
 func _ready():
 	ZapSodaClickedSprite = get_node("ZapSodaClickedSprite")
 	ZapSodaSprite = get_node("ZapSodaSprite")
+	if Global.zapSodaAuto == true:
+		%ZS_AutoClickTimer.start()
 
 #When input is mouse, when mouse button left click, when pressed
 func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisionshape2d signal
@@ -31,3 +33,12 @@ func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisi
 			
 			ZapSodaClickedSprite.show()
 			ZapSodaSprite.hide()
+#When mouse leaves collision box, reset sprites
+func _on_mouse_exited():
+	ZapSodaClickedSprite.hide()
+	ZapSodaSprite.show()
+
+
+func _on_zs_auto_click_timer_timeout():
+	Global.zapSodaMoney += (2 * (Global.zapSodaClickPower - 1)) * Global.zapSodaAutoClick
+	Global.trueMoney += (2 * (Global.lightSodaClickPower - 1)) * Global.zapSodaAutoClick

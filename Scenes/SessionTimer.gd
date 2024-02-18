@@ -1,15 +1,17 @@
 extends Timer
 
-var secTime = 0
-var minTime = 0
-var hourTime = 0
+
 
 func _on_timeout():
-	secTime += 1
+	Global.secTime += 1
+	var secTime = Global.secTime
+	var minTime = Global.minTime
+	var hourTime = Global.hourTime
 	if(secTime > 60):
-		minTime += 1
-		secTime = 0
+		Global.minTime += 1
+		Global.secTime = 0
+		
 	if(minTime > 60):
-		hourTime += 1
-		minTime = 0
+		Global.hourTime += 1
+		Global.minTime = 0
 	Global.sessionTime = str(hourTime) + " Hours  " + str(minTime) + " Minutes  " + str(secTime) + " Seconds"
