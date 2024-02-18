@@ -79,12 +79,12 @@ texture = ExtResource("3_wnpwg")
 
 [node name="Money" type="Label" parent="MainLayer/Control/MarginContainer/VBoxContainer/MoneyBorderSprite"]
 unique_name_in_owner = true
-offset_left = -66.0
-offset_top = 26.0
-offset_right = -37.0
-offset_bottom = 139.0
+offset_left = -301.429
+offset_top = -35.2349
+offset_right = -272.429
+offset_bottom = 150.765
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 500
+theme_override_font_sizes/font_size = 2000
 label_settings = SubResource("LabelSettings_6tmyr")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -96,7 +96,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="MoneySprite" type="Sprite2D" parent="MainLayer/Control/MarginContainer/VBoxContainer/MoneyBorderSprite/Money/BoxContainer"]
-position = Vector2(-80, 30)
+position = Vector2(-77.1429, 87.2483)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("3_qrsc5")
 

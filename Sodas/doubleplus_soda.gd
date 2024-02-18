@@ -6,6 +6,8 @@ var DoublePlusSodaSprite
 func _ready():
 	DoublePlusSodaClickedSprite = get_node("DoublePlusSodaClickedSprite")
 	DoublePlusSodaSprite = get_node("DoublePlusSodaSprite")
+	if Global.doublePlusSodaAuto == true:
+		%DPS_AutoClickTimer.start()
 
 #When input is mouse, when mouse button left click, when pressed
 func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisionshape2d signal
@@ -31,3 +33,12 @@ func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisi
 			
 			DoublePlusSodaClickedSprite.show()
 			DoublePlusSodaSprite.hide()
+#When mouse leaves collision box, reset sprites
+func _on_mouse_exited():
+	DoublePlusSodaClickedSprite.hide()
+	DoublePlusSodaSprite.show()
+
+
+func _on_dps_auto_click_timer_timeout():
+	Global.doublePlusSodaMoney += (3 * (Global.doublePlusSodaClickPower - 1)) * Global.doublePlusSodaAutoClick
+	Global.trueMoney += (3 * (Global.doublePlusSodaClickPower - 1)) * Global.doublePlusSodaAutoClick

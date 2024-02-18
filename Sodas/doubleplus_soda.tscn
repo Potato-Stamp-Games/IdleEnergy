@@ -25,4 +25,9 @@ position = Vector2(2, 34)
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("3_ibcpx")
 
+[node name="DPS_AutoClickTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+
 [connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="timeout" from="DPS_AutoClickTimer" to="." method="_on_dps_auto_click_timer_timeout"]

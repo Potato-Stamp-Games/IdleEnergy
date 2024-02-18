@@ -6,6 +6,8 @@ var BerryBurstSodaSprite
 func _ready():
 	BerryBurstSodaClickedSprite = get_node("BerryBurstSodaClickedSprite")
 	BerryBurstSodaSprite = get_node("BerryBurstSodaSprite")
+	if Global.berryBurstSodaAuto == true:
+		%BBS_AutoClickTimer.start()
 #When input is mouse, when mouse button left click, when pressed 
 func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisionshape2d signal
 	if  event is InputEventMouseButton:
@@ -30,3 +32,12 @@ func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisi
 			
 			BerryBurstSodaClickedSprite.show()
 			BerryBurstSodaSprite.hide()
+#When mouse leaves collision box, reset sprites
+func _on_mouse_exited():
+	BerryBurstSodaClickedSprite.hide()
+	BerryBurstSodaSprite.show()
+
+
+func _on_bbs_auto_click_timer_timeout():
+	Global.berryBurstSodaMoney += (4 * (Global.berryBurstSodaClickPower - 1)) * Global.berryBurstSodaAutoClick
+	Global.trueMoney += (4 * (Global.berryBurstSodaClickPower - 1)) * Global.berryBurstSodaAutoClick
