@@ -28,6 +28,9 @@ texture = ExtResource("3_cjwsr")
 [node name="ZS_AutoClickTimer" type="Timer" parent="."]
 unique_name_in_owner = true
 
+[node name="ZapSodaSFX" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="timeout" from="ZS_AutoClickTimer" to="." method="_on_zs_auto_click_timer_timeout"]

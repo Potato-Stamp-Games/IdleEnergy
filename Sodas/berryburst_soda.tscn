@@ -33,6 +33,9 @@ texture = ExtResource("3_uy2hu")
 [node name="BBS_AutoClickTimer" type="Timer" parent="."]
 unique_name_in_owner = true
 
+[node name="BerryBurstSodaSFX" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="timeout" from="BBS_AutoClickTimer" to="." method="_on_bbs_auto_click_timer_timeout"]
