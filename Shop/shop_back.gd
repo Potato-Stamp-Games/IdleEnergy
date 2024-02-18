@@ -20,11 +20,11 @@ func _process(delta):
 	%ZS_CP_CostLabel.text = str(pow(2 + Global.zapSodaClickPower, 2))
 
 	#Double Plus Soda Click Power Labels
-	%DPM_CP_CostLabel.text = str(pow(10 + (3 * Global.doublePlusSodaClickPower), 2))
+	%DPM_CP_CostLabel.text = str(pow(25 + (3 * Global.doublePlusSodaClickPower), 2))
 	%DPS_CP_CostLabel.text = str(pow(3 + Global.doublePlusSodaClickPower, 2))
 	
 	#Berry Burst Soda Click Power Labels
-	%BBPM_CP_CostLabel.text = str(pow(10 + (4 * Global.berryBurstSodaClickPower), 2))
+	%BBPM_CP_CostLabel.text = str(pow(50 + (4 * Global.berryBurstSodaClickPower), 2))
 	%BBPS_CP_CostLabel.text = str(pow(4 + Global.berryBurstSodaClickPower, 2))
 
 #Change scence back to main & deletes this scene
@@ -75,6 +75,8 @@ func _on_double_plus_soda_click_power_plus1():
 			%DPS_CP_CostLabel.text = str(sodaCostOfUpgrade)
 			Global.ttlAllClicks += 1
 			
+
+#Berry Burst Soda Click Power +1
 func _on_berry_burst_soda_click_power_plus1():
 	var moneyCostOfUpgrade = pow(10 + (4 * Global.berryBurstSodaClickPower), 2)
 	var sodaCostOfUpgrade = pow(4 + Global.berryBurstSodaClickPower, 2)
