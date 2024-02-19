@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bx07mhtviijjy"
-path="res://.godot/imported/ShopBackgroundSprite.jpg-94829706d3307dd0c9a960cd8d900e26.ctex"
+uid="uid://b1ctq3343pu5k"
+path="res://.godot/imported/Shop_Background.jpg-bf0f648a2aed14ba7e1475ce05fbc1d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Shop/ShopBackgroundSprite.jpg"
-dest_files=["res://.godot/imported/ShopBackgroundSprite.jpg-94829706d3307dd0c9a960cd8d900e26.ctex"]
+source_file="res://Shop/Shop_Background.jpg"
+dest_files=["res://.godot/imported/Shop_Background.jpg-bf0f648a2aed14ba7e1475ce05fbc1d2.ctex"]
 
 [params]
 
