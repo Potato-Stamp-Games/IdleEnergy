@@ -40,5 +40,7 @@ func _on_mouse_exited():
 
 
 func _on_zs_auto_click_timer_timeout():
-	Global.zapSodaMoney += (2 * (Global.zapSodaClickPower - 1)) * Global.zapSodaAutoClick
-	Global.trueMoney += (2 * (Global.lightSodaClickPower - 1)) * Global.zapSodaAutoClick
+	Global.zapSodaMoney += (Global.zapSodaClickPower - 1) * Global.zapSodaAutoClick
+	Global.ttlZapSodaMoney += (Global.zapSodaClickPower - 1) * Global.zapSodaAutoClick
+	Global.trueMoney += (2 * (Global.zapSodaClickPower - 1)) * Global.zapSodaAutoClick
+	Global.ttlTrueMoney += (2 * (Global.zapSodaClickPower - 1)) * Global.zapSodaAutoClick

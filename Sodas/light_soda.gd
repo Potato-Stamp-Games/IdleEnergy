@@ -41,4 +41,6 @@ func _on_mouse_exited():
 #Auto click once per second with power equal auto click power and click power 1
 func _on_ls_auto_click_timer_timeout():
 	Global.lightSodaMoney += (Global.lightSodaClickPower - 1) * Global.lightSodaAutoClick
+	Global.ttlLightSodaMoney += (Global.lightSodaClickPower - 1) * Global.lightSodaAutoClick
 	Global.trueMoney += (Global.lightSodaClickPower - 1) * Global.lightSodaAutoClick
+	Global.ttlTrueMoney += (Global.lightSodaClickPower - 1) * Global.lightSodaAutoClick

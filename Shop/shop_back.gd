@@ -40,58 +40,57 @@ func _process(_delta):
 	bbm_CP_CostEq = pow(10 + (3 * Global.berryBurstSodaClickPower), 2)
 	bbs_CP_CostEq = pow(12 + (2 * Global.berryBurstSodaClickPower), 2)
 	#Light Soda Auto Click 1
-	lm_AC_CostEq = pow(3 + (2 * Global.lightSodaAutoClick), 3)
-	ls_AC_CostEq = pow(2 + Global.lightSodaAutoClick, 2)
+	lm_AC_CostEq = pow(8 + (2 * Global.lightSodaAutoClick), 3)
+	ls_AC_CostEq = pow(1 + (3 *Global.lightSodaAutoClick), 3)
 	#Zap Soda Auto Click 1
-	zm_AC_CostEq = pow(4 + (2 * Global.zapSodaAutoClick), 3)
-	zs_AC_CostEq = pow(3 + Global.zapSodaAutoClick, 2)
+	zm_AC_CostEq = pow(10 + (2 * Global.zapSodaAutoClick), 3)
+	zs_AC_CostEq = pow(2 + (3 * Global.zapSodaAutoClick), 3)
 	#DP Soda Auto Click 1
-	dpm_AC_CostEq = pow(5 + (2 * Global.doublePlusSodaAutoClick), 3)
-	dps_AC_CostEq = pow(4 + Global.doublePlusSodaAutoClick, 2)
+	dpm_AC_CostEq = pow(10 + (3 * Global.doublePlusSodaAutoClick), 3)
+	dps_AC_CostEq = pow(1 + (4 * Global.doublePlusSodaAutoClick), 3)
 	#BB Soda Auto Click 1
-	bbm_AC_CostEq = pow(8 + (2 * Global.berryBurstSodaAutoClick), 3)
-	bbs_AC_CostEq = pow(5 + Global.berryBurstSodaAutoClick, 2)
+	bbm_AC_CostEq = pow(12 + (3 * Global.berryBurstSodaAutoClick), 3)
+	bbs_AC_CostEq = pow(2 + (4* Global.berryBurstSodaAutoClick), 3)
 	#END OF: Shop Equations
-	%MoneyLabel.text= str(FuncGlobal.round_to_dec(Global.trueMoney))
-	%LightSodaLabel.text = str(FuncGlobal.round_to_dec(Global.lightSodaMoney))
-	%ZapSodaLabel.text = str(FuncGlobal.round_to_dec(Global.zapSodaMoney))
-	%DoublePlusSodaLabel.text = str(FuncGlobal.round_to_dec(Global.doublePlusSodaMoney))
-	%BerryBurstSodaLabel.text = str(FuncGlobal.round_to_dec(Global.berryBurstSodaMoney))
-	%GodlySodaLabel.text = str(FuncGlobal.round_to_dec(Global.godlySodaMoney))
+	#Money & Soda Labels
+	%MoneyLabel.text= FuncGlobal.add_comma_to_float(float("%.2f" %[Global.trueMoney]))
+	%LightSodaLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[Global.lightSodaMoney]))
+	%ZapSodaLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[Global.zapSodaMoney]))
+	%DoublePlusSodaLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[Global.doublePlusSodaMoney]))
+	%BerryBurstSodaLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[Global.berryBurstSodaMoney]))
+	%GodlySodaLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[Global.godlySodaMoney]))
 	
 	#Light Soda Click Cost labels
-	%LM_CP_CostLabel.text = str(FuncGlobal.round_to_dec(lm_CP_CostEq))
-	%LS_CP_CostLabel.text = str(FuncGlobal.round_to_dec(ls_CP_CostEq))
-
+	%LM_CP_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[lm_CP_CostEq]))
+	%LS_CP_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[ls_CP_CostEq]))
+	
 	#Zap Soda Click Cost labels
-	%ZM_CP_CostLabel.text = str(FuncGlobal.round_to_dec(zm_CP_CostEq))
-	%ZS_CP_CostLabel.text = str(FuncGlobal.round_to_dec(zs_CP_CostEq))
-
-
+	%ZM_CP_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[zm_CP_CostEq]))
+	%ZS_CP_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[zs_CP_CostEq]))
+	
 	#Double Plus Soda Click Power Labels
-	%DPM_CP_CostLabel.text = str(FuncGlobal.round_to_dec(dpm_CP_CostEq))
-	%DPS_CP_CostLabel.text = str(FuncGlobal.round_to_dec(dps_CP_CostEq))
+	%DPM_CP_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[dpm_CP_CostEq]))
+	%DPS_CP_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[dps_CP_CostEq]))
 	
 	#Berry Burst Soda Click Power Labels
-	%BBM_CP_CostLabel.text = str(FuncGlobal.round_to_dec(bbm_CP_CostEq))
-	%BBS_CP_CostLabel.text = str(FuncGlobal.round_to_dec(bbs_CP_CostEq))
+	%BBM_CP_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[bbm_CP_CostEq]))
+	%BBS_CP_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[bbs_CP_CostEq]))
 	
 	#Light Soda Auto Click Cost labels
-	%LM_AC_CostLabel.text = str(FuncGlobal.round_to_dec(lm_AC_CostEq))
-	%LS_AC_CostLabel.text = str(FuncGlobal.round_to_dec(ls_AC_CostEq))
+	%LM_AC_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[lm_AC_CostEq]))
+	%LS_AC_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[ls_AC_CostEq]))
 
 	#Zap Soda Auto Click Cost labels
-	%ZM_AC_CostLabel.text = str(FuncGlobal.round_to_dec(zm_AC_CostEq))
-	%ZS_AC_CostLabel.text = str(FuncGlobal.round_to_dec(zs_AC_CostEq))
-
-
+	%ZM_AC_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[zm_AC_CostEq]))
+	%ZS_AC_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[zs_AC_CostEq]))
+	
 	#Double Plus Soda Auto Click Power Labels
-	%DPM_AC_CostLabel.text = str(FuncGlobal.round_to_dec(dpm_AC_CostEq))
-	%DPS_AC_CostLabel.text = str(FuncGlobal.round_to_dec(dps_AC_CostEq))
+	%DPM_AC_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[dpm_AC_CostEq]))
+	%DPS_AC_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[dps_AC_CostEq]))
 	
 	#Berry Burst Soda Auto Click Power Labels
-	%BBM_AC_CostLabel.text = str(FuncGlobal.round_to_dec(bbm_AC_CostEq))
-	%BBS_AC_CostLabel.text = str(FuncGlobal.round_to_dec(bbs_AC_CostEq))
+	%BBM_AC_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[bbm_AC_CostEq]))
+	%BBS_AC_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[bbs_AC_CostEq]))
 
 #Change scence back to main & deletes this scene
 func _on_back_button_pressed():
@@ -117,8 +116,8 @@ func _on_light_soda_click_power_plus1():
 			Global.trueMoney = Global.trueMoney - moneyCostOfUpgrade
 			Global.lightSodaMoney = Global.lightSodaMoney - sodaCostOfUpgrade
 			Global.lightSodaClickPower += 1
-			%LM_CP_CostLabel.text = str(FuncGlobal.round_to_dec(lm_CP_CostEq))
-			%LS_CP_CostLabel.text = str(FuncGlobal.round_to_dec(ls_CP_CostEq))
+			%LM_CP_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[lm_CP_CostEq]))
+			%LS_CP_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[ls_CP_CostEq]))
 			Global.ttlAllClicks += 1
 
 #Zap Soda Click Power +1
@@ -131,8 +130,8 @@ func _on_zap_soda_click_power_plus1():
 			Global.trueMoney = Global.trueMoney - moneyCostOfUpgrade
 			Global.zapSodaMoney = Global.zapSodaMoney - sodaCostOfUpgrade
 			Global.zapSodaClickPower += 1
-			%ZM_CP_CostLabel.text = str(FuncGlobal.round_to_dec(zm_CP_CostEq))
-			%ZS_CP_CostLabel.text = str(FuncGlobal.round_to_dec(zm_CP_CostEq))
+			%ZM_CP_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[zm_CP_CostEq]))
+			%ZS_CP_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[zm_CP_CostEq]))
 			Global.ttlAllClicks += 1
 
 #Double Plus Soda Click Power +1
@@ -145,36 +144,39 @@ func _on_double_plus_soda_click_power_plus1():
 			Global.trueMoney = Global.trueMoney - moneyCostOfUpgrade
 			Global.doublePlusSodaMoney = Global.doublePlusSodaMoney - sodaCostOfUpgrade
 			Global.doublePlusSodaClickPower += 1
-			%DPM_CP_CostLabel.text = str(FuncGlobal.round_to_dec(dpm_CP_CostEq))
-			%DPS_CP_CostLabel.text = str(FuncGlobal.round_to_dec(dps_CP_CostEq))
+			%DPM_CP_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[dpm_CP_CostEq]))
+			%DPS_CP_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[dps_CP_CostEq]))
 			Global.ttlAllClicks += 1
 
 #Berry Burst Soda Click Power +1
 func _on_berry_burst_soda_click_power_plus1():
 	var moneyCostOfUpgrade = bbm_CP_CostEq
 	var sodaCostOfUpgrade = bbs_CP_CostEq
-	
+	print(moneyCostOfUpgrade)
+	print(sodaCostOfUpgrade)
 	if Global.trueMoney >=  moneyCostOfUpgrade:
-		if Global.doublePlusSodaMoney >= sodaCostOfUpgrade:
+		if Global.berryBurstSodaMoney >= sodaCostOfUpgrade:
 			Global.trueMoney = Global.trueMoney - moneyCostOfUpgrade
 			Global.berryBurstSodaMoney = Global.berryBurstSodaMoney - sodaCostOfUpgrade
 			Global.berryBurstSodaClickPower += 1
-			%BBM_CP_CostLabel.text = str(FuncGlobal.round_to_dec(bbm_CP_CostEq))
-			%BBS_CP_CostLabel.text = str(FuncGlobal.round_to_dec(bbs_CP_CostEq))
+			%BBM_CP_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[bbm_CP_CostEq]))
+			%BBS_CP_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[bbs_CP_CostEq]))
 			Global.ttlAllClicks += 1
 
 #Light Soda Auto Clicker 20% Increase
 func _on_light_soda_ac_1_buy_button_pressed():
 	var moneyCostOfUpgrade = lm_AC_CostEq
 	var sodaCostOfUpgrade = ls_AC_CostEq
-	
+	print(moneyCostOfUpgrade)
+	print(sodaCostOfUpgrade)
 	if Global.trueMoney >=  moneyCostOfUpgrade:
 		if Global.godlySodaMoney >= sodaCostOfUpgrade:
 			Global.trueMoney = Global.trueMoney - moneyCostOfUpgrade
 			Global.godlySodaMoney = Global.godlySodaMoney - sodaCostOfUpgrade
 			Global.lightSodaAutoClick += 0.2
-			%LM_AC_CostLabel.text = str(FuncGlobal.round_to_dec(lm_AC_CostEq))
-			%LS_AC_CostLabel.text = str(FuncGlobal.round_to_dec(lm_AC_CostEq))
+			%LM_AC_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[lm_AC_CostEq]))
+			%LS_AC_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[lm_AC_CostEq]))
+			
 			Global.ttlAllClicks += 1
 			Global.lightSodaAuto = true
 
@@ -188,8 +190,8 @@ func _on_zap_soda_ac_1_buy_button_pressed():
 			Global.trueMoney = Global.trueMoney - moneyCostOfUpgrade
 			Global.godlySodaMoney = Global.godlySodaMoney - sodaCostOfUpgrade
 			Global.zapSodaAutoClick += 0.2
-			%ZM_AC_CostLabel.text = str(FuncGlobal.round_to_dec(zm_AC_CostEq))
-			%ZS_AC_CostLabel.text = str(FuncGlobal.round_to_dec(zs_AC_CostEq))
+			%ZM_AC_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[zm_AC_CostEq]))
+			%ZS_AC_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[zs_AC_CostEq]))
 			Global.ttlAllClicks += 1
 			Global.zapSodaAuto = true
 
@@ -203,8 +205,8 @@ func _on_dp_soda_ac_1_buy_button_pressed():
 			Global.trueMoney = Global.trueMoney - moneyCostOfUpgrade
 			Global.godlySodaMoney = Global.godlySodaMoney - sodaCostOfUpgrade
 			Global.doublePlusSodaAutoClick += 0.2
-			%DPM_AC_CostLabel.text = str(FuncGlobal.round_to_dec(dpm_AC_CostEq))
-			%DPS_AC_CostLabel.text = str(FuncGlobal.round_to_dec(dps_AC_CostEq))
+			%DPM_AC_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[dpm_AC_CostEq]))
+			%DPS_AC_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[dps_AC_CostEq]))
 			Global.ttlAllClicks += 1
 			Global.doublePlusSodaAuto = true
 
@@ -218,8 +220,8 @@ func _on_bb_soda_ac_1_buy_button_pressed():
 			Global.trueMoney = Global.trueMoney - moneyCostOfUpgrade
 			Global.godlySodaMoney = Global.godlySodaMoney - sodaCostOfUpgrade
 			Global.berryBurstSodaAutoClick += 0.2
-			%BBM_AC_CostLabel.text = str(FuncGlobal.round_to_dec(bbm_AC_CostEq))
-			%BBS_AC_CostLabel.text = str(FuncGlobal.round_to_dec(bbs_AC_CostEq))
+			%BBM_AC_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[bbm_AC_CostEq]))
+			%BBS_AC_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[bbs_AC_CostEq]))
 			Global.ttlAllClicks += 1
 			Global.berryBurstSodaAuto = true
 #END OF STORE UPGRADES ------------

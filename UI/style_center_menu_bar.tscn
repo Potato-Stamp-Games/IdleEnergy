@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c568qlc5aq4cr"]
+[gd_scene load_steps=9 format=3 uid="uid://c568qlc5aq4cr"]
 
 [ext_resource type="Script" path="res://UI/style_center_menu_bar.gd" id="1_cqdsd"]
 [ext_resource type="Texture2D" uid="uid://droj3s05taoeg" path="res://UI/UISprites/MenuButtonSprite.png" id="2_nx8lg"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bl0tuq47vwtyy" path="res://UI/UISprites/StatsSpriteIcon.png" id="4_evcr1"]
 [ext_resource type="Texture2D" uid="uid://cur8026dbfqa1" path="res://UI/UISprites/AboutUsSpriteIcon.png" id="5_vhmnu"]
 [ext_resource type="Texture2D" uid="uid://bvxu1f8j2mfr0" path="res://UI/UISprites/SettingsSpriteIcon.png" id="6_uek6a"]
+[ext_resource type="Texture2D" uid="uid://ch08agnltfguy" path="res://UI/UISprites/ExitButtonIcon.png" id="7_02dqw"]
 [ext_resource type="PackedScene" uid="uid://d57vdv10n0ts" path="res://UI/your_stats_canvas.tscn" id="7_88dtj"]
 
 [node name="StyleCenterMenuBar" type="CanvasLayer"]
@@ -29,7 +30,7 @@ theme_override_font_sizes/font_size = 130
 text = "Style
 Center"
 icon = ExtResource("2_nx8lg")
-item_count = 4
+item_count = 5
 popup/item_0/text = "Achievements"
 popup/item_0/icon = ExtResource("3_7h32v")
 popup/item_0/id = 0
@@ -42,6 +43,9 @@ popup/item_2/id = 2
 popup/item_3/text = "Settings"
 popup/item_3/icon = ExtResource("6_uek6a")
 popup/item_3/id = 3
+popup/item_4/text = "Exit"
+popup/item_4/icon = ExtResource("7_02dqw")
+popup/item_4/id = 4
 
 [node name="AchievementsPopUp" type="Window" parent="Control"]
 unique_name_in_owner = true
@@ -117,11 +121,11 @@ grow_vertical = 2
 [connection signal="close_requested" from="Control/YourStatsPopUp" to="." method="_on_your_stats_pop_up_close_requested"]
 [connection signal="go_back_requested" from="Control/YourStatsPopUp" to="." method="_on_your_stats_pop_up_go_back_requested"]
 [connection signal="visibility_changed" from="Control/YourStatsPopUp" to="Control/YourStatsPopUp/Camera2D/Panel/YourStatsCanvas" method="_on_your_stats_pop_up_visibility_changed"]
-[connection signal="close_requested" from="Control/AboutUsPopUp" to="." method="_on_about_us_pop_up_close_requested"]
 [connection signal="close_requested" from="Control/AboutUsPopUp" to="." method="_on_your_stats_pop_up_close_requested"]
+[connection signal="close_requested" from="Control/AboutUsPopUp" to="." method="_on_about_us_pop_up_close_requested"]
 [connection signal="go_back_requested" from="Control/AboutUsPopUp" to="." method="_on_about_us_pop_up_go_back_requested"]
 [connection signal="go_back_requested" from="Control/AboutUsPopUp" to="." method="_on_your_stats_pop_up_go_back_requested"]
-[connection signal="close_requested" from="Control/SettingsPopUp" to="." method="_on_settings_pop_up_close_requested"]
 [connection signal="close_requested" from="Control/SettingsPopUp" to="." method="_on_your_stats_pop_up_close_requested"]
-[connection signal="go_back_requested" from="Control/SettingsPopUp" to="." method="_on_settings_pop_up_go_back_requested"]
+[connection signal="close_requested" from="Control/SettingsPopUp" to="." method="_on_settings_pop_up_close_requested"]
 [connection signal="go_back_requested" from="Control/SettingsPopUp" to="." method="_on_your_stats_pop_up_go_back_requested"]
+[connection signal="go_back_requested" from="Control/SettingsPopUp" to="." method="_on_settings_pop_up_go_back_requested"]

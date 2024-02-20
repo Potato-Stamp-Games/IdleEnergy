@@ -39,5 +39,7 @@ func _on_mouse_exited():
 
 
 func _on_bbs_auto_click_timer_timeout():
-	Global.berryBurstSodaMoney += (4 * (Global.berryBurstSodaClickPower - 1)) * Global.berryBurstSodaAutoClick
+	Global.berryBurstSodaMoney += (Global.berryBurstSodaClickPower - 1) * Global.berryBurstSodaAutoClick
+	Global.ttlBerryBurstSodaMoney += (Global.berryBurstSodaClickPower - 1) * Global.berryBurstSodaAutoClick
 	Global.trueMoney += (4 * (Global.berryBurstSodaClickPower - 1)) * Global.berryBurstSodaAutoClick
+	Global.ttlTrueMoney += (4 * (Global.berryBurstSodaClickPower - 1)) * Global.berryBurstSodaAutoClick

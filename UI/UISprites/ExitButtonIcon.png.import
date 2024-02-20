@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xo044bybdnti"
-path="res://.godot/imported/backbuttonGUI.png-77b74fd677a614b1a464bc1315649fd0.ctex"
+uid="uid://ch08agnltfguy"
+path="res://.godot/imported/ExitButtonIcon.png-9e343d47d1756880619b141ab66cbe60.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/UISprites/backbuttonGUI.png"
-dest_files=["res://.godot/imported/backbuttonGUI.png-77b74fd677a614b1a464bc1315649fd0.ctex"]
+source_file="res://UI/UISprites/ExitButtonIcon.png"
+dest_files=["res://.godot/imported/ExitButtonIcon.png-9e343d47d1756880619b141ab66cbe60.ctex"]
 
 [params]
 
