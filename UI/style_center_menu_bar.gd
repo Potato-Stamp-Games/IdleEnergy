@@ -19,6 +19,9 @@ func _on_item_pressed(id: int):
 	if(item_name == "Settings"):
 		Global.ttlAllClicks += 1
 		%SettingsPopUp.show()
+	if(item_name == "Exit"):
+		Global.ttlAllClicks += 1
+		get_tree().quit()
 
 func _on_achievements_pop_up_close_requested():
 	Global.ttlAllClicks += 1

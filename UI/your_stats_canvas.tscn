@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d57vdv10n0ts"]
+[gd_scene load_steps=15 format=3 uid="uid://d57vdv10n0ts"]
 
 [ext_resource type="Script" path="res://UI/your_stats_canvas.gd" id="1_8rf5l"]
 [ext_resource type="Texture2D" uid="uid://dtm2rg3jkbm08" path="res://Sodas/SodaSprites/SodaLightSprite_Money.png" id="1_glcbm"]
@@ -6,6 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://ddk3urmvoqyxn" path="res://Sodas/SodaSprites/DoublePlusSodaMoneySprite.png" id="3_v0ubx"]
 [ext_resource type="Texture2D" uid="uid://dnfjkwp8ct40e" path="res://Sodas/SodaSprites/BerryBurstSodaSprite_Money.png" id="4_x46ee"]
 [ext_resource type="Texture2D" uid="uid://qwkul3xnjibu" path="res://Sodas/SodaSprites/GodlySodaSprite_Money.png" id="5_1alns"]
+[ext_resource type="Texture2D" uid="uid://nfwb5rkhpiwq" path="res://Shop/LightClickPower1Sprite.png" id="7_5v6mx"]
+[ext_resource type="Texture2D" uid="uid://cyv6l3qoarw6g" path="res://Shop/ZapClickPower1Sprite.png" id="8_6bwyb"]
+[ext_resource type="Texture2D" uid="uid://bjkxjgln1m710" path="res://Shop/DoublePlusClickPower1Sprite.png" id="9_diq6w"]
+[ext_resource type="Texture2D" uid="uid://h3vxvuu05w81" path="res://Shop/BerryBurstClickPower1Sprite.png" id="10_ok7a8"]
+[ext_resource type="Texture2D" uid="uid://4r86rmqko6tu" path="res://Shop/LightSodaAutoClickSprite.png" id="11_q5ps1"]
+[ext_resource type="Texture2D" uid="uid://dwwf37oqu8x1d" path="res://Shop/ZapAutoClickSprite.png" id="12_x3bxv"]
+[ext_resource type="Texture2D" uid="uid://5u220j4eu2fg" path="res://Shop/DPAutoClickSprite.png" id="13_2tgu0"]
+[ext_resource type="Texture2D" uid="uid://dwbj3lvg6hwmp" path="res://Shop/BerryBurstAutoClickSprite.png" id="14_g5m6h"]
 
 [node name="YourStatsCanvas" type="CanvasLayer"]
 script = ExtResource("1_8rf5l")
@@ -45,11 +53,13 @@ layout_mode = 2
 
 [node name="SodasLbl" type="Label" parent="HBoxContainer/VBoxContainer/Title+Headers/Headers"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 48
 text = "Sodas Collected:"
 
 [node name="padding" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/Title+Headers/Headers"]
-custom_minimum_size = Vector2(215, 0)
+custom_minimum_size = Vector2(175, 0)
 layout_mode = 2
 
 [node name="Panel" type="Panel" parent="HBoxContainer/VBoxContainer/Title+Headers/Headers/padding"]
@@ -59,11 +69,13 @@ size_flags_horizontal = 8
 
 [node name="ShopItemsLbl" type="Label" parent="HBoxContainer/VBoxContainer/Title+Headers/Headers"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 48
-text = "Shop Items Collected:"
+text = "Shop Items Click Stats"
 
 [node name="padding2" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/Title+Headers/Headers"]
-custom_minimum_size = Vector2(63, 0)
+custom_minimum_size = Vector2(58, 0)
 layout_mode = 2
 
 [node name="Panel" type="Panel" parent="HBoxContainer/VBoxContainer/Title+Headers/Headers/padding2"]
@@ -84,7 +96,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="SodaCollect" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Stats"]
-custom_minimum_size = Vector2(580, 560)
+custom_minimum_size = Vector2(540, 560)
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Stats/SodaCollect"]
@@ -192,7 +204,211 @@ custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
 [node name="ShopItemCollect" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Stats"]
-custom_minimum_size = Vector2(550, 0)
+custom_minimum_size = Vector2(551, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/Stats/ShopItemCollect"]
+layout_mode = 2
+
+[node name="ClickPowCon" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Stats/ShopItemCollect/VBoxContainer"]
+layout_mode = 2
+
+[node name="LClickCon" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Stats/ShopItemCollect/VBoxContainer/ClickPowCon"]
+custom_minimum_size = Vector2(135, 80)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="LClickPow" type="Sprite2D" parent="HBoxContainer/VBoxContainer/Stats/ShopItemCollect/VBoxContainer/ClickPowCon/LClickCon"]
+position = Vector2(25, 33)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("7_5v6mx")
+
+[node name="LClickPowLbl" type="Label" parent="HBoxContainer/VBoxContainer/Stats/ShopItemCollect/VBoxContainer/ClickPowCon/LClickCon/LClickPow"]
+unique_name_in_owner = true
+offset_left = 200.0
+offset_top = -167.0
+offset_right = 340.0
+offset_bottom = 213.0
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 250
+text = "0000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ZClickCon" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Stats/ShopItemCollect/VBoxContainer/ClickPowCon"]
+custom_minimum_size = Vector2(135, 80)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="ZClickPow" type="Sprite2D" parent="HBoxContainer/VBoxContainer/Stats/ShopItemCollect/VBoxContainer/ClickPowCon/ZClickCon"]
+position = Vector2(25, 33)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("8_6bwyb")
+
+[node name="ZClickPowLbl" type="Label" parent="HBoxContainer/VBoxContainer/Stats/ShopItemCollect/VBoxContainer/ClickPowCon/ZClickCon/ZClickPow"]
+unique_name_in_owner = true
+offset_left = 200.0
+offset_top = -167.0
+offset_right = 340.0
+offset_bottom = 213.0
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 250
+text = "0000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DBClickCon" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Stats/ShopItemCollect/VBoxContainer/ClickPowCon"]
+custom_minimum_size = Vector2(135, 80)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="DBClickPow" type="Sprite2D" parent="HBoxContainer/VBoxContainer/Stats/ShopItemCollect/VBoxContainer/ClickPowCon/DBClickCon"]
+position = Vector2(25, 33)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("9_diq6w")
+
+[node name="DBClickPowLbl" type="Label" parent="HBoxContainer/VBoxContainer/Stats/ShopItemCollect/VBoxContainer/ClickPowCon/DBClickCon/DBClickPow"]
+unique_name_in_owner = true
+offset_left = 200.0
+offset_top = -167.0
+offset_right = 340.0
+offset_bottom = 213.0
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 250
+text = "0000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BBClickCon" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Stats/ShopItemCollect/VBoxContainer/ClickPowCon"]
+custom_minimum_size = Vector2(135, 80)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="BBClickPow" type="Sprite2D" parent="HBoxContainer/VBoxContainer/Stats/ShopItemCollect/VBoxContainer/ClickPowCon/BBClickCon"]
+position = Vector2(25, 33)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("10_ok7a8")
+
+[node name="BBClickPowLbl" type="Label" parent="HBoxContainer/VBoxContainer/Stats/ShopItemCollect/VBoxContainer/ClickPowCon/BBClickCon/BBClickPow"]
+unique_name_in_owner = true
+offset_left = 200.0
+offset_top = -167.0
+offset_right = 340.0
+offset_bottom = 213.0
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 250
+text = "0000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Divider" type="Panel" parent="HBoxContainer/VBoxContainer/Stats/ShopItemCollect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/Stats/ShopItemCollect/VBoxContainer"]
+layout_mode = 2
+
+[node name="ClickPowCon" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Stats/ShopItemCollect/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LClickCon" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Stats/ShopItemCollect/VBoxContainer/VBoxContainer/ClickPowCon"]
+custom_minimum_size = Vector2(135, 80)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="LClickPow" type="Sprite2D" parent="HBoxContainer/VBoxContainer/Stats/ShopItemCollect/VBoxContainer/VBoxContainer/ClickPowCon/LClickCon"]
+position = Vector2(25, 33)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("11_q5ps1")
+
+[node name="LClickAutoLbl" type="Label" parent="HBoxContainer/VBoxContainer/Stats/ShopItemCollect/VBoxContainer/VBoxContainer/ClickPowCon/LClickCon/LClickPow"]
+unique_name_in_owner = true
+offset_left = 200.0
+offset_top = -167.0
+offset_right = 340.0
+offset_bottom = 213.0
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 180
+text = "0000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ZClickCon" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Stats/ShopItemCollect/VBoxContainer/VBoxContainer/ClickPowCon"]
+custom_minimum_size = Vector2(135, 80)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="ZClickPow" type="Sprite2D" parent="HBoxContainer/VBoxContainer/Stats/ShopItemCollect/VBoxContainer/VBoxContainer/ClickPowCon/ZClickCon"]
+position = Vector2(25, 33)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("12_x3bxv")
+
+[node name="ZClickAutoLbl" type="Label" parent="HBoxContainer/VBoxContainer/Stats/ShopItemCollect/VBoxContainer/VBoxContainer/ClickPowCon/ZClickCon/ZClickPow"]
+unique_name_in_owner = true
+offset_left = 200.0
+offset_top = -167.0
+offset_right = 340.0
+offset_bottom = 213.0
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 180
+text = "0000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DBClickCon" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Stats/ShopItemCollect/VBoxContainer/VBoxContainer/ClickPowCon"]
+custom_minimum_size = Vector2(135, 80)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="DBClickPow" type="Sprite2D" parent="HBoxContainer/VBoxContainer/Stats/ShopItemCollect/VBoxContainer/VBoxContainer/ClickPowCon/DBClickCon"]
+position = Vector2(25, 33)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("13_2tgu0")
+
+[node name="DBClickAutoLbl" type="Label" parent="HBoxContainer/VBoxContainer/Stats/ShopItemCollect/VBoxContainer/VBoxContainer/ClickPowCon/DBClickCon/DBClickPow"]
+unique_name_in_owner = true
+offset_left = 200.0
+offset_top = -167.0
+offset_right = 340.0
+offset_bottom = 213.0
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 180
+text = "0000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BBClickCon" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Stats/ShopItemCollect/VBoxContainer/VBoxContainer/ClickPowCon"]
+custom_minimum_size = Vector2(135, 80)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="BBClickPow" type="Sprite2D" parent="HBoxContainer/VBoxContainer/Stats/ShopItemCollect/VBoxContainer/VBoxContainer/ClickPowCon/BBClickCon"]
+position = Vector2(25, 33)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("14_g5m6h")
+
+[node name="BBClickAutoLbl" type="Label" parent="HBoxContainer/VBoxContainer/Stats/ShopItemCollect/VBoxContainer/VBoxContainer/ClickPowCon/BBClickCon/BBClickPow"]
+unique_name_in_owner = true
+offset_left = 200.0
+offset_top = -167.0
+offset_right = 340.0
+offset_bottom = 213.0
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 180
+text = "0000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Divider2" type="Panel" parent="HBoxContainer/VBoxContainer/Stats/ShopItemCollect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
 [node name="Divider2" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Stats"]
