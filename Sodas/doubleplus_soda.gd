@@ -44,7 +44,3 @@ func _on_dps_auto_click_timer_timeout():
 	Global.ttlDoublePlusSodaMoney += (Global.doublePlusSodaClickPower - 1) * Global.doublePlusSodaAutoClick
 	Global.trueMoney += (3 * (Global.doublePlusSodaClickPower - 1)) * Global.doublePlusSodaAutoClick
 	Global.ttlTrueMoney += (3 * (Global.doublePlusSodaClickPower - 1)) * Global.doublePlusSodaAutoClick
-
-
-func _on_mouse_entered():
-	pass # Replace with function body.

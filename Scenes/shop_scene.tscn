@@ -20,11 +20,11 @@
 [ext_resource type="Texture2D" uid="uid://cyv6l3qoarw6g" path="res://Shop/ZapClickPower1Sprite.png" id="15_tqsbh"]
 [ext_resource type="Texture2D" uid="uid://h3vxvuu05w81" path="res://Shop/BerryBurstClickPower1Sprite.png" id="16_egs01"]
 [ext_resource type="Texture2D" uid="uid://4r86rmqko6tu" path="res://Shop/LightSodaAutoClickSprite.png" id="17_36chg"]
-[ext_resource type="Script" path="res://UI/UISprites/tooltip.gd" id="17_d5uom"]
 [ext_resource type="Texture2D" uid="uid://dwwf37oqu8x1d" path="res://Shop/ZapAutoClickSprite.png" id="19_cmtwr"]
 [ext_resource type="Texture2D" uid="uid://5u220j4eu2fg" path="res://Shop/DPAutoClickSprite.png" id="20_c0ruk"]
 [ext_resource type="Texture2D" uid="uid://dwbj3lvg6hwmp" path="res://Shop/BerryBurstAutoClickSprite.png" id="22_qrlnr"]
-[ext_resource type="PackedScene" uid="uid://dw4p0gf5vkqf2" path="res://UI/UISprites/tooltip.tscn" id="25_0a0iy"]
+[ext_resource type="PackedScene" uid="uid://dw4p0gf5vkqf2" path="res://UI/tooltip.tscn" id="25_0a0iy"]
+[ext_resource type="Script" path="res://Scenes/LSTooltip.gd" id="26_qyf6t"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_vt5oh"]
 allow_unpress = true
@@ -525,8 +525,6 @@ offset_left = -47.0
 offset_right = 473.0
 offset_bottom = 74.0
 grow_horizontal = 0
-tooltip_text = "1 C/s Using Click Power
-20% Auto Click Power Per Upgrade"
 
 [node name="SpriteContainer" type="HBoxContainer" parent="UpgradesControl/LightSodaAutoClick1"]
 custom_minimum_size = Vector2(60, 0)
@@ -609,8 +607,6 @@ offset_top = 80.0
 offset_right = 473.0
 offset_bottom = 154.0
 grow_horizontal = 0
-tooltip_text = "1 C/s Using Click Power
-20% Auto Click Power Per Upgrade"
 
 [node name="SpriteContainer" type="HBoxContainer" parent="UpgradesControl/ZapSodaAutoClick1"]
 custom_minimum_size = Vector2(60, 0)
@@ -693,8 +689,6 @@ offset_top = 160.0
 offset_right = 473.0
 offset_bottom = 234.0
 grow_horizontal = 0
-tooltip_text = "1 C/s Using Click Power
-20% Auto Click Power Per Upgrade"
 
 [node name="SpriteContainer" type="HBoxContainer" parent="UpgradesControl/DPSodaAutoClick1"]
 custom_minimum_size = Vector2(60, 0)
@@ -777,8 +771,6 @@ offset_top = 240.0
 offset_right = 473.0
 offset_bottom = 314.0
 grow_horizontal = 0
-tooltip_text = "1 C/s Using Click Power
-20% Auto Click Power Per Upgrade"
 
 [node name="SpriteContainer" type="HBoxContainer" parent="UpgradesControl/BBSodaAutoClick1"]
 custom_minimum_size = Vector2(60, 0)
@@ -861,7 +853,6 @@ offset_top = 2.0
 offset_right = 1002.0
 offset_bottom = 74.0
 grow_horizontal = 0
-tooltip_text = "+1 Light Soda Click Power"
 
 [node name="SpriteContainer" type="HBoxContainer" parent="UpgradesControl/LightSodaSodaClickPower"]
 custom_minimum_size = Vector2(60, 0)
@@ -942,7 +933,6 @@ offset_top = 82.0
 offset_right = 1002.0
 offset_bottom = 154.0
 grow_horizontal = 0
-tooltip_text = "+1 Zap Soda Click Power"
 
 [node name="SpriteContainer" type="HBoxContainer" parent="UpgradesControl/ZapSodaSodaClickPower1"]
 custom_minimum_size = Vector2(60, 0)
@@ -1023,7 +1013,6 @@ offset_top = 162.0
 offset_right = 1009.0
 offset_bottom = 234.0
 grow_horizontal = 0
-tooltip_text = "+1 Double Plus Soda Click Power"
 
 [node name="SpriteContainer" type="HBoxContainer" parent="UpgradesControl/DoublePlusSodaClickPower1"]
 custom_minimum_size = Vector2(60, 0)
@@ -1104,7 +1093,6 @@ offset_top = 242.0
 offset_right = 1008.0
 offset_bottom = 314.0
 grow_horizontal = 0
-tooltip_text = "+1 Berry BursthtcDesignerClipboardCopyIdhtcDesignerClipboardCopyId Soda Click Power"
 
 [node name="SpriteContainer" type="HBoxContainer" parent="UpgradesControl/BerryBurstSodaClickPower1"]
 custom_minimum_size = Vector2(60, 0)
@@ -1175,21 +1163,75 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "60"
 
-[node name="Tooltip" type="Control" parent="UpgradesControl"]
-custom_minimum_size = Vector2(20, 20)
-anchors_preset = 0
-offset_left = -878.0
-offset_top = -42.0
-offset_right = -44.0
-offset_bottom = 183.0
-mouse_filter = 1
-script = ExtResource("17_d5uom")
-owner_path = NodePath("..")
+[node name="LSATooltip" type="Node" parent="UpgradesControl"]
+script = ExtResource("26_qyf6t")
+owner_path = NodePath("../LightSodaAutoClick1")
 visuals_res = ExtResource("25_0a0iy")
-offset_x = -30.0
-offset_y = 70.0
-padding_x = 20.0
-padding_y = 20.0
+delay = 1.0
+header = "Light Soda Auto Click"
+body1 = "1 C/s Using Click Power"
+body2 = "20% increase per upgrade"
+
+[node name="ZSATooltip" type="Node" parent="UpgradesControl"]
+script = ExtResource("26_qyf6t")
+owner_path = NodePath("../ZapSodaAutoClick1")
+visuals_res = ExtResource("25_0a0iy")
+delay = 1.0
+header = "Zap Soda Auto Click"
+body1 = "1 C/s Using Click Power"
+body2 = "20% increase per upgrade"
+
+[node name="DPSATooltip" type="Node" parent="UpgradesControl"]
+script = ExtResource("26_qyf6t")
+owner_path = NodePath("../DPSodaAutoClick1")
+visuals_res = ExtResource("25_0a0iy")
+delay = 1.0
+header = "Double Plus Soda Auto Click"
+body1 = "1 C/s Using Click Power"
+body2 = "20% increase per upgrade"
+
+[node name="BBSATooltip" type="Node" parent="UpgradesControl"]
+script = ExtResource("26_qyf6t")
+owner_path = NodePath("../BBSodaAutoClick1")
+visuals_res = ExtResource("25_0a0iy")
+delay = 1.0
+header = "Berry Burst Soda Auto Click"
+body1 = "1 C/s Using Click Power"
+body2 = "20% increase per upgrade"
+
+[node name="LSC1Tooltip" type="Node" parent="UpgradesControl"]
+script = ExtResource("26_qyf6t")
+owner_path = NodePath("../LightSodaSodaClickPower")
+visuals_res = ExtResource("25_0a0iy")
+delay = 1.0
+header = "Light Soda Click Pow"
+body1 = "+1 Light Soda"
+body2 = "+1 Money"
+
+[node name="ZSC1Tooltip" type="Node" parent="UpgradesControl"]
+script = ExtResource("26_qyf6t")
+owner_path = NodePath("../ZapSodaSodaClickPower1")
+visuals_res = ExtResource("25_0a0iy")
+delay = 1.0
+header = "Zap Soda Click Pow"
+body1 = "+1 Zap Soda"
+
+[node name="DPSC1Tooltip" type="Node" parent="UpgradesControl"]
+script = ExtResource("26_qyf6t")
+owner_path = NodePath("../DoublePlusSodaClickPower1")
+visuals_res = ExtResource("25_0a0iy")
+delay = 1.0
+header = "Double Plus Click Pow"
+body1 = "+1 Double Plus Soda"
+body2 = "+1 Money"
+
+[node name="BBSC1Tooltip" type="Node" parent="UpgradesControl"]
+script = ExtResource("26_qyf6t")
+owner_path = NodePath("../BerryBurstSodaClickPower1")
+visuals_res = ExtResource("25_0a0iy")
+delay = 1.0
+header = "Berry Burst Click Pow"
+body1 = "+1 Berry Burst Soda"
 
 [connection signal="pressed" from="ControlPanels/GoldyConversionPanel/GodlyConversionUI/VBoxContainer/ButtonMultipierContainer/GodlyX1Button" to="ControlPanels/GoldyConversionPanel/GodlyConversionUI" method="_on_godly_x_1_button_pressed"]
 [connection signal="pressed" from="ControlPanels/GoldyConversionPanel/GodlyConversionUI/VBoxContainer/ButtonMultipierContainer/GodlyX10Button" to="ControlPanels/GoldyConversionPanel/GodlyConversionUI" method="_on_godly_x_10_button_pressed"]

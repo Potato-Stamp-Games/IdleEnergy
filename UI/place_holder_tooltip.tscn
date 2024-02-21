@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://btka6pio5enk0"]
 
-[ext_resource type="Script" path="res://UI/UISprites/tooltip.gd" id="1_x0j52"]
-[ext_resource type="PackedScene" uid="uid://dw4p0gf5vkqf2" path="res://UI/UISprites/tooltip.tscn" id="2_gjgi2"]
+[ext_resource type="Script" path="res://UI/tooltip.gd" id="1_x0j52"]
+[ext_resource type="PackedScene" uid="uid://dw4p0gf5vkqf2" path="res://UI/tooltip.tscn" id="2_gjgi2"]
 
 [node name="PlaceHolderTooltip" type="NinePatchRect"]
 anchors_preset = 8
