@@ -1,6 +1,8 @@
 extends Control
 class_name shop_back
 
+
+
 #Local Equation Variables
 
 #Click Power
@@ -225,3 +227,4 @@ func _on_bb_soda_ac_1_buy_button_pressed():
 			Global.ttlAllClicks += 1
 			Global.berryBurstSodaAuto = true
 #END OF STORE UPGRADES ------------
+
