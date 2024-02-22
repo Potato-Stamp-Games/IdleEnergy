@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://h3vxvuu05w81"
-path="res://.godot/imported/BerryBurstClickPower1Sprite.png-8b0dff9206fea38b5a2bc5c58733cdc1.ctex"
+uid="uid://c344mjvyvtvlm"
+path="res://.godot/imported/BuyButtonPressedSprite.png-804309aae2b5d393f5c28adc3f30b0c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Shop/BerryBurstClickPower1Sprite.png"
-dest_files=["res://.godot/imported/BerryBurstClickPower1Sprite.png-8b0dff9206fea38b5a2bc5c58733cdc1.ctex"]
+source_file="res://Shop/Sprites/BuyButtonPressedSprite.png"
+dest_files=["res://.godot/imported/BuyButtonPressedSprite.png-804309aae2b5d393f5c28adc3f30b0c6.ctex"]
 
 [params]
 

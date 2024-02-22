@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwbj3lvg6hwmp"
-path="res://.godot/imported/BerryBurstAutoClickSprite.png-8b4b4b5ab0562a9d41072e9648901718.ctex"
+uid="uid://c8we4sceibyt3"
+path="res://.godot/imported/GodlyFavorUpgradeSprite.png-22d3be3140cba54d2c15f8cd9a4d41d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Shop/BerryBurstAutoClickSprite.png"
-dest_files=["res://.godot/imported/BerryBurstAutoClickSprite.png-8b4b4b5ab0562a9d41072e9648901718.ctex"]
+source_file="res://Shop/Sprites/GodlyFavorUpgradeSprite.png"
+dest_files=["res://.godot/imported/GodlyFavorUpgradeSprite.png-22d3be3140cba54d2c15f8cd9a4d41d4.ctex"]
 
 [params]
 

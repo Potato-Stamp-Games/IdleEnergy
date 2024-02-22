@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dry8qlpfwx1yx"
-path="res://.godot/imported/QuantumnFlucuationsUpgradeSprite.png-22c89d6e11997ef4708bc7a3fe39286c.ctex"
+uid="uid://cafxsaaq4g4dv"
+path="res://.godot/imported/UpgradeBackground.jpg-ecdd37615a779cff2ba66332dbc5f7d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Shop/QuantumnFlucuationsUpgradeSprite.png"
-dest_files=["res://.godot/imported/QuantumnFlucuationsUpgradeSprite.png-22c89d6e11997ef4708bc7a3fe39286c.ctex"]
+source_file="res://Shop/Sprites/UpgradeBackground.jpg"
+dest_files=["res://.godot/imported/UpgradeBackground.jpg-ecdd37615a779cff2ba66332dbc5f7d6.ctex"]
 
 [params]
 

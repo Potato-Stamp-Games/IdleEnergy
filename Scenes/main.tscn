@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://cqtrvtvbc2ng" path="res://Sodas/zap_soda.tscn" id="3_3sy2r"]
 [ext_resource type="PackedScene" uid="uid://ww00kfcioi7e" path="res://Sodas/berryburst_soda.tscn" id="4_0aqmg"]
 [ext_resource type="PackedScene" uid="uid://4f1g8hclro8c" path="res://UI/ui.tscn" id="5_8v3al"]
-[ext_resource type="Script" path="res://Scenes/SessionTimer.gd" id="6_hhxbr"]
+[ext_resource type="Script" path="res://UI/SessionTimer.gd" id="6_hhxbr"]
 [ext_resource type="AudioStream" uid="uid://ct1ycfmhfoft" path="res://audio/Music/IdleEnergyMusic.mp3" id="7_l3eyg"]
 
-[node name="MainControl" type="Control"]
+[node name="Main Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

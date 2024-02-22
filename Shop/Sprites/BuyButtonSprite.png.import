@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5u220j4eu2fg"
-path="res://.godot/imported/DPAutoClickSprite.png-d92d8fbb5042c296bb8ff3a970bcc7f2.ctex"
+uid="uid://jg2kc330oe2j"
+path="res://.godot/imported/BuyButtonSprite.png-50b2926e9ee48cdd43936ca7effd7b1f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Shop/DPAutoClickSprite.png"
-dest_files=["res://.godot/imported/DPAutoClickSprite.png-d92d8fbb5042c296bb8ff3a970bcc7f2.ctex"]
+source_file="res://Shop/Sprites/BuyButtonSprite.png"
+dest_files=["res://.godot/imported/BuyButtonSprite.png-50b2926e9ee48cdd43936ca7effd7b1f.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8we4sceibyt3"
-path="res://.godot/imported/GodlyFavorUpgradeSprite.png-52b7b4342eea77953616b2420b9d24ae.ctex"
+uid="uid://bjkxjgln1m710"
+path="res://.godot/imported/DoublePlusClickPower1Sprite.png-52747ded1dc685fc19f519d70e1a99b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Shop/GodlyFavorUpgradeSprite.png"
-dest_files=["res://.godot/imported/GodlyFavorUpgradeSprite.png-52b7b4342eea77953616b2420b9d24ae.ctex"]
+source_file="res://Shop/Sprites/DoublePlusClickPower1Sprite.png"
+dest_files=["res://.godot/imported/DoublePlusClickPower1Sprite.png-52747ded1dc685fc19f519d70e1a99b1.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyv6l3qoarw6g"
-path="res://.godot/imported/ZapClickPower1Sprite.png-fdd9140593286266a2a8d445a87f8bf1.ctex"
+uid="uid://dwwf37oqu8x1d"
+path="res://.godot/imported/ZapAutoClickSprite.png-fa9a39e458da14f56e2e02b7af5b0ff8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Shop/ZapClickPower1Sprite.png"
-dest_files=["res://.godot/imported/ZapClickPower1Sprite.png-fdd9140593286266a2a8d445a87f8bf1.ctex"]
+source_file="res://Shop/Sprites/ZapAutoClickSprite.png"
+dest_files=["res://.godot/imported/ZapAutoClickSprite.png-fa9a39e458da14f56e2e02b7af5b0ff8.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://btka6pio5enk0"]
 
-[ext_resource type="Script" path="res://UI/tooltip.gd" id="1_x0j52"]
-[ext_resource type="PackedScene" uid="uid://dw4p0gf5vkqf2" path="res://UI/tooltip.tscn" id="2_gjgi2"]
+[ext_resource type="Script" path="res://UI/CustomTooltip/tooltip_temp.gd" id="1_k5c6o"]
+[ext_resource type="PackedScene" uid="uid://dw4p0gf5vkqf2" path="res://UI/CustomTooltip/tooltip.tscn" id="2_gjgi2"]
 
 [node name="PlaceHolderTooltip" type="NinePatchRect"]
 anchors_preset = 8
@@ -17,5 +17,5 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("1_x0j52")
+script = ExtResource("1_k5c6o")
 visuals_res = ExtResource("2_gjgi2")
