@@ -110,12 +110,13 @@ content_scale_size = Vector2i(1000, 600)
 content_scale_aspect = 1
 
 [node name="Camera2D" type="Camera2D" parent="Control/SettingsPopUp"]
+anchor_mode = 0
 
 [node name="Settings" parent="Control/SettingsPopUp/Camera2D" instance=ExtResource("9_0wpkv")]
 
 [connection signal="pressed" from="Control/CoolMenuButton" to="." method="_on_menu_button_pressed"]
-[connection signal="close_requested" from="Control/AchievementsPopUp" to="." method="_on_achievements_pop_up_close_requested"]
 [connection signal="close_requested" from="Control/AchievementsPopUp" to="." method="_on_your_stats_pop_up_close_requested"]
+[connection signal="close_requested" from="Control/AchievementsPopUp" to="." method="_on_achievements_pop_up_close_requested"]
 [connection signal="go_back_requested" from="Control/AchievementsPopUp" to="." method="_on_your_stats_pop_up_go_back_requested"]
 [connection signal="go_back_requested" from="Control/AchievementsPopUp" to="." method="_on_achievements_pop_up_go_back_requested"]
 [connection signal="close_requested" from="Control/YourStatsPopUp" to="." method="_on_your_stats_pop_up_close_requested"]
@@ -125,7 +126,7 @@ content_scale_aspect = 1
 [connection signal="close_requested" from="Control/AboutUsPopUp" to="." method="_on_your_stats_pop_up_close_requested"]
 [connection signal="go_back_requested" from="Control/AboutUsPopUp" to="." method="_on_about_us_pop_up_go_back_requested"]
 [connection signal="go_back_requested" from="Control/AboutUsPopUp" to="." method="_on_your_stats_pop_up_go_back_requested"]
-[connection signal="close_requested" from="Control/SettingsPopUp" to="." method="_on_settings_pop_up_close_requested"]
 [connection signal="close_requested" from="Control/SettingsPopUp" to="." method="_on_your_stats_pop_up_close_requested"]
+[connection signal="close_requested" from="Control/SettingsPopUp" to="." method="_on_settings_pop_up_close_requested"]
 [connection signal="go_back_requested" from="Control/SettingsPopUp" to="." method="_on_your_stats_pop_up_go_back_requested"]
 [connection signal="go_back_requested" from="Control/SettingsPopUp" to="." method="_on_settings_pop_up_go_back_requested"]
