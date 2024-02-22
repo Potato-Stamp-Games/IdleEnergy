@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://4f1g8hclro8c"]
+[gd_scene load_steps=13 format=3 uid="uid://4f1g8hclro8c"]
 
 [ext_resource type="Script" path="res://UI/UI.gd" id="1_te6a7"]
 [ext_resource type="Texture2D" uid="uid://dtm2rg3jkbm08" path="res://Sodas/SodaSprites/SodaLightSprite_Money.png" id="3_703tr"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://ddk3urmvoqyxn" path="res://Sodas/SodaSprites/DoublePlusSodaMoneySprite.png" id="6_rmysn"]
 [ext_resource type="Texture2D" uid="uid://dnfjkwp8ct40e" path="res://Sodas/SodaSprites/BerryBurstSodaSprite_Money.png" id="6_ugtas"]
 [ext_resource type="Texture2D" uid="uid://qwkul3xnjibu" path="res://Sodas/SodaSprites/GodlySodaSprite_Money.png" id="7_wr61i"]
-[ext_resource type="Script" path="res://Shop/ShopButton.gd" id="8_8qnlb"]
 [ext_resource type="Texture2D" uid="uid://csbf0ebut366j" path="res://UI/UISprites/ShopIcon.png" id="10_e622p"]
 [ext_resource type="PackedScene" uid="uid://c568qlc5aq4cr" path="res://UI/style_center_menu_bar.tscn" id="11_vhvr6"]
 
@@ -42,6 +41,7 @@ scale = Vector2(1.25, 1.25)
 texture = SubResource("CompressedTexture2D_p66b4")
 
 [node name="MainLayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
 follow_viewport_enabled = true
 
 [node name="Control" type="Control" parent="MainLayer"]
@@ -229,24 +229,19 @@ vertical_alignment = 1
 [node name="ShopBoxContainer" type="BoxContainer" parent="MainLayer/Control"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-offset_left = 20.0
-offset_top = 800.0
+offset_top = 821.0
 offset_right = 130.0
-offset_bottom = 910.0
-scale = Vector2(2.5, 2.5)
+offset_bottom = 951.0
+scale = Vector2(2, 2)
 
 [node name="ShopButton" type="TextureButton" parent="MainLayer/Control/ShopBoxContainer"]
-custom_minimum_size = Vector2(110, 110)
+custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
 size_flags_horizontal = 4
 action_mode = 0
+texture_normal = ExtResource("10_e622p")
+ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("8_8qnlb")
-
-[node name="ShopButtonSprite" type="Sprite2D" parent="MainLayer/Control/ShopBoxContainer/ShopButton"]
-position = Vector2(52, 50)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("10_e622p")
 
 [node name="ExitBoxContainer" type="BoxContainer" parent="MainLayer/Control"]
 custom_minimum_size = Vector2(200, 100)
@@ -262,6 +257,7 @@ grow_horizontal = 0
 grow_vertical = 0
 
 [node name="StyleCenterMenu" parent="." instance=ExtResource("11_vhvr6")]
+layer = 5
 offset = Vector2(1650, 0)
 scale = Vector2(1.2, 1.2)
 transform = Transform2D(1.2, 0, 0, 1.2, 1650, 0)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjkxjgln1m710"
-path="res://.godot/imported/DoublePlusClickPower1Sprite.png-4c034dab66669bb168577fe9a843fb30.ctex"
+uid="uid://b0ft1dbyjqfqd"
+path="res://.godot/imported/NewAgeUpgradeSprite.png-199625fd55f3db3f1a0a0b838d302e93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Shop/DoublePlusClickPower1Sprite.png"
-dest_files=["res://.godot/imported/DoublePlusClickPower1Sprite.png-4c034dab66669bb168577fe9a843fb30.ctex"]
+source_file="res://Shop/Sprites/NewAgeUpgradeSprite.png"
+dest_files=["res://.godot/imported/NewAgeUpgradeSprite.png-199625fd55f3db3f1a0a0b838d302e93.ctex"]
 
 [params]
 

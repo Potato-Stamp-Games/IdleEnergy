@@ -1,0 +1,1066 @@
+[gd_scene load_steps=17 format=3 uid="uid://cw66f47d2obuk"]
+
+[ext_resource type="Script" path="res://Shop/shop_back.gd" id="1_sxfpw"]
+[ext_resource type="Texture2D" uid="uid://cafxsaaq4g4dv" path="res://Shop/Sprites/UpgradeBackground.jpg" id="2_arcqi"]
+[ext_resource type="Texture2D" uid="uid://4r86rmqko6tu" path="res://Shop/Sprites/LightSodaAutoClickSprite.png" id="3_jc3wx"]
+[ext_resource type="Texture2D" uid="uid://jg2kc330oe2j" path="res://Shop/Sprites/BuyButtonSprite.png" id="4_hswoi"]
+[ext_resource type="Texture2D" uid="uid://dwwf37oqu8x1d" path="res://Shop/Sprites/ZapAutoClickSprite.png" id="4_ow3pm"]
+[ext_resource type="Texture2D" uid="uid://5u220j4eu2fg" path="res://Shop/Sprites/DPAutoClickSprite.png" id="5_im56k"]
+[ext_resource type="Texture2D" uid="uid://c344mjvyvtvlm" path="res://Shop/Sprites/BuyButtonPressedSprite.png" id="5_ys35p"]
+[ext_resource type="Texture2D" uid="uid://dwbj3lvg6hwmp" path="res://Shop/Sprites/BerryBurstAutoClickSprite.png" id="6_u27tq"]
+[ext_resource type="Texture2D" uid="uid://nfwb5rkhpiwq" path="res://Shop/Sprites/LightClickPower1Sprite.png" id="7_1l6bd"]
+[ext_resource type="Texture2D" uid="uid://cyv6l3qoarw6g" path="res://Shop/Sprites/ZapClickPower1Sprite.png" id="8_ob24m"]
+[ext_resource type="Texture2D" uid="uid://bjkxjgln1m710" path="res://Shop/Sprites/DoublePlusClickPower1Sprite.png" id="9_s17d6"]
+[ext_resource type="Texture2D" uid="uid://h3vxvuu05w81" path="res://Shop/Sprites/BerryBurstClickPower1Sprite.png" id="10_wi8iv"]
+[ext_resource type="Script" path="res://UI/tooltip_template_file.gd" id="11_eeqtr"]
+[ext_resource type="PackedScene" uid="uid://dw4p0gf5vkqf2" path="res://UI/CustomTooltip/tooltip.tscn" id="12_8qiyg"]
+[ext_resource type="Texture2D" uid="uid://c8we4sceibyt3" path="res://Shop/Sprites/GodlyFavorUpgradeSprite.png" id="13_js2yy"]
+[ext_resource type="Texture2D" uid="uid://b0ft1dbyjqfqd" path="res://Shop/Sprites/NewAgeUpgradeSprite.png" id="14_0n58q"]
+
+[node name="ShopUpgradesControl" type="ScrollContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -860.0
+offset_bottom = 1923.0
+grow_horizontal = 2
+grow_vertical = 2
+follow_focus = true
+script = ExtResource("1_sxfpw")
+
+[node name="UpgradesControl" type="Control" parent="."]
+show_behind_parent = true
+custom_minimum_size = Vector2(1060, 3000)
+layout_mode = 2
+
+[node name="StoreBackground" type="TextureRect" parent="UpgradesControl"]
+custom_minimum_size = Vector2(800, 3000)
+layout_mode = 1
+offset_right = 1333.0
+offset_bottom = 2192.0
+texture = ExtResource("2_arcqi")
+expand_mode = 4
+
+[node name="Store Header" type="Panel" parent="UpgradesControl"]
+layout_mode = 0
+offset_right = 1057.0
+offset_bottom = 51.0
+
+[node name="Header" type="Label" parent="UpgradesControl"]
+layout_mode = 1
+offset_right = 1052.0
+offset_bottom = 45.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 30
+text = "Hover over an upgrade to see more details!
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LightSodaAutoClick1" type="BoxContainer" parent="UpgradesControl"]
+custom_minimum_size = Vector2(500, 75)
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1058.0
+offset_top = 52.0
+offset_right = -558.0
+offset_bottom = 126.0
+grow_horizontal = 0
+
+[node name="SpriteContainer" type="HBoxContainer" parent="UpgradesControl/LightSodaAutoClick1"]
+custom_minimum_size = Vector2(60, 0)
+layout_direction = 2
+layout_mode = 2
+
+[node name="ClickPower1Sprite" type="Sprite2D" parent="UpgradesControl/LightSodaAutoClick1/SpriteContainer"]
+position = Vector2(32, 35)
+scale = Vector2(0.149785, 0.149785)
+texture = ExtResource("3_jc3wx")
+
+[node name="LightSoda_AC1_BuyButton" type="TextureButton" parent="UpgradesControl/LightSodaAutoClick1"]
+custom_minimum_size = Vector2(95, 75)
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+mouse_filter = 1
+action_mode = 0
+texture_normal = ExtResource("4_hswoi")
+texture_pressed = ExtResource("5_ys35p")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="LightSodaCostLabel" type="Label" parent="UpgradesControl/LightSodaAutoClick1"]
+custom_minimum_size = Vector2(78, 10)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.831373, 0.831373, 0.831373, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 24
+text = "Money Cost:
+Godly Soda Cost:"
+horizontal_alignment = 2
+
+[node name="CostContainer" type="HBoxContainer" parent="UpgradesControl/LightSodaAutoClick1"]
+custom_minimum_size = Vector2(40, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MoneyCostContainer" type="VBoxContainer" parent="UpgradesControl/LightSodaAutoClick1/CostContainer"]
+custom_minimum_size = Vector2(40, 20)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="LM_AC_CostLabel" type="Label" parent="UpgradesControl/LightSodaAutoClick1/CostContainer/MoneyCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 25
+text = "000"
+
+[node name="SodaCostContainer" type="VBoxContainer" parent="UpgradesControl/LightSodaAutoClick1/CostContainer/MoneyCostContainer"]
+layout_mode = 2
+
+[node name="LS_AC_CostLabel" type="Label" parent="UpgradesControl/LightSodaAutoClick1/CostContainer/MoneyCostContainer/SodaCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.788235, 0.631373, 0.0431373, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 25
+text = "60"
+
+[node name="ZapSodaAutoClick1" type="BoxContainer" parent="UpgradesControl"]
+custom_minimum_size = Vector2(500, 75)
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1058.0
+offset_top = 127.0
+offset_right = -558.0
+offset_bottom = 202.0
+grow_horizontal = 0
+
+[node name="SpriteContainer" type="HBoxContainer" parent="UpgradesControl/ZapSodaAutoClick1"]
+custom_minimum_size = Vector2(60, 0)
+layout_direction = 2
+layout_mode = 2
+
+[node name="ClickPower1Sprite" type="Sprite2D" parent="UpgradesControl/ZapSodaAutoClick1/SpriteContainer"]
+position = Vector2(32, 35)
+scale = Vector2(0.149785, 0.149785)
+texture = ExtResource("4_ow3pm")
+
+[node name="ZapSoda_AC1_BuyButton" type="TextureButton" parent="UpgradesControl/ZapSodaAutoClick1"]
+custom_minimum_size = Vector2(95, 75)
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 1
+action_mode = 0
+texture_normal = ExtResource("4_hswoi")
+texture_pressed = ExtResource("5_ys35p")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="CostLabel" type="Label" parent="UpgradesControl/ZapSodaAutoClick1"]
+custom_minimum_size = Vector2(78, 10)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.831373, 0.831373, 0.831373, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 24
+text = "Money Cost:
+Godly Soda Cost:"
+horizontal_alignment = 2
+
+[node name="CostContainer" type="HBoxContainer" parent="UpgradesControl/ZapSodaAutoClick1"]
+custom_minimum_size = Vector2(40, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MoneyCostContainer" type="VBoxContainer" parent="UpgradesControl/ZapSodaAutoClick1/CostContainer"]
+custom_minimum_size = Vector2(40, 20)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="ZM_AC_CostLabel" type="Label" parent="UpgradesControl/ZapSodaAutoClick1/CostContainer/MoneyCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 25
+text = "60"
+
+[node name="SodaCostContainer" type="VBoxContainer" parent="UpgradesControl/ZapSodaAutoClick1/CostContainer/MoneyCostContainer"]
+layout_mode = 2
+
+[node name="ZS_AC_CostLabel" type="Label" parent="UpgradesControl/ZapSodaAutoClick1/CostContainer/MoneyCostContainer/SodaCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.788235, 0.631373, 0.0431373, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 25
+text = "60"
+
+[node name="DPSodaAutoClick1" type="BoxContainer" parent="UpgradesControl"]
+custom_minimum_size = Vector2(500, 75)
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1058.0
+offset_top = 202.0
+offset_right = -558.0
+offset_bottom = 277.0
+grow_horizontal = 0
+
+[node name="SpriteContainer" type="HBoxContainer" parent="UpgradesControl/DPSodaAutoClick1"]
+custom_minimum_size = Vector2(60, 0)
+layout_direction = 2
+layout_mode = 2
+
+[node name="ClickPower1Sprite" type="Sprite2D" parent="UpgradesControl/DPSodaAutoClick1/SpriteContainer"]
+position = Vector2(32, 35)
+scale = Vector2(0.149785, 0.149785)
+texture = ExtResource("5_im56k")
+
+[node name="DPSoda_AC1_BuyButton" type="TextureButton" parent="UpgradesControl/DPSodaAutoClick1"]
+custom_minimum_size = Vector2(95, 75)
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 1
+action_mode = 0
+texture_normal = ExtResource("4_hswoi")
+texture_pressed = ExtResource("5_ys35p")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="CostLabel" type="Label" parent="UpgradesControl/DPSodaAutoClick1"]
+custom_minimum_size = Vector2(78, 10)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.831373, 0.831373, 0.831373, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 24
+text = "Money Cost:
+Godly Soda Cost:"
+horizontal_alignment = 2
+
+[node name="CostContainer" type="HBoxContainer" parent="UpgradesControl/DPSodaAutoClick1"]
+custom_minimum_size = Vector2(40, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MoneyCostContainer" type="VBoxContainer" parent="UpgradesControl/DPSodaAutoClick1/CostContainer"]
+custom_minimum_size = Vector2(40, 20)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="DPM_AC_CostLabel" type="Label" parent="UpgradesControl/DPSodaAutoClick1/CostContainer/MoneyCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 25
+text = "60"
+
+[node name="SodaCostContainer" type="VBoxContainer" parent="UpgradesControl/DPSodaAutoClick1/CostContainer/MoneyCostContainer"]
+layout_mode = 2
+
+[node name="DPS_AC_CostLabel" type="Label" parent="UpgradesControl/DPSodaAutoClick1/CostContainer/MoneyCostContainer/SodaCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.788235, 0.631373, 0.0431373, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 25
+text = "60"
+
+[node name="BBSodaAutoClick1" type="BoxContainer" parent="UpgradesControl"]
+custom_minimum_size = Vector2(500, 75)
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1058.0
+offset_top = 277.0
+offset_right = -558.0
+offset_bottom = 352.0
+grow_horizontal = 0
+
+[node name="SpriteContainer" type="HBoxContainer" parent="UpgradesControl/BBSodaAutoClick1"]
+custom_minimum_size = Vector2(60, 0)
+layout_direction = 2
+layout_mode = 2
+
+[node name="ClickPower1Sprite" type="Sprite2D" parent="UpgradesControl/BBSodaAutoClick1/SpriteContainer"]
+position = Vector2(32, 35)
+scale = Vector2(0.149785, 0.149785)
+texture = ExtResource("6_u27tq")
+
+[node name="BBSoda_AC1_BuyButton" type="TextureButton" parent="UpgradesControl/BBSodaAutoClick1"]
+custom_minimum_size = Vector2(95, 75)
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 1
+action_mode = 0
+texture_normal = ExtResource("4_hswoi")
+texture_pressed = ExtResource("5_ys35p")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="CostLabel" type="Label" parent="UpgradesControl/BBSodaAutoClick1"]
+custom_minimum_size = Vector2(78, 10)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.831373, 0.831373, 0.831373, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 24
+text = "Money Cost:
+Godly Soda Cost:"
+horizontal_alignment = 2
+
+[node name="CostContainer" type="HBoxContainer" parent="UpgradesControl/BBSodaAutoClick1"]
+custom_minimum_size = Vector2(40, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MoneyCostContainer" type="VBoxContainer" parent="UpgradesControl/BBSodaAutoClick1/CostContainer"]
+custom_minimum_size = Vector2(40, 20)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="BBM_AC_CostLabel" type="Label" parent="UpgradesControl/BBSodaAutoClick1/CostContainer/MoneyCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 15
+theme_override_font_sizes/font_size = 25
+text = "60"
+
+[node name="SodaCostContainer" type="VBoxContainer" parent="UpgradesControl/BBSodaAutoClick1/CostContainer/MoneyCostContainer"]
+layout_mode = 2
+
+[node name="BBS_AC_CostLabel" type="Label" parent="UpgradesControl/BBSodaAutoClick1/CostContainer/MoneyCostContainer/SodaCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.784314, 0.631373, 0.0431373, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 15
+theme_override_font_sizes/font_size = 25
+text = "60"
+
+[node name="LightSodaSodaClickPower" type="BoxContainer" parent="UpgradesControl"]
+custom_minimum_size = Vector2(500, 75)
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -529.0
+offset_top = 52.0
+offset_right = -29.0
+offset_bottom = 127.0
+grow_horizontal = 0
+
+[node name="SpriteContainer" type="HBoxContainer" parent="UpgradesControl/LightSodaSodaClickPower"]
+custom_minimum_size = Vector2(60, 0)
+layout_direction = 2
+layout_mode = 2
+
+[node name="ClickPower1Sprite" type="Sprite2D" parent="UpgradesControl/LightSodaSodaClickPower/SpriteContainer"]
+position = Vector2(32, 35)
+scale = Vector2(0.149785, 0.149785)
+texture = ExtResource("7_1l6bd")
+
+[node name="LightSoda_CP1_BuyButton" type="TextureButton" parent="UpgradesControl/LightSodaSodaClickPower"]
+custom_minimum_size = Vector2(95, 75)
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 1
+action_mode = 0
+texture_normal = ExtResource("4_hswoi")
+texture_pressed = ExtResource("5_ys35p")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="CostLabel" type="Label" parent="UpgradesControl/LightSodaSodaClickPower"]
+custom_minimum_size = Vector2(165, 10)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.831373, 0.831373, 0.831373, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 24
+text = "Money Cost:
+L Soda Cost:"
+horizontal_alignment = 2
+
+[node name="CostContainer" type="HBoxContainer" parent="UpgradesControl/LightSodaSodaClickPower"]
+custom_minimum_size = Vector2(40, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MoneyCostContainer" type="VBoxContainer" parent="UpgradesControl/LightSodaSodaClickPower/CostContainer"]
+custom_minimum_size = Vector2(40, 20)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="LM_CP_CostLabel" type="Label" parent="UpgradesControl/LightSodaSodaClickPower/CostContainer/MoneyCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 24
+text = "60"
+
+[node name="SodaCostContainer" type="VBoxContainer" parent="UpgradesControl/LightSodaSodaClickPower/CostContainer/MoneyCostContainer"]
+layout_mode = 2
+
+[node name="LS_CP_CostLabel" type="Label" parent="UpgradesControl/LightSodaSodaClickPower/CostContainer/MoneyCostContainer/SodaCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.592157, 0.858824, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 24
+text = "60"
+
+[node name="ZapSodaSodaClickPower1" type="BoxContainer" parent="UpgradesControl"]
+custom_minimum_size = Vector2(500, 75)
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -529.0
+offset_top = 127.0
+offset_right = -29.0
+offset_bottom = 202.0
+grow_horizontal = 0
+
+[node name="SpriteContainer" type="HBoxContainer" parent="UpgradesControl/ZapSodaSodaClickPower1"]
+custom_minimum_size = Vector2(60, 0)
+layout_direction = 2
+layout_mode = 2
+
+[node name="ClickPower1Sprite" type="Sprite2D" parent="UpgradesControl/ZapSodaSodaClickPower1/SpriteContainer"]
+position = Vector2(32, 35)
+scale = Vector2(0.149785, 0.149785)
+texture = ExtResource("8_ob24m")
+
+[node name="ZapSoda_CP1_BuyButton" type="TextureButton" parent="UpgradesControl/ZapSodaSodaClickPower1"]
+custom_minimum_size = Vector2(95, 75)
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 1
+action_mode = 0
+texture_normal = ExtResource("4_hswoi")
+texture_pressed = ExtResource("5_ys35p")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ZapCostLabel" type="Label" parent="UpgradesControl/ZapSodaSodaClickPower1"]
+custom_minimum_size = Vector2(165, 10)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.831373, 0.831373, 0.831373, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 24
+text = "Money Cost:
+Z Soda Cost:"
+horizontal_alignment = 2
+
+[node name="CostContainer" type="HBoxContainer" parent="UpgradesControl/ZapSodaSodaClickPower1"]
+custom_minimum_size = Vector2(40, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MoneyCostContainer" type="VBoxContainer" parent="UpgradesControl/ZapSodaSodaClickPower1/CostContainer"]
+custom_minimum_size = Vector2(40, 20)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="ZM_CP_CostLabel" type="Label" parent="UpgradesControl/ZapSodaSodaClickPower1/CostContainer/MoneyCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 24
+text = "60"
+
+[node name="SodaCostContainer" type="VBoxContainer" parent="UpgradesControl/ZapSodaSodaClickPower1/CostContainer/MoneyCostContainer"]
+layout_mode = 2
+
+[node name="ZS_CP_CostLabel" type="Label" parent="UpgradesControl/ZapSodaSodaClickPower1/CostContainer/MoneyCostContainer/SodaCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.560784, 1, 0.733333, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 24
+text = "60"
+
+[node name="DoublePlusSodaClickPower1" type="BoxContainer" parent="UpgradesControl"]
+custom_minimum_size = Vector2(500, 75)
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -529.0
+offset_top = 202.0
+offset_right = -29.0
+offset_bottom = 277.0
+grow_horizontal = 0
+
+[node name="SpriteContainer" type="HBoxContainer" parent="UpgradesControl/DoublePlusSodaClickPower1"]
+custom_minimum_size = Vector2(60, 0)
+layout_direction = 2
+layout_mode = 2
+
+[node name="ClickPower1Sprite" type="Sprite2D" parent="UpgradesControl/DoublePlusSodaClickPower1/SpriteContainer"]
+position = Vector2(32, 35)
+scale = Vector2(0.149785, 0.149785)
+texture = ExtResource("9_s17d6")
+
+[node name="DoublePlusSoda_CP1_BuyButton" type="TextureButton" parent="UpgradesControl/DoublePlusSodaClickPower1"]
+custom_minimum_size = Vector2(95, 75)
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 1
+action_mode = 0
+texture_normal = ExtResource("4_hswoi")
+texture_pressed = ExtResource("5_ys35p")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="CostLabel" type="Label" parent="UpgradesControl/DoublePlusSodaClickPower1"]
+custom_minimum_size = Vector2(165, 10)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.831373, 0.831373, 0.831373, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 24
+text = "Money Cost:
+DP Soda Cost:"
+horizontal_alignment = 2
+
+[node name="CostContainer" type="HBoxContainer" parent="UpgradesControl/DoublePlusSodaClickPower1"]
+custom_minimum_size = Vector2(40, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MoneyCostContainer" type="VBoxContainer" parent="UpgradesControl/DoublePlusSodaClickPower1/CostContainer"]
+custom_minimum_size = Vector2(40, 20)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="DPM_CP_CostLabel" type="Label" parent="UpgradesControl/DoublePlusSodaClickPower1/CostContainer/MoneyCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 24
+text = "60"
+
+[node name="SodaCostContainer" type="VBoxContainer" parent="UpgradesControl/DoublePlusSodaClickPower1/CostContainer/MoneyCostContainer"]
+layout_mode = 2
+
+[node name="DPS_CP_CostLabel" type="Label" parent="UpgradesControl/DoublePlusSodaClickPower1/CostContainer/MoneyCostContainer/SodaCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.768627, 0.219608, 0.34902, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 24
+text = "60"
+
+[node name="BerryBurstSodaClickPower1" type="BoxContainer" parent="UpgradesControl"]
+custom_minimum_size = Vector2(500, 75)
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -529.0
+offset_top = 277.0
+offset_right = -29.0
+offset_bottom = 352.0
+grow_horizontal = 0
+
+[node name="SpriteContainer" type="HBoxContainer" parent="UpgradesControl/BerryBurstSodaClickPower1"]
+custom_minimum_size = Vector2(60, 0)
+layout_direction = 2
+layout_mode = 2
+
+[node name="ClickPower1Sprite" type="Sprite2D" parent="UpgradesControl/BerryBurstSodaClickPower1/SpriteContainer"]
+position = Vector2(32, 35)
+scale = Vector2(0.149785, 0.149785)
+texture = ExtResource("10_wi8iv")
+
+[node name="BerryBurstSoda_CP1_BuyButton" type="TextureButton" parent="UpgradesControl/BerryBurstSodaClickPower1"]
+custom_minimum_size = Vector2(95, 75)
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 1
+action_mode = 0
+texture_normal = ExtResource("4_hswoi")
+texture_pressed = ExtResource("5_ys35p")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="CostLabel" type="Label" parent="UpgradesControl/BerryBurstSodaClickPower1"]
+custom_minimum_size = Vector2(165, 10)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.831373, 0.831373, 0.831373, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 24
+text = "Money Cost:
+BB Soda Cost:"
+horizontal_alignment = 2
+
+[node name="CostContainer" type="HBoxContainer" parent="UpgradesControl/BerryBurstSodaClickPower1"]
+custom_minimum_size = Vector2(40, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MoneyCostContainer" type="VBoxContainer" parent="UpgradesControl/BerryBurstSodaClickPower1/CostContainer"]
+custom_minimum_size = Vector2(40, 20)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="BBM_CP_CostLabel" type="Label" parent="UpgradesControl/BerryBurstSodaClickPower1/CostContainer/MoneyCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 24
+text = "60"
+
+[node name="SodaCostContainer" type="VBoxContainer" parent="UpgradesControl/BerryBurstSodaClickPower1/CostContainer/MoneyCostContainer"]
+layout_mode = 2
+
+[node name="BBS_CP_CostLabel" type="Label" parent="UpgradesControl/BerryBurstSodaClickPower1/CostContainer/MoneyCostContainer/SodaCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.643137, 0.52549, 0.980392, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 15
+theme_override_font_sizes/font_size = 24
+text = "60"
+
+[node name="GodlyFavor" type="BoxContainer" parent="UpgradesControl"]
+custom_minimum_size = Vector2(500, 75)
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1057.0
+offset_top = 400.0
+offset_right = -557.0
+offset_bottom = 475.0
+grow_horizontal = 0
+
+[node name="SpriteContainer" type="HBoxContainer" parent="UpgradesControl/GodlyFavor"]
+custom_minimum_size = Vector2(60, 0)
+layout_direction = 2
+layout_mode = 2
+
+[node name="ClickPower1Sprite" type="Sprite2D" parent="UpgradesControl/GodlyFavor/SpriteContainer"]
+position = Vector2(32, 38)
+scale = Vector2(0.149785, 0.149785)
+texture = ExtResource("13_js2yy")
+
+[node name="GodlyFavor_BuyButton" type="TextureButton" parent="UpgradesControl/GodlyFavor"]
+custom_minimum_size = Vector2(95, 75)
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 1
+action_mode = 0
+texture_normal = ExtResource("4_hswoi")
+texture_pressed = ExtResource("5_ys35p")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="CostLabel" type="Label" parent="UpgradesControl/GodlyFavor"]
+custom_minimum_size = Vector2(165, 10)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.831373, 0.831373, 0.831373, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 24
+text = "Money Cost:
+Godly Soda Cost:"
+horizontal_alignment = 2
+
+[node name="CostContainer" type="HBoxContainer" parent="UpgradesControl/GodlyFavor"]
+custom_minimum_size = Vector2(40, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MoneyCostContainer" type="VBoxContainer" parent="UpgradesControl/GodlyFavor/CostContainer"]
+custom_minimum_size = Vector2(40, 20)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="GodlyFM_CostLabel" type="Label" parent="UpgradesControl/GodlyFavor/CostContainer/MoneyCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 24
+text = "60"
+
+[node name="SodaCostContainer" type="VBoxContainer" parent="UpgradesControl/GodlyFavor/CostContainer/MoneyCostContainer"]
+layout_mode = 2
+
+[node name="GodlyFS_CostLabel" type="Label" parent="UpgradesControl/GodlyFavor/CostContainer/MoneyCostContainer/SodaCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.784314, 0.631373, 0.0431373, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 15
+theme_override_font_sizes/font_size = 24
+text = "60"
+
+[node name="NewAge" type="BoxContainer" parent="UpgradesControl"]
+custom_minimum_size = Vector2(500, 75)
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -529.0
+offset_top = 400.0
+offset_right = -29.0
+offset_bottom = 475.0
+grow_horizontal = 0
+
+[node name="SpriteContainer" type="HBoxContainer" parent="UpgradesControl/NewAge"]
+custom_minimum_size = Vector2(60, 0)
+layout_direction = 2
+layout_mode = 2
+
+[node name="ClickPower1Sprite" type="Sprite2D" parent="UpgradesControl/NewAge/SpriteContainer"]
+position = Vector2(32, 38)
+scale = Vector2(0.149785, 0.149785)
+texture = ExtResource("14_0n58q")
+
+[node name="NewAge_BuyButton" type="TextureButton" parent="UpgradesControl/NewAge"]
+custom_minimum_size = Vector2(95, 75)
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 1
+action_mode = 0
+texture_normal = ExtResource("4_hswoi")
+texture_pressed = ExtResource("5_ys35p")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="CostLabel" type="Label" parent="UpgradesControl/NewAge"]
+custom_minimum_size = Vector2(165, 10)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.831373, 0.831373, 0.831373, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 24
+text = "Money Cost:
+Godly Soda Cost:"
+horizontal_alignment = 2
+
+[node name="CostContainer" type="HBoxContainer" parent="UpgradesControl/NewAge"]
+custom_minimum_size = Vector2(40, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MoneyCostContainer" type="VBoxContainer" parent="UpgradesControl/NewAge/CostContainer"]
+custom_minimum_size = Vector2(40, 20)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="NewAgeM_CostLabel" type="Label" parent="UpgradesControl/NewAge/CostContainer/MoneyCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 24
+text = "60"
+
+[node name="SodaCostContainer" type="VBoxContainer" parent="UpgradesControl/NewAge/CostContainer/MoneyCostContainer"]
+layout_mode = 2
+
+[node name="NewAgeS_CostLabel" type="Label" parent="UpgradesControl/NewAge/CostContainer/MoneyCostContainer/SodaCostContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.784314, 0.631373, 0.0431373, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 15
+theme_override_font_sizes/font_size = 24
+text = "60"
+
+[node name="TooltipsControl" type="Control" parent="UpgradesControl"]
+layout_mode = 2
+anchors_preset = 0
+
+[node name="LSClickPow1Tooltip" type="Node" parent="UpgradesControl/TooltipsControl"]
+script = ExtResource("11_eeqtr")
+owner_path = NodePath("../../LightSodaSodaClickPower")
+visuals_res = ExtResource("12_8qiyg")
+delay = 0.3
+offset_x = 250.0
+offset_y = 75.0
+padding_x = 240.0
+padding_y = 68.0
+header = "Light Soda Click Pow"
+body1 = "+1 Click Power"
+body2 = "\"Light it up!\""
+body3 = "~No Refunds~"
+
+[node name="ZSClickPow1Tooltip" type="Node" parent="UpgradesControl/TooltipsControl"]
+script = ExtResource("11_eeqtr")
+owner_path = NodePath("../../ZapSodaSodaClickPower1")
+visuals_res = ExtResource("12_8qiyg")
+delay = 0.3
+offset_x = 250.0
+offset_y = 75.0
+padding_x = 240.0
+padding_y = 68.0
+header = "Zap Soda Click Pow"
+body1 = "+1 Click Power"
+body2 = "\". . . and his soda was electric!\""
+body3 = "~No Refunds~"
+
+[node name="DPClickPow1Tooltip" type="Node" parent="UpgradesControl/TooltipsControl"]
+script = ExtResource("11_eeqtr")
+owner_path = NodePath("../../DoublePlusSodaClickPower1")
+visuals_res = ExtResource("12_8qiyg")
+delay = 0.3
+offset_x = 250.0
+offset_y = 75.0
+padding_x = 240.0
+padding_y = 68.0
+header = "DB Soda Click Pow"
+body1 = "+1 Click Power"
+body2 = "\"Double Plus, Double, Double, Double Plus\""
+body3 = "~No Refunds~"
+
+[node name="BBClickPow1Tooltip" type="Node" parent="UpgradesControl/TooltipsControl"]
+script = ExtResource("11_eeqtr")
+owner_path = NodePath("../../BerryBurstSodaClickPower1")
+visuals_res = ExtResource("12_8qiyg")
+delay = 0.3
+offset_x = 250.0
+offset_y = 75.0
+padding_x = 240.0
+padding_y = 68.0
+header = "BB Soda Click Pow"
+body1 = "+1 Click Power"
+body2 = "\"Don't be bursting my berries\""
+body3 = "~No Refunds~"
+
+[node name="LSAutoClickTooltip" type="Node" parent="UpgradesControl/TooltipsControl"]
+script = ExtResource("11_eeqtr")
+owner_path = NodePath("../../LightSodaAutoClick1")
+visuals_res = ExtResource("12_8qiyg")
+delay = 0.3
+offset_x = 250.0
+offset_y = 75.0
+padding_x = 240.0
+padding_y = 68.0
+header = "LS Auto Click Pow"
+body1 = "+20% Auto Click Gain(1 Click/sec)"
+body2 = "\"Technique . . . is for lightweights\""
+body3 = "~No Refunds~"
+
+[node name="ZSAutoClickTooltip" type="Node" parent="UpgradesControl/TooltipsControl"]
+script = ExtResource("11_eeqtr")
+owner_path = NodePath("../../ZapSodaAutoClick1")
+visuals_res = ExtResource("12_8qiyg")
+delay = 0.3
+offset_x = 250.0
+offset_y = 75.0
+padding_x = 240.0
+padding_y = 68.0
+header = "ZS Auto Click Pow"
+body1 = "+20% Auto Click Gain(1 Click/sec)"
+body2 = "\"I am speed\""
+body3 = "~No Refunds~"
+
+[node name="DPAutoClickTooltip" type="Node" parent="UpgradesControl/TooltipsControl"]
+script = ExtResource("11_eeqtr")
+owner_path = NodePath("../../DPSodaAutoClick1")
+visuals_res = ExtResource("12_8qiyg")
+delay = 0.3
+offset_x = 250.0
+offset_y = 75.0
+padding_x = 240.0
+padding_y = 68.0
+header = "DB Soda Auto Click Pow"
+body1 = "+20% Auto Click Gain(1 Click/sec)"
+body2 = "\"Double the money, plus the honey\""
+body3 = "~No Refunds~"
+
+[node name="BBAutoClickTooltip" type="Node" parent="UpgradesControl/TooltipsControl"]
+script = ExtResource("11_eeqtr")
+owner_path = NodePath("../../BBSodaAutoClick1")
+visuals_res = ExtResource("12_8qiyg")
+delay = 0.3
+offset_x = 250.0
+offset_y = 75.0
+padding_x = 240.0
+padding_y = 68.0
+header = "BB Auto Click Pow"
+body1 = "+20% Auto Click Gain(1 Click/sec)"
+body2 = "\"I wanna be the berry best\""
+body3 = "~No Refunds~"
+
+[node name="GodlyFavorTooltip" type="Node" parent="UpgradesControl/TooltipsControl"]
+script = ExtResource("11_eeqtr")
+owner_path = NodePath("../../GodlyFavor")
+visuals_res = ExtResource("12_8qiyg")
+delay = 0.3
+offset_x = 250.0
+offset_y = 75.0
+padding_x = 240.0
+padding_y = 68.0
+header = "Godly Favor"
+body1 = "+1 Godly Soda Per Click"
+body2 = "\"I'm beginnin' to feel like a Click God\""
+body3 = "~No Refunds~"
+
+[node name="NewAgeTooltip" type="Node" parent="UpgradesControl/TooltipsControl"]
+script = ExtResource("11_eeqtr")
+owner_path = NodePath("../../NewAge")
+visuals_res = ExtResource("12_8qiyg")
+delay = 0.3
+offset_x = 250.0
+offset_y = 75.0
+padding_x = 240.0
+padding_y = 68.0
+header = "New Age"
+body1 = "+1.5 Soda Per Click"
+body2 = "\"A whole new age\""
+body3 = "~No Refunds~"
+
+[connection signal="pressed" from="UpgradesControl/LightSodaAutoClick1/LightSoda_AC1_BuyButton" to="." method="_on_light_soda_ac_1_buy_button_pressed"]
+[connection signal="pressed" from="UpgradesControl/ZapSodaAutoClick1/ZapSoda_AC1_BuyButton" to="." method="_on_zap_soda_ac_1_buy_button_pressed"]
+[connection signal="pressed" from="UpgradesControl/DPSodaAutoClick1/DPSoda_AC1_BuyButton" to="." method="_on_dp_soda_ac_1_buy_button_pressed"]
+[connection signal="pressed" from="UpgradesControl/BBSodaAutoClick1/BBSoda_AC1_BuyButton" to="." method="_on_bb_soda_ac_1_buy_button_pressed"]
+[connection signal="pressed" from="UpgradesControl/LightSodaSodaClickPower/LightSoda_CP1_BuyButton" to="." method="_on_light_soda_click_power_plus1"]
+[connection signal="pressed" from="UpgradesControl/ZapSodaSodaClickPower1/ZapSoda_CP1_BuyButton" to="." method="_on_zap_soda_click_power_plus1"]
+[connection signal="pressed" from="UpgradesControl/DoublePlusSodaClickPower1/DoublePlusSoda_CP1_BuyButton" to="." method="_on_double_plus_soda_click_power_plus1"]
+[connection signal="pressed" from="UpgradesControl/BerryBurstSodaClickPower1/BerryBurstSoda_CP1_BuyButton" to="." method="_on_berry_burst_soda_click_power_plus1"]
+[connection signal="pressed" from="UpgradesControl/GodlyFavor/GodlyFavor_BuyButton" to="." method="_on_godly_favor_buy_button_pressed"]
+[connection signal="pressed" from="UpgradesControl/NewAge/NewAge_BuyButton" to="." method="_on_new_age_buy_button_pressed"]

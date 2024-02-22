@@ -1,5 +1,9 @@
 #global
 extends Node
+
+#Return to main screen when in shop
+var returnToMain = false
+
 #Session Timer Variables
 var secTime = 0
 var minTime = 0
@@ -43,3 +47,7 @@ var ttlAllClicks = 0
 var prestiegeCounter = 0
 var sessionTime = ""
 var ttlSessionTime = ""
+
+#Tier 2 shop items
+var godlyFavor = 0
+var newAge = 0
