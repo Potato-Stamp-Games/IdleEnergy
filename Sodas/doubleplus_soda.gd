@@ -7,7 +7,7 @@ var DoublePlusSodaSprite
 var trueMoney 
 var doublePlusSodaMoney 
 var doublePlusSodaClickPower 
-var newAge
+var newAge = Global.newAge
 func _ready():
 	DoublePlusSodaClickedSprite = get_node("DoublePlusSodaClickedSprite")
 	DoublePlusSodaSprite = get_node("DoublePlusSodaSprite")
@@ -24,6 +24,7 @@ func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisi
 			trueMoney = Global.trueMoney
 			doublePlusSodaMoney = Global.doublePlusSodaMoney
 			doublePlusSodaClickPower = Global.doublePlusSodaClickPower
+			newAge = Global.newAge
 			
 			#Calculates the new value based on click power
 			doublePlusSodaMoney += doublePlusSodaClickPower + (newAge * 1.5)#A
@@ -49,6 +50,10 @@ func _on_mouse_exited():
 func _on_dps_auto_click_timer_timeout():
 	#Creates values based on most recent in global.gd
 	var doublePlusSodaAutoClick = Global.doublePlusSodaAutoClick
+	trueMoney = Global.trueMoney
+	doublePlusSodaMoney = Global.doublePlusSodaMoney
+	doublePlusSodaClickPower = Global.doublePlusSodaClickPower
+	newAge = Global.newAge
 	#Sets the new value for each money type
 	Global.doublePlusSodaMoney += ((doublePlusSodaClickPower - 1) * doublePlusSodaAutoClick) + (newAge * 1.5) #A
 	Global.trueMoney += (doublePlusSodaClickPower - 1) * doublePlusSodaAutoClick #B

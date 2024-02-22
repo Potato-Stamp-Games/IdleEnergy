@@ -7,7 +7,7 @@ var ZapSodaSprite
 var trueMoney 
 var zapSodaMoney 
 var zapSodaClickPower 
-var newAge
+var newAge = Global.newAge
 func _ready():
 	ZapSodaClickedSprite = get_node("ZapSodaClickedSprite")
 	ZapSodaSprite = get_node("ZapSodaSprite")
@@ -51,6 +51,10 @@ func _on_mouse_exited():
 func _on_zs_auto_click_timer_timeout():
 	#Creates values based on most recent in global.gd
 	var zapSodaAutoClick = Global.zapSodaAutoClick
+	newAge = Global.newAge
+	trueMoney = Global.trueMoney
+	zapSodaMoney = Global.zapSodaMoney
+	zapSodaClickPower = Global.zapSodaClickPower
 	#Sets the new value for each money type
 	Global.zapSodaMoney += ((zapSodaClickPower - 1) * zapSodaAutoClick) + (newAge * 1.5) #A
 	Global.trueMoney += (zapSodaClickPower - 1) * zapSodaAutoClick #B

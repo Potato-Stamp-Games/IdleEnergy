@@ -7,7 +7,7 @@ var BerryBurstSodaSprite
 var trueMoney 
 var berryBurstSodaMoney 
 var berryBurstSodaClickPower 
-var newAge
+var newAge = Global.newAge
 func _ready():
 	BerryBurstSodaClickedSprite = get_node("BerryBurstSodaClickedSprite")
 	BerryBurstSodaSprite = get_node("BerryBurstSodaSprite")
@@ -20,16 +20,17 @@ func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisi
 		BerryBurstSodaSprite.show()
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			#Creates values based on most recent in global.gd
-			var trueMoney = Global.trueMoney
-			var berryMoney = Global.berryBurstSodaMoney
-			var berryBurstSodaClickPower = Global.berryBurstSodaClickPower
+			newAge = Global.newAge
+			trueMoney = Global.trueMoney
+			berryBurstSodaMoney = Global.berryBurstSodaMoney
+			berryBurstSodaClickPower = Global.berryBurstSodaClickPower
 			
 			#Calculates the new value based on click power
-			berryMoney = berryMoney + berryBurstSodaClickPower + (newAge * 1.5)#A
+			berryBurstSodaMoney = berryBurstSodaMoney + berryBurstSodaClickPower + (newAge * 1.5)#A
 			trueMoney = trueMoney + (berryBurstSodaClickPower * 4)#B
 			
 			#Sets the new value for each money type
-			Global.berryBurstSodaMoney = berryMoney
+			Global.berryBurstSodaMoney = berryBurstSodaMoney
 			Global.trueMoney = trueMoney
 			Global.godlySodaMoney += Global.godlyFavor
 			#Sets new stat values
@@ -49,6 +50,10 @@ func _on_mouse_exited():
 func _on_bbs_auto_click_timer_timeout():
 	#Creates values based on most recent in global.gd
 	var berryBurstSodaAutoClick = Global.berryBurstSodaAutoClick
+	newAge = Global.newAge
+	trueMoney = Global.trueMoney
+	berryBurstSodaMoney = Global.berryBurstSodaMoney
+	berryBurstSodaClickPower = Global.berryBurstSodaClickPower
 	#Sets the new value for each money type
 	Global.berryBurstSodaMoney += ((berryBurstSodaClickPower - 1) * berryBurstSodaAutoClick) + (newAge * 1.5) #A
 	Global.trueMoney += (berryBurstSodaClickPower - 1) * berryBurstSodaAutoClick #B

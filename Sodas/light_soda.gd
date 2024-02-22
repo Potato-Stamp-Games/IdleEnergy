@@ -8,7 +8,7 @@ var SodaLightSprite
 var trueMoney 
 var lightSodaMoney 
 var lightSodaClickPower 
-var newAge
+var newAge = Global.newAge
 
 func _ready():
 	SodaLightClickedSprite = get_node("SodaLightClickedSprite")
@@ -52,6 +52,11 @@ func _on_mouse_exited():
 func _on_ls_auto_click_timer_timeout():
 	#Creates values based on most recent in global.gd
 	var lightSodaAutoClick = Global.lightSodaAutoClick
+	#Creates values based on most recent in global.gd
+	newAge = Global.newAge
+	trueMoney = Global.trueMoney
+	lightSodaMoney = Global.lightSodaMoney
+	lightSodaClickPower = Global.lightSodaClickPower
 	#Sets the new value for each money type
 	Global.lightSodaMoney += ((lightSodaClickPower - 1) * lightSodaAutoClick) + (newAge * 1.5) #A
 	Global.trueMoney += (lightSodaClickPower - 1) * lightSodaAutoClick #B

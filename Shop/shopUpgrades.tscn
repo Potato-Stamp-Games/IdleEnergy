@@ -939,7 +939,7 @@ padding_x = 240.0
 padding_y = 68.0
 header = "Zap Soda Click Pow"
 body1 = "+1 Click Power"
-body2 = "\"and his soda was electric!\""
+body2 = "\". . . and his soda was electric!\""
 body3 = "~No Refunds~"
 
 [node name="DPClickPow1Tooltip" type="Node" parent="UpgradesControl/TooltipsControl"]

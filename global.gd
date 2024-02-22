@@ -10,12 +10,12 @@ var minTime = 0
 var hourTime = 0
 
 # Money Variables
-var trueMoney = 0999999999999
+var trueMoney = 0
 var lightSodaMoney = 0
 var zapSodaMoney = 0
 var doublePlusSodaMoney = 0
 var berryBurstSodaMoney = 0
-var godlySodaMoney = 0999999999999999 #combined of the rest of the money
+var godlySodaMoney = 0 #combined of the rest of the money
 
 #Click Power Variables
 var lightSodaClickPower = 1
