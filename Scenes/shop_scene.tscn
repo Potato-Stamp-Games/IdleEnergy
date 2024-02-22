@@ -14,7 +14,7 @@
 [ext_resource type="Script" path="res://UI/GodlyConversionUI.gd" id="12_mhtgi"]
 [ext_resource type="Texture2D" uid="uid://drdlqsrvuwo6y" path="res://Sodas/SodaSprites/GoldyEqualsSodaSprite.png" id="12_wakov"]
 [ext_resource type="Texture2D" uid="uid://ca3fspipw8awc" path="res://Sodas/SodaSprites/allMoneySprite.png" id="13_vxfcl"]
-[ext_resource type="PackedScene" uid="uid://cw66f47d2obuk" path="res://Shop/shopUpgrades.tscn" id="16_88w08"]
+[ext_resource type="PackedScene" uid="uid://btd8rnrs6ui54" path="res://Shop/shopUpgrades.tscn" id="16_88w08"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_vt5oh"]
 allow_unpress = true

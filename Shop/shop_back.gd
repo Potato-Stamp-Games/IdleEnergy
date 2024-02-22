@@ -1,8 +1,6 @@
 extends Control
 class_name shop_back
 
-
-
 #Local Equation Variables
 
 #Click Power

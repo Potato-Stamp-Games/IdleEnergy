@@ -1,5 +1,8 @@
 extends CanvasLayer
 
+@onready var SFX_BUS_ID = AudioServer.get_bus_index("Sfx")
+@onready var MUSIC_BUS_ID = AudioServer.get_bus_index("Music")
+
 #gets item id that is pressed in the menu button and creates a callable function
 func _ready():
 	%CoolMenuButton.get_popup().id_pressed.connect(_on_item_pressed)
@@ -50,3 +53,12 @@ func _on_settings_pop_up_close_requested():
 func _on_settings_pop_up_go_back_requested():
 	Global.ttlAllClicks += 1
 	%SettingsPopUp.hide()
+
+func _on_music_slider_value_changed(value):
+	AudioServer.set_bus_volume_db(MUSIC_BUS_ID, linear_to_db(value))
+	AudioServer.set_bus_mute(MUSIC_BUS_ID, value < .05)
+
+func _on_sfx_slider_value_changed(value):
+	AudioServer.set_bus_volume_db(SFX_BUS_ID, linear_to_db(value))
+	AudioServer.set_bus_mute(SFX_BUS_ID, value < .05)
+	

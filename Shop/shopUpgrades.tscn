@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cw66f47d2obuk"]
+[gd_scene load_steps=17 format=3 uid="uid://btd8rnrs6ui54"]
 
 [ext_resource type="Script" path="res://Shop/shop_back.gd" id="1_sxfpw"]
 [ext_resource type="Texture2D" uid="uid://cafxsaaq4g4dv" path="res://Shop/Sprites/UpgradeBackground.jpg" id="2_arcqi"]
