@@ -1,6 +1,9 @@
 extends Area2D
 class_name DoublePlusSoda
 
+#Audio Variables
+@onready var double_plus_soda_sfx = $DoublePlusSodaSFX
+
 var DoublePlusSodaClickedSprite
 var DoublePlusSodaSprite
 #Number Variables
@@ -20,6 +23,9 @@ func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisi
 		DoublePlusSodaClickedSprite.hide()
 		DoublePlusSodaSprite.show()
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			#Audio
+			double_plus_soda_sfx.play()
+			
 			#Creates values based on most recent in global.gd
 			trueMoney = Global.trueMoney
 			doublePlusSodaMoney = Global.doublePlusSodaMoney

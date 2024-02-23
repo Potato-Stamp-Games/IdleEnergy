@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqtrvtvbc2ng"]
+[gd_scene load_steps=6 format=3 uid="uid://cqtrvtvbc2ng"]
 
 [ext_resource type="Script" path="res://Sodas/zap_soda.gd" id="1_hkud6"]
 [ext_resource type="Texture2D" uid="uid://dlbstht3t2v28" path="res://Sodas/SodaSprites/ZapSodaSprite.png" id="1_krx17"]
 [ext_resource type="Texture2D" uid="uid://c8vmyfpqr6ub3" path="res://Sodas/SodaSprites/ZapSodaSpriteClicked.png" id="3_cjwsr"]
+[ext_resource type="AudioStream" uid="uid://dabpig3cvddr0" path="res://audio/SFX/zap.wav" id="4_apiiu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d476x"]
 size = Vector2(121, 236)
@@ -29,6 +30,8 @@ texture = ExtResource("3_cjwsr")
 unique_name_in_owner = true
 
 [node name="ZapSodaSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_apiiu")
+volume_db = -19.676
 bus = &"SFX"
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

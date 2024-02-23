@@ -55,5 +55,8 @@ volume_db = -20.8
 autoplay = true
 bus = &"Music"
 
+[node name="SFX Player" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
 [connection signal="mouse_entered" from="Panel/DoublePlusSoda" to="Panel/DoublePlusSoda" method="_on_mouse_entered"]
 [connection signal="timeout" from="SessionTimer" to="SessionTimer" method="_on_timeout"]

@@ -19,6 +19,8 @@ func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisi
 		BerryBurstSodaClickedSprite.hide()
 		BerryBurstSodaSprite.show()
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			$BerryBurstSodaSFX.play()
+			
 			#Creates values based on most recent in global.gd
 			newAge = Global.newAge
 			trueMoney = Global.trueMoney

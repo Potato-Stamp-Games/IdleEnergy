@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cw66f47d2obuk"]
+[gd_scene load_steps=17 format=3 uid="uid://btd8rnrs6ui54"]
 
 [ext_resource type="Script" path="res://Shop/shop_back.gd" id="1_sxfpw"]
 [ext_resource type="Texture2D" uid="uid://cafxsaaq4g4dv" path="res://Shop/Sprites/UpgradeBackground.jpg" id="2_arcqi"]
@@ -1053,6 +1053,10 @@ header = "New Age"
 body1 = "+1.5 Soda Per Click"
 body2 = "\"A whole new age\""
 body3 = "~No Refunds~"
+
+[node name="ShopSoundEffects" type="AudioStreamPlayer" parent="."]
+volume_db = -20.613
+bus = &"SFX"
 
 [connection signal="pressed" from="UpgradesControl/LightSodaAutoClick1/LightSoda_AC1_BuyButton" to="." method="_on_light_soda_ac_1_buy_button_pressed"]
 [connection signal="pressed" from="UpgradesControl/ZapSodaAutoClick1/ZapSoda_AC1_BuyButton" to="." method="_on_zap_soda_ac_1_buy_button_pressed"]
