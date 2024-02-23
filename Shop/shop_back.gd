@@ -31,6 +31,9 @@ var godlyFS_CostEq = 0
 var newAgeM_CostEq = 0
 var newAgeS_CostEq = 0
 
+#SFX
+const bubbleSfx = preload("res://audio/SFX/pop.wav")
+
 #Updates store prices. Each cost label in the shop needs to be placed here
 #Money container updated every frame
 func _process(_delta):
@@ -120,6 +123,8 @@ func _on_light_soda_click_power_plus1():
 			%LM_CP_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[lm_CP_CostEq]))
 			%LS_CP_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[ls_CP_CostEq]))
 			Global.ttlAllClicks += 1
+			$ShopSoundEffects.stream = bubbleSfx
+			$ShopSoundEffects.play()
 
 #Zap Soda Click Power +1
 func _on_zap_soda_click_power_plus1():	
@@ -134,7 +139,9 @@ func _on_zap_soda_click_power_plus1():
 			%ZM_CP_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[zm_CP_CostEq]))
 			%ZS_CP_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[zm_CP_CostEq]))
 			Global.ttlAllClicks += 1
-
+			$ShopSoundEffects.stream = bubbleSfx
+			$ShopSoundEffects.play()
+			
 #Double Plus Soda Click Power +1
 func _on_double_plus_soda_click_power_plus1():
 	var moneyCostOfUpgrade = dpm_CP_CostEq
@@ -148,6 +155,8 @@ func _on_double_plus_soda_click_power_plus1():
 			%DPM_CP_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[dpm_CP_CostEq]))
 			%DPS_CP_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[dps_CP_CostEq]))
 			Global.ttlAllClicks += 1
+			$ShopSoundEffects.stream = bubbleSfx
+			$ShopSoundEffects.play()
 
 #Berry Burst Soda Click Power +1
 func _on_berry_burst_soda_click_power_plus1():
@@ -163,6 +172,8 @@ func _on_berry_burst_soda_click_power_plus1():
 			%BBM_CP_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[bbm_CP_CostEq]))
 			%BBS_CP_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[bbs_CP_CostEq]))
 			Global.ttlAllClicks += 1
+			$ShopSoundEffects.stream = bubbleSfx
+			$ShopSoundEffects.play()
 
 #Light Soda Auto Clicker 20% Increase
 func _on_light_soda_ac_1_buy_button_pressed():
@@ -179,6 +190,8 @@ func _on_light_soda_ac_1_buy_button_pressed():
 			Global.ttlAllClicks += 1
 			Global.lightSodaAuto = true
 			print(Global.lightSodaAuto)
+			$ShopSoundEffects.stream = bubbleSfx
+			$ShopSoundEffects.play()
 
 #Zap Soda Auto Clicker 20% Increase
 func _on_zap_soda_ac_1_buy_button_pressed():
@@ -194,6 +207,8 @@ func _on_zap_soda_ac_1_buy_button_pressed():
 			%ZS_AC_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[zs_AC_CostEq]))
 			Global.ttlAllClicks += 1
 			Global.zapSodaAuto = true
+			$ShopSoundEffects.stream = bubbleSfx
+			$ShopSoundEffects.play()
 
 #DP Soda Auto Clicker 20% Increase
 func _on_dp_soda_ac_1_buy_button_pressed():
@@ -209,6 +224,8 @@ func _on_dp_soda_ac_1_buy_button_pressed():
 			%DPS_AC_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[dps_AC_CostEq]))
 			Global.ttlAllClicks += 1
 			Global.doublePlusSodaAuto = true
+			$ShopSoundEffects.stream = bubbleSfx
+			$ShopSoundEffects.play()
 
 #Bery Burst Auto Clicker 20% Increase
 func _on_bb_soda_ac_1_buy_button_pressed():
@@ -224,6 +241,8 @@ func _on_bb_soda_ac_1_buy_button_pressed():
 			%BBS_AC_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[bbs_AC_CostEq]))
 			Global.ttlAllClicks += 1
 			Global.berryBurstSodaAuto = true
+			$ShopSoundEffects.stream = bubbleSfx
+			$ShopSoundEffects.play()
 
 func _on_godly_favor_buy_button_pressed():
 	var moneyCostOfUpgrade = godlyFM_CostEq
@@ -237,6 +256,8 @@ func _on_godly_favor_buy_button_pressed():
 			%GodlyFM_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[godlyFM_CostEq]))
 			%GodlyFS_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[godlyFS_CostEq]))
 			Global.ttlAllClicks += 1
+			$ShopSoundEffects.stream = bubbleSfx
+			$ShopSoundEffects.play()
 
 
 func _on_new_age_buy_button_pressed():
@@ -251,3 +272,5 @@ func _on_new_age_buy_button_pressed():
 			%newAge_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[newAgeM_CostEq]))
 			%newAge_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[newAgeS_CostEq]))
 			Global.ttlAllClicks += 1
+			$ShopSoundEffects.stream = bubbleSfx
+			$ShopSoundEffects.play()

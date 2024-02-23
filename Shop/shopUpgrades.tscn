@@ -22,7 +22,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -860.0
-offset_bottom = 1920.0
+offset_bottom = 1923.0
 grow_horizontal = 2
 grow_vertical = 2
 follow_focus = true
@@ -1053,6 +1053,10 @@ header = "New Age"
 body1 = "+1.5 Soda Per Click"
 body2 = "\"A whole new age\""
 body3 = "~No Refunds~"
+
+[node name="ShopSoundEffects" type="AudioStreamPlayer" parent="."]
+volume_db = -20.613
+bus = &"SFX"
 
 [connection signal="pressed" from="UpgradesControl/LightSodaAutoClick1/LightSoda_AC1_BuyButton" to="." method="_on_light_soda_ac_1_buy_button_pressed"]
 [connection signal="pressed" from="UpgradesControl/ZapSodaAutoClick1/ZapSoda_AC1_BuyButton" to="." method="_on_zap_soda_ac_1_buy_button_pressed"]

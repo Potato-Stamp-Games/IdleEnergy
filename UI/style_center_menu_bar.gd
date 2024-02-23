@@ -1,8 +1,6 @@
 extends CanvasLayer
 
-@onready var SFX_BUS_ID = AudioServer.get_bus_index("Sfx")
-@onready var MUSIC_BUS_ID = AudioServer.get_bus_index("Music")
-
+const POP_BUBBLE_SOUND_EFFECT = preload("res://audio/SFX/pop.wav")
 #gets item id that is pressed in the menu button and creates a callable function
 func _ready():
 	%CoolMenuButton.get_popup().id_pressed.connect(_on_item_pressed)
@@ -10,6 +8,10 @@ func _ready():
 func _on_item_pressed(id: int):
 	#The item name variable is set using the id to find the right item
 	var item_name = %CoolMenuButton.get_popup().get_item_text(id)
+	var sfx_audio_player = $SfxAudioPlayer
+	sfx_audio_player.stream = POP_BUBBLE_SOUND_EFFECT
+	sfx_audio_player.play()
+
 	if(item_name == "Achievements"):
 		Global.ttlAllClicks += 1
 		%AchievementsPopUp.show()
@@ -53,12 +55,3 @@ func _on_settings_pop_up_close_requested():
 func _on_settings_pop_up_go_back_requested():
 	Global.ttlAllClicks += 1
 	%SettingsPopUp.hide()
-
-func _on_music_slider_value_changed(value):
-	AudioServer.set_bus_volume_db(MUSIC_BUS_ID, linear_to_db(value))
-	AudioServer.set_bus_mute(MUSIC_BUS_ID, value < .05)
-
-func _on_sfx_slider_value_changed(value):
-	AudioServer.set_bus_volume_db(SFX_BUS_ID, linear_to_db(value))
-	AudioServer.set_bus_mute(SFX_BUS_ID, value < .05)
-	

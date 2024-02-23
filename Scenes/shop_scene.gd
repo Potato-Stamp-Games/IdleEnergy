@@ -1,5 +1,7 @@
 extends Control
+@onready var sfx_player = $"SFX Player"
 
+const POP = preload("res://audio/SFX/pop.wav")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	#Money & Soda Labels
@@ -13,7 +15,10 @@ func _process(_delta):
 #Change scence back to main & deletes this scene
 func _on_back_button_pressed():
 	Global.ttlAllClicks += 1
+	sfx_player.stream = POP
+	sfx_player.play()
 	Global.returnToMain = true
+	
 
 #changes backbutton sprite when mouse hovers over
 func _on_back_button_mouse_entered():
