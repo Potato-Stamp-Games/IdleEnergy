@@ -120,8 +120,9 @@ anchor_mode = 0
 [node name="SfxAudioPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamMP3_5rtp0")
 volume_db = -20.613
+bus = &"SFX"
 
-[connection signal="pressed" from="Control/CoolMenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="Control/CoolMenuButton" to="." method="_on_cool_menu_button_pressed"]
 [connection signal="close_requested" from="Control/AchievementsPopUp" to="." method="_on_achievements_pop_up_close_requested"]
 [connection signal="close_requested" from="Control/AchievementsPopUp" to="." method="_on_your_stats_pop_up_close_requested"]
 [connection signal="go_back_requested" from="Control/AchievementsPopUp" to="." method="_on_achievements_pop_up_go_back_requested"]

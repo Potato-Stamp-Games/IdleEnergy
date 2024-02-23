@@ -3,6 +3,10 @@ class_name ZapSoda
 #Node Variables
 var ZapSodaClickedSprite
 var ZapSodaSprite
+
+#Audio Variables
+@onready var zap_soda_sfx = $ZapSodaSFX
+
 #Number Variables
 var trueMoney 
 var zapSodaMoney 
@@ -20,6 +24,9 @@ func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisi
 		ZapSodaClickedSprite.hide()
 		ZapSodaSprite.show()
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			#Audio
+			zap_soda_sfx.play()
+			
 			#Creates values based on most recent in global.gd
 			newAge = Global.newAge
 			trueMoney = Global.trueMoney

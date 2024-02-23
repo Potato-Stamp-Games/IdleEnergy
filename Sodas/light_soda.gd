@@ -1,7 +1,10 @@
 extends Area2D
 class_name SodaLight
 
-#Node variables
+#Audio Variables
+@onready var light_soda_sfx = $LightSodaSFX
+
+#Node Variables
 var SodaLightClickedSprite
 var SodaLightSprite
 #Number Variables
@@ -22,6 +25,9 @@ func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisi
 		SodaLightClickedSprite.hide()
 		SodaLightSprite.show()
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			#Audio
+			light_soda_sfx.play()
+			
 			#Creates values based on most recent in global.gd
 			newAge = Global.newAge
 			trueMoney = Global.trueMoney

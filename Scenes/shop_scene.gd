@@ -1,5 +1,5 @@
 extends Control
-@onready var sfx_player = $"SFX Player"
+@onready var sfx_audio_player = $SfxAudioPlayer
 
 const POP = preload("res://audio/SFX/pop.wav")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -15,8 +15,9 @@ func _process(_delta):
 #Change scence back to main & deletes this scene
 func _on_back_button_pressed():
 	Global.ttlAllClicks += 1
-	sfx_player.stream = POP
-	sfx_player.play()
+	sfx_audio_player.stream = POP
+	sfx_audio_player.play()
+	await get_tree().create_timer(0.13).timeout
 	Global.returnToMain = true
 	
 
