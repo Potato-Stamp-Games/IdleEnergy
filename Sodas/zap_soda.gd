@@ -1,25 +1,28 @@
 extends Area2D
 class_name ZapSoda
-#Node Variables
-var ZapSodaClickedSprite
-var ZapSodaSprite
 
 #Audio Variables
 @onready var zap_soda_sfx = $ZapSodaSFX
-
+#RNG Variables
+var rng = RandomNumberGenerator.new()
+var doubleClick = 1
+#Node Variables
+var ZapSodaClickedSprite
+var ZapSodaSprite
 #Number Variables
 var trueMoney 
 var zapSodaMoney 
 var zapSodaClickPower 
 var newAge = Global.newAge
+var quantumSoda
 func _ready():
 	ZapSodaClickedSprite = get_node("ZapSodaClickedSprite")
 	ZapSodaSprite = get_node("ZapSodaSprite")
-	if Global.zapSodaAuto == true:
-		%ZS_AutoClickTimer.start()
 
 #When input is mouse, when mouse button left click, when pressed
 func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisionshape2d signal
+	if Global.zapSodaAuto == true:
+		%ZS_AutoClickTimer.start()
 	if  event is InputEventMouseButton:
 		ZapSodaClickedSprite.hide()
 		ZapSodaSprite.show()
@@ -32,10 +35,23 @@ func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisi
 			trueMoney = Global.trueMoney
 			zapSodaMoney = Global.zapSodaMoney
 			zapSodaClickPower = Global.zapSodaClickPower
-			
+			quantumSoda = Global.quantumSoda
+			#double click rng upgrade
+			if rng.randi_range(1, 500) <= quantumSoda:
+				doubleClick	= 2
+			#Magic Soda RNG upgrade
+			var sodaSelect = rng.randi_range(0, 3)
+			if sodaSelect == 0:
+				Global.lightSodaMoney += Global.magicSoda * 2
+			elif sodaSelect == 1:
+				zapSodaMoney += Global.magicSoda * 2 
+			elif sodaSelect == 2:
+				Global.doublePlusSodaMoney += Global.magicSoda * 2
+			elif sodaSelect == 3:
+				Global.berryBurstSodaMoney += Global.magicSoda * 2
 			#Calculates the new value based on click power
-			zapSodaMoney += zapSodaClickPower + (newAge * 1.5)
-			trueMoney = trueMoney + 2*(zapSodaClickPower)
+			zapSodaMoney += (zapSodaClickPower + (newAge * 1.5)) * doubleClick
+			trueMoney += (2*(zapSodaClickPower)) * doubleClick
 			
 			#Sets the new value for each money type
 			Global.trueMoney = trueMoney
@@ -45,6 +61,8 @@ func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisi
 			Global.ttlZapSodaMoney += zapSodaClickPower + (newAge * 1.5)
 			Global.ttlTrueMoney = Global.ttlTrueMoney + (zapSodaClickPower * 2)
 			Global.ttlAllClicks += 1
+			#Resets double click
+			doubleClick = 1
 
 			
 			ZapSodaClickedSprite.show()
@@ -58,14 +76,24 @@ func _on_mouse_exited():
 func _on_zs_auto_click_timer_timeout():
 	#Creates values based on most recent in global.gd
 	var zapSodaAutoClick = Global.zapSodaAutoClick
+	var doubleClickA = 1
 	newAge = Global.newAge
 	trueMoney = Global.trueMoney
 	zapSodaMoney = Global.zapSodaMoney
 	zapSodaClickPower = Global.zapSodaClickPower
+	#double click rng upgrade
+	if rng.randi_range(1, 500) <= quantumSoda:
+		doubleClickA = 2
 	#Sets the new value for each money type
-	Global.zapSodaMoney += ((zapSodaClickPower - 1) * zapSodaAutoClick) + (newAge * 1.5) #A
-	Global.trueMoney += (zapSodaClickPower - 1) * zapSodaAutoClick #B
+	Global.zapSodaMoney += (((zapSodaClickPower - 1) * zapSodaAutoClick) + (newAge * 1.5)) * doubleClickA #A
+	Global.trueMoney += ((zapSodaClickPower - 1) * zapSodaAutoClick) * doubleClickA #B
 	Global.godlySodaMoney += Global.godlyFavor
 	#Sets new stat values
-	Global.ttlZapSodaMoney += ((zapSodaClickPower - 1) * zapSodaAutoClick) + (newAge * 1.5) #A
-	Global.ttlTrueMoney += (zapSodaClickPower - 1) * zapSodaAutoClick#B
+	Global.ttlZapSodaMoney += (((zapSodaClickPower - 1) * zapSodaAutoClick) + (newAge * 1.5)) * doubleClickA #A
+	Global.ttlTrueMoney += ((zapSodaClickPower - 1) * zapSodaAutoClick) * doubleClickA #B
+	#Resets double click
+	doubleClickA = 1
+		#Time in a soda bottle Upgrade
+	if Global.timeInSoda > 0:
+		var newTime = (1 - (float(Global.timeInSoda) / 100))
+		%ZS_AutoClickTimer.wait_time = newTime

@@ -121,5 +121,7 @@ func _get_screen_pos() -> Vector2:
 		position = owner_node.position
 	elif owner_node is BoxContainer:
 		position = owner_node.get_global_transform_with_canvas().origin
+	elif owner_node is ColorRect:
+		position = owner_node.get_global_transform_with_canvas().origin
 	
 	return position

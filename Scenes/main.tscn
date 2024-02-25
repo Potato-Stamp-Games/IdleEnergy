@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://b56r0drnfyeq3"]
+[gd_scene load_steps=9 format=3 uid="uid://b56r0drnfyeq3"]
 
 [ext_resource type="PackedScene" uid="uid://cgespow2hwr4k" path="res://Sodas/doubleplus_soda.tscn" id="1_8elwk"]
+[ext_resource type="Script" path="res://Scenes/main.gd" id="1_awm87"]
 [ext_resource type="PackedScene" uid="uid://ctxfgtgvi35df" path="res://Sodas/light_soda.tscn" id="2_yhlpn"]
 [ext_resource type="PackedScene" uid="uid://cqtrvtvbc2ng" path="res://Sodas/zap_soda.tscn" id="3_3sy2r"]
 [ext_resource type="PackedScene" uid="uid://ww00kfcioi7e" path="res://Sodas/berryburst_soda.tscn" id="4_0aqmg"]
@@ -16,6 +17,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("1_awm87")
 
 [node name="Panel" type="Panel" parent="."]
 visibility_layer = 15
@@ -49,6 +51,9 @@ scale = Vector2(1.8, 1.8)
 autostart = true
 script = ExtResource("6_hhxbr")
 
+[node name="RNGTimer" type="Timer" parent="."]
+autostart = true
+
 [node name="Music Player" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_l3eyg")
 volume_db = -20.8
@@ -60,3 +65,4 @@ bus = &"SFX"
 
 [connection signal="mouse_entered" from="Panel/DoublePlusSoda" to="Panel/DoublePlusSoda" method="_on_mouse_entered"]
 [connection signal="timeout" from="SessionTimer" to="SessionTimer" method="_on_timeout"]
+[connection signal="timeout" from="RNGTimer" to="." method="_on_rng_timer_timeout"]

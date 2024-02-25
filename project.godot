@@ -37,6 +37,13 @@ project/assembly_name="Idle Energy"
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
 
+[file_customization]
+
+folder_colors={
+"res://Scenes/Alchemy/": "purple",
+"res://Scenes/Shop/": "green"
+}
+
 [input]
 
 LeftClick={
