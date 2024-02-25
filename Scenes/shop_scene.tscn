@@ -1,10 +1,11 @@
 [gd_scene load_steps=20 format=3 uid="uid://bktf204prj7tk"]
 
 [ext_resource type="Script" path="res://Scenes/shop_scene.gd" id="1_0sxmm"]
-[ext_resource type="Texture2D" uid="uid://b1ctq3343pu5k" path="res://Shop/Sprites/Shop_Background.jpg" id="2_06bfo"]
 [ext_resource type="Texture2D" uid="uid://bofo3l5nscx5n" path="res://UI/UISprites/BackButtonSprite.png" id="2_52daq"]
-[ext_resource type="Texture2D" uid="uid://dj4airel7m8ox" path="res://Shop/Sprites/ShopBorder.png" id="3_3dayi"]
+[ext_resource type="Texture2D" uid="uid://b1ctq3343pu5k" path="res://Scenes/Shop/Sprites/Shop_Background.jpg" id="2_n7cfy"]
+[ext_resource type="Texture2D" uid="uid://dj4airel7m8ox" path="res://Scenes/Shop/Sprites/ShopBorder.png" id="3_kpma2"]
 [ext_resource type="Texture2D" uid="uid://30dqtb8660af" path="res://UI/UISprites/BackButtonHoverIcon.png" id="3_uxxo2"]
+[ext_resource type="PackedScene" uid="uid://btd8rnrs6ui54" path="res://Scenes/Shop/shopUpgrades.tscn" id="4_srxdh"]
 [ext_resource type="Texture2D" uid="uid://dtm2rg3jkbm08" path="res://Sodas/SodaSprites/SodaLightSprite_Money.png" id="4_xwt0g"]
 [ext_resource type="Texture2D" uid="uid://dv5qmdighj0mt" path="res://Sodas/SodaSprites/SodaSprite_Money.png" id="5_w6ntd"]
 [ext_resource type="Texture2D" uid="uid://ddk3urmvoqyxn" path="res://Sodas/SodaSprites/DoublePlusSodaMoneySprite.png" id="6_kxep2"]
@@ -14,7 +15,6 @@
 [ext_resource type="Script" path="res://UI/GodlyConversionUI.gd" id="12_mhtgi"]
 [ext_resource type="Texture2D" uid="uid://drdlqsrvuwo6y" path="res://Sodas/SodaSprites/GoldyEqualsSodaSprite.png" id="12_wakov"]
 [ext_resource type="Texture2D" uid="uid://ca3fspipw8awc" path="res://Sodas/SodaSprites/allMoneySprite.png" id="13_vxfcl"]
-[ext_resource type="PackedScene" uid="uid://btd8rnrs6ui54" path="res://Shop/shopUpgrades.tscn" id="16_88w08"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_vt5oh"]
 allow_unpress = true
@@ -47,15 +47,16 @@ metadata/_edit_horizontal_guides_ = [-93.0]
 [node name="BackgroundSprite" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
 scale = Vector2(1.25, 1.25)
-texture = ExtResource("2_06bfo")
+texture = ExtResource("2_n7cfy")
 
 [node name="Border" type="Sprite2D" parent="."]
-position = Vector2(1023, 427.06)
-scale = Vector2(0.88, 0.665531)
-texture = ExtResource("3_3dayi")
+position = Vector2(1023, 426.56)
+scale = Vector2(0.88, 0.66475)
+texture = ExtResource("3_kpma2")
 
-[node name="ShopUpgradesControl" parent="." instance=ExtResource("16_88w08")]
+[node name="ShopUpgradesControl" parent="." instance=ExtResource("4_srxdh")]
 layout_mode = 1
+anchor_bottom = 0.999074
 offset_left = 490.0
 offset_top = 29.0
 offset_right = -368.0

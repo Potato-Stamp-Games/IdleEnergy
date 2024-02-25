@@ -4,6 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://dw4p0gf5vkqf2" path="res://UI/CustomTooltip/tooltip.tscn" id="2_gjgi2"]
 
 [node name="PlaceHolderTooltip" type="NinePatchRect"]
+top_level = true
+visibility_layer = 15
+custom_minimum_size = Vector2(100, 100)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

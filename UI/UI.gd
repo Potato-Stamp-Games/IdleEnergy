@@ -3,6 +3,7 @@ class_name UI
 
 
 @onready var shop = preload("res://Scenes/shop_scene.tscn").instantiate()
+@onready var alchemy = preload("res://Scenes/alchemy_scene.tscn").instantiate()
 @onready var sfx_player = $"../../SFX Player"
 @onready var music_player = $"../../Music Player"
 
@@ -25,10 +26,23 @@ func _process(_delta):
 			return
 		remove_child(shop)
 		Global.returnToMain = false
+		
+	if Global.returnToMain2 == true:
+		%MainLayer.show()
+		if sfx_player.is_playing():
+			Global.returnToMain2 = true
+			return
+		remove_child(alchemy)
+		Global.returnToMain2 = false
 
 func _on_shop_button_pressed():
 	Global.ttlAllClicks += 1
 	sfx_player.stream = TREASURE_CHEST_OPENING_SOUND_EFFECT
 	sfx_player.play()
 	add_child(shop)
+	%MainLayer.hide()
+
+func _on_alchemy_button_pressed():
+	Global.ttlAllClicks += 1
+	add_child(alchemy)
 	%MainLayer.hide()
