@@ -11,11 +11,11 @@ var cdFDP = false
 var cdFBB = false
 var cdFG = false
 
-func _can_drop_data(at_position, data):
+func _can_drop_data(_at_position, _data):
 	#Check if we can drop an item in this slot
 	return true
 
-func _drop_data(at_position, data):
+func _drop_data(_at_position, data):
 	#what happens when we drag and drop item here
 	var item = data["origin_node_name"]
 	if item == "FizzyLightPotionItem" and cdFL == false:

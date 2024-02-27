@@ -1,6 +1,6 @@
 extends TextureRect
 
-func _get_drag_data(at_position):
+func _get_drag_data(_at_position):
 	#Retrieve information about the slot we are dragging
 	var nodeName = get_parent().get_parent().name
 	var data  = {}
@@ -21,10 +21,10 @@ func _get_drag_data(at_position):
 	
 	return data
 
-func _can_drop_data(at_position, data):
+func _can_drop_data(_at_position, _data):
 	#Check if we can drop an item in this slot
 	return true
 
-func _drop_data(at_position, data):
+func _drop_data(_at_position, _data):
 	#what happens when we drag
 	pass
