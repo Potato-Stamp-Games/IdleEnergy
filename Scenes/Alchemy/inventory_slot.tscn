@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://2t1nevk017dv"]
+
+[ext_resource type="Texture2D" uid="uid://dj4airel7m8ox" path="res://Scenes/Shop/Sprites/ShopBorder.png" id="1_q4q03"]
+[ext_resource type="Script" path="res://Scenes/Alchemy/inventory_slot.gd" id="2_ot24l"]
+
+[node name="Inv1" type="TextureRect"]
+custom_minimum_size = Vector2(95, 95)
+texture = ExtResource("1_q4q03")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="M" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Icon" type="TextureRect" parent="M"]
+layout_mode = 2
+expand_mode = 3
+stretch_mode = 5
+script = ExtResource("2_ot24l")
+
+[node name="AmtLbl" type="Label" parent="M/Icon"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -28.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 41.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 35
+text = "0"
+horizontal_alignment = 1

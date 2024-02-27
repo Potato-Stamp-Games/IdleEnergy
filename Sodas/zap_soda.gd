@@ -29,7 +29,6 @@ func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisi
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			#Audio
 			zap_soda_sfx.play()
-			
 			#Creates values based on most recent in global.gd
 			newAge = Global.newAge
 			trueMoney = Global.trueMoney
@@ -50,16 +49,16 @@ func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisi
 			elif sodaSelect == 3:
 				Global.berryBurstSodaMoney += Global.magicSoda * 2
 			#Calculates the new value based on click power
-			zapSodaMoney += (zapSodaClickPower + (newAge * 1.5)) * doubleClick
-			trueMoney += (2*(zapSodaClickPower)) * doubleClick
+			zapSodaMoney += ((zapSodaClickPower + (newAge * 1.5)) * doubleClick) * Global.activePotionPower
+			trueMoney += ((2*(zapSodaClickPower)) * doubleClick) * Global.activePotionPower
 			
 			#Sets the new value for each money type
 			Global.trueMoney = trueMoney
 			Global.zapSodaMoney = zapSodaMoney
 			Global.godlySodaMoney += Global.godlyFavor
 			#Sets new stat values
-			Global.ttlZapSodaMoney += zapSodaClickPower + (newAge * 1.5)
-			Global.ttlTrueMoney = Global.ttlTrueMoney + (zapSodaClickPower * 2)
+			Global.ttlZapSodaMoney += (zapSodaClickPower + (newAge * 1.5)) * Global.activePotionPower
+			Global.ttlTrueMoney = (Global.ttlTrueMoney + (zapSodaClickPower * 2)) * Global.activePotionPower
 			Global.ttlAllClicks += 1
 			#Resets double click
 			doubleClick = 1

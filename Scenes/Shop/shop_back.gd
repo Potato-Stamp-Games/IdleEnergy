@@ -194,8 +194,6 @@ func _on_double_plus_soda_click_power_plus1():
 func _on_berry_burst_soda_click_power_plus1():
 	var moneyCostOfUpgrade = bbm_CP_CostEq
 	var sodaCostOfUpgrade = bbs_CP_CostEq
-	print(moneyCostOfUpgrade)
-	print(sodaCostOfUpgrade)
 	if Global.trueMoney >=  moneyCostOfUpgrade:
 		if Global.berryBurstSodaMoney >= sodaCostOfUpgrade:
 			Global.trueMoney = Global.trueMoney - moneyCostOfUpgrade

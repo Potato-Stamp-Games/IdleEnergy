@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://pxnv5a1s7740"]
+[gd_scene load_steps=8 format=3 uid="uid://pxnv5a1s7740"]
 
+[ext_resource type="Script" path="res://Scenes/Alchemy/potion_crafting.gd" id="1_75fwf"]
 [ext_resource type="Texture2D" uid="uid://dholn7d2gsk7x" path="res://Scenes/Alchemy/Sprites/AlchemyCraftingBackground.jpg" id="1_gyi1u"]
 [ext_resource type="Texture2D" uid="uid://bd232amgcg5dx" path="res://Scenes/Alchemy/Sprites/FizzyLight.png" id="2_541ao"]
 [ext_resource type="Texture2D" uid="uid://bk30d325f4d1n" path="res://Scenes/Alchemy/Sprites/CraftButtonSprite.png" id="3_ni8q7"]
@@ -12,7 +13,8 @@ default_font_size = 60
 [node name="ScrollContainer" type="ScrollContainer"]
 custom_minimum_size = Vector2(1640, 0)
 offset_right = 1640.0
-offset_bottom = 666.0
+offset_bottom = 3023.0
+script = ExtResource("1_75fwf")
 
 [node name="Control" type="Control" parent="."]
 custom_minimum_size = Vector2(1640, 3000)
@@ -52,13 +54,13 @@ text = "Potion Crafting
 ----------------------------------"
 horizontal_alignment = 1
 
-[node name="BoxContainer" type="GridContainer" parent="Control/GridContainer"]
+[node name="SubHeader" type="GridContainer" parent="Control/GridContainer"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme_override_constants/h_separation = 700
 columns = 2
 
-[node name="label" type="Label" parent="Control/GridContainer/BoxContainer"]
+[node name="CraftLabel" type="Label" parent="Control/GridContainer/SubHeader"]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -67,7 +69,7 @@ theme_override_constants/outline_size = 35
 theme_override_font_sizes/font_size = 100
 text = "Craft:"
 
-[node name="Label" type="Label" parent="Control/GridContainer/BoxContainer"]
+[node name="IngredientsLabel" type="Label" parent="Control/GridContainer/SubHeader"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.337255, 0.192157, 0.00392157, 1)
@@ -96,7 +98,7 @@ mouse_filter = 1
 theme = SubResource("Theme_dtxcm")
 max_value = 999.0
 update_on_text_changed = true
-prefix = "Craft"
+prefix = "Amt"
 
 [node name="FizzyLightPotion_BTN" type="TextureButton" parent="Control/GridContainer/FizzyLight"]
 custom_minimum_size = Vector2(200, 200)
@@ -106,12 +108,19 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="FizzyLightPotion_PB" type="ProgressBar" parent="Control/GridContainer/FizzyLight"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 200)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.556863, 0.427451, 0, 1)
 theme_override_constants/outline_size = 15
 theme_override_font_sizes/font_size = 100
+max_value = 300.0
+step = 1.0
+
+[node name="FizzyLTimer" type="Timer" parent="Control/GridContainer/FizzyLight/FizzyLightPotion_PB"]
+unique_name_in_owner = true
+wait_time = 300.0
 
 [node name="Ingredient1" type="TextureRect" parent="Control/GridContainer/FizzyLight"]
 layout_mode = 2
@@ -136,7 +145,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 50
-text = "0"
+text = "1"
 
 [node name="Ingredient2" type="TextureRect" parent="Control/GridContainer/FizzyLight"]
 layout_mode = 2
@@ -161,4 +170,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 50
-text = "0"
+text = "1"
+
+[connection signal="pressed" from="Control/GridContainer/FizzyLight/FizzyLightPotion_BTN" to="." method="_on_fizzy_light_potion_btn_pressed"]
+[connection signal="timeout" from="Control/GridContainer/FizzyLight/FizzyLightPotion_PB/FizzyLTimer" to="." method="_on_fizzy_l_timer_timeout"]

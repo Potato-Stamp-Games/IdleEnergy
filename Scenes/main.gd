@@ -13,7 +13,7 @@ func _on_rng_timer_timeout():
 	if rng.randi_range(1, 12000) <= Global.sodaAlchemy :
 		Global.lightSodaExtract +=  1
 	if rng.randi_range(1, 30000) <= Global.sodaAlchemy :
-		Global.ChargedCaffine += 1
+		Global.chargedCaffine += 1
 	if rng.randi_range(1, 35000) <= Global.sodaAlchemy :
 		Global.zapSodaExtract += 1
 	if rng.randi_range(1, 100000) <= Global.sodaAlchemy :
