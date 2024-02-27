@@ -1,23 +1,22 @@
-[gd_scene load_steps=19 format=3 uid="uid://bqfcbqo1c5y6t"]
+[gd_scene load_steps=18 format=3 uid="uid://bqfcbqo1c5y6t"]
 
-[ext_resource type="Texture2D" uid="uid://bqhigb1mqun6d" path="res://Scenes/Alchemy/Sprites/CaffinePowder.png" id="1_8e877"]
 [ext_resource type="Script" path="res://Scenes/alchemy_scene.gd" id="1_cq3hx"]
-[ext_resource type="Texture2D" uid="uid://bi6yw6km4vwfe" path="res://Scenes/Alchemy/Sprites/ChargedCaffinePowder.png" id="2_51q70"]
-[ext_resource type="Texture2D" uid="uid://cye1g6wtq0acj" path="res://Scenes/Alchemy/Sprites/DoubleChargedCaffinePowder.png" id="3_emijq"]
-[ext_resource type="Texture2D" uid="uid://dxhn4x4cmhbqq" path="res://Scenes/Alchemy/Sprites/ExplosivelyChargedCaffinePowder.png" id="4_7sk0m"]
-[ext_resource type="Texture2D" uid="uid://cyvjpjbjfnr45" path="res://Scenes/Alchemy/Sprites/GodlyChargedCaffinePowder.png" id="5_wsnbp"]
-[ext_resource type="Texture2D" uid="uid://b2w1jlmhykfxj" path="res://Scenes/Alchemy/Sprites/LightSodaExtract.png" id="6_61kx2"]
-[ext_resource type="Texture2D" uid="uid://cggkous4dw1l0" path="res://Scenes/Alchemy/Sprites/ZapSodaExtract.png" id="7_dgjg6"]
-[ext_resource type="Texture2D" uid="uid://ckt36i1yn7ag5" path="res://Scenes/Alchemy/Sprites/DoublePlusSodaExtract.png" id="8_ardrd"]
-[ext_resource type="Texture2D" uid="uid://cf5cymxi88lxb" path="res://Scenes/Alchemy/Sprites/BerryBurstSodaExtract.png" id="9_faltr"]
-[ext_resource type="Texture2D" uid="uid://4rkl3ssuuxf3" path="res://Scenes/Alchemy/Sprites/GoldySodaExtract.png" id="10_yryix"]
-[ext_resource type="Texture2D" uid="uid://k4ndrrtp88bl" path="res://Scenes/Alchemy/Sprites/BaseSoda.png" id="11_4f76j"]
+[ext_resource type="Texture2D" uid="uid://dkwqhdq164w5h" path="res://Scenes/Alchemy/Sprites/AlchemyBackground.jpg" id="2_njhpx"]
+[ext_resource type="PackedScene" uid="uid://bw3uql372c5b6" path="res://Scenes/Alchemy/potion_inventory.tscn" id="6_ehgyo"]
+[ext_resource type="Texture2D" uid="uid://bnw4nddokbegg" path="res://Scenes/Alchemy/Sprites/IngredientsInvSprite.png" id="8_g7jf2"]
+[ext_resource type="Texture2D" uid="uid://c2vmgtmfbr566" path="res://Scenes/Alchemy/Sprites/DrinkPotionSprite.png" id="11_vg2ng"]
+[ext_resource type="Script" path="res://Scenes/DrinkRect.gd" id="12_flyrt"]
 [ext_resource type="Texture2D" uid="uid://cwwavl00bcno8" path="res://UI/UISprites/FramesTemplate.png" id="13_3e4lh"]
+[ext_resource type="Texture2D" uid="uid://bd232amgcg5dx" path="res://Scenes/Alchemy/Sprites/FizzyLight.png" id="13_vt7pi"]
 [ext_resource type="Texture2D" uid="uid://bofo3l5nscx5n" path="res://UI/UISprites/BackButtonSprite.png" id="13_ybxed"]
 [ext_resource type="Texture2D" uid="uid://30dqtb8660af" path="res://UI/UISprites/BackButtonHoverIcon.png" id="14_7yj7g"]
-[ext_resource type="Script" path="res://UI/CustomTooltip/tooltip.gd" id="15_m18dr"]
-[ext_resource type="PackedScene" uid="uid://dw4p0gf5vkqf2" path="res://UI/CustomTooltip/tooltip.tscn" id="16_ni6j2"]
+[ext_resource type="Texture2D" uid="uid://ri6g5cxxd010" path="res://Scenes/Alchemy/Sprites/FizzyZap.png" id="14_63d8h"]
+[ext_resource type="Texture2D" uid="uid://cft55aflgdmlv" path="res://Scenes/Alchemy/Sprites/FizzyDoublePlus.png" id="15_4s7gd"]
+[ext_resource type="Texture2D" uid="uid://c2nn2u2lb8os7" path="res://Scenes/Alchemy/Sprites/FizzyBerryBurst.png" id="16_j5guf"]
+[ext_resource type="Texture2D" uid="uid://chbfts53plbyc" path="res://Scenes/Alchemy/Sprites/FizzyGodly.png" id="17_aellw"]
 [ext_resource type="PackedScene" uid="uid://pxnv5a1s7740" path="res://Scenes/Alchemy/potion_crafting.tscn" id="17_v2l5g"]
+[ext_resource type="PackedScene" uid="uid://de4stk4xcsr85" path="res://Scenes/Alchemy/Ingredient_inventory.tscn" id="19_sku15"]
+[ext_resource type="Texture2D" uid="uid://b3notbqmwtm3g" path="res://Scenes/Alchemy/Sprites/PotionInvSprite.png" id="21_wkqvs"]
 
 [node name="AlchemyControl" type="Control"]
 layout_mode = 3
@@ -28,37 +27,22 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cq3hx")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.239216, 0.239216, 0.278431, 1)
+texture = ExtResource("2_njhpx")
+expand_mode = 5
+stretch_mode = 5
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Background"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Background/HBoxContainer"]
+[node name="Label" type="Label" parent="."]
 layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="HeaderLine1" type="Panel" parent="Background/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 10)
-layout_mode = 2
-
-[node name="Header" type="VBoxContainer" parent="Background/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 180)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Background/HBoxContainer/VBoxContainer/Header"]
-layout_mode = 2
+offset_top = 14.0
+offset_right = 1920.0
+offset_bottom = 179.0
 theme_override_colors/font_color = Color(0.243137, 0, 0.278431, 1)
 theme_override_colors/font_outline_color = Color(0.992157, 1, 0.866667, 1)
 theme_override_constants/outline_size = 25
@@ -67,362 +51,22 @@ text = "~Alchemy Table~"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HeaderLine2" type="Panel" parent="Background/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 10)
-layout_mode = 2
-
-[node name="IngredientsGContainer" type="GridContainer" parent="Background/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/h_separation = 80
-theme_override_constants/v_separation = 15
-columns = 10
-
-[node name="CaffinePowder" type="BoxContainer" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer"]
-layout_mode = 2
-
-[node name="CaffinePowder" type="ColorRect" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer/CaffinePowder"]
-custom_minimum_size = Vector2(120, 40)
-layout_mode = 2
-color = Color(0.713726, 0.592157, 0.329412, 0.247059)
-
-[node name="TextureRect" type="TextureRect" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer/CaffinePowder/CaffinePowder"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-offset_right = 42.0
-offset_bottom = 42.0
-texture = ExtResource("1_8e877")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="CaffinePowderLbl" type="Label" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer/CaffinePowder/CaffinePowder"]
-unique_name_in_owner = true
-layout_mode = 2
-offset_left = 45.0
-offset_right = 96.0
-offset_bottom = 42.0
-size_flags_horizontal = 0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 15
-theme_override_font_sizes/font_size = 30
-text = "0000"
-vertical_alignment = 1
-
-[node name="ChargedCaffinePowder" type="BoxContainer" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer"]
-layout_mode = 2
-
-[node name="ChargedCaffinePowder" type="ColorRect" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer/ChargedCaffinePowder"]
-custom_minimum_size = Vector2(120, 40)
-layout_mode = 2
-color = Color(0.713726, 0.592157, 0.329412, 0.247059)
-
-[node name="TextureRect" type="TextureRect" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer/ChargedCaffinePowder/ChargedCaffinePowder"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-offset_right = 42.0
-offset_bottom = 42.0
-texture = ExtResource("2_51q70")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="ChargedCaffinePowderLbl" type="Label" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer/ChargedCaffinePowder/ChargedCaffinePowder"]
-unique_name_in_owner = true
-layout_mode = 2
-offset_left = 45.0
-offset_right = 96.0
-offset_bottom = 42.0
-size_flags_horizontal = 0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 15
-theme_override_font_sizes/font_size = 30
-text = "0000"
-vertical_alignment = 1
-
-[node name="DoubleChargedCaffinePowder" type="BoxContainer" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer"]
-layout_mode = 2
-
-[node name="DoubleChargedCaffinePowder" type="ColorRect" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer/DoubleChargedCaffinePowder"]
-custom_minimum_size = Vector2(120, 40)
-layout_mode = 2
-color = Color(0.713726, 0.592157, 0.329412, 0.247059)
-
-[node name="TextureRect" type="TextureRect" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer/DoubleChargedCaffinePowder/DoubleChargedCaffinePowder"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-offset_right = 42.0
-offset_bottom = 42.0
-texture = ExtResource("3_emijq")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="DoubleChargedCaffinePowderLbl" type="Label" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer/DoubleChargedCaffinePowder/DoubleChargedCaffinePowder"]
-unique_name_in_owner = true
-layout_mode = 2
-offset_left = 45.0
-offset_right = 96.0
-offset_bottom = 42.0
-size_flags_horizontal = 0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 15
-theme_override_font_sizes/font_size = 30
-text = "0000"
-vertical_alignment = 1
-
-[node name="ExplosivelyChargedCaffinePowder" type="BoxContainer" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer"]
-layout_mode = 2
-
-[node name="ExplosivelyChargedCaffinePowder" type="ColorRect" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer/ExplosivelyChargedCaffinePowder"]
-custom_minimum_size = Vector2(120, 40)
-layout_mode = 2
-color = Color(0.713726, 0.592157, 0.329412, 0.247059)
-
-[node name="TextureRect" type="TextureRect" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer/ExplosivelyChargedCaffinePowder/ExplosivelyChargedCaffinePowder"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-offset_right = 42.0
-offset_bottom = 42.0
-texture = ExtResource("4_7sk0m")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="ExplosivelyChargedCaffinePowderLbl" type="Label" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer/ExplosivelyChargedCaffinePowder/ExplosivelyChargedCaffinePowder"]
-unique_name_in_owner = true
-layout_mode = 2
-offset_left = 45.0
-offset_right = 96.0
-offset_bottom = 42.0
-size_flags_horizontal = 0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 15
-theme_override_font_sizes/font_size = 30
-text = "0000"
-vertical_alignment = 1
-
-[node name="GodlyChargedCaffinePowder" type="BoxContainer" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer"]
-layout_mode = 2
-
-[node name="GodlyChargeDcaffinePowder" type="ColorRect" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer/GodlyChargedCaffinePowder"]
-custom_minimum_size = Vector2(120, 40)
-layout_mode = 2
-color = Color(0.713726, 0.592157, 0.329412, 0.247059)
-
-[node name="TextureRect" type="TextureRect" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer/GodlyChargedCaffinePowder/GodlyChargeDcaffinePowder"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-offset_right = 42.0
-offset_bottom = 42.0
-texture = ExtResource("5_wsnbp")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="GodlyChargedCaffinePowderLbl" type="Label" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer/GodlyChargedCaffinePowder/GodlyChargeDcaffinePowder"]
-unique_name_in_owner = true
-layout_mode = 2
-offset_left = 45.0
-offset_right = 96.0
-offset_bottom = 42.0
-size_flags_horizontal = 0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 15
-theme_override_font_sizes/font_size = 30
-text = "0000"
-vertical_alignment = 1
-
-[node name="LightSodaExtract" type="BoxContainer" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer"]
-layout_mode = 2
-
-[node name="LightSodaExtract" type="ColorRect" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer/LightSodaExtract"]
-custom_minimum_size = Vector2(120, 40)
-layout_mode = 2
-color = Color(0.713726, 0.592157, 0.329412, 0.247059)
-
-[node name="TextureRect" type="TextureRect" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer/LightSodaExtract/LightSodaExtract"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-offset_right = 42.0
-offset_bottom = 42.0
-texture = ExtResource("6_61kx2")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="LightSodaExtractLbl" type="Label" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer/LightSodaExtract/LightSodaExtract"]
-unique_name_in_owner = true
-layout_mode = 2
-offset_left = 45.0
-offset_right = 96.0
-offset_bottom = 42.0
-size_flags_horizontal = 0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 15
-theme_override_font_sizes/font_size = 30
-text = "0000"
-vertical_alignment = 1
-
-[node name="ZapSodaExtract" type="BoxContainer" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer"]
-layout_mode = 2
-
-[node name="ZapSodaExtract" type="ColorRect" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer/ZapSodaExtract"]
-custom_minimum_size = Vector2(120, 40)
-layout_mode = 2
-color = Color(0.713726, 0.592157, 0.329412, 0.247059)
-
-[node name="TextureRect" type="TextureRect" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer/ZapSodaExtract/ZapSodaExtract"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-offset_right = 42.0
-offset_bottom = 42.0
-texture = ExtResource("7_dgjg6")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="ZapSodaExtractLbl" type="Label" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer/ZapSodaExtract/ZapSodaExtract"]
-unique_name_in_owner = true
-layout_mode = 2
-offset_left = 45.0
-offset_right = 96.0
-offset_bottom = 42.0
-size_flags_horizontal = 0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 15
-theme_override_font_sizes/font_size = 30
-text = "0000"
-vertical_alignment = 1
-
-[node name="DoublePlusSodaExtract" type="BoxContainer" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer"]
-layout_mode = 2
-
-[node name="DoublePlusSodaExtract" type="ColorRect" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer/DoublePlusSodaExtract"]
-custom_minimum_size = Vector2(120, 40)
-layout_mode = 2
-color = Color(0.713726, 0.592157, 0.329412, 0.247059)
-
-[node name="TextureRect" type="TextureRect" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer/DoublePlusSodaExtract/DoublePlusSodaExtract"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-offset_right = 42.0
-offset_bottom = 42.0
-texture = ExtResource("8_ardrd")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="DoublePlusSodaExtractLbl" type="Label" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer/DoublePlusSodaExtract/DoublePlusSodaExtract"]
-unique_name_in_owner = true
-layout_mode = 2
-offset_left = 45.0
-offset_right = 96.0
-offset_bottom = 42.0
-size_flags_horizontal = 0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 15
-theme_override_font_sizes/font_size = 30
-text = "0000"
-vertical_alignment = 1
-
-[node name="BerryBurstSodaExtract" type="BoxContainer" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer"]
-layout_mode = 2
-
-[node name="BerryBurstSodaExtract" type="ColorRect" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer/BerryBurstSodaExtract"]
-custom_minimum_size = Vector2(120, 40)
-layout_mode = 2
-color = Color(0.713726, 0.592157, 0.329412, 0.247059)
-
-[node name="TextureRect" type="TextureRect" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer/BerryBurstSodaExtract/BerryBurstSodaExtract"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-offset_right = 42.0
-offset_bottom = 42.0
-texture = ExtResource("9_faltr")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="BerryBurstSodaExtractLbl" type="Label" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer/BerryBurstSodaExtract/BerryBurstSodaExtract"]
-unique_name_in_owner = true
-layout_mode = 2
-offset_left = 45.0
-offset_right = 96.0
-offset_bottom = 42.0
-size_flags_horizontal = 0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 15
-theme_override_font_sizes/font_size = 30
-text = "0000"
-vertical_alignment = 1
-
-[node name="GodlySodaExtract" type="BoxContainer" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer"]
-layout_mode = 2
-
-[node name="GodlySodaExtract" type="ColorRect" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer/GodlySodaExtract"]
-custom_minimum_size = Vector2(120, 40)
-layout_mode = 2
-color = Color(0.713726, 0.592157, 0.329412, 0.247059)
-
-[node name="TextureRect" type="TextureRect" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer/GodlySodaExtract/GodlySodaExtract"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-offset_right = 42.0
-offset_bottom = 42.0
-texture = ExtResource("10_yryix")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="GodlySodaExtractLbl" type="Label" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer/GodlySodaExtract/GodlySodaExtract"]
-unique_name_in_owner = true
-layout_mode = 2
-offset_left = 45.0
-offset_right = 96.0
-offset_bottom = 42.0
-size_flags_horizontal = 0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 15
-theme_override_font_sizes/font_size = 30
-text = "0000"
-vertical_alignment = 1
-
-[node name="BaseSoda" type="BoxContainer" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer"]
-layout_mode = 2
-
-[node name="BaseSoda" type="ColorRect" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer/BaseSoda"]
-custom_minimum_size = Vector2(120, 40)
-layout_mode = 2
-color = Color(0.713726, 0.592157, 0.329412, 0.247059)
-
-[node name="TextureRect" type="TextureRect" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer/BaseSoda/BaseSoda"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-offset_right = 42.0
-offset_bottom = 42.0
-texture = ExtResource("11_4f76j")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="Label" type="Label" parent="Background/HBoxContainer/VBoxContainer/IngredientsGContainer/BaseSoda/BaseSoda"]
-layout_mode = 2
-offset_left = 45.0
-offset_right = 96.0
-offset_bottom = 42.0
-size_flags_horizontal = 0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 15
-theme_override_font_sizes/font_size = 30
-text = "0000"
-vertical_alignment = 1
-
 [node name="Border" type="NinePatchRect" parent="."]
 custom_minimum_size = Vector2(1250, 600)
 layout_mode = 2
-offset_left = 15.0
-offset_top = 347.0
-offset_right = 1728.0
-offset_bottom = 963.0
+offset_top = 174.0
+offset_right = 1713.0
+offset_bottom = 918.0
 texture = ExtResource("13_3e4lh")
 region_rect = Rect2(560, 24, 696, 357)
 
 [node name="ScrollContainer" parent="." instance=ExtResource("17_v2l5g")]
 custom_minimum_size = Vector2(1640, 550)
 layout_mode = 0
-offset_left = 52.0
-offset_top = 386.0
-offset_right = 1682.0
-offset_bottom = 936.0
+offset_left = 37.0
+offset_top = 213.0
+offset_right = 1677.0
+offset_bottom = 887.0
 
 [node name="BackButton" type="BoxContainer" parent="."]
 layout_mode = 0
@@ -451,112 +95,260 @@ position = Vector2(111.5, 49.5)
 scale = Vector2(0.224927, 0.260745)
 texture = ExtResource("14_7yj7g")
 
-[node name="TooltipControl" type="Control" parent="."]
-anchors_preset = 0
+[node name="DrinkRect" type="TextureRect" parent="."]
+unique_name_in_owner = true
+visible = false
+visibility_layer = 3
+custom_minimum_size = Vector2(175, 175)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -520.0
+offset_right = -345.0
+offset_bottom = 175.0
+grow_horizontal = 0
+mouse_filter = 0
+texture = ExtResource("11_vg2ng")
+expand_mode = 3
+stretch_mode = 5
+script = ExtResource("12_flyrt")
 
-[node name="CaffinePTooltip" type="Node" parent="TooltipControl"]
-script = ExtResource("15_m18dr")
-owner_path = NodePath("../../Background/HBoxContainer/VBoxContainer/IngredientsGContainer/CaffinePowder/CaffinePowder")
-visuals_res = ExtResource("16_ni6j2")
-delay = 0.3
-header = "~Caffine Powder~"
-body1 = "Basic crafting componet"
-body2 = "\"Makes you feel awake\""
-body3 = "COMMON"
+[node name="Background" type="ColorRect" parent="DrinkRect"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.517647, 0.45098, 0, 1)
 
-[node name="ChargedCaffinePTooltip" type="Node" parent="TooltipControl"]
-script = ExtResource("15_m18dr")
-owner_path = NodePath("../../Background/HBoxContainer/VBoxContainer/IngredientsGContainer/ChargedCaffinePowder/ChargedCaffinePowder")
-visuals_res = ExtResource("16_ni6j2")
-delay = 0.3
-header = "~Charged Caffine Powder~"
-body1 = "Basic crafting componet"
-body2 = "\"Makes you feel charged up\""
-body3 = "UNCOMMON"
+[node name="ColorRect" type="ColorRect" parent="DrinkRect/Background"]
+custom_minimum_size = Vector2(171, 171)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.5
+offset_top = -85.5
+offset_right = 85.5
+offset_bottom = 85.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0.0588235, 0.121569, 1)
 
-[node name="DoubleChargedCaffinePTooltip" type="Node" parent="TooltipControl"]
-script = ExtResource("15_m18dr")
-owner_path = NodePath("../../Background/HBoxContainer/VBoxContainer/IngredientsGContainer/DoubleChargedCaffinePowder/DoubleChargedCaffinePowder")
-visuals_res = ExtResource("16_ni6j2")
-delay = 0.3
-header = "~Double Charged Caffine Powder~"
-body1 = "Basic crafting componet"
-body2 = "\"Makes you feel super charged up\""
-body3 = "RARE"
+[node name="Label" type="Label" parent="DrinkRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.5
+offset_top = -34.5
+offset_right = 77.5
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.705882, 0.501961, 0.192157, 1)
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 50
+text = "DRINK"
 
-[node name="ExplosivlyChargedCaffinePTooltip2" type="Node" parent="TooltipControl"]
-script = ExtResource("15_m18dr")
-owner_path = NodePath("../../Background/HBoxContainer/VBoxContainer/IngredientsGContainer/ExplosivelyChargedCaffinePowder/ExplosivelyChargedCaffinePowder")
-visuals_res = ExtResource("16_ni6j2")
-delay = 0.3
-header = "~Explosivly Charged Caffine Powder~"
-body1 = "Basic crafting componet"
-body2 = "\"Gives you an explosion of energy\""
-body3 = "RARE"
+[node name="PotionInventory" parent="." instance=ExtResource("6_ehgyo")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+offset_left = -540.0
 
-[node name="GodlyChargedCaffinePTooltip" type="Node" parent="TooltipControl"]
-script = ExtResource("15_m18dr")
-owner_path = NodePath("../../Background/HBoxContainer/VBoxContainer/IngredientsGContainer/GodlyChargedCaffinePowder/GodlyChargeDcaffinePowder")
-visuals_res = ExtResource("16_ni6j2")
-delay = 0.3
-header = "~Godly Charged Caffine Powder~"
-body1 = "Basic crafting componet"
-body2 = "\"Makes you feel godly\""
-body3 = "VERY RARE"
+[node name="IngredientInventory" parent="." instance=ExtResource("19_sku15")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+offset_left = -540.0
 
-[node name="LightSodaExtractTooltip" type="Node" parent="TooltipControl"]
-script = ExtResource("15_m18dr")
-owner_path = NodePath("../../Background/HBoxContainer/VBoxContainer/IngredientsGContainer/LightSodaExtract/LightSodaExtract")
-visuals_res = ExtResource("16_ni6j2")
-delay = 0.3
-header = "~Light Soda Extract~"
-body1 = "Basic crafting componet"
-body2 = "\"Condesed extract from light sodas\""
-body3 = "COMMON"
+[node name="IngredientsInvBtn" type="TextureButton" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = 100.0
+offset_bottom = 300.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("8_g7jf2")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="ZapSodaExtractTooltip" type="Node" parent="TooltipControl"]
-script = ExtResource("15_m18dr")
-owner_path = NodePath("../../Background/HBoxContainer/VBoxContainer/IngredientsGContainer/ZapSodaExtract/ZapSodaExtract")
-visuals_res = ExtResource("16_ni6j2")
-delay = 0.3
-header = "~Zap Soda Extract~"
-body1 = "Basic crafting componet"
-body2 = "\"Condesed extract from zap sodas\""
-body3 = "UNCOMMON"
+[node name="PotionInvBtn" type="TextureButton" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("21_wkqvs")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="DoubleSodaExtractTooltip" type="Node" parent="TooltipControl"]
-script = ExtResource("15_m18dr")
-owner_path = NodePath("../../Background/HBoxContainer/VBoxContainer/IngredientsGContainer/DoublePlusSodaExtract/DoublePlusSodaExtract")
-visuals_res = ExtResource("16_ni6j2")
-delay = 0.3
-offset_x = -500.0
-header = "~Double Soda Soda Extract~"
-body1 = "Basic crafting componet"
-body2 = "\"Condesed extract from double plus sodas\""
-body3 = "RARE"
+[node name="ActivePotions" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(1675, 160)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+columns = 8
 
-[node name="BerryBurstSodaExtractTooltip" type="Node" parent="TooltipControl"]
-script = ExtResource("15_m18dr")
-owner_path = NodePath("../../Background/HBoxContainer/VBoxContainer/IngredientsGContainer/BerryBurstSodaExtract/BerryBurstSodaExtract")
-visuals_res = ExtResource("16_ni6j2")
-delay = 0.3
-offset_x = -550.0
-header = "~Berry Burst Soda Soda Extract~"
-body1 = "Basic crafting componet"
-body2 = "\"Condesed extract from berry burst sodas\""
-body3 = "RARE"
+[node name="FizzyLightBuffActive" type="TextureRect" parent="ActivePotions"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+texture = ExtResource("13_vt7pi")
+expand_mode = 5
+stretch_mode = 5
 
-[node name="GodlySodaExtractTooltip" type="Node" parent="TooltipControl"]
-script = ExtResource("15_m18dr")
-owner_path = NodePath("../../Background/HBoxContainer/VBoxContainer/IngredientsGContainer/GodlySodaExtract/GodlySodaExtract")
-visuals_res = ExtResource("16_ni6j2")
-delay = 0.3
-offset_x = -675.0
-header = "~Godly Soda Soda Extract~"
-body1 = "Basic crafting componet"
-body2 = "\"Condesed extract from godly sodas\""
-body3 = "VERY RARE"
+[node name="Label" type="Label" parent="ActivePotions/FizzyLightBuffActive"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.5
+offset_right = 50.5
+offset_bottom = 42.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 30
+text = "ACTIVE"
+
+[node name="FizzyZapBuffActive" type="TextureRect" parent="ActivePotions"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+texture = ExtResource("14_63d8h")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="ActivePotions/FizzyZapBuffActive"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.5
+offset_right = 50.5
+offset_bottom = 42.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 30
+text = "ACTIVE"
+
+[node name="FizzyDPBuffActive" type="TextureRect" parent="ActivePotions"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+texture = ExtResource("15_4s7gd")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="ActivePotions/FizzyDPBuffActive"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.5
+offset_right = 50.5
+offset_bottom = 42.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 30
+text = "ACTIVE"
+
+[node name="FizzyBBBuffActive" type="TextureRect" parent="ActivePotions"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+texture = ExtResource("16_j5guf")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="ActivePotions/FizzyBBBuffActive"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.5
+offset_right = 50.5
+offset_bottom = 42.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 30
+text = "ACTIVE"
+
+[node name="FizzyGodlyBuffActive" type="TextureRect" parent="ActivePotions"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+texture = ExtResource("17_aellw")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="ActivePotions/FizzyGodlyBuffActive"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.5
+offset_right = 50.5
+offset_bottom = 42.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 30
+text = "ACTIVE"
 
 [connection signal="mouse_entered" from="BackButton/BackButton" to="." method="_on_back_button_mouse_entered"]
 [connection signal="mouse_exited" from="BackButton/BackButton" to="." method="_on_back_button_mouse_exited"]
 [connection signal="pressed" from="BackButton/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="FizzyBerryBurstPotionBuff" from="DrinkRect" to="." method="_on_drink_rect_fizzy_berry_burst_potion_buff"]
+[connection signal="FizzyDoublePlusPotionBuff" from="DrinkRect" to="." method="_on_drink_fizzy_double_plus_potion_buff"]
+[connection signal="FizzyGodlyPotionBuff" from="DrinkRect" to="." method="_on_drink_rect_fizzy_godly_potion_buff"]
+[connection signal="FizzyLightPotionBuff" from="DrinkRect" to="." method="_on_drink_fizzy_light_potion_buff"]
+[connection signal="FizzyZapPotionBuff" from="DrinkRect" to="." method="_on_drink_fizzy_zap_potion_buff"]
+[connection signal="visibility_changed" from="PotionInventory" to="." method="_on_potion_inventory_visibility_changed"]
+[connection signal="visibility_changed" from="IngredientInventory" to="." method="_on_ingredient_inventory_visibility_changed"]
+[connection signal="pressed" from="IngredientsInvBtn" to="." method="_on_ingredients_inv_btn_pressed"]
+[connection signal="pressed" from="PotionInvBtn" to="." method="_on_potion_inv_btn_pressed"]

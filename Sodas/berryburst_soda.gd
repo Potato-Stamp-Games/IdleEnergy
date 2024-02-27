@@ -44,16 +44,16 @@ func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisi
 			elif sodaSelect == 3:
 				berryBurstSodaMoney += Global.magicSoda * 2
 			#Calculates the new value based on click power
-			berryBurstSodaMoney = berryBurstSodaMoney + berryBurstSodaClickPower + (newAge * 1.5)#A
-			trueMoney = trueMoney + (berryBurstSodaClickPower * 4)#B
+			berryBurstSodaMoney += (berryBurstSodaClickPower + (newAge * 1.5) * doubleClick) * Global.activePotionPower#A
+			trueMoney += ((berryBurstSodaClickPower * 4) * doubleClick) * Global.activePotionPower#B
 			
 			#Sets the new value for each money type
 			Global.berryBurstSodaMoney = berryBurstSodaMoney
 			Global.trueMoney = trueMoney
 			Global.godlySodaMoney += Global.godlyFavor
 			#Sets new stat values
-			Global.ttlBerryBurstSodaMoney += berryBurstSodaClickPower + (newAge * 1.5)#A
-			Global.ttlTrueMoney = Global.ttlTrueMoney + (berryBurstSodaClickPower * 4)#B
+			Global.ttlBerryBurstSodaMoney += (berryBurstSodaClickPower + (newAge * 1.5) * doubleClick) * Global.activePotionPower#A
+			Global.ttlTrueMoney += ((berryBurstSodaClickPower * 4) * doubleClick) * Global.activePotionPower#B
 			Global.ttlAllClicks += 1
 			#Reset double click RNG
 			doubleClick = 1

@@ -1,18 +1,5 @@
 extends Control
 
-func _process(_delta):
-	%CaffinePowderLbl.text = str(Global.caffinePowder)
-	%ChargedCaffinePowderLbl.text = str(Global.chargedCaffinePowder)
-	%DoubleChargedCaffinePowderLbl.text = str(Global.doubleChargedCaffinePowder)
-	%ExplosivelyChargedCaffinePowderLbl.text = str(Global.explosivelyChargedCaffinePowder)
-	%GodlyChargedCaffinePowderLbl.text = str(Global.godlyChargedCaffinePowder)
-	%LightSodaExtractLbl.text = str(Global.lightSodaExtract)
-	%ZapSodaExtractLbl.text = str(Global.zapSodaExtract)
-	%DoublePlusSodaExtractLbl.text = str(Global.doublePlusSodaExtract)
-	%BerryBurstSodaExtractLbl.text = str(Global.berryBurstSodaExtract)
-	%GodlySodaExtractLbl.text = str(Global.godlySodaExtract)
-	
-
 #Change scence back to main & deletes this scene
 func _on_back_button_pressed():
 	Global.ttlAllClicks += 1
@@ -25,3 +12,62 @@ func _on_back_button_mouse_entered():
 func _on_back_button_mouse_exited():
 	%BackButtonHoverSprite.hide()
 	%BackButtonSprite.show()
+
+
+func _on_potion_inv_btn_pressed():
+	%PotionInventory.show()
+	%DrinkRect.show()
+	%PotionInvBtn.hide()
+	%IngredientsInvBtn.hide()
+
+
+func _on_ingredients_inv_btn_pressed():
+	%IngredientInventory.show()
+	%IngredientsInvBtn.hide()
+	%PotionInvBtn.hide()
+
+
+
+func _on_ingredient_inventory_visibility_changed():
+	if get_node("IngredientInventory").is_visible() == false:
+		%IngredientsInvBtn.show()
+		%PotionInvBtn.show()
+
+
+func _on_potion_inventory_visibility_changed():
+	if get_node("PotionInventory").is_visible() == false:
+		%PotionInvBtn.show()
+		%IngredientsInvBtn.show()
+		%DrinkRect.hide()
+
+
+func _on_drink_fizzy_light_potion_buff():
+	Global.activePotionPower += 2
+	%FizzyLightBuffActive.show()
+	await get_tree().create_timer(300).timeout #wait 5 minutes
+	Global.activePotionPower -= 2
+	%FizzyLightBuffActive.hide()
+func _on_drink_fizzy_zap_potion_buff():
+	Global.activePotionPower += 3
+	%FizzyZapBuffActive.show()
+	await get_tree().create_timer(300).timeout #wait 5 minutes
+	Global.activePotionPower -= 3
+	%FizzyZapBuffActive.hide()
+func _on_drink_fizzy_double_plus_potion_buff():
+	Global.activePotionPower += 4
+	%FizzyDPBuffActive.show()
+	await get_tree().create_timer(300).timeout #wait 5 minutes
+	Global.activePotionPower -= 4
+	%FizzyDPBuffActive.hide()
+func _on_drink_rect_fizzy_berry_burst_potion_buff():
+	Global.activePotionPower += 5
+	%FizzyBBBuffActive.show()
+	await get_tree().create_timer(300).timeout #wait 5 minutes
+	Global.activePotionPower -= 5
+	%FizzyBBBuffActive.hide()
+func _on_drink_rect_fizzy_godly_potion_buff():
+	Global.activePotionPower += 10
+	%FizzyGodlyBuffActive.show()
+	await get_tree().create_timer(300).timeout #wait 5 minutes
+	Global.activePotionPower -= 10
+	%FizzyGodlyBuffActive.hide()
