@@ -51,18 +51,18 @@ var essenseTime = 0
 #Items - Base
 var basePotion = 12
 #Items - Dusts
-var caffinePowder = 3
-var chargedCaffinePowder = 0
-var doubleChargedCaffinePowder = 0
-var explosivelyChargedCaffinePowder = 0
-var godlyChargedCaffinePowder = 0
+var caffinePowder = 5
+var chargedCaffinePowder = 5
+var doubleChargedCaffinePowder = 5
+var explosivelyChargedCaffinePowder = 5
+var godlyChargedCaffinePowder = 5
 
 #Items - Extracts
-var lightSodaExtract = 3
-var zapSodaExtract = 0
-var doublePlusSodaExtract = 0
-var berryBurstSodaExtract = 0
-var godlySodaExtract = 0
+var lightSodaExtract = 5
+var zapSodaExtract = 5
+var doublePlusSodaExtract = 5
+var berryBurstSodaExtract = 5
+var godlySodaExtract = 5
 
 #Items - Potions
 var fizzyLightPotion = 5

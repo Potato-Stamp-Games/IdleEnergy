@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk30d325f4d1n"
-path="res://.godot/imported/CraftButtonSprite.png-00d18d95f93508cf65354cafb1747e89.ctex"
+uid="uid://brphn8pcf6n1a"
+path="res://.godot/imported/CraftSprite.png-8f7c025de1f698ff5b9dfdb981d1473f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Alchemy/Sprites/CraftButtonSprite.png"
-dest_files=["res://.godot/imported/CraftButtonSprite.png-00d18d95f93508cf65354cafb1747e89.ctex"]
+source_file="res://Scenes/Alchemy/Sprites/CraftSprite.png"
+dest_files=["res://.godot/imported/CraftSprite.png-8f7c025de1f698ff5b9dfdb981d1473f.ctex"]
 
 [params]
 

@@ -148,221 +148,91 @@ func _process(_delta):
 	%EssenseTimeM_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[essenseTimeM_CostEq]))
 	%EssenseTimeS_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[essenseTimeS_CostEq]))
 #STORE UPGRADES--------------------------------------------------------------------------------------------
+#Returns true if upgrade can be bought. Deducts true money, sets new price labels, adds total clicks and plays sound effects if true
+func buyUpgrade(moneyCostOfUpgrade: float, sodaCostOfUpgrade: float, sodaMoney: float, mLabel: Node, sLabel: Node ):
+	if Global.trueMoney >= moneyCostOfUpgrade:
+		if (sodaMoney >= sodaCostOfUpgrade):
+			Global.trueMoney -= moneyCostOfUpgrade
+			mLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[sodaCostOfUpgrade]))
+			sLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[moneyCostOfUpgrade]))
+			Global.ttlAllClicks += 1
+			$ShopSoundEffects.stream = bubbleSfx
+			$ShopSoundEffects.play()
+			return true
+
 #Light Soda Click Power +1
 func _on_light_soda_click_power_plus1():
-	var moneyCostOfUpgrade = lm_CP_CostEq
-	var sodaCostOfUpgrade = ls_CP_CostEq
-	if Global.trueMoney >= moneyCostOfUpgrade:
-		if Global.lightSodaMoney >= sodaCostOfUpgrade:
-			Global.trueMoney = Global.trueMoney - moneyCostOfUpgrade
-			Global.lightSodaMoney = Global.lightSodaMoney - sodaCostOfUpgrade
-			Global.lightSodaClickPower += 1
-			%LM_CP_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[lm_CP_CostEq]))
-			%LS_CP_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[ls_CP_CostEq]))
-			Global.ttlAllClicks += 1
-			$ShopSoundEffects.stream = bubbleSfx
-			$ShopSoundEffects.play()
-
+	if (buyUpgrade(lm_CP_CostEq, ls_CP_CostEq, Global.lightSodaMoney, %LM_CP_CostLabel, %LS_CP_CostLabel) == true):
+		Global.lightSodaMoney -= ls_CP_CostEq
+		Global.lightSodaClickPower += 1
 #Zap Soda Click Power +1
 func _on_zap_soda_click_power_plus1():	
-	var moneyCostOfUpgrade = zm_CP_CostEq
-	var sodaCostOfUpgrade = zs_CP_CostEq
-	if Global.trueMoney >= moneyCostOfUpgrade:
-		if Global.zapSodaMoney >= sodaCostOfUpgrade:
-			Global.trueMoney = Global.trueMoney - moneyCostOfUpgrade
-			Global.zapSodaMoney = Global.zapSodaMoney - sodaCostOfUpgrade
-			Global.zapSodaClickPower += 1
-			%ZM_CP_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[zm_CP_CostEq]))
-			%ZS_CP_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[zm_CP_CostEq]))
-			Global.ttlAllClicks += 1
-			$ShopSoundEffects.stream = bubbleSfx
-			$ShopSoundEffects.play()
-			
+	if (buyUpgrade(zm_CP_CostEq, zs_CP_CostEq, Global.zapSodaMoney, %ZM_CP_CostLabel, %ZS_CP_CostLabel) == true):
+		Global.zapSodaMoney = Global.zapSodaMoney - zs_CP_CostEq
+		Global.zapSodaClickPower += 1
+#Double Plus Soda Click Power +1
 func _on_double_plus_soda_click_power_plus1():
-	var moneyCostOfUpgrade = dpm_CP_CostEq
-	var sodaCostOfUpgrade = dps_CP_CostEq
-	if Global.trueMoney >=  moneyCostOfUpgrade:
-		if Global.doublePlusSodaMoney >= sodaCostOfUpgrade:
-			Global.trueMoney = Global.trueMoney - moneyCostOfUpgrade
-			Global.doublePlusSodaMoney = Global.doublePlusSodaMoney - sodaCostOfUpgrade
-			Global.doublePlusSodaClickPower += 1
-			%DPM_CP_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[dpm_CP_CostEq]))
-			%DPS_CP_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[dps_CP_CostEq]))
-			Global.ttlAllClicks += 1
-			$ShopSoundEffects.stream = bubbleSfx
-			$ShopSoundEffects.play()
+	if (buyUpgrade(dpm_CP_CostEq, dps_CP_CostEq, Global.doublePlusSodaMoney, %DPM_CP_CostLabel, %DPS_CP_CostLabel) == true):
+		Global.doublePlusSodaMoney -= dps_CP_CostEq
+		Global.doublePlusSodaClickPower += 1
+#Berry Burst Soda Click Power +1
 func _on_berry_burst_soda_click_power_plus1():
-	var moneyCostOfUpgrade = bbm_CP_CostEq
-	var sodaCostOfUpgrade = bbs_CP_CostEq
-	if Global.trueMoney >=  moneyCostOfUpgrade:
-		if Global.berryBurstSodaMoney >= sodaCostOfUpgrade:
-			Global.trueMoney = Global.trueMoney - moneyCostOfUpgrade
-			Global.berryBurstSodaMoney = Global.berryBurstSodaMoney - sodaCostOfUpgrade
-			Global.berryBurstSodaClickPower += 1
-			%BBM_CP_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[bbm_CP_CostEq]))
-			%BBS_CP_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[bbs_CP_CostEq]))
-			Global.ttlAllClicks += 1
-			$ShopSoundEffects.stream = bubbleSfx
-			$ShopSoundEffects.play()
+	if (buyUpgrade(bbm_CP_CostEq, bbs_CP_CostEq, Global.berryBurstSodaMoney, %BBM_CP_CostLabel, %BBS_CP_CostLabel) == true):
+		Global.berryBurstSodaMoney -= bbs_CP_CostEq
+		Global.berryBurstSodaClickPower += 1
+#Light Soda Auto Click 20%
 func _on_light_soda_ac_1_buy_button_pressed():
-	var moneyCostOfUpgrade = lm_AC_CostEq
-	var sodaCostOfUpgrade = ls_AC_CostEq
-	if Global.trueMoney >=  moneyCostOfUpgrade:
-		if Global.godlySodaMoney >= sodaCostOfUpgrade:
-			Global.trueMoney = Global.trueMoney - moneyCostOfUpgrade
-			Global.godlySodaMoney = Global.godlySodaMoney - sodaCostOfUpgrade
+	if (buyUpgrade(lm_AC_CostEq, ls_AC_CostEq, Global.godlySodaMoney, %LM_AC_CostLabel, %LS_AC_CostLabel) == true):
+			Global.godlySodaMoney -= ls_AC_CostEq
 			Global.lightSodaAutoClick += 0.2
-			%LM_AC_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[lm_AC_CostEq]))
-			%LS_AC_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[lm_AC_CostEq]))
-			Global.ttlAllClicks += 1
-			Global.lightSodaAuto = true
-			$ShopSoundEffects.stream = bubbleSfx
-			$ShopSoundEffects.play()
+#Zap Soda Auto Click 20%
 func _on_zap_soda_ac_1_buy_button_pressed():
-	var moneyCostOfUpgrade = zm_AC_CostEq
-	var sodaCostOfUpgrade = zs_AC_CostEq
-	if Global.trueMoney >=  moneyCostOfUpgrade:
-		if Global.godlySodaMoney >= sodaCostOfUpgrade:
-			Global.trueMoney = Global.trueMoney - moneyCostOfUpgrade
-			Global.godlySodaMoney = Global.godlySodaMoney - sodaCostOfUpgrade
-			Global.zapSodaAutoClick += 0.2
-			%ZM_AC_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[zm_AC_CostEq]))
-			%ZS_AC_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[zs_AC_CostEq]))
-			Global.ttlAllClicks += 1
-			Global.zapSodaAuto = true
-			$ShopSoundEffects.stream = bubbleSfx
-			$ShopSoundEffects.play()
+	if (buyUpgrade(zm_AC_CostEq, zs_AC_CostEq, Global.godlySodaMoney, %ZM_AC_CostLabel, %ZS_AC_CostLabel) == true):
+		Global.godlySodaMoney -= zs_AC_CostEq
+		Global.zapSodaAutoClick += 0.2
+#Double Plus Soda Auto Click 20%
 func _on_dp_soda_ac_1_buy_button_pressed():
-	var moneyCostOfUpgrade = dpm_AC_CostEq
-	var sodaCostOfUpgrade = dps_AC_CostEq
-	if Global.trueMoney >=  moneyCostOfUpgrade:
-		if Global.godlySodaMoney >= sodaCostOfUpgrade:
-			Global.trueMoney = Global.trueMoney - moneyCostOfUpgrade
-			Global.godlySodaMoney = Global.godlySodaMoney - sodaCostOfUpgrade
-			Global.doublePlusSodaAutoClick += 0.2
-			%DPM_AC_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[dpm_AC_CostEq]))
-			%DPS_AC_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[dps_AC_CostEq]))
-			Global.ttlAllClicks += 1
-			Global.doublePlusSodaAuto = true
-			$ShopSoundEffects.stream = bubbleSfx
-			$ShopSoundEffects.play()
+	if (buyUpgrade(dpm_AC_CostEq, dps_AC_CostEq, Global.godlySodaMoney, %DPM_AC_CostLabel, %DPS_AC_CostLabel) == true):
+		Global.godlySodaMoney -= dps_AC_CostEq
+		Global.doublePlusSodaAutoClick += 0.2
+#Berry Burst Soda Auto Click 20%
 func _on_bb_soda_ac_1_buy_button_pressed():
-	var moneyCostOfUpgrade = bbm_AC_CostEq
-	var sodaCostOfUpgrade = bbs_AC_CostEq
-	if Global.trueMoney >=  moneyCostOfUpgrade:
-		if Global.godlySodaMoney >= sodaCostOfUpgrade:
-			Global.trueMoney = Global.trueMoney - moneyCostOfUpgrade
-			Global.godlySodaMoney = Global.godlySodaMoney - sodaCostOfUpgrade
-			Global.berryBurstSodaAutoClick += 0.2
-			%BBM_AC_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[bbm_AC_CostEq]))
-			%BBS_AC_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[bbs_AC_CostEq]))
-			Global.ttlAllClicks += 1
-			Global.berryBurstSodaAuto = true
-			$ShopSoundEffects.stream = bubbleSfx
-			$ShopSoundEffects.play()
+	if (buyUpgrade(bbm_AC_CostEq, bbs_AC_CostEq, Global.godlySodaMoney, %BBM_AC_CostLabel, %BBS_AC_CostLabel) == true):
+		Global.godlySodaMoney -= bbs_AC_CostEq
+		Global.berryBurstSodaAutoClick += 0.2
+#Godly Favor +0.1
 func _on_godly_favor_buy_button_pressed():
-	var moneyCostOfUpgrade = godlyFM_CostEq
-	var sodaCostOfUpgrade = godlyFS_CostEq
-	if Global.trueMoney >=  moneyCostOfUpgrade:
-		if Global.godlySodaMoney >= sodaCostOfUpgrade:
-			Global.trueMoney = Global.trueMoney - moneyCostOfUpgrade
-			Global.godlySodaMoney = Global.godlySodaMoney - sodaCostOfUpgrade
+	if (buyUpgrade(godlyFM_CostEq, godlyFS_CostEq, Global.godlySodaMoney, %GodlyFM_CostLabel, %GodlyFS_CostLabel) == true):
+			Global.godlySodaMoney -= godlyFS_CostEq
 			Global.godlyFavor += 0.1
-			%GodlyFM_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[godlyFM_CostEq]))
-			%GodlyFS_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[godlyFS_CostEq]))
-			Global.ttlAllClicks += 1
-			$ShopSoundEffects.stream = bubbleSfx
-			$ShopSoundEffects.play()
+#New Age +1
 func _on_new_age_buy_button_pressed():
-	var moneyCostOfUpgrade = newAgeM_CostEq
-	var sodaCostOfUpgrade = newAgeS_CostEq
-	if Global.trueMoney >=  moneyCostOfUpgrade:
-		if Global.zapSodaMoney >= sodaCostOfUpgrade:
-			Global.trueMoney = Global.trueMoney - moneyCostOfUpgrade
-			Global.zapSodaMoney = Global.zapSodaMoney - sodaCostOfUpgrade
-			Global.newAge += 1
-			%NewAgeS_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[newAgeM_CostEq]))
-			%NewAgeM_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[newAgeS_CostEq]))
-			Global.ttlAllClicks += 1
-			$ShopSoundEffects.stream = bubbleSfx
-			$ShopSoundEffects.play()
+	if (buyUpgrade(newAgeM_CostEq, newAgeS_CostEq, Global.zapSodaMoney, %NewAgeM_CostLabel, %NewAgeS_CostLabel) == true):
+		Global.zapSodaMoney -= newAgeS_CostEq
+		Global.newAge += 1
+#Quantum Soda +1
 func _on_quantum_soda_buy_button_pressed():
-	var moneyCostOfUpgrade = quantumSodaM_CostEq
-	var sodaCostOfUpgrade = quantumSodaS_CostEq
-	if Global.trueMoney >=  moneyCostOfUpgrade:
-		if Global.berryBurstSodaMoney >= sodaCostOfUpgrade:
-			Global.trueMoney = Global.trueMoney - moneyCostOfUpgrade
-			Global.berryBurstSodaMoney = Global.berryBurstSodaMoney - sodaCostOfUpgrade
-			Global.quantumSoda += 1
-			%QuantumSodaM_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[quantumSodaM_CostEq]))
-			%QuantumSodaS_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[quantumSodaS_CostEq]))
-			Global.ttlAllClicks += 1
-			$ShopSoundEffects.stream = bubbleSfx
-			$ShopSoundEffects.play()
+	if (buyUpgrade(quantumSodaM_CostEq, quantumSodaS_CostEq, Global.berryBurstSodaMoney, %QuantumSodaM_CostLabel, %QuantumSodaS_CostLabel) == true):
+		Global.berryBurstSodaMoney -= quantumSodaS_CostEq
+		Global.quantumSoda += 1
+#Magic Soda +1
 func _on_magic_soda_buy_button_pressed():
-	var moneyCostOfUpgrade = magicSodaM_CostEq
-	var sodaCostOfUpgrade = magicSodaS_CostEq
-	if Global.trueMoney >=  moneyCostOfUpgrade:
-		if Global.zapSodaMoney >= sodaCostOfUpgrade:
-			Global.trueMoney = Global.trueMoney - moneyCostOfUpgrade
-			Global.zapSodaMoney = Global.zapSodaMoney - sodaCostOfUpgrade
-			Global.magicSoda += 1
-			%MagicSodaM_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[magicSodaM_CostEq]))
-			%MagicSodaS_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[magicSodaS_CostEq]))
-			Global.ttlAllClicks += 1
-			$ShopSoundEffects.stream = bubbleSfx
-			$ShopSoundEffects.play()
+	if (buyUpgrade(magicSodaM_CostEq, magicSodaS_CostEq, Global.zapSodaMoney, %MagicSodaM_CostLabel, %MagicSodaS_CostLabel) == true):
+		Global.zapSodaMoney -= magicSodaS_CostEq
+		Global.magicSoda += 1
 func _on_time_in_soda_buy_button_pressed():
-	var moneyCostOfUpgrade = timeInSodaM_CostEq
-	var sodaCostOfUpgrade = timeInSodaS_CostEq
-	if Global.trueMoney >=  moneyCostOfUpgrade:
-		if Global.lightSodaMoney >= sodaCostOfUpgrade:
-			Global.trueMoney = Global.trueMoney - moneyCostOfUpgrade
-			Global.lightSodaMoney = Global.lightSodaMoney - sodaCostOfUpgrade
-			Global.timeInSoda += 1
-			%TimeInSodaM_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[timeInSodaM_CostEq]))
-			%TimeInSodaS_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[timeInSodaS_CostEq]))
-			Global.ttlAllClicks += 1
-			$ShopSoundEffects.stream = bubbleSfx
-			$ShopSoundEffects.play()
+	if (buyUpgrade(timeInSodaM_CostEq, timeInSodaS_CostEq, Global.lightSodaMoney, %TimeInSodaM_CostLabel, %TimeInSodaS_CostLabel) == true):
+		Global.lightSodaMoney = Global.lightSodaMoney - timeInSodaS_CostEq
+		Global.timeInSoda += 1
 func _on_soda_alchemy_buy_button_pressed():
-	var moneyCostOfUpgrade = sodaAlchemyM_CostEq
-	var sodaCostOfUpgrade = sodaAlchemyS_CostEq
-	if Global.trueMoney >=  moneyCostOfUpgrade:
-		if Global.lightSodaMoney >= sodaCostOfUpgrade:
-			Global.trueMoney = Global.trueMoney - moneyCostOfUpgrade
-			Global.lightSodaMoney = Global.lightSodaMoney - sodaCostOfUpgrade
-			Global.sodaAlchemy += 1
-			%SodaAlchemyM_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[sodaAlchemyM_CostEq]))
-			%SodaAlchemyS_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[sodaAlchemyS_CostEq]))
-			Global.ttlAllClicks += 1
-			$ShopSoundEffects.stream = bubbleSfx
-			$ShopSoundEffects.play()
-func _on_soda_of_unity_buy_button_pressed():
-	var moneyCostOfUpgrade = sodaUnityM_CostEq
-	var sodaCostOfUpgrade = sodaUnityS_CostEq
-	if Global.trueMoney >=  moneyCostOfUpgrade:
-		if Global.godlySodaMoney >= sodaCostOfUpgrade:
-			Global.trueMoney = Global.trueMoney - moneyCostOfUpgrade
-			Global.godlySodaMoney = Global.godlySodaMoney - sodaCostOfUpgrade
-			Global.sodaUnity += 1
-			%SodaUnityM_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[sodaUnityM_CostEq]))
-			%SodaUnityS_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[sodaUnityS_CostEq]))
-			Global.ttlAllClicks += 1
-			$ShopSoundEffects.stream = bubbleSfx
-			$ShopSoundEffects.play()
-
-
+	if (buyUpgrade(sodaAlchemyM_CostEq, sodaAlchemyS_CostEq, Global.lightSodaMoney, %SodaAlchemyM_CostLabel, %SodaAlchemyS_CostLabel) == true):
+		Global.lightSodaMoney -= sodaAlchemyS_CostEq
+		Global.sodaAlchemy += 1
+func _on_unification_theory_buy_button_pressed():
+	if (buyUpgrade(sodaUnityM_CostEq, sodaUnityS_CostEq, Global.godlySodaMoney, %SodaUnityM_CostLabel, %SodaUnityS_CostLabel) == true):
+		Global.godlySodaMoney -= sodaUnityS_CostEq
+		Global.sodaUnity += 1
 func _on_essense_of_time_buy_button_pressed():
-	var moneyCostOfUpgrade = essenseTimeM_CostEq
-	var sodaCostOfUpgrade = essenseTimeS_CostEq
-	if Global.trueMoney >=  moneyCostOfUpgrade:
-		if Global.godlySodaMoney >= sodaCostOfUpgrade:
-			Global.trueMoney = Global.trueMoney - moneyCostOfUpgrade
-			Global.godlySodaMoney = Global.godlySodaMoney - sodaCostOfUpgrade
-			Global.essenseTime += 1
-			%EssenseTimeM_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[essenseTimeM_CostEq]))
-			%EssenseTimeS_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[essenseTimeS_CostEq]))
-			Global.ttlAllClicks += 1
-			$ShopSoundEffects.stream = bubbleSfx
-			$ShopSoundEffects.play()
+	if (buyUpgrade(essenseTimeM_CostEq, essenseTimeS_CostEq, Global.godlySodaMoney, %EssenseTimeM_CostLabel, %EssenseTimeS_CostLabel) == true):
+		Global.godlySodaMoney -= essenseTimeS_CostEq
+		Global.essenseTime += 1

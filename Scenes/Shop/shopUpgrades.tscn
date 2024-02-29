@@ -1497,12 +1497,12 @@ theme_override_constants/shadow_outline_size = 15
 theme_override_font_sizes/font_size = 24
 text = "999,999,999"
 
-[node name="SodaOfUnity" type="ColorRect" parent="UpgradesControl/UpgradesGridContainer/T2 Grid"]
+[node name="Unification Theory" type="ColorRect" parent="UpgradesControl/UpgradesGridContainer/T2 Grid"]
 custom_minimum_size = Vector2(500, 75)
 layout_mode = 2
 color = Color(1, 1, 1, 0.392157)
 
-[node name="ShopUpgradeTemp" type="GridContainer" parent="UpgradesControl/UpgradesGridContainer/T2 Grid/SodaOfUnity"]
+[node name="ShopUpgradeTemp" type="GridContainer" parent="UpgradesControl/UpgradesGridContainer/T2 Grid/Unification Theory"]
 custom_minimum_size = Vector2(500, 75)
 layout_direction = 2
 layout_mode = 1
@@ -1515,13 +1515,13 @@ offset_bottom = 76.0
 grow_horizontal = 2
 columns = 5
 
-[node name="BorderSprite" type="TextureRect" parent="UpgradesControl/UpgradesGridContainer/T2 Grid/SodaOfUnity/ShopUpgradeTemp"]
+[node name="BorderSprite" type="TextureRect" parent="UpgradesControl/UpgradesGridContainer/T2 Grid/Unification Theory/ShopUpgradeTemp"]
 self_modulate = Color(1, 1, 1, 0.45098)
 layout_mode = 2
 texture = ExtResource("3_pfbg8")
 expand_mode = 2
 
-[node name="SpriteHere" type="TextureRect" parent="UpgradesControl/UpgradesGridContainer/T2 Grid/SodaOfUnity/ShopUpgradeTemp/BorderSprite"]
+[node name="SpriteHere" type="TextureRect" parent="UpgradesControl/UpgradesGridContainer/T2 Grid/Unification Theory/ShopUpgradeTemp/BorderSprite"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -1533,7 +1533,7 @@ texture = ExtResource("20_remng")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="SodaOfUnity_BuyButton" type="TextureButton" parent="UpgradesControl/UpgradesGridContainer/T2 Grid/SodaOfUnity/ShopUpgradeTemp"]
+[node name="UnificationTheory_BuyButton" type="TextureButton" parent="UpgradesControl/UpgradesGridContainer/T2 Grid/Unification Theory/ShopUpgradeTemp"]
 custom_minimum_size = Vector2(95, 75)
 layout_direction = 3
 layout_mode = 2
@@ -1545,7 +1545,7 @@ texture_pressed = ExtResource("6_88ill")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="TextCostLabel" type="Label" parent="UpgradesControl/UpgradesGridContainer/T2 Grid/SodaOfUnity/ShopUpgradeTemp"]
+[node name="TextCostLabel" type="Label" parent="UpgradesControl/UpgradesGridContainer/T2 Grid/Unification Theory/ShopUpgradeTemp"]
 custom_minimum_size = Vector2(165, 10)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -1558,21 +1558,21 @@ text = "Money Cost:
 G Soda Cost:"
 horizontal_alignment = 2
 
-[node name="CostNumCon" type="HBoxContainer" parent="UpgradesControl/UpgradesGridContainer/T2 Grid/SodaOfUnity/ShopUpgradeTemp"]
+[node name="CostNumCon" type="HBoxContainer" parent="UpgradesControl/UpgradesGridContainer/T2 Grid/Unification Theory/ShopUpgradeTemp"]
 custom_minimum_size = Vector2(40, 0)
 layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 
-[node name="Money Con" type="VBoxContainer" parent="UpgradesControl/UpgradesGridContainer/T2 Grid/SodaOfUnity/ShopUpgradeTemp/CostNumCon"]
+[node name="Money Con" type="VBoxContainer" parent="UpgradesControl/UpgradesGridContainer/T2 Grid/Unification Theory/ShopUpgradeTemp/CostNumCon"]
 custom_minimum_size = Vector2(40, 20)
 layout_direction = 1
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="SodaUnityM_CostLabel" type="Label" parent="UpgradesControl/UpgradesGridContainer/T2 Grid/SodaOfUnity/ShopUpgradeTemp/CostNumCon/Money Con"]
+[node name="SodaUnityM_CostLabel" type="Label" parent="UpgradesControl/UpgradesGridContainer/T2 Grid/Unification Theory/ShopUpgradeTemp/CostNumCon/Money Con"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -1582,10 +1582,10 @@ theme_override_font_sizes/font_size = 24
 text = "999,999,999
 "
 
-[node name="Soda Con" type="VBoxContainer" parent="UpgradesControl/UpgradesGridContainer/T2 Grid/SodaOfUnity/ShopUpgradeTemp/CostNumCon/Money Con"]
+[node name="Soda Con" type="VBoxContainer" parent="UpgradesControl/UpgradesGridContainer/T2 Grid/Unification Theory/ShopUpgradeTemp/CostNumCon/Money Con"]
 layout_mode = 2
 
-[node name="SodaUnityS_CostLabel" type="Label" parent="UpgradesControl/UpgradesGridContainer/T2 Grid/SodaOfUnity/ShopUpgradeTemp/CostNumCon/Money Con/Soda Con"]
+[node name="SodaUnityS_CostLabel" type="Label" parent="UpgradesControl/UpgradesGridContainer/T2 Grid/Unification Theory/ShopUpgradeTemp/CostNumCon/Money Con/Soda Con"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
@@ -5583,14 +5583,14 @@ body1 = "Chance to find alchemy ingredients"
 body2 = "\"Mix, Stir, Mix\""
 body3 = "~No Refunds~"
 
-[node name="SodaOfUnityTooltip" type="Node" parent="UpgradesControl/TooltipsControl"]
+[node name="UnificationTheoryTooltip" type="Node" parent="UpgradesControl/TooltipsControl"]
 script = ExtResource("23_x7fnr")
-owner_path = NodePath("../../UpgradesGridContainer/T2 Grid/SodaOfUnity")
+owner_path = NodePath("../../UpgradesGridContainer/T2 Grid/Unification Theory")
 visuals_res = ExtResource("24_cvo2o")
 delay = 0.3
-header = "~Soda of Unity ~"
-body1 = "Does nothing for now"
-body2 = "\"The foundation to everything\""
+header = "~Unification Theory ~"
+body1 = "-0.5s Alchemy crafting time"
+body2 = "\"One is all and all is one\""
 body3 = "~No Refunds~"
 
 [node name="EssenseOfTimeTooltip" type="Node" parent="UpgradesControl/TooltipsControl"]
@@ -5599,8 +5599,8 @@ owner_path = NodePath("../../UpgradesGridContainer/T2 Grid/EssenseOfTime")
 visuals_res = ExtResource("24_cvo2o")
 delay = 0.3
 header = "~Essense Of Time~"
-body1 = "\"Reduce alchemy crafting time\""
-body2 = "\"If only you had more time. Now you do\""
+body1 = "\"Chance to refund ingredients used\""
+body2 = "\"If only you had more ingredients. Now you do\""
 body3 = "~No Refunds~"
 
 [node name="ShopSoundEffects" type="AudioStreamPlayer" parent="."]
@@ -5621,5 +5621,5 @@ bus = &"SFX"
 [connection signal="pressed" from="UpgradesControl/UpgradesGridContainer/T2 Grid/MagicSoda/ShopUpgradeTemp/MagicSoda_BuyButton" to="." method="_on_magic_soda_buy_button_pressed"]
 [connection signal="pressed" from="UpgradesControl/UpgradesGridContainer/T2 Grid/TimeInSodaBottle/ShopUpgradeTemp/TimeInSoda_BuyButton" to="." method="_on_time_in_soda_buy_button_pressed"]
 [connection signal="pressed" from="UpgradesControl/UpgradesGridContainer/T2 Grid/SodaAlchemyBottle/ShopUpgradeTemp/SodaAlchemy_BuyButton" to="." method="_on_soda_alchemy_buy_button_pressed"]
-[connection signal="pressed" from="UpgradesControl/UpgradesGridContainer/T2 Grid/SodaOfUnity/ShopUpgradeTemp/SodaOfUnity_BuyButton" to="." method="_on_soda_of_unity_buy_button_pressed"]
+[connection signal="pressed" from="UpgradesControl/UpgradesGridContainer/T2 Grid/Unification Theory/ShopUpgradeTemp/UnificationTheory_BuyButton" to="." method="_on_unification_theory_buy_button_pressed"]
 [connection signal="pressed" from="UpgradesControl/UpgradesGridContainer/T2 Grid/EssenseOfTime/ShopUpgradeTemp/EssenseOfTime_BuyButton" to="." method="_on_essense_of_time_buy_button_pressed"]
