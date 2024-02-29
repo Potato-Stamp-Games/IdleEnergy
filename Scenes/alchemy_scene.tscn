@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bqfcbqo1c5y6t"]
+[gd_scene load_steps=19 format=3 uid="uid://bqfcbqo1c5y6t"]
 
 [ext_resource type="Script" path="res://Scenes/alchemy_scene.gd" id="1_cq3hx"]
 [ext_resource type="Texture2D" uid="uid://dkwqhdq164w5h" path="res://Scenes/Alchemy/Sprites/AlchemyBackground.jpg" id="2_njhpx"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://c2nn2u2lb8os7" path="res://Scenes/Alchemy/Sprites/FizzyBerryBurst.png" id="16_j5guf"]
 [ext_resource type="Texture2D" uid="uid://chbfts53plbyc" path="res://Scenes/Alchemy/Sprites/FizzyGodly.png" id="17_aellw"]
 [ext_resource type="PackedScene" uid="uid://pxnv5a1s7740" path="res://Scenes/Alchemy/potion_crafting.tscn" id="17_v2l5g"]
+[ext_resource type="Texture2D" uid="uid://br8gcqs8hafuo" path="res://Scenes/Alchemy/TheAlchemyTable.png" id="18_dcnbd"]
 [ext_resource type="PackedScene" uid="uid://de4stk4xcsr85" path="res://Scenes/Alchemy/Ingredient_inventory.tscn" id="19_sku15"]
 [ext_resource type="Texture2D" uid="uid://b3notbqmwtm3g" path="res://Scenes/Alchemy/Sprites/PotionInvSprite.png" id="21_wkqvs"]
 
@@ -37,19 +38,6 @@ grow_vertical = 2
 texture = ExtResource("2_njhpx")
 expand_mode = 5
 stretch_mode = 5
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 2
-offset_top = 14.0
-offset_right = 1920.0
-offset_bottom = 179.0
-theme_override_colors/font_color = Color(0.243137, 0, 0.278431, 1)
-theme_override_colors/font_outline_color = Color(0.992157, 1, 0.866667, 1)
-theme_override_constants/outline_size = 25
-theme_override_font_sizes/font_size = 120
-text = "~Alchemy Table~"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Border" type="NinePatchRect" parent="."]
 custom_minimum_size = Vector2(1250, 600)
@@ -339,6 +327,19 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 20
 theme_override_font_sizes/font_size = 30
 text = "ACTIVE"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1983.76
+offset_right = 1983.76
+offset_bottom = 183.0
+grow_horizontal = 2
+texture = ExtResource("18_dcnbd")
+expand_mode = 3
+stretch_mode = 5
 
 [connection signal="mouse_entered" from="BackButton/BackButton" to="." method="_on_back_button_mouse_entered"]
 [connection signal="mouse_exited" from="BackButton/BackButton" to="." method="_on_back_button_mouse_exited"]

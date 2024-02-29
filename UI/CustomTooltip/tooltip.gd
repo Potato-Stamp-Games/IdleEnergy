@@ -70,6 +70,7 @@ func _ready() -> void:
 
 #Sets the visual to top-right corner of mouse cursor
 func _process(_delta: float) -> void:
+	_visuals.position = _visuals.position
 	if _visuals.visible:
 		var border = get_viewport().size
 		border.x = border.x - padding.x

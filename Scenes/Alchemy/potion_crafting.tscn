@@ -1,11 +1,31 @@
-[gd_scene load_steps=8 format=3 uid="uid://pxnv5a1s7740"]
+[gd_scene load_steps=28 format=3 uid="uid://pxnv5a1s7740"]
 
 [ext_resource type="Script" path="res://Scenes/Alchemy/potion_crafting.gd" id="1_75fwf"]
 [ext_resource type="Texture2D" uid="uid://dholn7d2gsk7x" path="res://Scenes/Alchemy/Sprites/AlchemyCraftingBackground.jpg" id="1_gyi1u"]
 [ext_resource type="Texture2D" uid="uid://bd232amgcg5dx" path="res://Scenes/Alchemy/Sprites/FizzyLight.png" id="2_541ao"]
-[ext_resource type="Texture2D" uid="uid://bk30d325f4d1n" path="res://Scenes/Alchemy/Sprites/CraftButtonSprite.png" id="3_ni8q7"]
+[ext_resource type="Texture2D" uid="uid://brphn8pcf6n1a" path="res://Scenes/Alchemy/Sprites/CraftSprite.png" id="4_f5gr8"]
 [ext_resource type="Texture2D" uid="uid://k4ndrrtp88bl" path="res://Scenes/Alchemy/Sprites/BaseSoda.png" id="4_ucr2o"]
 [ext_resource type="Texture2D" uid="uid://bqhigb1mqun6d" path="res://Scenes/Alchemy/Sprites/CaffinePowder.png" id="5_4e3ev"]
+[ext_resource type="Texture2D" uid="uid://b7qgaeghkly5m" path="res://Scenes/Alchemy/Sprites/CraftSpriteClick.png" id="5_jqxm6"]
+[ext_resource type="Texture2D" uid="uid://catk7akjg4yd0" path="res://Scenes/Alchemy/Sprites/CraftSpriteHover.png" id="6_4u1lw"]
+[ext_resource type="Texture2D" uid="uid://dtm2rg3jkbm08" path="res://Sodas/SodaSprites/SodaLightSprite_Money.png" id="9_fq5bl"]
+[ext_resource type="Texture2D" uid="uid://ri6g5cxxd010" path="res://Scenes/Alchemy/Sprites/FizzyZap.png" id="10_mj7gt"]
+[ext_resource type="Texture2D" uid="uid://bi6yw6km4vwfe" path="res://Scenes/Alchemy/Sprites/ChargedCaffinePowder.png" id="11_bj1fv"]
+[ext_resource type="Texture2D" uid="uid://dv5qmdighj0mt" path="res://Sodas/SodaSprites/SodaSprite_Money.png" id="12_qinh0"]
+[ext_resource type="Texture2D" uid="uid://cft55aflgdmlv" path="res://Scenes/Alchemy/Sprites/FizzyDoublePlus.png" id="13_rjk84"]
+[ext_resource type="Texture2D" uid="uid://cye1g6wtq0acj" path="res://Scenes/Alchemy/Sprites/DoubleChargedCaffinePowder.png" id="14_8q72d"]
+[ext_resource type="Texture2D" uid="uid://ddk3urmvoqyxn" path="res://Sodas/SodaSprites/DoublePlusSodaMoneySprite.png" id="15_4xwjo"]
+[ext_resource type="Texture2D" uid="uid://c2nn2u2lb8os7" path="res://Scenes/Alchemy/Sprites/FizzyBerryBurst.png" id="16_wn8xq"]
+[ext_resource type="Texture2D" uid="uid://dxhn4x4cmhbqq" path="res://Scenes/Alchemy/Sprites/ExplosivelyChargedCaffinePowder.png" id="17_5igsn"]
+[ext_resource type="Texture2D" uid="uid://dnfjkwp8ct40e" path="res://Sodas/SodaSprites/BerryBurstSodaSprite_Money.png" id="18_4f2ox"]
+[ext_resource type="Texture2D" uid="uid://chbfts53plbyc" path="res://Scenes/Alchemy/Sprites/FizzyGodly.png" id="19_xcgu2"]
+[ext_resource type="Texture2D" uid="uid://cyvjpjbjfnr45" path="res://Scenes/Alchemy/Sprites/GodlyChargedCaffinePowder.png" id="20_t7dch"]
+[ext_resource type="Texture2D" uid="uid://qwkul3xnjibu" path="res://Sodas/SodaSprites/GodlySodaSprite_Money.png" id="21_rsbvs"]
+[ext_resource type="Texture2D" uid="uid://b2w1jlmhykfxj" path="res://Scenes/Alchemy/Sprites/LightSodaExtract.png" id="22_fqoqq"]
+[ext_resource type="Texture2D" uid="uid://cggkous4dw1l0" path="res://Scenes/Alchemy/Sprites/ZapSodaExtract.png" id="23_svn3l"]
+[ext_resource type="Texture2D" uid="uid://ckt36i1yn7ag5" path="res://Scenes/Alchemy/Sprites/DoublePlusSodaExtract.png" id="24_px4wx"]
+[ext_resource type="Texture2D" uid="uid://cf5cymxi88lxb" path="res://Scenes/Alchemy/Sprites/BerryBurstSodaExtract.png" id="25_pwgw5"]
+[ext_resource type="Texture2D" uid="uid://4rkl3ssuuxf3" path="res://Scenes/Alchemy/Sprites/GoldySodaExtract.png" id="26_xp8o2"]
 
 [sub_resource type="Theme" id="Theme_dtxcm"]
 default_font_size = 60
@@ -31,7 +51,7 @@ texture = ExtResource("1_gyi1u")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="GridContainer" type="GridContainer" parent="Control"]
+[node name="Crafting" type="GridContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -39,11 +59,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="header" type="BoxContainer" parent="Control/GridContainer"]
+[node name="header" type="BoxContainer" parent="Control/Crafting"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
-[node name="Header" type="Label" parent="Control/GridContainer/header"]
+[node name="Header" type="Label" parent="Control/Crafting/header"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.301961, 0, 0.121569, 1)
 theme_override_colors/font_outline_color = Color(0.729412, 0.729412, 0.729412, 1)
@@ -54,13 +74,13 @@ text = "Potion Crafting
 ----------------------------------"
 horizontal_alignment = 1
 
-[node name="SubHeader" type="GridContainer" parent="Control/GridContainer"]
+[node name="SubHeader" type="GridContainer" parent="Control/Crafting"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme_override_constants/h_separation = 700
 columns = 2
 
-[node name="CraftLabel" type="Label" parent="Control/GridContainer/SubHeader"]
+[node name="CraftLabel" type="Label" parent="Control/Crafting/SubHeader"]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -69,7 +89,7 @@ theme_override_constants/outline_size = 35
 theme_override_font_sizes/font_size = 100
 text = "Craft:"
 
-[node name="IngredientsLabel" type="Label" parent="Control/GridContainer/SubHeader"]
+[node name="IngredientsLabel" type="Label" parent="Control/Crafting/SubHeader"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.337255, 0.192157, 0.00392157, 1)
@@ -77,19 +97,20 @@ theme_override_constants/outline_size = 35
 theme_override_font_sizes/font_size = 100
 text = "Ingredients:"
 
-[node name="FizzyLight" type="GridContainer" parent="Control/GridContainer"]
+[node name="FizzyLight" type="GridContainer" parent="Control/Crafting"]
 layout_mode = 2
 theme_override_constants/h_separation = -15
 columns = 9
 
-[node name="CraftTexture" type="TextureRect" parent="Control/GridContainer/FizzyLight"]
+[node name="CraftTexture" type="TextureRect" parent="Control/Crafting/FizzyLight"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 texture = ExtResource("2_541ao")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="FizzyLightPotion_SB" type="SpinBox" parent="Control/GridContainer/FizzyLight"]
+[node name="FizzyLightPotion_SB" type="SpinBox" parent="Control/Crafting/FizzyLight"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
@@ -100,14 +121,29 @@ max_value = 999.0
 update_on_text_changed = true
 prefix = "Amt"
 
-[node name="FizzyLightPotion_BTN" type="TextureButton" parent="Control/GridContainer/FizzyLight"]
+[node name="FizzyLightPotion_BTN" type="TextureButton" parent="Control/Crafting/FizzyLight"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
-texture_normal = ExtResource("3_ni8q7")
+texture_normal = ExtResource("4_f5gr8")
+texture_pressed = ExtResource("5_jqxm6")
+texture_hover = ExtResource("6_4u1lw")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="FizzyLightPotion_PB" type="ProgressBar" parent="Control/GridContainer/FizzyLight"]
+[node name="ColorRect" type="ColorRect" parent="Control/Crafting/FizzyLight/FizzyLightPotion_BTN"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = 1025.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.321569, 0.498039, 0.517647, 0.290196)
+
+[node name="FizzyLightPotion_PB" type="ProgressBar" parent="Control/Crafting/FizzyLight"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 200)
 layout_mode = 2
@@ -118,17 +154,17 @@ theme_override_font_sizes/font_size = 100
 max_value = 300.0
 step = 1.0
 
-[node name="FizzyLTimer" type="Timer" parent="Control/GridContainer/FizzyLight/FizzyLightPotion_PB"]
+[node name="FizzyLTimer" type="Timer" parent="Control/Crafting/FizzyLight/FizzyLightPotion_PB"]
 unique_name_in_owner = true
 wait_time = 300.0
 
-[node name="Ingredient1" type="TextureRect" parent="Control/GridContainer/FizzyLight"]
+[node name="Ingredient1" type="TextureRect" parent="Control/Crafting/FizzyLight"]
 layout_mode = 2
 texture = ExtResource("4_ucr2o")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="FizzyL_Ing1_LBL" type="Label" parent="Control/GridContainer/FizzyLight/Ingredient1"]
+[node name="FizzyL_Ing1_LBL" type="Label" parent="Control/Crafting/FizzyLight/Ingredient1"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 1
@@ -147,13 +183,13 @@ theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 50
 text = "1"
 
-[node name="Ingredient2" type="TextureRect" parent="Control/GridContainer/FizzyLight"]
+[node name="Ingredient2" type="TextureRect" parent="Control/Crafting/FizzyLight"]
 layout_mode = 2
 texture = ExtResource("5_4e3ev")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="FizzyL_Ing2_LBL" type="Label" parent="Control/GridContainer/FizzyLight/Ingredient2"]
+[node name="FizzyL_Ing2_LBL" type="Label" parent="Control/Crafting/FizzyLight/Ingredient2"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 1
@@ -172,5 +208,1224 @@ theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 50
 text = "1"
 
-[connection signal="pressed" from="Control/GridContainer/FizzyLight/FizzyLightPotion_BTN" to="." method="_on_fizzy_light_potion_btn_pressed"]
-[connection signal="timeout" from="Control/GridContainer/FizzyLight/FizzyLightPotion_PB/FizzyLTimer" to="." method="_on_fizzy_l_timer_timeout"]
+[node name="Ingredient3" type="TextureRect" parent="Control/Crafting/FizzyLight"]
+layout_mode = 2
+texture = ExtResource("9_fq5bl")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="FizzyL_Ing2_LBL" type="Label" parent="Control/Crafting/FizzyLight/Ingredient3"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -69.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "5k"
+
+[node name="FizzyZap" type="GridContainer" parent="Control/Crafting"]
+layout_mode = 2
+theme_override_constants/h_separation = -15
+columns = 9
+
+[node name="CraftTexture" type="TextureRect" parent="Control/Crafting/FizzyZap"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("10_mj7gt")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="FizzyZapPotion_SB" type="SpinBox" parent="Control/Crafting/FizzyZap"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+size_flags_stretch_ratio = 11.54
+mouse_filter = 1
+theme = SubResource("Theme_dtxcm")
+max_value = 999.0
+update_on_text_changed = true
+prefix = "Amt"
+
+[node name="FizzyZapPotion_BTN" type="TextureButton" parent="Control/Crafting/FizzyZap"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture_normal = ExtResource("4_f5gr8")
+texture_pressed = ExtResource("5_jqxm6")
+texture_hover = ExtResource("6_4u1lw")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ColorRect" type="ColorRect" parent="Control/Crafting/FizzyZap/FizzyZapPotion_BTN"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = 1025.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.321569, 0.498039, 0.517647, 0.290196)
+
+[node name="FizzyZapPotion_PB" type="ProgressBar" parent="Control/Crafting/FizzyZap"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.556863, 0.427451, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 100
+max_value = 300.0
+step = 1.0
+
+[node name="FizzyZTimer" type="Timer" parent="Control/Crafting/FizzyZap/FizzyZapPotion_PB"]
+unique_name_in_owner = true
+wait_time = 300.0
+
+[node name="Ingredient1" type="TextureRect" parent="Control/Crafting/FizzyZap"]
+layout_mode = 2
+texture = ExtResource("4_ucr2o")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="FizzyZ_Ing1_LBL" type="Label" parent="Control/Crafting/FizzyZap/Ingredient1"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -69.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "1"
+
+[node name="Ingredient2" type="TextureRect" parent="Control/Crafting/FizzyZap"]
+layout_mode = 2
+texture = ExtResource("11_bj1fv")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="FizzyZ_Ing2_LBL" type="Label" parent="Control/Crafting/FizzyZap/Ingredient2"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -69.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "1"
+
+[node name="Ingredient3" type="TextureRect" parent="Control/Crafting/FizzyZap"]
+layout_mode = 2
+texture = ExtResource("12_qinh0")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="FizzyZ_Ing2_LBL" type="Label" parent="Control/Crafting/FizzyZap/Ingredient3"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -69.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "10k"
+
+[node name="FizzyDP" type="GridContainer" parent="Control/Crafting"]
+layout_mode = 2
+theme_override_constants/h_separation = -15
+columns = 9
+
+[node name="CraftTexture" type="TextureRect" parent="Control/Crafting/FizzyDP"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("13_rjk84")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="FizzyDPPotion_SB" type="SpinBox" parent="Control/Crafting/FizzyDP"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+size_flags_stretch_ratio = 11.54
+mouse_filter = 1
+theme = SubResource("Theme_dtxcm")
+max_value = 999.0
+update_on_text_changed = true
+prefix = "Amt"
+
+[node name="FizzyDPPotion_BTN" type="TextureButton" parent="Control/Crafting/FizzyDP"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture_normal = ExtResource("4_f5gr8")
+texture_pressed = ExtResource("5_jqxm6")
+texture_hover = ExtResource("6_4u1lw")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ColorRect" type="ColorRect" parent="Control/Crafting/FizzyDP/FizzyDPPotion_BTN"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = 1025.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.321569, 0.498039, 0.517647, 0.290196)
+
+[node name="FizzyDPPotion_PB" type="ProgressBar" parent="Control/Crafting/FizzyDP"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.556863, 0.427451, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 100
+max_value = 300.0
+step = 1.0
+
+[node name="FizzyDPTimer" type="Timer" parent="Control/Crafting/FizzyDP/FizzyDPPotion_PB"]
+unique_name_in_owner = true
+wait_time = 300.0
+
+[node name="Ingredient1" type="TextureRect" parent="Control/Crafting/FizzyDP"]
+layout_mode = 2
+texture = ExtResource("4_ucr2o")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="FizzyDP_Ing1_LBL" type="Label" parent="Control/Crafting/FizzyDP/Ingredient1"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -69.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "1"
+
+[node name="Ingredient2" type="TextureRect" parent="Control/Crafting/FizzyDP"]
+layout_mode = 2
+texture = ExtResource("14_8q72d")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="FizzyDP_Ing2_LBL" type="Label" parent="Control/Crafting/FizzyDP/Ingredient2"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -69.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "1"
+
+[node name="Ingredient3" type="TextureRect" parent="Control/Crafting/FizzyDP"]
+layout_mode = 2
+texture = ExtResource("15_4xwjo")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="FizzyDP_Ing2_LBL" type="Label" parent="Control/Crafting/FizzyDP/Ingredient3"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -69.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "20k"
+
+[node name="FizzyBB" type="GridContainer" parent="Control/Crafting"]
+layout_mode = 2
+theme_override_constants/h_separation = -15
+columns = 9
+
+[node name="CraftTexture" type="TextureRect" parent="Control/Crafting/FizzyBB"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("16_wn8xq")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="FizzyBBPotion_SB" type="SpinBox" parent="Control/Crafting/FizzyBB"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+size_flags_stretch_ratio = 11.54
+mouse_filter = 1
+theme = SubResource("Theme_dtxcm")
+max_value = 999.0
+update_on_text_changed = true
+prefix = "Amt"
+
+[node name="FizzyBBPotion_BTN" type="TextureButton" parent="Control/Crafting/FizzyBB"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture_normal = ExtResource("4_f5gr8")
+texture_pressed = ExtResource("5_jqxm6")
+texture_hover = ExtResource("6_4u1lw")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ColorRect" type="ColorRect" parent="Control/Crafting/FizzyBB/FizzyBBPotion_BTN"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = 1025.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.321569, 0.498039, 0.517647, 0.290196)
+
+[node name="FizzyBBPotion_PB" type="ProgressBar" parent="Control/Crafting/FizzyBB"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.556863, 0.427451, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 100
+max_value = 300.0
+step = 1.0
+
+[node name="FizzyBBTimer" type="Timer" parent="Control/Crafting/FizzyBB/FizzyBBPotion_PB"]
+unique_name_in_owner = true
+wait_time = 300.0
+
+[node name="Ingredient1" type="TextureRect" parent="Control/Crafting/FizzyBB"]
+layout_mode = 2
+texture = ExtResource("4_ucr2o")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="FizzyBB_Ing1_LBL" type="Label" parent="Control/Crafting/FizzyBB/Ingredient1"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -69.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "1"
+
+[node name="Ingredient2" type="TextureRect" parent="Control/Crafting/FizzyBB"]
+layout_mode = 2
+texture = ExtResource("17_5igsn")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="FizzyBB_Ing2_LBL" type="Label" parent="Control/Crafting/FizzyBB/Ingredient2"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -69.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "1"
+
+[node name="Ingredient3" type="TextureRect" parent="Control/Crafting/FizzyBB"]
+layout_mode = 2
+texture = ExtResource("18_4f2ox")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="FizzyBB_Ing2_LBL" type="Label" parent="Control/Crafting/FizzyBB/Ingredient3"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -69.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "35k
+"
+
+[node name="FizzyGodly" type="GridContainer" parent="Control/Crafting"]
+layout_mode = 2
+theme_override_constants/h_separation = -15
+columns = 9
+
+[node name="CraftTexture" type="TextureRect" parent="Control/Crafting/FizzyGodly"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("19_xcgu2")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="FizzyGodlyPotion_SB" type="SpinBox" parent="Control/Crafting/FizzyGodly"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+size_flags_stretch_ratio = 11.54
+mouse_filter = 1
+theme = SubResource("Theme_dtxcm")
+max_value = 999.0
+update_on_text_changed = true
+prefix = "Amt"
+
+[node name="FizzyGodlyPotion_BTN" type="TextureButton" parent="Control/Crafting/FizzyGodly"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture_normal = ExtResource("4_f5gr8")
+texture_pressed = ExtResource("5_jqxm6")
+texture_hover = ExtResource("6_4u1lw")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ColorRect" type="ColorRect" parent="Control/Crafting/FizzyGodly/FizzyGodlyPotion_BTN"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = 1025.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.321569, 0.498039, 0.517647, 0.290196)
+
+[node name="FizzyGodlyPotion_PB" type="ProgressBar" parent="Control/Crafting/FizzyGodly"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.556863, 0.427451, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 100
+max_value = 300.0
+step = 1.0
+
+[node name="FizzyGodlyTimer" type="Timer" parent="Control/Crafting/FizzyGodly/FizzyGodlyPotion_PB"]
+unique_name_in_owner = true
+wait_time = 300.0
+
+[node name="Ingredient1" type="TextureRect" parent="Control/Crafting/FizzyGodly"]
+layout_mode = 2
+texture = ExtResource("4_ucr2o")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="FizzyGodly_Ing1_LBL" type="Label" parent="Control/Crafting/FizzyGodly/Ingredient1"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -69.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "1"
+
+[node name="Ingredient2" type="TextureRect" parent="Control/Crafting/FizzyGodly"]
+layout_mode = 2
+texture = ExtResource("20_t7dch")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="FizzyGodly_Ing2_LBL" type="Label" parent="Control/Crafting/FizzyGodly/Ingredient2"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -69.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "1"
+
+[node name="Ingredient3" type="TextureRect" parent="Control/Crafting/FizzyGodly"]
+layout_mode = 2
+texture = ExtResource("21_rsbvs")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="FizzyGodly_Ing2_LBL" type="Label" parent="Control/Crafting/FizzyGodly/Ingredient3"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -69.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "75k
+"
+
+[node name="BasePotion" type="GridContainer" parent="Control/Crafting"]
+layout_mode = 2
+theme_override_constants/h_separation = -15
+columns = 9
+
+[node name="CraftTexture" type="TextureRect" parent="Control/Crafting/BasePotion"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("4_ucr2o")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="BasePotion_SB" type="SpinBox" parent="Control/Crafting/BasePotion"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+size_flags_stretch_ratio = 11.54
+mouse_filter = 1
+theme = SubResource("Theme_dtxcm")
+max_value = 999.0
+update_on_text_changed = true
+prefix = "Amt"
+
+[node name="BasePotion_BTN" type="TextureButton" parent="Control/Crafting/BasePotion"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture_normal = ExtResource("4_f5gr8")
+texture_pressed = ExtResource("5_jqxm6")
+texture_hover = ExtResource("6_4u1lw")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ColorRect" type="ColorRect" parent="Control/Crafting/BasePotion/BasePotion_BTN"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = 1025.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.321569, 0.498039, 0.517647, 0.290196)
+
+[node name="BasePotion_PB" type="ProgressBar" parent="Control/Crafting/BasePotion"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.556863, 0.427451, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 100
+max_value = 300.0
+step = 1.0
+
+[node name="BasePotionTimer" type="Timer" parent="Control/Crafting/BasePotion/BasePotion_PB"]
+unique_name_in_owner = true
+wait_time = 300.0
+
+[node name="Ingredient1" type="TextureRect" parent="Control/Crafting/BasePotion"]
+layout_mode = 2
+texture = ExtResource("22_fqoqq")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="BasePotion_Ing1_LBL" type="Label" parent="Control/Crafting/BasePotion/Ingredient1"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -69.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "1"
+
+[node name="Ingredient2" type="TextureRect" parent="Control/Crafting/BasePotion"]
+layout_mode = 2
+texture = ExtResource("9_fq5bl")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="BasePotion_Ing2_LBL" type="Label" parent="Control/Crafting/BasePotion/Ingredient2"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -69.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "5k"
+
+[node name="ChargedCaffine" type="GridContainer" parent="Control/Crafting"]
+layout_mode = 2
+theme_override_constants/h_separation = -15
+columns = 9
+
+[node name="CraftTexture" type="TextureRect" parent="Control/Crafting/ChargedCaffine"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("11_bj1fv")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="ChargedCaffine_SB" type="SpinBox" parent="Control/Crafting/ChargedCaffine"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+size_flags_stretch_ratio = 11.54
+mouse_filter = 1
+theme = SubResource("Theme_dtxcm")
+max_value = 999.0
+update_on_text_changed = true
+prefix = "Amt"
+
+[node name="ChargedCaffine_BTN" type="TextureButton" parent="Control/Crafting/ChargedCaffine"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture_normal = ExtResource("4_f5gr8")
+texture_pressed = ExtResource("5_jqxm6")
+texture_hover = ExtResource("6_4u1lw")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ColorRect" type="ColorRect" parent="Control/Crafting/ChargedCaffine/ChargedCaffine_BTN"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = 1025.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.321569, 0.498039, 0.517647, 0.290196)
+
+[node name="ChargedCaffine_PB" type="ProgressBar" parent="Control/Crafting/ChargedCaffine"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.556863, 0.427451, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 100
+max_value = 300.0
+step = 1.0
+
+[node name="ChargedCaffineTimer" type="Timer" parent="Control/Crafting/ChargedCaffine/ChargedCaffine_PB"]
+unique_name_in_owner = true
+wait_time = 300.0
+
+[node name="Ingredient1" type="TextureRect" parent="Control/Crafting/ChargedCaffine"]
+layout_mode = 2
+texture = ExtResource("5_4e3ev")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="ChargedCaffine_Ing1_LBL" type="Label" parent="Control/Crafting/ChargedCaffine/Ingredient1"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -69.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "1"
+
+[node name="Ingredient2" type="TextureRect" parent="Control/Crafting/ChargedCaffine"]
+layout_mode = 2
+texture = ExtResource("23_svn3l")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="ChargedCaffine_Ing2_LBL" type="Label" parent="Control/Crafting/ChargedCaffine/Ingredient2"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -69.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "1"
+
+[node name="Ingredient3" type="TextureRect" parent="Control/Crafting/ChargedCaffine"]
+layout_mode = 2
+texture = ExtResource("12_qinh0")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="FizzyGodly_Ing2_LBL" type="Label" parent="Control/Crafting/ChargedCaffine/Ingredient3"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -69.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "5k
+"
+
+[node name="DChargedCaffine" type="GridContainer" parent="Control/Crafting"]
+layout_mode = 2
+theme_override_constants/h_separation = -15
+columns = 9
+
+[node name="CraftTexture" type="TextureRect" parent="Control/Crafting/DChargedCaffine"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("14_8q72d")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="DChargedCaffine_SB" type="SpinBox" parent="Control/Crafting/DChargedCaffine"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+size_flags_stretch_ratio = 11.54
+mouse_filter = 1
+theme = SubResource("Theme_dtxcm")
+max_value = 999.0
+update_on_text_changed = true
+prefix = "Amt"
+
+[node name="DChargedCaffine_BTN" type="TextureButton" parent="Control/Crafting/DChargedCaffine"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture_normal = ExtResource("4_f5gr8")
+texture_pressed = ExtResource("5_jqxm6")
+texture_hover = ExtResource("6_4u1lw")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ColorRect" type="ColorRect" parent="Control/Crafting/DChargedCaffine/DChargedCaffine_BTN"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = 1025.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.321569, 0.498039, 0.517647, 0.290196)
+
+[node name="DChargedCaffine_PB" type="ProgressBar" parent="Control/Crafting/DChargedCaffine"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.556863, 0.427451, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 100
+max_value = 300.0
+step = 1.0
+
+[node name="DChargedCaffineTimer" type="Timer" parent="Control/Crafting/DChargedCaffine/DChargedCaffine_PB"]
+unique_name_in_owner = true
+wait_time = 300.0
+
+[node name="Ingredient1" type="TextureRect" parent="Control/Crafting/DChargedCaffine"]
+layout_mode = 2
+texture = ExtResource("11_bj1fv")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Ing1_LBL" type="Label" parent="Control/Crafting/DChargedCaffine/Ingredient1"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -69.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "1"
+
+[node name="Ingredient2" type="TextureRect" parent="Control/Crafting/DChargedCaffine"]
+layout_mode = 2
+texture = ExtResource("24_px4wx")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Ing2_LBL" type="Label" parent="Control/Crafting/DChargedCaffine/Ingredient2"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -69.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "1"
+
+[node name="Ingredient3" type="TextureRect" parent="Control/Crafting/DChargedCaffine"]
+layout_mode = 2
+texture = ExtResource("15_4xwjo")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Ing3_LBL" type="Label" parent="Control/Crafting/DChargedCaffine/Ingredient3"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -69.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "10k"
+
+[node name="EChargedCaffine" type="GridContainer" parent="Control/Crafting"]
+layout_mode = 2
+theme_override_constants/h_separation = -15
+columns = 9
+
+[node name="CraftTexture" type="TextureRect" parent="Control/Crafting/EChargedCaffine"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("17_5igsn")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="EChargedCaffine_SB" type="SpinBox" parent="Control/Crafting/EChargedCaffine"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+size_flags_stretch_ratio = 11.54
+mouse_filter = 1
+theme = SubResource("Theme_dtxcm")
+max_value = 999.0
+update_on_text_changed = true
+prefix = "Amt"
+
+[node name="EChargedCaffine_BTN" type="TextureButton" parent="Control/Crafting/EChargedCaffine"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture_normal = ExtResource("4_f5gr8")
+texture_pressed = ExtResource("5_jqxm6")
+texture_hover = ExtResource("6_4u1lw")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ColorRect" type="ColorRect" parent="Control/Crafting/EChargedCaffine/EChargedCaffine_BTN"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = 1025.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.321569, 0.498039, 0.517647, 0.290196)
+
+[node name="EChargedCaffine_PB" type="ProgressBar" parent="Control/Crafting/EChargedCaffine"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.556863, 0.427451, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 100
+max_value = 300.0
+step = 1.0
+
+[node name="EChargedCaffineTimer" type="Timer" parent="Control/Crafting/EChargedCaffine/EChargedCaffine_PB"]
+unique_name_in_owner = true
+wait_time = 300.0
+
+[node name="Ingredient1" type="TextureRect" parent="Control/Crafting/EChargedCaffine"]
+layout_mode = 2
+texture = ExtResource("14_8q72d")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="FizzyGodly_Ing1_LBL" type="Label" parent="Control/Crafting/EChargedCaffine/Ingredient1"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -69.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "1"
+
+[node name="Ingredient2" type="TextureRect" parent="Control/Crafting/EChargedCaffine"]
+layout_mode = 2
+texture = ExtResource("25_pwgw5")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="FizzyGodly_Ing2_LBL" type="Label" parent="Control/Crafting/EChargedCaffine/Ingredient2"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -69.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "1"
+
+[node name="Ingredient3" type="TextureRect" parent="Control/Crafting/EChargedCaffine"]
+layout_mode = 2
+texture = ExtResource("18_4f2ox")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="FizzyGodly_Ing2_LBL" type="Label" parent="Control/Crafting/EChargedCaffine/Ingredient3"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -69.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "15k"
+
+[node name="GChargedCaffine" type="GridContainer" parent="Control/Crafting"]
+layout_mode = 2
+theme_override_constants/h_separation = -15
+columns = 9
+
+[node name="CraftTexture" type="TextureRect" parent="Control/Crafting/GChargedCaffine"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("20_t7dch")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="GChargedCaffine_SB" type="SpinBox" parent="Control/Crafting/GChargedCaffine"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+size_flags_stretch_ratio = 11.54
+mouse_filter = 1
+theme = SubResource("Theme_dtxcm")
+max_value = 999.0
+update_on_text_changed = true
+prefix = "Amt"
+
+[node name="GChargedCaffine_BTN" type="TextureButton" parent="Control/Crafting/GChargedCaffine"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture_normal = ExtResource("4_f5gr8")
+texture_pressed = ExtResource("5_jqxm6")
+texture_hover = ExtResource("6_4u1lw")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ColorRect" type="ColorRect" parent="Control/Crafting/GChargedCaffine/GChargedCaffine_BTN"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = 1025.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.321569, 0.498039, 0.517647, 0.290196)
+
+[node name="GChargedCaffine_PB" type="ProgressBar" parent="Control/Crafting/GChargedCaffine"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.556863, 0.427451, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 100
+max_value = 300.0
+step = 1.0
+
+[node name="GChargedCaffineTimer" type="Timer" parent="Control/Crafting/GChargedCaffine/GChargedCaffine_PB"]
+unique_name_in_owner = true
+wait_time = 300.0
+
+[node name="Ingredient1" type="TextureRect" parent="Control/Crafting/GChargedCaffine"]
+layout_mode = 2
+texture = ExtResource("17_5igsn")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="FizzyGodly_Ing1_LBL" type="Label" parent="Control/Crafting/GChargedCaffine/Ingredient1"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -69.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "1"
+
+[node name="Ingredient2" type="TextureRect" parent="Control/Crafting/GChargedCaffine"]
+layout_mode = 2
+texture = ExtResource("26_xp8o2")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="FizzyGodly_Ing2_LBL" type="Label" parent="Control/Crafting/GChargedCaffine/Ingredient2"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -69.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "1"
+
+[node name="Ingredient3" type="TextureRect" parent="Control/Crafting/GChargedCaffine"]
+layout_mode = 2
+texture = ExtResource("21_rsbvs")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="FizzyGodly_Ing2_LBL" type="Label" parent="Control/Crafting/GChargedCaffine/Ingredient3"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -69.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "25k"
+
+[connection signal="pressed" from="Control/Crafting/FizzyLight/FizzyLightPotion_BTN" to="." method="_on_fizzy_light_potion_btn_pressed"]
+[connection signal="timeout" from="Control/Crafting/FizzyLight/FizzyLightPotion_PB/FizzyLTimer" to="." method="_on_fizzy_l_timer_timeout"]
+[connection signal="pressed" from="Control/Crafting/FizzyZap/FizzyZapPotion_BTN" to="." method="_on_fizzy_zap_potion_btn_pressed"]
+[connection signal="timeout" from="Control/Crafting/FizzyZap/FizzyZapPotion_PB/FizzyZTimer" to="." method="_on_fizzy_z_timer_timeout"]
+[connection signal="pressed" from="Control/Crafting/FizzyDP/FizzyDPPotion_BTN" to="." method="_on_fizzy_dp_potion_btn_pressed"]
+[connection signal="timeout" from="Control/Crafting/FizzyDP/FizzyDPPotion_PB/FizzyDPTimer" to="." method="_on_fizzy_dp_timer_timeout"]
+[connection signal="pressed" from="Control/Crafting/FizzyBB/FizzyBBPotion_BTN" to="." method="_on_fizzy_bb_potion_btn_pressed"]
+[connection signal="timeout" from="Control/Crafting/FizzyBB/FizzyBBPotion_PB/FizzyBBTimer" to="." method="_on_fizzy_bb_timer_timeout"]
+[connection signal="pressed" from="Control/Crafting/FizzyGodly/FizzyGodlyPotion_BTN" to="." method="_on_fizzy_godly_potion_btn_pressed"]
+[connection signal="timeout" from="Control/Crafting/FizzyGodly/FizzyGodlyPotion_PB/FizzyGodlyTimer" to="." method="_on_fizzy_godly_timer_timeout"]
+[connection signal="pressed" from="Control/Crafting/BasePotion/BasePotion_BTN" to="." method="_on_base_potion_btn_pressed"]
+[connection signal="timeout" from="Control/Crafting/BasePotion/BasePotion_PB/BasePotionTimer" to="." method="_on_base_potion_timer_timeout"]
+[connection signal="pressed" from="Control/Crafting/ChargedCaffine/ChargedCaffine_BTN" to="." method="_on_charged_caffine_btn_pressed"]
+[connection signal="timeout" from="Control/Crafting/ChargedCaffine/ChargedCaffine_PB/ChargedCaffineTimer" to="." method="_on_charged_caffine_timer_timeout"]
+[connection signal="pressed" from="Control/Crafting/DChargedCaffine/DChargedCaffine_BTN" to="." method="_on_d_charged_caffine_btn_pressed"]
+[connection signal="timeout" from="Control/Crafting/DChargedCaffine/DChargedCaffine_PB/DChargedCaffineTimer" to="." method="_on_d_charged_caffine_timer_timeout"]
+[connection signal="pressed" from="Control/Crafting/EChargedCaffine/EChargedCaffine_BTN" to="." method="_on_e_charged_caffine_btn_pressed"]
+[connection signal="timeout" from="Control/Crafting/EChargedCaffine/EChargedCaffine_PB/EChargedCaffineTimer" to="." method="_on_e_charged_timer_timeout"]
+[connection signal="pressed" from="Control/Crafting/GChargedCaffine/GChargedCaffine_BTN" to="." method="_on_g_charged_caffine_btn_pressed"]
+[connection signal="timeout" from="Control/Crafting/GChargedCaffine/GChargedCaffine_PB/GChargedCaffineTimer" to="." method="_on_g_charged_caffine_timer_timeout"]

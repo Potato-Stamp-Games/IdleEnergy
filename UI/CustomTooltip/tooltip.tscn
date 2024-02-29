@@ -22,16 +22,21 @@ corner_detail = 1
 Panel/styles/panel = SubResource("StyleBoxFlat_0yubt")
 
 [node name="ShopTooltip" type="Control"]
+top_level = true
 layout_mode = 3
-anchors_preset = 2
+anchor_left = -0.26
 anchor_top = 1.0
+anchor_right = -0.26
 anchor_bottom = 1.0
+offset_left = -0.799957
+offset_right = -0.799957
 grow_vertical = 0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 1
 theme = ExtResource("1_tadyx")
 script = ExtResource("2_x0tl8")
+metadata/_edit_use_anchors_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
