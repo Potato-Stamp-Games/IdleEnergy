@@ -1,15 +1,48 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgespow2hwr4k"]
+[gd_scene load_steps=8 format=3 uid="uid://cgespow2hwr4k"]
 
 [ext_resource type="Script" path="res://Sodas/doubleplus_soda.gd" id="1_utsjc"]
 [ext_resource type="Texture2D" uid="uid://krg22jfu2x18" path="res://Sodas/SodaSprites/DoublePlusSodaSprite.png" id="2_itdu8"]
+[ext_resource type="Texture2D" uid="uid://ddk3urmvoqyxn" path="res://Sodas/SodaSprites/DoublePlusSodaMoneySprite.png" id="2_l6x0c"]
 [ext_resource type="Texture2D" uid="uid://drpni6pmlgnsl" path="res://Sodas/SodaSprites/DoublePlusSodaClickedSprite.png" id="3_ibcpx"]
 [ext_resource type="AudioStream" uid="uid://dmwe1ciypp4mw" path="res://audio/SFX/meow.wav" id="4_yodrt"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_m5oid"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(0.1, 0.1, 1)
+angle_min = 145.6
+angle_max = 145.6
+direction = Vector3(0, -10, 0)
+initial_velocity_min = 300.0
+initial_velocity_max = 600.0
+angular_velocity_min = 226.52
+angular_velocity_max = 469.22
+gravity = Vector3(0, 750, 0)
+scale_min = 0.3
+scale_max = 0.5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22a5w"]
 size = Vector2(129, 272)
 
 [node name="DoublePlusSoda" type="Area2D"]
 script = ExtResource("1_utsjc")
+
+[node name="DPSodaParticles" type="GPUParticles2D" parent="."]
+unique_name_in_owner = true
+emitting = false
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_m5oid")
+texture = ExtResource("2_l6x0c")
+lifetime = 3.5
+one_shot = true
+speed_scale = 2.5
+trail_lifetime = 2.0
+trail_sections = 5
+trail_section_subdivisions = 5
+
+[node name="DPParticleTimer" type="Timer" parent="DPSodaParticles"]
+unique_name_in_owner = true
+wait_time = 2.5
+one_shot = true
 
 [node name="DoublePlusSodaCollision" type="CollisionShape2D" parent="."]
 position = Vector2(3.5, 31)
@@ -36,4 +69,5 @@ bus = &"SFX"
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="timeout" from="DPSodaParticles/DPParticleTimer" to="." method="_on_dp_particle_timer_timeout"]
 [connection signal="timeout" from="DPS_AutoClickTimer" to="." method="_on_dps_auto_click_timer_timeout"]

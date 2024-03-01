@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bktf204prj7tk"]
+[gd_scene load_steps=21 format=3 uid="uid://bktf204prj7tk"]
 
 [ext_resource type="Script" path="res://Scenes/shop_scene.gd" id="1_0sxmm"]
 [ext_resource type="Texture2D" uid="uid://bofo3l5nscx5n" path="res://UI/UISprites/BackButtonSprite.png" id="2_52daq"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" path="res://UI/GodlyConversionUI.gd" id="12_mhtgi"]
 [ext_resource type="Texture2D" uid="uid://drdlqsrvuwo6y" path="res://Sodas/SodaSprites/GoldyEqualsSodaSprite.png" id="12_wakov"]
 [ext_resource type="Texture2D" uid="uid://ca3fspipw8awc" path="res://Sodas/SodaSprites/allMoneySprite.png" id="13_vxfcl"]
+[ext_resource type="Texture2D" uid="uid://du4wf0ee5rtes" path="res://Scenes/Shop/TheSodaShop.png" id="16_ce7g4"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_vt5oh"]
 allow_unpress = true
@@ -50,7 +51,7 @@ scale = Vector2(1.25, 1.25)
 texture = ExtResource("2_n7cfy")
 
 [node name="Border" type="Sprite2D" parent="."]
-position = Vector2(1023, 426.56)
+position = Vector2(1023, 627.56)
 scale = Vector2(0.88, 0.66475)
 texture = ExtResource("3_kpma2")
 
@@ -58,9 +59,9 @@ texture = ExtResource("3_kpma2")
 layout_mode = 1
 anchor_bottom = 0.999074
 offset_left = 490.0
-offset_top = 29.0
+offset_top = 230.0
 offset_right = -368.0
-offset_bottom = -256.0
+offset_bottom = -55.0
 
 [node name="Panels Control" type="Control" parent="."]
 anchors_preset = 0
@@ -469,7 +470,21 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="SfxAudioPlayer" type="AudioStreamPlayer" parent="."]
-volume_db = -0.195
+volume_db = -19.5
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(800, 200)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -499.0
+offset_right = 624.0
+offset_bottom = 200.0
+grow_horizontal = 2
+texture = ExtResource("16_ce7g4")
+expand_mode = 1
+stretch_mode = 5
 
 [connection signal="pressed" from="Panels Control/GoldyConversionPanel/GodlyConversionUI/VBoxContainer/ButtonMultipierContainer/GodlyX1Button" to="Panels Control/GoldyConversionPanel/GodlyConversionUI" method="_on_godly_x_1_button_pressed"]
 [connection signal="pressed" from="Panels Control/GoldyConversionPanel/GodlyConversionUI/VBoxContainer/ButtonMultipierContainer/GodlyX10Button" to="Panels Control/GoldyConversionPanel/GodlyConversionUI" method="_on_godly_x_10_button_pressed"]

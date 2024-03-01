@@ -5439,9 +5439,8 @@ theme_override_constants/shadow_outline_size = 15
 theme_override_font_sizes/font_size = 24
 text = "999,999,999"
 
-[node name="TooltipsControl" type="Control" parent="UpgradesControl"]
-layout_mode = 2
-anchors_preset = 0
+[node name="TooltipsControl" type="CanvasLayer" parent="UpgradesControl"]
+layer = 10
 
 [node name="LSClickPow1Tooltip" type="Node" parent="UpgradesControl/TooltipsControl"]
 script = ExtResource("23_x7fnr")
@@ -5510,7 +5509,7 @@ visuals_res = ExtResource("24_cvo2o")
 delay = 0.3
 header = "~DB Soda Auto Click Pow~"
 body1 = "+20% Auto Click Gain(1 Click/sec)"
-body2 = "\"Double the money, plus the honey\""
+body2 = "\"Here comes trouble, make it double\""
 body3 = "~No Refunds~"
 
 [node name="BBAutoClickTooltip" type="Node" parent="UpgradesControl/TooltipsControl"]

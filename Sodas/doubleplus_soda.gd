@@ -15,6 +15,8 @@ var doublePlusSodaMoney
 var doublePlusSodaClickPower 
 var newAge = Global.newAge
 var quantumSoda
+#Particle Variables
+var timesClicked = 0
 func _ready():
 	DoublePlusSodaClickedSprite = get_node("DoublePlusSodaClickedSprite")
 	DoublePlusSodaSprite = get_node("DoublePlusSodaSprite")
@@ -22,7 +24,7 @@ func _ready():
 
 #When input is mouse, when mouse button left click, when pressed
 func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisionshape2d signal
-	if Global.doublePlusSodaAuto == true:
+	if Global.doublePlusSodaAuto == true && %DPS_AutoClickTimer.is_stopped() == true :
 		%DPS_AutoClickTimer.start()
 	if  event is InputEventMouseButton:
 		DoublePlusSodaClickedSprite.hide()
@@ -30,7 +32,10 @@ func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisi
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			#Audio
 			double_plus_soda_sfx.play()
-			
+			#Particles
+			timesClicked += 2
+			if %DPParticleTimer.is_stopped() == true:
+				%DPParticleTimer.start()
 			#Creates values based on most recent in global.gd
 			trueMoney = Global.trueMoney
 			doublePlusSodaMoney = Global.doublePlusSodaMoney
@@ -39,7 +44,7 @@ func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisi
 			quantumSoda = Global.quantumSoda
 			#double click rng upgrade
 			if rng.randi_range(1, 500) <= quantumSoda :
-				doubleClick	= 2
+				doubleClick	= 3
 			#Magic Soda RNG upgrade
 			var sodaSelect = rng.randi_range(0, 3)
 			if sodaSelect == 0:
@@ -97,3 +102,11 @@ func _on_dps_auto_click_timer_timeout():
 		var newTime = (1 - (float(Global.timeInSoda) / 100))
 		%DPS_AutoClickTimer.wait_time = newTime
 
+
+
+func _on_dp_particle_timer_timeout():
+	%DPSodaParticles.restart()
+	%DPSodaParticles.amount = timesClicked
+	timesClicked = 0
+	%DPSodaParticles.emitting = true
+	%DPParticleTimer.stop()

@@ -185,21 +185,25 @@ func _on_light_soda_ac_1_buy_button_pressed():
 	if (buyUpgrade(lm_AC_CostEq, ls_AC_CostEq, Global.godlySodaMoney, %LM_AC_CostLabel, %LS_AC_CostLabel) == true):
 			Global.godlySodaMoney -= ls_AC_CostEq
 			Global.lightSodaAutoClick += 0.2
+			Global.lightSodaAuto = true
 #Zap Soda Auto Click 20%
 func _on_zap_soda_ac_1_buy_button_pressed():
 	if (buyUpgrade(zm_AC_CostEq, zs_AC_CostEq, Global.godlySodaMoney, %ZM_AC_CostLabel, %ZS_AC_CostLabel) == true):
 		Global.godlySodaMoney -= zs_AC_CostEq
 		Global.zapSodaAutoClick += 0.2
+		Global.zapSodaAuto = true
 #Double Plus Soda Auto Click 20%
 func _on_dp_soda_ac_1_buy_button_pressed():
 	if (buyUpgrade(dpm_AC_CostEq, dps_AC_CostEq, Global.godlySodaMoney, %DPM_AC_CostLabel, %DPS_AC_CostLabel) == true):
 		Global.godlySodaMoney -= dps_AC_CostEq
 		Global.doublePlusSodaAutoClick += 0.2
+		Global.doublePlusSodaAuto = true
 #Berry Burst Soda Auto Click 20%
 func _on_bb_soda_ac_1_buy_button_pressed():
 	if (buyUpgrade(bbm_AC_CostEq, bbs_AC_CostEq, Global.godlySodaMoney, %BBM_AC_CostLabel, %BBS_AC_CostLabel) == true):
 		Global.godlySodaMoney -= bbs_AC_CostEq
 		Global.berryBurstSodaAutoClick += 0.2
+		Global.berryBurstSodaAuto = true
 #Godly Favor +0.1
 func _on_godly_favor_buy_button_pressed():
 	if (buyUpgrade(godlyFM_CostEq, godlyFS_CostEq, Global.godlySodaMoney, %GodlyFM_CostLabel, %GodlyFS_CostLabel) == true):

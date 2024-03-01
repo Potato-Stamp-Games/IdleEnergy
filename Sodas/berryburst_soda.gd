@@ -12,18 +12,24 @@ var berryBurstSodaMoney
 var berryBurstSodaClickPower 
 var newAge = Global.newAge
 var quantumSoda
+#Particle Variables
+var timesClicked = 0
 func _ready():
 	BerryBurstSodaClickedSprite = get_node("BerryBurstSodaClickedSprite")
 	BerryBurstSodaSprite = get_node("BerryBurstSodaSprite")
 #When input is mouse, when mouse button left click, when pressed 
 func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisionshape2d signal
-	
+	if Global.berryBurstSodaAuto == true && %BBS_AutoClickTimer.is_stopped() == true :
+		%BBS_AutoClickTimer.start()
 	if  event is InputEventMouseButton:
 		BerryBurstSodaClickedSprite.hide()
 		BerryBurstSodaSprite.show()
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			$BerryBurstSodaSFX.play()
-			
+			#Particles
+			timesClicked += 3
+			if %BBParticleTimer.is_stopped() == true:
+				%BBParticleTimer.start()
 			#Creates values based on most recent in global.gd
 			newAge = Global.newAge
 			trueMoney = Global.trueMoney
@@ -91,3 +97,11 @@ func _on_bbs_auto_click_timer_timeout():
 	if Global.timeInSoda > 0:
 		var newTime = (1 - (float(Global.timeInSoda) / 100))
 		%BBS_AutoClickTimer.wait_time = newTime
+
+
+func _on_bb_particle_timer_timeout():
+	%BBSodaParticles.restart()
+	%BBSodaParticles.amount = timesClicked
+	timesClicked = 0
+	%BBSodaParticles.emitting = true
+	%BBParticleTimer.stop()

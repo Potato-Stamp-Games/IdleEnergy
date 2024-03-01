@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dpyojnqpoucji"]
+
+[node name="ScrollContainer" type="ScrollContainer"]
+custom_minimum_size = Vector2(400, 1000)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(400, 600)
+layout_mode = 2

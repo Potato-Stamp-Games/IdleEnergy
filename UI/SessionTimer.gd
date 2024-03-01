@@ -7,11 +7,11 @@ func _on_timeout():
 	var secTime = Global.secTime
 	var minTime = Global.minTime
 	var hourTime = Global.hourTime
-	if(secTime > 60):
+	if(secTime >= 59):
 		Global.minTime += 1
-		Global.secTime = 0
+		Global.secTime = -1
 		
-	if(minTime > 60):
+	if(minTime >= 59):
 		Global.hourTime += 1
-		Global.minTime = 0
+		Global.minTime = -1
 	Global.sessionTime = str(hourTime) + " Hours  " + str(minTime) + " Minutes  " + str(secTime) + " Seconds"
