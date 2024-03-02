@@ -1,7 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://4f1g8hclro8c"]
+[gd_scene load_steps=17 format=3 uid="uid://4f1g8hclro8c"]
 
 [ext_resource type="Script" path="res://UI/UI.gd" id="1_te6a7"]
-[ext_resource type="Texture2D" uid="uid://chgwqi4r7ukji" path="res://Scenes/MainBackground.svg" id="2_y1h6c"]
+[ext_resource type="Texture2D" uid="uid://hkus72itds8u" path="res://Scenes/MainBackground.svg" id="2_y1h6c"]
 [ext_resource type="Texture2D" uid="uid://dtm2rg3jkbm08" path="res://Sodas/SodaSprites/SodaLightSprite_Money.png" id="3_703tr"]
 [ext_resource type="Texture2D" uid="uid://b6j2cir231g8x" path="res://Sodas/SodaSprites/TrueMoneySprite.png" id="3_qrsc5"]
 [ext_resource type="Texture2D" uid="uid://cfqoqf35wm8dr" path="res://UI/UISprites/MoneyBorder.png" id="3_wnpwg"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://csbf0ebut366j" path="res://UI/UISprites/ShopIcon.png" id="10_e622p"]
 [ext_resource type="Texture2D" uid="uid://bwtt1d6k3deos" path="res://UI/UISprites/AlchemyButtonSprite.png" id="11_7hie4"]
 [ext_resource type="PackedScene" uid="uid://c568qlc5aq4cr" path="res://UI/style_center_menu_bar.tscn" id="11_vhvr6"]
+[ext_resource type="Texture2D" uid="uid://b7lg4hasbshyw" path="res://UI/UISprites/ShopIconPressed.png" id="13_kvkua"]
+[ext_resource type="Texture2D" uid="uid://beaar7onv0mkq" path="res://UI/UISprites/AlchemyButtonPressedSprite.png" id="15_eanbf"]
 
 [sub_resource type="GDScript" id="GDScript_22jcw"]
 script/source = "extends Label
@@ -36,7 +38,7 @@ script = ExtResource("1_te6a7")
 layer = -2
 
 [node name="Background" type="Sprite2D" parent="BackgroundImage"]
-self_modulate = Color(1, 0.639216, 0.654902, 1)
+self_modulate = Color(0.529412, 0.529412, 0.529412, 1)
 position = Vector2(960, 540)
 texture = ExtResource("2_y1h6c")
 
@@ -112,7 +114,7 @@ offset_left = -2482.43
 offset_top = -612.0
 offset_right = -957.431
 offset_bottom = 961.0
-color = Color(0.0901961, 0.0901961, 0.0901961, 0.8)
+color = Color(0, 0, 0, 0.921569)
 
 [node name="TextureRect" type="TextureRect" parent="MainLayer/Control/MarginContainer/VBoxContainer/MoneyBorderSprite/Money/BoxContainer/MoneySprite/ColorRect"]
 show_behind_parent = true
@@ -159,8 +161,10 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_colors/font_color = Color(0.592157, 0.858824, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_outline_size = 25
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_constants/shadow_outline_size = 45
 theme_override_font_sizes/font_size = 75
 text = "0"
 horizontal_alignment = 2
@@ -182,8 +186,10 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_colors/font_color = Color(0.560784, 1, 0.733333, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_outline_size = 25
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_constants/shadow_outline_size = 45
 theme_override_font_sizes/font_size = 75
 text = "0"
 horizontal_alignment = 2
@@ -205,8 +211,10 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_colors/font_color = Color(0.768627, 0.219608, 0.34902, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_outline_size = 25
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_constants/shadow_outline_size = 45
 theme_override_font_sizes/font_size = 75
 text = "0"
 horizontal_alignment = 2
@@ -228,8 +236,10 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_colors/font_color = Color(0.643137, 0.52549, 0.980392, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_outline_size = 25
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_constants/shadow_outline_size = 45
 theme_override_font_sizes/font_size = 75
 text = "0"
 horizontal_alignment = 2
@@ -251,8 +261,10 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_colors/font_color = Color(0.866667, 0.686275, 0.0980392, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_outline_size = 25
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_constants/shadow_outline_size = 45
 theme_override_font_sizes/font_size = 75
 text = "0"
 horizontal_alignment = 2
@@ -266,14 +278,25 @@ offset_right = 130.0
 offset_bottom = 951.0
 scale = Vector2(2, 2)
 
+[node name="ColorRect" type="ColorRect" parent="MainLayer/Control/ShopBoxContainer"]
+custom_minimum_size = Vector2(3, 0)
+layout_mode = 2
+color = Color(1, 1, 0, 1)
+
 [node name="ShopButton" type="TextureButton" parent="MainLayer/Control/ShopBoxContainer"]
-custom_minimum_size = Vector2(130, 130)
+custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 action_mode = 0
 texture_normal = ExtResource("10_e622p")
+texture_hover = ExtResource("13_kvkua")
 ignore_texture_size = true
-stretch_mode = 0
+stretch_mode = 6
+
+[node name="ColorRect2" type="ColorRect" parent="MainLayer/Control/ShopBoxContainer"]
+custom_minimum_size = Vector2(3, 0)
+layout_mode = 2
+color = Color(1, 1, 0, 1)
 
 [node name="ShopBoxContainer" type="BoxContainer" parent="MainLayer"]
 anchors_preset = 4
@@ -285,14 +308,25 @@ offset_bottom = -5.0
 grow_vertical = 2
 scale = Vector2(2, 2)
 
+[node name="ColorRect" type="ColorRect" parent="MainLayer/ShopBoxContainer"]
+custom_minimum_size = Vector2(3, 0)
+layout_mode = 2
+color = Color(1, 1, 0, 1)
+
 [node name="AlchemyButton" type="TextureButton" parent="MainLayer/ShopBoxContainer"]
-custom_minimum_size = Vector2(135, 135)
+custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 action_mode = 0
 texture_normal = ExtResource("11_7hie4")
+texture_hover = ExtResource("15_eanbf")
 ignore_texture_size = true
-stretch_mode = 0
+stretch_mode = 6
+
+[node name="ColorRect2" type="ColorRect" parent="MainLayer/ShopBoxContainer"]
+custom_minimum_size = Vector2(3, 0)
+layout_mode = 2
+color = Color(1, 1, 0, 1)
 
 [connection signal="pressed" from="MainLayer/Control/ShopBoxContainer/ShopButton" to="." method="_on_shop_button_pressed"]
 [connection signal="pressed" from="MainLayer/ShopBoxContainer/AlchemyButton" to="." method="_on_alchemy_button_pressed"]
