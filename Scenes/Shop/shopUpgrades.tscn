@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://btd8rnrs6ui54"]
+[gd_scene load_steps=26 format=3 uid="uid://btd8rnrs6ui54"]
 
 [ext_resource type="Script" path="res://Scenes/Shop/shop_back.gd" id="1_1rc8l"]
 [ext_resource type="Texture2D" uid="uid://cafxsaaq4g4dv" path="res://Scenes/Shop/Sprites/UpgradeBackground.jpg" id="2_3lsky"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://nfwb5rkhpiwq" path="res://Scenes/Shop/Sprites/LightClickPower1Sprite.png" id="4_n3owc"]
 [ext_resource type="Texture2D" uid="uid://jg2kc330oe2j" path="res://Scenes/Shop/Sprites/BuyButtonSprite.png" id="5_t6v8o"]
 [ext_resource type="Texture2D" uid="uid://c344mjvyvtvlm" path="res://Scenes/Shop/Sprites/BuyButtonPressedSprite.png" id="6_88ill"]
+[ext_resource type="Texture2D" uid="uid://xki4u0tnwg8v" path="res://Scenes/Shop/Sprites/BuyButtonHoverSprite.png" id="7_ffm6e"]
 [ext_resource type="Texture2D" uid="uid://cyv6l3qoarw6g" path="res://Scenes/Shop/Sprites/ZapClickPower1Sprite.png" id="7_jmt6v"]
 [ext_resource type="Texture2D" uid="uid://bjkxjgln1m710" path="res://Scenes/Shop/Sprites/DoublePlusClickPower1Sprite.png" id="8_n2qgw"]
 [ext_resource type="Texture2D" uid="uid://h3vxvuu05w81" path="res://Scenes/Shop/Sprites/BerryBurstClickPower1Sprite.png" id="9_6gehq"]
@@ -143,6 +144,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -239,6 +241,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -335,6 +338,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -431,6 +435,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -529,6 +534,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -627,6 +633,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -724,6 +731,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -820,6 +828,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -957,6 +966,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -1049,6 +1059,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -1147,6 +1158,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -1246,6 +1258,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -1345,6 +1358,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -1444,6 +1458,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -1543,6 +1558,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -1642,6 +1658,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -1768,6 +1785,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -1863,6 +1881,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -1958,6 +1977,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -2053,6 +2073,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -2148,6 +2169,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -2243,6 +2265,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -2338,6 +2361,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -2433,6 +2457,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -2562,6 +2587,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -2657,6 +2683,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -2752,6 +2779,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -2847,6 +2875,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -2942,6 +2971,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -3037,6 +3067,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -3132,6 +3163,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -3227,6 +3259,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -3356,6 +3389,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -3451,6 +3485,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -3546,6 +3581,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -3641,6 +3677,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -3736,6 +3773,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -3831,6 +3869,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -3926,6 +3965,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -4021,6 +4061,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -4153,6 +4194,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -4248,6 +4290,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -4343,6 +4386,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -4438,6 +4482,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -4533,6 +4578,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -4628,6 +4674,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -4723,6 +4770,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -4818,6 +4866,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -4913,6 +4962,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -5008,6 +5058,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -5103,6 +5154,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -5198,6 +5250,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -5293,6 +5346,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -5388,6 +5442,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("5_t6v8o")
 texture_pressed = ExtResource("6_88ill")
+texture_hover = ExtResource("7_ffm6e")
 ignore_texture_size = true
 stretch_mode = 0
 
