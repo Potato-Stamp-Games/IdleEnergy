@@ -76,7 +76,7 @@ size_flags_vertical = 0
 mouse_filter = 2
 
 [node name="MoneyBorderSprite" type="Sprite2D" parent="MainLayer/Control/MarginContainer/VBoxContainer"]
-self_modulate = Color(0.901961, 0.952941, 0.988235, 1)
+self_modulate = Color(0.721569, 0.721569, 0.721569, 1)
 position = Vector2(977, 133)
 scale = Vector2(0.7, 0.596)
 texture = ExtResource("3_wnpwg")
@@ -270,63 +270,70 @@ text = "0"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="ShopBoxContainer" type="BoxContainer" parent="MainLayer/Control"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-offset_top = 821.0
-offset_right = 130.0
-offset_bottom = 951.0
-scale = Vector2(2, 2)
+[node name="ColorRect" type="ColorRect" parent="MainLayer/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -263.0
+offset_bottom = 172.0
+grow_horizontal = 0
+color = Color(0, 0, 0, 0.760784)
 
-[node name="ColorRect" type="ColorRect" parent="MainLayer/Control/ShopBoxContainer"]
-custom_minimum_size = Vector2(3, 0)
-layout_mode = 2
-color = Color(1, 1, 0, 1)
-
-[node name="ShopButton" type="TextureButton" parent="MainLayer/Control/ShopBoxContainer"]
-custom_minimum_size = Vector2(120, 120)
-layout_mode = 2
-size_flags_horizontal = 4
-action_mode = 0
-texture_normal = ExtResource("10_e622p")
-texture_hover = ExtResource("13_kvkua")
-ignore_texture_size = true
-stretch_mode = 6
-
-[node name="ColorRect2" type="ColorRect" parent="MainLayer/Control/ShopBoxContainer"]
-custom_minimum_size = Vector2(3, 0)
-layout_mode = 2
-color = Color(1, 1, 0, 1)
-
-[node name="ShopBoxContainer" type="BoxContainer" parent="MainLayer"]
+[node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -65.0
-offset_right = 60.0
-offset_bottom = -5.0
+offset_left = 1.0
+offset_top = -139.0
+offset_right = 264.0
+offset_bottom = 538.0
 grow_vertical = 2
-scale = Vector2(2, 2)
+color = Color(0, 0, 0, 0.760784)
 
-[node name="ColorRect" type="ColorRect" parent="MainLayer/ShopBoxContainer"]
-custom_minimum_size = Vector2(3, 0)
+[node name="GridContainer" type="GridContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AlchemyBoxContainer" type="BoxContainer" parent="ColorRect/GridContainer"]
+custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
-color = Color(1, 1, 0, 1)
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="AlchemyButton" type="TextureButton" parent="MainLayer/ShopBoxContainer"]
-custom_minimum_size = Vector2(120, 120)
+[node name="AlchemyButton" type="TextureButton" parent="ColorRect/GridContainer/AlchemyBoxContainer"]
+self_modulate = Color(0.811765, 0.811765, 0.811765, 1)
+custom_minimum_size = Vector2(260, 260)
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 4
 action_mode = 0
 texture_normal = ExtResource("11_7hie4")
 texture_hover = ExtResource("15_eanbf")
 ignore_texture_size = true
 stretch_mode = 6
 
-[node name="ColorRect2" type="ColorRect" parent="MainLayer/ShopBoxContainer"]
-custom_minimum_size = Vector2(3, 0)
+[node name="ShopBoxContainer" type="BoxContainer" parent="ColorRect/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-color = Color(1, 1, 0, 1)
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[connection signal="pressed" from="MainLayer/Control/ShopBoxContainer/ShopButton" to="." method="_on_shop_button_pressed"]
-[connection signal="pressed" from="MainLayer/ShopBoxContainer/AlchemyButton" to="." method="_on_alchemy_button_pressed"]
+[node name="ShopButton" type="TextureButton" parent="ColorRect/GridContainer/ShopBoxContainer"]
+modulate = Color(0.733333, 0.733333, 0.733333, 1)
+custom_minimum_size = Vector2(260, 260)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+action_mode = 0
+texture_normal = ExtResource("10_e622p")
+texture_hover = ExtResource("13_kvkua")
+ignore_texture_size = true
+stretch_mode = 6
+
+[connection signal="pressed" from="ColorRect/GridContainer/AlchemyBoxContainer/AlchemyButton" to="." method="_on_alchemy_button_pressed"]
+[connection signal="pressed" from="ColorRect/GridContainer/ShopBoxContainer/ShopButton" to="." method="_on_shop_button_pressed"]

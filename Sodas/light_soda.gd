@@ -22,6 +22,8 @@ var timesClicked = 0
 func _ready():
 	SodaLightClickedSprite = get_node("SodaLightClickedSprite")
 	SodaLightSprite = get_node("SodaLightSprite")
+func _process(_delta):
+	%LSAnimation.play("Idle")
 #When input is mouse, when mouse button left click, when pressed 
 func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisionshape2d signal
 	if Global.lightSodaAuto == true:

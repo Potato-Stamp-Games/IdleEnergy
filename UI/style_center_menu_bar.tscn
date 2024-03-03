@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c568qlc5aq4cr"]
+[gd_scene load_steps=12 format=3 uid="uid://c568qlc5aq4cr"]
 
 [ext_resource type="Script" path="res://UI/style_center_menu_bar.gd" id="1_cqdsd"]
 [ext_resource type="Texture2D" uid="uid://droj3s05taoeg" path="res://UI/UISprites/MenuButtonSprite.png" id="2_nx8lg"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bvxu1f8j2mfr0" path="res://UI/UISprites/SettingsSpriteIcon.png" id="6_uek6a"]
 [ext_resource type="Texture2D" uid="uid://ch08agnltfguy" path="res://UI/UISprites/ExitButtonIcon.png" id="7_02dqw"]
 [ext_resource type="PackedScene" uid="uid://d57vdv10n0ts" path="res://UI/your_stats_canvas.tscn" id="7_88dtj"]
+[ext_resource type="PackedScene" uid="uid://dpyojnqpoucji" path="res://Scenes/Achievements/achievements_scene.tscn" id="8_id0jg"]
 [ext_resource type="PackedScene" uid="uid://d1wvp7q3c3gv0" path="res://settings.tscn" id="9_0wpkv"]
 
 [sub_resource type="AudioStreamMP3" id="AudioStreamMP3_5rtp0"]
@@ -55,15 +56,17 @@ popup/item_4/id = 4
 unique_name_in_owner = true
 title = "Achievements"
 initial_position = 2
-size = Vector2i(400, 600)
+size = Vector2i(800, 1000)
 visible = false
 
 [node name="Camera2D" type="Camera2D" parent="Control/AchievementsPopUp"]
 
-[node name="Panel" type="Panel" parent="Control/AchievementsPopUp/Camera2D"]
+[node name="Achievements" parent="Control/AchievementsPopUp/Camera2D" instance=ExtResource("8_id0jg")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -125,8 +128,8 @@ bus = &"SFX"
 [connection signal="pressed" from="Control/CoolMenuButton" to="." method="_on_cool_menu_button_pressed"]
 [connection signal="close_requested" from="Control/AchievementsPopUp" to="." method="_on_achievements_pop_up_close_requested"]
 [connection signal="close_requested" from="Control/AchievementsPopUp" to="." method="_on_your_stats_pop_up_close_requested"]
-[connection signal="go_back_requested" from="Control/AchievementsPopUp" to="." method="_on_your_stats_pop_up_go_back_requested"]
 [connection signal="go_back_requested" from="Control/AchievementsPopUp" to="." method="_on_achievements_pop_up_go_back_requested"]
+[connection signal="go_back_requested" from="Control/AchievementsPopUp" to="." method="_on_your_stats_pop_up_go_back_requested"]
 [connection signal="close_requested" from="Control/YourStatsPopUp" to="." method="_on_your_stats_pop_up_close_requested"]
 [connection signal="go_back_requested" from="Control/YourStatsPopUp" to="." method="_on_your_stats_pop_up_go_back_requested"]
 [connection signal="visibility_changed" from="Control/YourStatsPopUp" to="Control/YourStatsPopUp/Camera2D/Panel/YourStatsCanvas" method="_on_your_stats_pop_up_visibility_changed"]
