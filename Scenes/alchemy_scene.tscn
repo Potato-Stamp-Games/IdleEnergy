@@ -39,6 +39,19 @@ texture = ExtResource("2_njhpx")
 expand_mode = 5
 stretch_mode = 5
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1983.76
+offset_right = 1983.76
+offset_bottom = 183.0
+grow_horizontal = 2
+texture = ExtResource("18_dcnbd")
+expand_mode = 3
+stretch_mode = 5
+
 [node name="Border" type="NinePatchRect" parent="."]
 custom_minimum_size = Vector2(1250, 600)
 layout_mode = 2
@@ -327,19 +340,6 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 20
 theme_override_font_sizes/font_size = 30
 text = "ACTIVE"
-
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -1983.76
-offset_right = 1983.76
-offset_bottom = 183.0
-grow_horizontal = 2
-texture = ExtResource("18_dcnbd")
-expand_mode = 3
-stretch_mode = 5
 
 [connection signal="mouse_entered" from="BackButton/BackButton" to="." method="_on_back_button_mouse_entered"]
 [connection signal="mouse_exited" from="BackButton/BackButton" to="." method="_on_back_button_mouse_exited"]

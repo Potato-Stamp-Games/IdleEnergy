@@ -19,33 +19,30 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_awm87")
 
-[node name="Panel" type="Panel" parent="."]
-visibility_layer = 15
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
+[node name="UI" parent="." instance=ExtResource("5_8v3al")]
+layer = 2
 
-[node name="UI" parent="Panel" instance=ExtResource("5_8v3al")]
+[node name="Sodas" type="CanvasLayer" parent="."]
 
-[node name="DoublePlusSoda" parent="Panel" instance=ExtResource("1_8elwk")]
-position = Vector2(1214, 755)
-scale = Vector2(1.8, 1.8)
+[node name="SodaLight" parent="Sodas" instance=ExtResource("2_yhlpn")]
+light_mask = 7
+position = Vector2(431, 797)
+scale = Vector2(3.2, 3.2)
 
-[node name="SodaLight" parent="Panel" instance=ExtResource("2_yhlpn")]
-position = Vector2(434, 717)
-scale = Vector2(3.8, 3.8)
+[node name="ZapSoda" parent="Sodas" instance=ExtResource("3_3sy2r")]
+visibility_layer = 7
+position = Vector2(804, 816)
+scale = Vector2(1.75, 1.75)
 
-[node name="ZapSoda" parent="Panel" instance=ExtResource("3_3sy2r")]
-position = Vector2(843, 741)
-scale = Vector2(2.1, 2.1)
+[node name="DoublePlusSoda" parent="Sodas" instance=ExtResource("1_8elwk")]
+visibility_layer = 7
+position = Vector2(1134, 828)
+scale = Vector2(1.5, 1.5)
 
-[node name="BerryBurstSoda" parent="Panel" instance=ExtResource("4_0aqmg")]
-position = Vector2(1573, 786)
-scale = Vector2(1.8, 1.8)
+[node name="BerryBurstSoda" parent="Sodas" instance=ExtResource("4_0aqmg")]
+visibility_layer = 7
+position = Vector2(1442, 850)
+scale = Vector2(1.5, 1.5)
 
 [node name="SessionTimer" type="Timer" parent="."]
 autostart = true
@@ -54,15 +51,16 @@ script = ExtResource("6_hhxbr")
 [node name="RNGTimer" type="Timer" parent="."]
 autostart = true
 
+[node name="SFX Player" type="AudioStreamPlayer" parent="."]
+volume_db = -19.5
+bus = &"SFX"
+
 [node name="Music Player" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_l3eyg")
 volume_db = -20.8
 autoplay = true
 bus = &"Music"
 
-[node name="SFX Player" type="AudioStreamPlayer" parent="."]
-bus = &"SFX"
-
-[connection signal="mouse_entered" from="Panel/DoublePlusSoda" to="Panel/DoublePlusSoda" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Sodas/DoublePlusSoda" to="Sodas/DoublePlusSoda" method="_on_mouse_entered"]
 [connection signal="timeout" from="SessionTimer" to="SessionTimer" method="_on_timeout"]
 [connection signal="timeout" from="RNGTimer" to="." method="_on_rng_timer_timeout"]

@@ -15,13 +15,15 @@ var zapSodaMoney
 var zapSodaClickPower 
 var newAge = Global.newAge
 var quantumSoda
+#Particle variables
+var timesClicked = 0
 func _ready():
 	ZapSodaClickedSprite = get_node("ZapSodaClickedSprite")
 	ZapSodaSprite = get_node("ZapSodaSprite")
 
 #When input is mouse, when mouse button left click, when pressed
 func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisionshape2d signal
-	if Global.zapSodaAuto == true:
+	if Global.zapSodaAuto == true && %ZS_AutoClickTimer.is_stopped() == true :
 		%ZS_AutoClickTimer.start()
 	if  event is InputEventMouseButton:
 		ZapSodaClickedSprite.hide()
@@ -29,6 +31,10 @@ func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisi
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			#Audio
 			zap_soda_sfx.play()
+			#Particles
+			timesClicked += 3
+			if %ZParticleTimer.is_stopped() == true:
+				%ZParticleTimer.start()
 			#Creates values based on most recent in global.gd
 			newAge = Global.newAge
 			trueMoney = Global.trueMoney
@@ -96,3 +102,11 @@ func _on_zs_auto_click_timer_timeout():
 	if Global.timeInSoda > 0:
 		var newTime = (1 - (float(Global.timeInSoda) / 100))
 		%ZS_AutoClickTimer.wait_time = newTime
+
+
+func _on_z_particle_timer_timeout():
+	%ZSodaParticles.restart()
+	%ZSodaParticles.amount = timesClicked
+	timesClicked = 0
+	%ZSodaParticles.emitting = true
+	%ZParticleTimer.stop()

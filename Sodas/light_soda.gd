@@ -16,6 +16,8 @@ var lightSodaMoney
 var lightSodaClickPower 
 var newAge = Global.newAge
 var quantumSoda = Global.quantumSoda
+#Particles Variables
+var timesClicked = 0
 
 func _ready():
 	SodaLightClickedSprite = get_node("SodaLightClickedSprite")
@@ -30,6 +32,10 @@ func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisi
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			#Audio
 			light_soda_sfx.play()
+			#Particles
+			timesClicked += 1
+			if %LParticleTimer.is_stopped() == true && %LS_AutoClickTimer.is_stopped() == true:
+				%LParticleTimer.start()
 			
 			#Creates values based on most recent in global.gd
 			newAge = Global.newAge
@@ -39,7 +45,7 @@ func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisi
 			quantumSoda = Global.quantumSoda
 			#double click rng upgrade
 			if rng.randi_range(1, 500) <= quantumSoda :
-				doubleClick	= 2
+				doubleClick	= 3
 			#Magic Soda RNG upgrade
 			var sodaSelect = rng.randi_range(0, 3)
 			if sodaSelect == 0:
@@ -95,4 +101,13 @@ func _on_ls_auto_click_timer_timeout():
 	if Global.timeInSoda > 0:
 		var newTime = (1 - (float(Global.timeInSoda) / 100))
 		%LS_AutoClickTimer.wait_time = newTime
+
+
+
+func _on_l_particle_timer_timeout():
+	%LSodaParticles.restart()
+	%LSodaParticles.amount = timesClicked
+	timesClicked = 0
+	%LSodaParticles.emitting = true
+	%LParticleTimer.stop()
 

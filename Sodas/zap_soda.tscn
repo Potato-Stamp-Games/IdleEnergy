@@ -1,15 +1,51 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqtrvtvbc2ng"]
+[gd_scene load_steps=8 format=3 uid="uid://cqtrvtvbc2ng"]
 
 [ext_resource type="Script" path="res://Sodas/zap_soda.gd" id="1_hkud6"]
 [ext_resource type="Texture2D" uid="uid://dlbstht3t2v28" path="res://Sodas/SodaSprites/ZapSodaSprite.png" id="1_krx17"]
+[ext_resource type="Texture2D" uid="uid://dv5qmdighj0mt" path="res://Sodas/SodaSprites/SodaSprite_Money.png" id="2_n0kto"]
 [ext_resource type="Texture2D" uid="uid://c8vmyfpqr6ub3" path="res://Sodas/SodaSprites/ZapSodaSpriteClicked.png" id="3_cjwsr"]
 [ext_resource type="AudioStream" uid="uid://dabpig3cvddr0" path="res://audio/SFX/zap.wav" id="4_apiiu"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_onsqi"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(0.1, 0.1, 1)
+angle_min = 145.6
+angle_max = 145.6
+direction = Vector3(0, -10, 0)
+spread = 90.0
+initial_velocity_min = 50.0
+initial_velocity_max = 150.0
+angular_velocity_min = 500.0
+angular_velocity_max = 800.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 350.0
+linear_accel_max = 350.0
+scale_min = 0.3
+scale_max = 0.5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d476x"]
 size = Vector2(121, 236)
 
 [node name="ZapSoda" type="Area2D"]
 script = ExtResource("1_hkud6")
+
+[node name="ZSodaParticles" type="GPUParticles2D" parent="."]
+unique_name_in_owner = true
+emitting = false
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_onsqi")
+texture = ExtResource("2_n0kto")
+lifetime = 3.5
+one_shot = true
+speed_scale = 2.5
+trail_lifetime = 2.0
+trail_sections = 5
+trail_section_subdivisions = 5
+
+[node name="ZParticleTimer" type="Timer" parent="ZSodaParticles"]
+unique_name_in_owner = true
+wait_time = 2.5
+one_shot = true
 
 [node name="ZapSodaCollision" type="CollisionShape2D" parent="."]
 position = Vector2(2.5, 32)
@@ -36,4 +72,5 @@ bus = &"SFX"
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="timeout" from="ZSodaParticles/ZParticleTimer" to="." method="_on_z_particle_timer_timeout"]
 [connection signal="timeout" from="ZS_AutoClickTimer" to="." method="_on_zs_auto_click_timer_timeout"]

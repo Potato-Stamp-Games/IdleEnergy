@@ -1,0 +1,783 @@
+[gd_scene load_steps=36 format=3 uid="uid://bq5bv1t7ocx5x"]
+
+[ext_resource type="Script" path="res://Scenes/Stats/shop_alchemy_stats.gd" id="1_881hl"]
+[ext_resource type="Texture2D" uid="uid://boq56j2gmc6h1" path="res://Scenes/Stats/ShopAlchemyBackground.jpg" id="2_tqb4d"]
+[ext_resource type="Texture2D" uid="uid://nfwb5rkhpiwq" path="res://Scenes/Shop/Sprites/LightClickPower1Sprite.png" id="3_ve0jb"]
+[ext_resource type="Texture2D" uid="uid://cyv6l3qoarw6g" path="res://Scenes/Shop/Sprites/ZapClickPower1Sprite.png" id="4_ahvhv"]
+[ext_resource type="Texture2D" uid="uid://bjkxjgln1m710" path="res://Scenes/Shop/Sprites/DoublePlusClickPower1Sprite.png" id="5_oi813"]
+[ext_resource type="Texture2D" uid="uid://h3vxvuu05w81" path="res://Scenes/Shop/Sprites/BerryBurstClickPower1Sprite.png" id="6_iy8ea"]
+[ext_resource type="Texture2D" uid="uid://4r86rmqko6tu" path="res://Scenes/Shop/Sprites/LightSodaAutoClickSprite.png" id="7_edggv"]
+[ext_resource type="Texture2D" uid="uid://dwwf37oqu8x1d" path="res://Scenes/Shop/Sprites/ZapAutoClickSprite.png" id="8_52mqv"]
+[ext_resource type="Texture2D" uid="uid://5u220j4eu2fg" path="res://Scenes/Shop/Sprites/DPAutoClickSprite.png" id="9_40oes"]
+[ext_resource type="Texture2D" uid="uid://dwbj3lvg6hwmp" path="res://Scenes/Shop/Sprites/BerryBurstAutoClickSprite.png" id="10_dds61"]
+[ext_resource type="Texture2D" uid="uid://c8we4sceibyt3" path="res://Scenes/Shop/Sprites/GodlyFavorUpgradeSprite.png" id="11_e6n5i"]
+[ext_resource type="Texture2D" uid="uid://b0ft1dbyjqfqd" path="res://Scenes/Shop/Sprites/NewAgeUpgradeSprite.png" id="12_2nr0l"]
+[ext_resource type="Texture2D" uid="uid://dry8qlpfwx1yx" path="res://Scenes/Shop/Sprites/QuantumnFlucuationsUpgradeSprite.png" id="13_1u4mp"]
+[ext_resource type="Texture2D" uid="uid://wyh66ae1hehe" path="res://Scenes/Shop/Sprites/MagicSodaSprite.png" id="14_ie3lb"]
+[ext_resource type="Texture2D" uid="uid://cn3h3pmrcnjcv" path="res://Scenes/Shop/Sprites/TimeSodaBottle.png" id="15_ryesv"]
+[ext_resource type="Texture2D" uid="uid://blawr0uwgn6ld" path="res://Scenes/Shop/Sprites/SpeedPotionInfusedSprite.png" id="16_qhcx0"]
+[ext_resource type="Texture2D" uid="uid://bdwmgc780h6xn" path="res://Scenes/Shop/Sprites/SensationOverloadSprite.png" id="17_3j47v"]
+[ext_resource type="Texture2D" uid="uid://bijh8lxhpe42t" path="res://Scenes/Shop/Sprites/TimeSodaBottleSprite.png" id="18_g5o4i"]
+[ext_resource type="Texture2D" uid="uid://bd232amgcg5dx" path="res://Scenes/Alchemy/Sprites/FizzyLight.png" id="19_jlads"]
+[ext_resource type="Texture2D" uid="uid://ri6g5cxxd010" path="res://Scenes/Alchemy/Sprites/FizzyZap.png" id="20_vv4ng"]
+[ext_resource type="Texture2D" uid="uid://cft55aflgdmlv" path="res://Scenes/Alchemy/Sprites/FizzyDoublePlus.png" id="21_uw80k"]
+[ext_resource type="Texture2D" uid="uid://c2nn2u2lb8os7" path="res://Scenes/Alchemy/Sprites/FizzyBerryBurst.png" id="22_ov51f"]
+[ext_resource type="Texture2D" uid="uid://chbfts53plbyc" path="res://Scenes/Alchemy/Sprites/FizzyGodly.png" id="23_me6g4"]
+[ext_resource type="Texture2D" uid="uid://bqhigb1mqun6d" path="res://Scenes/Alchemy/Sprites/CaffinePowder.png" id="24_hetoh"]
+[ext_resource type="Texture2D" uid="uid://bi6yw6km4vwfe" path="res://Scenes/Alchemy/Sprites/ChargedCaffinePowder.png" id="25_1u74n"]
+[ext_resource type="Texture2D" uid="uid://cye1g6wtq0acj" path="res://Scenes/Alchemy/Sprites/DoubleChargedCaffinePowder.png" id="26_j33h2"]
+[ext_resource type="Texture2D" uid="uid://dxhn4x4cmhbqq" path="res://Scenes/Alchemy/Sprites/ExplosivelyChargedCaffinePowder.png" id="27_57al2"]
+[ext_resource type="Texture2D" uid="uid://cyvjpjbjfnr45" path="res://Scenes/Alchemy/Sprites/GodlyChargedCaffinePowder.png" id="28_cttt0"]
+[ext_resource type="Texture2D" uid="uid://b2w1jlmhykfxj" path="res://Scenes/Alchemy/Sprites/LightSodaExtract.png" id="29_0c7c8"]
+[ext_resource type="Texture2D" uid="uid://cggkous4dw1l0" path="res://Scenes/Alchemy/Sprites/ZapSodaExtract.png" id="30_4ueb1"]
+[ext_resource type="Texture2D" uid="uid://ckt36i1yn7ag5" path="res://Scenes/Alchemy/Sprites/DoublePlusSodaExtract.png" id="31_0tqbu"]
+[ext_resource type="Texture2D" uid="uid://cf5cymxi88lxb" path="res://Scenes/Alchemy/Sprites/BerryBurstSodaExtract.png" id="32_4ulvj"]
+[ext_resource type="Texture2D" uid="uid://4rkl3ssuuxf3" path="res://Scenes/Alchemy/Sprites/GoldySodaExtract.png" id="33_gpkfl"]
+[ext_resource type="Texture2D" uid="uid://k4ndrrtp88bl" path="res://Scenes/Alchemy/Sprites/BaseSoda.png" id="34_7xwwu"]
+[ext_resource type="Texture2D" uid="uid://catk7akjg4yd0" path="res://Scenes/Alchemy/Sprites/CraftSpriteHover.png" id="35_do76w"]
+
+[node name="ScrollContainer" type="ScrollContainer"]
+offset_right = 565.0
+offset_bottom = 998.0
+script = ExtResource("1_881hl")
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(560, 870)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_tqb4d")
+expand_mode = 4
+flip_v = true
+
+[node name="C" type="BoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GC" type="GridContainer" parent="Control/C"]
+layout_mode = 2
+
+[node name="Header" type="GridContainer" parent="Control/C/GC"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Control/C/GC/Header"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.996078, 0.909804, 0.752941, 1)
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 70
+text = "Shop & Alchemy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Control/C/GC/Header"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.996078, 0.909804, 0.752941, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 21
+text = "--------------------------------------------------------------------------------"
+
+[node name="T1Divider" type="GridContainer" parent="Control/C/GC"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/v_separation = -20
+
+[node name="Label4" type="Label" parent="Control/C/GC/T1Divider"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 35
+text = " Tier 1"
+
+[node name="Label3" type="Label" parent="Control/C/GC/T1Divider"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 21
+text = "--------------------------------------------------------------------------------"
+
+[node name="ShopGC1" type="GridContainer" parent="Control/C/GC"]
+layout_mode = 2
+columns = 8
+
+[node name="TextureRect" type="TextureRect" parent="Control/C/GC/ShopGC1"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_ve0jb")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LPowLbl" type="Label" parent="Control/C/GC/ShopGC1"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="TextureRect2" type="TextureRect" parent="Control/C/GC/ShopGC1"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_ahvhv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ZPowLbl" type="Label" parent="Control/C/GC/ShopGC1"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="TextureRect3" type="TextureRect" parent="Control/C/GC/ShopGC1"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("5_oi813")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DPPowLbl" type="Label" parent="Control/C/GC/ShopGC1"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="TextureRect4" type="TextureRect" parent="Control/C/GC/ShopGC1"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("6_iy8ea")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BBPowLbl" type="Label" parent="Control/C/GC/ShopGC1"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="ShopGC2" type="GridContainer" parent="Control/C/GC"]
+layout_mode = 2
+columns = 8
+
+[node name="TextureRect" type="TextureRect" parent="Control/C/GC/ShopGC2"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("7_edggv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LAutoLbl" type="Label" parent="Control/C/GC/ShopGC2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="TextureRect2" type="TextureRect" parent="Control/C/GC/ShopGC2"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_52mqv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ZAutoLbl" type="Label" parent="Control/C/GC/ShopGC2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="TextureRect3" type="TextureRect" parent="Control/C/GC/ShopGC2"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("9_40oes")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DPAutoLbl" type="Label" parent="Control/C/GC/ShopGC2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="TextureRect4" type="TextureRect" parent="Control/C/GC/ShopGC2"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("10_dds61")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BBAutoLbl" type="Label" parent="Control/C/GC/ShopGC2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="T1Divider2" type="GridContainer" parent="Control/C/GC"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/v_separation = -20
+
+[node name="Label4" type="Label" parent="Control/C/GC/T1Divider2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.592157, 0.858824, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 35
+text = " Tier 2"
+
+[node name="Label3" type="Label" parent="Control/C/GC/T1Divider2"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_colors/font_color = Color(0.592157, 0.858824, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 21
+text = "--------------------------------------------------------------------------------"
+
+[node name="ShopGC3" type="GridContainer" parent="Control/C/GC"]
+layout_mode = 2
+columns = 8
+
+[node name="TextureRect" type="TextureRect" parent="Control/C/GC/ShopGC3"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("11_e6n5i")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="GFortuneLbl" type="Label" parent="Control/C/GC/ShopGC3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="TextureRect2" type="TextureRect" parent="Control/C/GC/ShopGC3"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("12_2nr0l")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NewAgeLbl" type="Label" parent="Control/C/GC/ShopGC3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="TextureRect3" type="TextureRect" parent="Control/C/GC/ShopGC3"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("13_1u4mp")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="QuantumSodaLbl" type="Label" parent="Control/C/GC/ShopGC3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="TextureRect4" type="TextureRect" parent="Control/C/GC/ShopGC3"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("14_ie3lb")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MagicSodaLbl" type="Label" parent="Control/C/GC/ShopGC3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="ShopGC4" type="GridContainer" parent="Control/C/GC"]
+layout_mode = 2
+columns = 8
+
+[node name="TextureRect" type="TextureRect" parent="Control/C/GC/ShopGC4"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("15_ryesv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TimeBottleLbl" type="Label" parent="Control/C/GC/ShopGC4"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="TextureRect2" type="TextureRect" parent="Control/C/GC/ShopGC4"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("16_qhcx0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AlchemyLbl" type="Label" parent="Control/C/GC/ShopGC4"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="TextureRect3" type="TextureRect" parent="Control/C/GC/ShopGC4"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("17_3j47v")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="UnificationLbl" type="Label" parent="Control/C/GC/ShopGC4"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="TextureRect4" type="TextureRect" parent="Control/C/GC/ShopGC4"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("18_g5o4i")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ETimeLbl" type="Label" parent="Control/C/GC/ShopGC4"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="Divider" type="GridContainer" parent="Control/C/GC"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="Control/C/GC/Divider"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.996078, 0.909804, 0.752941, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 21
+text = "--------------------------------------------------------------------------------"
+
+[node name="AlchemyGC" type="GridContainer" parent="Control/C/GC"]
+layout_mode = 2
+columns = 4
+
+[node name="AlchemyGC1" type="GridContainer" parent="Control/C/GC/AlchemyGC"]
+layout_mode = 2
+size_flags_horizontal = 0
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/C/GC/AlchemyGC/AlchemyGC1"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("19_jlads")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FizzyLPotLbl" type="Label" parent="Control/C/GC/AlchemyGC/AlchemyGC1"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="TextureRect2" type="TextureRect" parent="Control/C/GC/AlchemyGC/AlchemyGC1"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("20_vv4ng")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FizzyZPotLbl" type="Label" parent="Control/C/GC/AlchemyGC/AlchemyGC1"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="TextureRect3" type="TextureRect" parent="Control/C/GC/AlchemyGC/AlchemyGC1"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("21_uw80k")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FizzyDPPotLbl" type="Label" parent="Control/C/GC/AlchemyGC/AlchemyGC1"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="TextureRect4" type="TextureRect" parent="Control/C/GC/AlchemyGC/AlchemyGC1"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("22_ov51f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FizzyBBPotLbl" type="Label" parent="Control/C/GC/AlchemyGC/AlchemyGC1"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="TextureRect5" type="TextureRect" parent="Control/C/GC/AlchemyGC/AlchemyGC1"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("23_me6g4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FizzyGPotLbl" type="Label" parent="Control/C/GC/AlchemyGC/AlchemyGC1"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="AlchemyGC2" type="GridContainer" parent="Control/C/GC/AlchemyGC"]
+layout_mode = 2
+size_flags_horizontal = 0
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/C/GC/AlchemyGC/AlchemyGC2"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("24_hetoh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CPowderLbl" type="Label" parent="Control/C/GC/AlchemyGC/AlchemyGC2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="TextureRect2" type="TextureRect" parent="Control/C/GC/AlchemyGC/AlchemyGC2"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("25_1u74n")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CCPowderLbl" type="Label" parent="Control/C/GC/AlchemyGC/AlchemyGC2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="TextureRect3" type="TextureRect" parent="Control/C/GC/AlchemyGC/AlchemyGC2"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("26_j33h2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DCPowderLbl" type="Label" parent="Control/C/GC/AlchemyGC/AlchemyGC2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="TextureRect4" type="TextureRect" parent="Control/C/GC/AlchemyGC/AlchemyGC2"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("27_57al2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ECPowderLbl" type="Label" parent="Control/C/GC/AlchemyGC/AlchemyGC2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="TextureRect5" type="TextureRect" parent="Control/C/GC/AlchemyGC/AlchemyGC2"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("28_cttt0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="GCPowderLbl" type="Label" parent="Control/C/GC/AlchemyGC/AlchemyGC2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="AlchemyGC3" type="GridContainer" parent="Control/C/GC/AlchemyGC"]
+layout_mode = 2
+size_flags_horizontal = 0
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/C/GC/AlchemyGC/AlchemyGC3"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("29_0c7c8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LExtractLbl" type="Label" parent="Control/C/GC/AlchemyGC/AlchemyGC3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="TextureRect2" type="TextureRect" parent="Control/C/GC/AlchemyGC/AlchemyGC3"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("30_4ueb1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ZExtractLbl" type="Label" parent="Control/C/GC/AlchemyGC/AlchemyGC3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="TextureRect3" type="TextureRect" parent="Control/C/GC/AlchemyGC/AlchemyGC3"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("31_0tqbu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DBExtractLbl" type="Label" parent="Control/C/GC/AlchemyGC/AlchemyGC3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="TextureRect4" type="TextureRect" parent="Control/C/GC/AlchemyGC/AlchemyGC3"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("32_4ulvj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BBExtractLbl" type="Label" parent="Control/C/GC/AlchemyGC/AlchemyGC3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="TextureRect5" type="TextureRect" parent="Control/C/GC/AlchemyGC/AlchemyGC3"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("33_gpkfl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="GExtractLbl" type="Label" parent="Control/C/GC/AlchemyGC/AlchemyGC3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="AlchemyGC4" type="GridContainer" parent="Control/C/GC/AlchemyGC"]
+layout_mode = 2
+size_flags_horizontal = 0
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/C/GC/AlchemyGC/AlchemyGC4"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("34_7xwwu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BasePotionLbl" type="Label" parent="Control/C/GC/AlchemyGC/AlchemyGC4"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="TextureRect2" type="TextureRect" parent="Control/C/GC/AlchemyGC/AlchemyGC4"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("35_do76w")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CraftAmountLbl" type="Label" parent="Control/C/GC/AlchemyGC/AlchemyGC4"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "00"

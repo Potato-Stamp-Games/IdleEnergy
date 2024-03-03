@@ -1,9 +1,25 @@
-[gd_scene load_steps=7 format=3 uid="uid://ww00kfcioi7e"]
+[gd_scene load_steps=9 format=3 uid="uid://ww00kfcioi7e"]
 
 [ext_resource type="Script" path="res://Sodas/berryburst_soda.gd" id="1_cvqwe"]
 [ext_resource type="Texture2D" uid="uid://837hktbq5mpp" path="res://Sodas/SodaSprites/BerryBurstSodaSprite.png" id="1_vphrf"]
+[ext_resource type="Texture2D" uid="uid://dnfjkwp8ct40e" path="res://Sodas/SodaSprites/BerryBurstSodaSprite_Money.png" id="2_merip"]
 [ext_resource type="Texture2D" uid="uid://bg0wegu0r0yq4" path="res://Sodas/SodaSprites/BerryBurstSodaClickedSprite.png" id="3_uy2hu"]
 [ext_resource type="AudioStream" uid="uid://bodbxrjopewr2" path="res://audio/SFX/squish.wav" id="4_46hth"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_k2lin"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(0.1, 0.1, 1)
+angle_min = 720.0
+angle_max = 720.0
+direction = Vector3(0, -10, 0)
+spread = 90.0
+initial_velocity_min = 600.0
+initial_velocity_max = 900.0
+angular_velocity_min = 226.52
+angular_velocity_max = 469.22
+gravity = Vector3(0, 500, 0)
+scale_min = 0.3
+scale_max = 0.5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dm6ko"]
 size = Vector2(137, 271)
@@ -14,6 +30,24 @@ script/source = "extends CollisionShape2D
 
 [node name="BerryBurstSoda" type="Area2D"]
 script = ExtResource("1_cvqwe")
+
+[node name="BBSodaParticles" type="GPUParticles2D" parent="."]
+unique_name_in_owner = true
+emitting = false
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_k2lin")
+texture = ExtResource("2_merip")
+lifetime = 3.5
+one_shot = true
+speed_scale = 2.5
+trail_lifetime = 2.0
+trail_sections = 5
+trail_section_subdivisions = 5
+
+[node name="BBParticleTimer" type="Timer" parent="BBSodaParticles"]
+unique_name_in_owner = true
+wait_time = 2.5
+one_shot = true
 
 [node name="BerryBurstSodaCollision" type="CollisionShape2D" parent="."]
 position = Vector2(5.5, 16.5)
@@ -41,4 +75,5 @@ bus = &"SFX"
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="timeout" from="BBSodaParticles/BBParticleTimer" to="." method="_on_bb_particle_timer_timeout"]
 [connection signal="timeout" from="BBS_AutoClickTimer" to="." method="_on_bbs_auto_click_timer_timeout"]

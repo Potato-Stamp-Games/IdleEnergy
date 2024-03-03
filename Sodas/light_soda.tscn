@@ -1,15 +1,48 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctxfgtgvi35df"]
+[gd_scene load_steps=8 format=3 uid="uid://ctxfgtgvi35df"]
 
 [ext_resource type="Script" path="res://Sodas/light_soda.gd" id="1_mforc"]
+[ext_resource type="Texture2D" uid="uid://dtm2rg3jkbm08" path="res://Sodas/SodaSprites/SodaLightSprite_Money.png" id="2_4vljx"]
 [ext_resource type="Texture2D" uid="uid://bbqht10v3jjd7" path="res://Sodas/SodaSprites/LightSodaSprite.png" id="2_2561i"]
 [ext_resource type="Texture2D" uid="uid://cxmpmea66ld1b" path="res://Sodas/SodaSprites/LightSodaClickedSprite.png" id="3_j5lit"]
 [ext_resource type="AudioStream" uid="uid://btih6sboaf1rk" path="res://audio/SFX/pop.wav" id="4_hpvbk"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_c4o4c"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(0.1, 0.1, 1)
+angle_min = 145.6
+angle_max = 145.6
+direction = Vector3(0, -10, 0)
+initial_velocity_min = 350.0
+initial_velocity_max = 500.0
+angular_velocity_min = 226.52
+angular_velocity_max = 469.22
+gravity = Vector3(0, 500, 0)
+scale_min = 0.3
+scale_max = 0.5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_prqrn"]
 size = Vector2(70, 131)
 
 [node name="SodaLight" type="Area2D"]
 script = ExtResource("1_mforc")
+
+[node name="LSodaParticles" type="GPUParticles2D" parent="."]
+unique_name_in_owner = true
+emitting = false
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_c4o4c")
+texture = ExtResource("2_4vljx")
+lifetime = 3.5
+one_shot = true
+speed_scale = 2.5
+trail_lifetime = 2.0
+trail_sections = 5
+trail_section_subdivisions = 5
+
+[node name="LParticleTimer" type="Timer" parent="LSodaParticles"]
+unique_name_in_owner = true
+wait_time = 2.5
+one_shot = true
 
 [node name="SodaLightCollision" type="CollisionShape2D" parent="."]
 position = Vector2(10, 22.5)
@@ -37,4 +70,5 @@ bus = &"SFX"
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="timeout" from="LSodaParticles/LParticleTimer" to="." method="_on_l_particle_timer_timeout"]
 [connection signal="timeout" from="LS_AutoClickTimer" to="." method="_on_ls_auto_click_timer_timeout"]

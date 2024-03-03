@@ -4,8 +4,8 @@ class_name UI
 
 @onready var shop = preload("res://Scenes/shop_scene.tscn").instantiate()
 @onready var alchemy = preload("res://Scenes/alchemy_scene.tscn").instantiate()
-@onready var sfx_player = $"../../SFX Player"
-@onready var music_player = $"../../Music Player"
+@onready var sfx_player = $"../SFX Player"
+@onready var music_player = $"../Music Player"
 
 #Pre Load Sound Effects
 const TREASURE_CHEST_OPENING_SOUND_EFFECT = preload("res://audio/SFX/Treasure chest opening sound effect.mp3")

@@ -11,12 +11,12 @@ var minTime = 0
 var hourTime = 0
 
 # Money Variables
-var trueMoney = 0999999999999
-var lightSodaMoney = 0999999999999
-var zapSodaMoney = 0999999999999
-var doublePlusSodaMoney = 0999999999999
-var berryBurstSodaMoney = 0999999999999
-var godlySodaMoney = 09999999999999 #combined of the rest of the money
+var trueMoney = 0
+var lightSodaMoney = 0
+var zapSodaMoney = 0
+var doublePlusSodaMoney = 0
+var berryBurstSodaMoney = 0
+var godlySodaMoney = 0 #combined of the rest of the money
 
 #Click Power Variables
 var lightSodaClickPower = 1
@@ -49,27 +49,27 @@ var essenseTime = 0
 
 #Alchemy Variables
 #Items - Base
-var basePotion = 12
+var basePotion = 0
 #Items - Dusts
-var caffinePowder = 5
-var chargedCaffinePowder = 5
-var doubleChargedCaffinePowder = 5
-var explosivelyChargedCaffinePowder = 5
-var godlyChargedCaffinePowder = 5
+var caffinePowder = 0
+var chargedCaffinePowder = 0
+var doubleChargedCaffinePowder = 0
+var explosivelyChargedCaffinePowder = 0
+var godlyChargedCaffinePowder = 0
 
 #Items - Extracts
-var lightSodaExtract = 5
-var zapSodaExtract = 5
-var doublePlusSodaExtract = 5
-var berryBurstSodaExtract = 5
-var godlySodaExtract = 5
+var lightSodaExtract = 0
+var zapSodaExtract = 0
+var doublePlusSodaExtract = 0
+var berryBurstSodaExtract = 0
+var godlySodaExtract = 0
 
 #Items - Potions
-var fizzyLightPotion = 5
-var fizzyZapPotion = 5
-var fizzyDoublePlusPotion = 5
-var fizzyBerryBurstPotion = 5
-var fizzyGodlyPotion = 5
+var fizzyLightPotion = 0
+var fizzyZapPotion = 0
+var fizzyDoublePlusPotion = 0
+var fizzyBerryBurstPotion = 0
+var fizzyGodlyPotion = 0
 #Active
 var activePotionPower = 1
 
@@ -84,3 +84,28 @@ var ttlAllClicks = 0
 var prestiegeCounter = 0
 var sessionTime = ""
 var ttlSessionTime = ""
+
+#Items- Crafted
+var ttlCrafted = 0
+#Items - Base
+var ttlBasePotion = 0
+#Items - Dusts
+var ttlCaffinePowder = 0
+var ttlChargedCaffinePowder = 0
+var ttlDoubleChargedCaffinePowder = 0
+var ttlExplosivelyChargedCaffinePowder = 0
+var ttlGodlyChargedCaffinePowder = 0
+
+#Items - Extracts
+var ttlLightSodaExtract = 0
+var ttlZapSodaExtract = 0
+var ttlDoublePlusSodaExtract = 0
+var ttlBerryBurstSodaExtract = 0
+var ttlGodlySodaExtract = 0
+
+#Items - Potions
+var ttlFizzyLightPotion = 0
+var ttlFizzyZapPotion = 0
+var ttlFizzyDoublePlusPotion = 0
+var ttlFizzyBerryBurstPotion = 0
+var ttlFizzyGodlyPotion = 0

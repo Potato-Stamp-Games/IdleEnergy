@@ -32,6 +32,7 @@ func process_crafting(ing1: int, ing2: int, ing3: int, money: float, start: bool
 		start = true
 		timer.wait_time = (timer.wait_time - timeDeduction) * sb.value
 		pb.max_value = timer.wait_time
+		Global.ttlCrafted += sb.value
 		timer.start()
 		
 		return start
@@ -80,6 +81,7 @@ func _on_fizzy_l_timer_timeout():
 	fizzyLStart = process_timeout(fizzyLStart, %FizzyLTimer, %FizzyLightPotion_PB)
 	#Currently crafting variable set to false. Add potion crafted
 	Global.fizzyLightPotion += fizzyLAmount
+	Global.ttlFizzyLightPotion += fizzyLAmount
 	fizzyLAmount = 0
 
 
@@ -99,6 +101,7 @@ func _on_fizzy_z_timer_timeout():
 	fizzyZStart = process_timeout(fizzyZStart, %FizzyZTimer, %FizzyZapPotion_PB)
 	#Currently crafting variable set to false. Add potion crafted
 	Global.fizzyZapPotion += fizzyZAmount
+	Global.ttlFizzyZapPotion += fizzyZAmount
 	fizzyZAmount = 0
 
 
@@ -118,6 +121,7 @@ func _on_fizzy_dp_timer_timeout():
 	fizzyDPStart = process_timeout(fizzyDPStart, %FizzyDPTimer, %FizzyDPPotion_PB)
 	#Currently crafting variable set to false. Add potion crafted
 	Global.fizzyDoublePlusPotion += fizzyDPAmount
+	Global.ttlFizzyDoublePlusPotion += fizzyDPAmount
 	fizzyDPAmount = 0
 
 
@@ -137,6 +141,7 @@ func _on_fizzy_bb_timer_timeout():
 	fizzyBBStart = process_timeout(fizzyBBStart, %FizzyBBTimer, %FizzyBBPotion_PB)
 	#Currently crafting variable set to false. Add potion crafted
 	Global.fizzyBerryBurstPotion += fizzyBBAmount
+	Global.ttlFizzyBerryBurstPotion += fizzyBBAmount
 	fizzyBBAmount = 0
 
 
@@ -156,6 +161,7 @@ func _on_fizzy_godly_timer_timeout():
 	fizzyGStart = process_timeout(fizzyGStart, %FizzyGodlyTimer, %FizzyGodlyPotion_PB)
 	#Currently crafting variable set to false. Add potion crafted
 	Global.fizzyGodlyPotion += fizzyGAmount
+	Global.ttlFizzyGodlyPotion += fizzyGAmount
 	fizzyGAmount = 0
 
 
@@ -174,6 +180,7 @@ func _on_base_potion_timer_timeout():
 	bpStart = process_timeout(bpStart, %BasePotionTimer, %BasePotion_PB)
 	#Currently crafting variable set to false. Add potion crafted
 	Global.basePotion += bpAmount
+	Global.ttlBasePotion += bpAmount
 	bpAmount = 0.
 
 
@@ -193,6 +200,7 @@ func _on_charged_caffine_timer_timeout():
 	cPowderStart = process_timeout(bpStart, %ChargedPowderTimer, %ChargedPowder_PB)
 	#Currently crafting variable set to false. Add potion crafted
 	Global.chargedCaffinePowder += cPowderAmount
+	Global.ttlChargedCaffinePowder += cPowderAmount
 	cPowderAmount = 0.
 
 
@@ -211,7 +219,8 @@ func _on_d_charged_caffine_btn_pressed():
 func _on_d_charged_caffine_timer_timeout():
 	dpcPowderStart = process_timeout(dpcPowderStart, %DChargedPowderTimer, %DChargedPowder_PB)
 	#Currently crafting variable set to false. Add potion crafted
-	Global.chargedCaffinePowder += dpcPowderAmount
+	Global.doubleChargedCaffinePowder += dpcPowderAmount
+	Global.ttlDoubleChargedCaffinePowder += dpcPowderAmount
 	dpcPowderAmount = 0.
 
 
@@ -231,6 +240,7 @@ func _on_e_charged_timer_timeout():
 	ecPowderStart = process_timeout(ecPowderStart, %EChargedPowderTimer, %EChargedPowder_PB)
 	#Currently crafting variable set to false. Add potion crafted
 	Global.explosivelyChargedCaffinePowder += ecPowderAmount
+	Global.ttlExplosivelyChargedCaffinePowder += ecPowderAmount
 	ecPowderAmount = 0
 
 
@@ -250,4 +260,5 @@ func _on_g_charged_caffine_timer_timeout():
 	gcPowderStart = process_timeout(gcPowderStart, %GChargedPowderTimer, %GChargedPowder_PB)
 	#Currently crafting variable set to false. Add potion crafted
 	Global.godlyChargedCaffinePowder += gcPowderAmount
+	Global.ttlGodlyChargedCaffinePowder += gcPowderAmount
 	gcPowderAmount = 0
