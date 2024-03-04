@@ -17,6 +17,8 @@ var timesClicked = 0
 func _ready():
 	BerryBurstSodaClickedSprite = get_node("BerryBurstSodaClickedSprite")
 	BerryBurstSodaSprite = get_node("BerryBurstSodaSprite")
+func _process(_delta):
+	%BBAnimation.play("Idle")
 #When input is mouse, when mouse button left click, when pressed 
 func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisionshape2d signal
 	if Global.berryBurstSodaAuto == true && %BBS_AutoClickTimer.is_stopped() == true :

@@ -17,11 +17,11 @@ var newAge = Global.newAge
 var quantumSoda
 #Particle Variables
 var timesClicked = 0
+func _process(_delta):
+	%DPAnimation.play("Idle")
 func _ready():
 	DoublePlusSodaClickedSprite = get_node("DoublePlusSodaClickedSprite")
 	DoublePlusSodaSprite = get_node("DoublePlusSodaSprite")
-
-
 #When input is mouse, when mouse button left click, when pressed
 func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisionshape2d signal
 	if Global.doublePlusSodaAuto == true && %DPS_AutoClickTimer.is_stopped() == true :

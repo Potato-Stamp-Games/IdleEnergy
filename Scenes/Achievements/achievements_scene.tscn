@@ -1,0 +1,526 @@
+[gd_scene load_steps=9 format=3 uid="uid://dpyojnqpoucji"]
+
+[ext_resource type="Texture2D" uid="uid://blo3fifvss3ud" path="res://Scenes/Achievements/AchievementsBackgorund.png" id="1_pwdu2"]
+[ext_resource type="Texture2D" uid="uid://cd28dlfx6ppyr" path="res://Scenes/Achievements/Border.png" id="2_d44sx"]
+[ext_resource type="Texture2D" uid="uid://bl7di3j6outnl" path="res://Scenes/Achievements/SpriteFrame.png" id="3_a5pky"]
+[ext_resource type="Texture2D" uid="uid://dl7ydolfk60fk" path="res://Scenes/Achievements/AchievementIcons/AmateurClicker.png" id="4_igrau"]
+[ext_resource type="Texture2D" uid="uid://hp17kltxqwg6" path="res://Scenes/Achievements/AchievementIcons/CompletedSprite.png" id="5_e7bxe"]
+[ext_resource type="Texture2D" uid="uid://dl0xlcr0pqkj7" path="res://Scenes/Achievements/AchievementIcons/SemiAmateurClicker.png" id="6_am1u3"]
+[ext_resource type="Texture2D" uid="uid://b4uxyow1mpem5" path="res://Scenes/Achievements/AchievementIcons/ProClicker.png" id="7_g1yr0"]
+[ext_resource type="Texture2D" uid="uid://bavps5cydggrp" path="res://icon.svg" id="8_u68ih"]
+
+[node name="Achievements" type="ScrollContainer"]
+custom_minimum_size = Vector2(800, 1000)
+offset_right = 800.0
+offset_bottom = 1573.0
+
+[node name="MC" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(800, 1050)
+layout_mode = 2
+
+[node name="TextureRect" type="NinePatchRect" parent="MC"]
+layout_mode = 2
+texture = ExtResource("1_pwdu2")
+region_rect = Rect2(0, 138, 905, 874)
+patch_margin_top = 312
+patch_margin_bottom = 185
+
+[node name="MC" type="MarginContainer" parent="MC"]
+layout_mode = 2
+
+[node name="VC" type="VBoxContainer" parent="MC/MC"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MC/MC/VC"]
+custom_minimum_size = Vector2(800, 160)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MC/MC/VC/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.639216, 0.227451, 0.2, 1)
+theme_override_colors/font_shadow_color = Color(0.337255, 0.254902, 0.027451, 0.698039)
+theme_override_colors/font_outline_color = Color(0.290196, 0.101961, 0.0352941, 1)
+theme_override_constants/shadow_offset_y = 35
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 105
+text = "ACHIEVEMENTS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="padding" type="VBoxContainer" parent="MC/MC/VC"]
+custom_minimum_size = Vector2(0, 140)
+layout_mode = 2
+
+[node name="AmateurClicker" type="MarginContainer" parent="MC/MC/VC"]
+layout_mode = 2
+
+[node name="Border" type="NinePatchRect" parent="MC/MC/VC/AmateurClicker"]
+layout_mode = 2
+texture = ExtResource("2_d44sx")
+region_rect = Rect2(0, 0, 640, 497)
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="MCMain" type="MarginContainer" parent="MC/MC/VC/AmateurClicker"]
+layout_mode = 2
+theme_override_constants/margin_left = 33
+theme_override_constants/margin_top = 33
+theme_override_constants/margin_right = 33
+theme_override_constants/margin_bottom = 33
+
+[node name="ColorRect" type="ColorRect" parent="MC/MC/VC/AmateurClicker/MCMain"]
+show_behind_parent = true
+custom_minimum_size = Vector2(20, 60)
+layout_mode = 2
+color = Color(0.172549, 0.172549, 0.172549, 0.815686)
+
+[node name="GridContainer" type="GridContainer" parent="MC/MC/VC/AmateurClicker/MCMain"]
+layout_mode = 2
+columns = 2
+
+[node name="IconBorder" type="TextureRect" parent="MC/MC/VC/AmateurClicker/MCMain/GridContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("3_a5pky")
+expand_mode = 1
+
+[node name="IconHere" type="TextureRect" parent="MC/MC/VC/AmateurClicker/MCMain/GridContainer/IconBorder"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_igrau")
+expand_mode = 1
+
+[node name="Completed" type="TextureRect" parent="MC/MC/VC/AmateurClicker/MCMain/GridContainer/IconBorder/IconHere"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_e7bxe")
+expand_mode = 1
+
+[node name="GridContainer" type="GridContainer" parent="MC/MC/VC/AmateurClicker/MCMain/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MC/MC/VC/AmateurClicker/MCMain/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.913725, 0.678431, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.839216, 0.839216, 0.839216, 0.101961)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 35
+theme_override_font_sizes/font_size = 39
+text = "AMATEUR CLICKER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="MC/MC/VC/AmateurClicker/MCMain/GridContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label2" type="Label" parent="MC/MC/VC/AmateurClicker/MCMain/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 21
+text = "Click 3,000 times"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="MC/MC/VC/AmateurClicker/MCMain/GridContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label3" type="Label" parent="MC/MC/VC/AmateurClicker/MCMain/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.913725, 0.815686, 0.584314, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 0.329412)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 11
+theme_override_font_sizes/font_size = 20
+text = "REWARD: ???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SemiProClicker" type="MarginContainer" parent="MC/MC/VC"]
+layout_mode = 2
+
+[node name="Border" type="NinePatchRect" parent="MC/MC/VC/SemiProClicker"]
+layout_mode = 2
+texture = ExtResource("2_d44sx")
+region_rect = Rect2(0, 0, 640, 497)
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="MCMain" type="MarginContainer" parent="MC/MC/VC/SemiProClicker"]
+layout_mode = 2
+theme_override_constants/margin_left = 33
+theme_override_constants/margin_top = 33
+theme_override_constants/margin_right = 33
+theme_override_constants/margin_bottom = 33
+
+[node name="ColorRect" type="ColorRect" parent="MC/MC/VC/SemiProClicker/MCMain"]
+show_behind_parent = true
+custom_minimum_size = Vector2(20, 60)
+layout_mode = 2
+color = Color(0.172549, 0.172549, 0.172549, 0.815686)
+
+[node name="GridContainer" type="GridContainer" parent="MC/MC/VC/SemiProClicker/MCMain"]
+layout_mode = 2
+columns = 2
+
+[node name="IconBorder" type="TextureRect" parent="MC/MC/VC/SemiProClicker/MCMain/GridContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("3_a5pky")
+expand_mode = 1
+
+[node name="IconHere" type="TextureRect" parent="MC/MC/VC/SemiProClicker/MCMain/GridContainer/IconBorder"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_am1u3")
+expand_mode = 1
+
+[node name="Completed" type="TextureRect" parent="MC/MC/VC/SemiProClicker/MCMain/GridContainer/IconBorder/IconHere"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_e7bxe")
+expand_mode = 1
+
+[node name="GridContainer" type="GridContainer" parent="MC/MC/VC/SemiProClicker/MCMain/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MC/MC/VC/SemiProClicker/MCMain/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.913725, 0.678431, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.839216, 0.839216, 0.839216, 0.101961)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 35
+theme_override_font_sizes/font_size = 39
+text = "SEMI-AMATEUR CLICKER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="MC/MC/VC/SemiProClicker/MCMain/GridContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label2" type="Label" parent="MC/MC/VC/SemiProClicker/MCMain/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 21
+text = "Click 25,000 times"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="MC/MC/VC/SemiProClicker/MCMain/GridContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label3" type="Label" parent="MC/MC/VC/SemiProClicker/MCMain/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.913725, 0.815686, 0.584314, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 0.329412)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 11
+theme_override_font_sizes/font_size = 20
+text = "REWARD: ???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProClicker" type="MarginContainer" parent="MC/MC/VC"]
+layout_mode = 2
+
+[node name="Border" type="NinePatchRect" parent="MC/MC/VC/ProClicker"]
+layout_mode = 2
+texture = ExtResource("2_d44sx")
+region_rect = Rect2(0, 0, 640, 497)
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="MCMain" type="MarginContainer" parent="MC/MC/VC/ProClicker"]
+layout_mode = 2
+theme_override_constants/margin_left = 33
+theme_override_constants/margin_top = 33
+theme_override_constants/margin_right = 33
+theme_override_constants/margin_bottom = 33
+
+[node name="ColorRect" type="ColorRect" parent="MC/MC/VC/ProClicker/MCMain"]
+show_behind_parent = true
+custom_minimum_size = Vector2(20, 60)
+layout_mode = 2
+color = Color(0.172549, 0.172549, 0.172549, 0.815686)
+
+[node name="GridContainer" type="GridContainer" parent="MC/MC/VC/ProClicker/MCMain"]
+layout_mode = 2
+columns = 2
+
+[node name="IconBorder" type="TextureRect" parent="MC/MC/VC/ProClicker/MCMain/GridContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("3_a5pky")
+expand_mode = 1
+
+[node name="IconHere" type="TextureRect" parent="MC/MC/VC/ProClicker/MCMain/GridContainer/IconBorder"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_g1yr0")
+expand_mode = 1
+
+[node name="Completed" type="TextureRect" parent="MC/MC/VC/ProClicker/MCMain/GridContainer/IconBorder/IconHere"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_e7bxe")
+expand_mode = 1
+
+[node name="GridContainer" type="GridContainer" parent="MC/MC/VC/ProClicker/MCMain/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MC/MC/VC/ProClicker/MCMain/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.913725, 0.678431, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.839216, 0.839216, 0.839216, 0.101961)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 35
+theme_override_font_sizes/font_size = 39
+text = "PRO CLICKER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="MC/MC/VC/ProClicker/MCMain/GridContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label2" type="Label" parent="MC/MC/VC/ProClicker/MCMain/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 21
+text = "Click 100,000 times"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="MC/MC/VC/ProClicker/MCMain/GridContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label3" type="Label" parent="MC/MC/VC/ProClicker/MCMain/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.913725, 0.815686, 0.584314, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 0.329412)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 11
+theme_override_font_sizes/font_size = 20
+text = "REWARD: ???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AchievementTemplate4" type="MarginContainer" parent="MC/MC/VC"]
+layout_mode = 2
+
+[node name="Border" type="NinePatchRect" parent="MC/MC/VC/AchievementTemplate4"]
+layout_mode = 2
+texture = ExtResource("2_d44sx")
+region_rect = Rect2(0, 0, 640, 497)
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="MCMain" type="MarginContainer" parent="MC/MC/VC/AchievementTemplate4"]
+layout_mode = 2
+theme_override_constants/margin_left = 33
+theme_override_constants/margin_top = 33
+theme_override_constants/margin_right = 33
+theme_override_constants/margin_bottom = 33
+
+[node name="ColorRect" type="ColorRect" parent="MC/MC/VC/AchievementTemplate4/MCMain"]
+show_behind_parent = true
+custom_minimum_size = Vector2(20, 60)
+layout_mode = 2
+color = Color(0.172549, 0.172549, 0.172549, 0.815686)
+
+[node name="GridContainer" type="GridContainer" parent="MC/MC/VC/AchievementTemplate4/MCMain"]
+layout_mode = 2
+columns = 2
+
+[node name="IconBorder" type="TextureRect" parent="MC/MC/VC/AchievementTemplate4/MCMain/GridContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("3_a5pky")
+expand_mode = 1
+
+[node name="IconHere" type="TextureRect" parent="MC/MC/VC/AchievementTemplate4/MCMain/GridContainer/IconBorder"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_u68ih")
+expand_mode = 1
+
+[node name="Completed" type="TextureRect" parent="MC/MC/VC/AchievementTemplate4/MCMain/GridContainer/IconBorder/IconHere"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_e7bxe")
+expand_mode = 1
+
+[node name="GridContainer" type="GridContainer" parent="MC/MC/VC/AchievementTemplate4/MCMain/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MC/MC/VC/AchievementTemplate4/MCMain/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.913725, 0.678431, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.839216, 0.839216, 0.839216, 0.101961)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 35
+theme_override_font_sizes/font_size = 39
+text = "TEMPLATE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="MC/MC/VC/AchievementTemplate4/MCMain/GridContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label2" type="Label" parent="MC/MC/VC/AchievementTemplate4/MCMain/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 21
+text = "THIS IS A TEMPLATE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="MC/MC/VC/AchievementTemplate4/MCMain/GridContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label3" type="Label" parent="MC/MC/VC/AchievementTemplate4/MCMain/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.913725, 0.815686, 0.584314, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 0.329412)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 11
+theme_override_font_sizes/font_size = 20
+text = "REWARD: ???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="padding2" type="VBoxContainer" parent="MC/MC/VC"]
+custom_minimum_size = Vector2(0, 180)
+layout_mode = 2
+size_flags_vertical = 10
+alignment = 2

@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ctxfgtgvi35df"]
+[gd_scene load_steps=11 format=3 uid="uid://ctxfgtgvi35df"]
 
 [ext_resource type="Script" path="res://Sodas/light_soda.gd" id="1_mforc"]
 [ext_resource type="Texture2D" uid="uid://dtm2rg3jkbm08" path="res://Sodas/SodaSprites/SodaLightSprite_Money.png" id="2_4vljx"]
-[ext_resource type="Texture2D" uid="uid://bbqht10v3jjd7" path="res://Sodas/SodaSprites/LightSodaSprite.png" id="2_2561i"]
+[ext_resource type="Texture2D" uid="uid://df6trw1i08qap" path="res://Sodas/SodaSprites/LSSpriteSheet.png" id="3_ivwsj"]
 [ext_resource type="Texture2D" uid="uid://cxmpmea66ld1b" path="res://Sodas/SodaSprites/LightSodaClickedSprite.png" id="3_j5lit"]
 [ext_resource type="AudioStream" uid="uid://btih6sboaf1rk" path="res://audio/SFX/pop.wav" id="4_hpvbk"]
 
@@ -22,6 +22,42 @@ scale_max = 0.5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_prqrn"]
 size = Vector2(70, 131)
+
+[sub_resource type="Animation" id="Animation_g0s48"]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_3yaol"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jrgiw"]
+_data = {
+"Idle": SubResource("Animation_g0s48"),
+"RESET": SubResource("Animation_3yaol")
+}
 
 [node name="SodaLight" type="Area2D"]
 script = ExtResource("1_mforc")
@@ -49,9 +85,17 @@ position = Vector2(10, 22.5)
 shape = SubResource("RectangleShape2D_prqrn")
 
 [node name="SodaLightSprite" type="Sprite2D" parent="."]
-position = Vector2(11, 19)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_2561i")
+position = Vector2(10.925, 19)
+scale = Vector2(0.199585, 0.2)
+texture = ExtResource("3_ivwsj")
+hframes = 6
+region_rect = Rect2(0, 0, 536, 712)
+
+[node name="LSAnimation" type="AnimationPlayer" parent="SodaLightSprite"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_jrgiw")
+}
 
 [node name="SodaLightClickedSprite" type="Sprite2D" parent="."]
 visible = false

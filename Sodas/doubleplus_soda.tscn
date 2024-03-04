@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cgespow2hwr4k"]
+[gd_scene load_steps=11 format=3 uid="uid://cgespow2hwr4k"]
 
 [ext_resource type="Script" path="res://Sodas/doubleplus_soda.gd" id="1_utsjc"]
-[ext_resource type="Texture2D" uid="uid://krg22jfu2x18" path="res://Sodas/SodaSprites/DoublePlusSodaSprite.png" id="2_itdu8"]
 [ext_resource type="Texture2D" uid="uid://ddk3urmvoqyxn" path="res://Sodas/SodaSprites/DoublePlusSodaMoneySprite.png" id="2_l6x0c"]
+[ext_resource type="Texture2D" uid="uid://dboe07aa7ttlp" path="res://Sodas/SodaSprites/DPSpriteSheet.png" id="3_534pv"]
 [ext_resource type="Texture2D" uid="uid://drpni6pmlgnsl" path="res://Sodas/SodaSprites/DoublePlusSodaClickedSprite.png" id="3_ibcpx"]
 [ext_resource type="AudioStream" uid="uid://dmwe1ciypp4mw" path="res://audio/SFX/meow.wav" id="4_yodrt"]
 
@@ -22,6 +22,43 @@ scale_max = 0.5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22a5w"]
 size = Vector2(129, 272)
+
+[sub_resource type="Animation" id="Animation_5fm0v"]
+resource_name = "Idle"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+
+[sub_resource type="Animation" id="Animation_rjc8r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fbqt5"]
+_data = {
+"Idle": SubResource("Animation_5fm0v"),
+"RESET": SubResource("Animation_rjc8r")
+}
 
 [node name="DoublePlusSoda" type="Area2D"]
 script = ExtResource("1_utsjc")
@@ -51,7 +88,14 @@ shape = SubResource("RectangleShape2D_22a5w")
 [node name="DoublePlusSodaSprite" type="Sprite2D" parent="."]
 position = Vector2(2, 34)
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_itdu8")
+texture = ExtResource("3_534pv")
+hframes = 11
+
+[node name="DPAnimation" type="AnimationPlayer" parent="DoublePlusSodaSprite"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_fbqt5")
+}
 
 [node name="DoublePlusSodaClickedSprite" type="Sprite2D" parent="."]
 visible = false

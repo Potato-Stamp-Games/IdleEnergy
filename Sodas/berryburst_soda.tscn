@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://ww00kfcioi7e"]
+[gd_scene load_steps=12 format=3 uid="uid://ww00kfcioi7e"]
 
 [ext_resource type="Script" path="res://Sodas/berryburst_soda.gd" id="1_cvqwe"]
-[ext_resource type="Texture2D" uid="uid://837hktbq5mpp" path="res://Sodas/SodaSprites/BerryBurstSodaSprite.png" id="1_vphrf"]
 [ext_resource type="Texture2D" uid="uid://dnfjkwp8ct40e" path="res://Sodas/SodaSprites/BerryBurstSodaSprite_Money.png" id="2_merip"]
+[ext_resource type="Texture2D" uid="uid://dd81pqi2vsg8m" path="res://Sodas/SodaSprites/BBSpriteSheet.png" id="3_u5emf"]
 [ext_resource type="Texture2D" uid="uid://bg0wegu0r0yq4" path="res://Sodas/SodaSprites/BerryBurstSodaClickedSprite.png" id="3_uy2hu"]
 [ext_resource type="AudioStream" uid="uid://bodbxrjopewr2" path="res://audio/SFX/squish.wav" id="4_46hth"]
 
@@ -27,6 +27,42 @@ size = Vector2(137, 271)
 [sub_resource type="GDScript" id="GDScript_41385"]
 script/source = "extends CollisionShape2D
 "
+
+[sub_resource type="Animation" id="Animation_7r732"]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+
+[sub_resource type="Animation" id="Animation_aboeb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jyxdq"]
+_data = {
+"Idle": SubResource("Animation_7r732"),
+"RESET": SubResource("Animation_aboeb")
+}
 
 [node name="BerryBurstSoda" type="Area2D"]
 script = ExtResource("1_cvqwe")
@@ -57,7 +93,14 @@ script = SubResource("GDScript_41385")
 [node name="BerryBurstSodaSprite" type="Sprite2D" parent="."]
 position = Vector2(-6, 9)
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_vphrf")
+texture = ExtResource("3_u5emf")
+hframes = 10
+
+[node name="BBAnimation" type="AnimationPlayer" parent="BerryBurstSodaSprite"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_jyxdq")
+}
 
 [node name="BerryBurstSodaClickedSprite" type="Sprite2D" parent="."]
 visible = false
