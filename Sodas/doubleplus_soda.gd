@@ -53,7 +53,7 @@ func _on_dps_auto_click_timer_timeout():
 	var sodaMoneyAuto = Global.doublePlusSodaMoney
 	var weatherMultiplier = 1
 	#Sets the new value for each money type
-	if Global.dpsRain == true:
+	if Global.dpRain == true:
 		weatherMultiplier = 1.5
 	elif (Global.rainbowStart == true):
 		weatherMultiplier = 3
