@@ -19,11 +19,11 @@ var berryBurstSodaMoney = 0
 var godlySodaMoney = 0 #combined of the rest of the money
 
 #Click Power Variables
-var lightSodaClickPower = 1
-var zapSodaClickPower = 1
-var doublePlusSodaClickPower = 1
-var berryBurstSodaClickPower = 1
-var godlySodaClickPower = 1
+var lightSodaClickPower = 0
+var zapSodaClickPower = 0
+var doublePlusSodaClickPower = 0
+var berryBurstSodaClickPower = 0
+var godlySodaClickPower = 0
 
 #Auto Click Power Variables Multiplier
 var lightSodaAutoClick = 1.0
@@ -71,7 +71,7 @@ var fizzyDoublePlusPotion = 0
 var fizzyBerryBurstPotion = 0
 var fizzyGodlyPotion = 0
 #Active
-var activePotionPower = 1
+var activePotionPower = 0
 
 #Values for stats
 var ttlTrueMoney = 0
@@ -109,3 +109,21 @@ var ttlFizzyZapPotion = 0
 var ttlFizzyDoublePlusPotion = 0
 var ttlFizzyBerryBurstPotion = 0
 var ttlFizzyGodlyPotion = 0
+
+#Achievements
+var baseClickPower = 1
+var ttlUpgradesBought = 0
+var baseMoneyPower = 1
+var letItRain = false
+var rainStart = false
+
+#Weather
+#Rain
+var lsRain = false
+var zsRain = false
+var dpRain = false
+var bbRain = false
+#Rainbow
+var rainbowStart = false
+#Shooting Stars
+var shootingStarsStart = false

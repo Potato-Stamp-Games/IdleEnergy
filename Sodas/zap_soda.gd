@@ -3,23 +3,16 @@ class_name ZapSoda
 
 #Audio Variables
 @onready var zap_soda_sfx = $ZapSodaSFX
-#RNG Variables
-var rng = RandomNumberGenerator.new()
 var doubleClick = 1
 #Node Variables
 var ZapSodaClickedSprite
 var ZapSodaSprite
-#Number Variables
-var trueMoney 
-var zapSodaMoney 
-var zapSodaClickPower 
-var newAge = Global.newAge
-var quantumSoda
 #Particle variables
 var timesClicked = 0
 func _ready():
 	ZapSodaClickedSprite = get_node("ZapSodaClickedSprite")
 	ZapSodaSprite = get_node("ZapSodaSprite")
+#Play animation
 func _process(_delta):
 	%ZSAnimation.play("Idle")
 #When input is mouse, when mouse button left click, when pressed
@@ -36,40 +29,18 @@ func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisi
 			timesClicked += 3
 			if %ZParticleTimer.is_stopped() == true:
 				%ZParticleTimer.start()
-			#Creates values based on most recent in global.gd
-			newAge = Global.newAge
-			trueMoney = Global.trueMoney
-			zapSodaMoney = Global.zapSodaMoney
-			zapSodaClickPower = Global.zapSodaClickPower
-			quantumSoda = Global.quantumSoda
-			#double click rng upgrade
-			if rng.randi_range(1, 500) <= quantumSoda:
-				doubleClick	= 2
-			#Magic Soda RNG upgrade
-			var sodaSelect = rng.randi_range(0, 3)
-			if sodaSelect == 0:
-				Global.lightSodaMoney += Global.magicSoda * 2
-			elif sodaSelect == 1:
-				zapSodaMoney += Global.magicSoda * 2 
-			elif sodaSelect == 2:
-				Global.doublePlusSodaMoney += Global.magicSoda * 2
-			elif sodaSelect == 3:
-				Global.berryBurstSodaMoney += Global.magicSoda * 2
+			#Sets soda money variable
+			var sodaMoney = Global.zapSodaMoney
+			var weatherMultiplier = 1
 			#Calculates the new value based on click power
-			zapSodaMoney += ((zapSodaClickPower + (newAge * 1.5)) * doubleClick) * Global.activePotionPower
-			trueMoney += ((2*(zapSodaClickPower)) * doubleClick) * Global.activePotionPower
-			
-			#Sets the new value for each money type
-			Global.trueMoney = trueMoney
-			Global.zapSodaMoney = zapSodaMoney
-			Global.godlySodaMoney += Global.godlyFavor
+			if Global.zsRain == true:
+				weatherMultiplier = 1.5
+			elif Global.rainbowStart == true:
+				weatherMultiplier = 3
+			sodaMoney += FuncGlobal.process_click(Global.zapSodaClickPower, weatherMultiplier)
 			#Sets new stat values
-			Global.ttlZapSodaMoney += (zapSodaClickPower + (newAge * 1.5)) * Global.activePotionPower
-			Global.ttlTrueMoney = (Global.ttlTrueMoney + (zapSodaClickPower * 2)) * Global.activePotionPower
-			Global.ttlAllClicks += 1
-			#Resets double click
-			doubleClick = 1
-
+			Global.zapSodaMoney = sodaMoney
+			Global.ttlZapSodaMoney = sodaMoney
 			
 			ZapSodaClickedSprite.show()
 			ZapSodaSprite.hide()
@@ -81,24 +52,16 @@ func _on_mouse_exited():
 
 func _on_zs_auto_click_timer_timeout():
 	#Creates values based on most recent in global.gd
-	var zapSodaAutoClick = Global.zapSodaAutoClick
-	var doubleClickA = 1
-	newAge = Global.newAge
-	trueMoney = Global.trueMoney
-	zapSodaMoney = Global.zapSodaMoney
-	zapSodaClickPower = Global.zapSodaClickPower
-	#double click rng upgrade
-	if rng.randi_range(1, 500) <= quantumSoda:
-		doubleClickA = 2
+	var sodaMoneyAuto = Global.zapSodaMoney
+	var weatherMultiplier = 1
 	#Sets the new value for each money type
-	Global.zapSodaMoney += (((zapSodaClickPower - 1) * zapSodaAutoClick) + (newAge * 1.5)) * doubleClickA #A
-	Global.trueMoney += ((zapSodaClickPower - 1) * zapSodaAutoClick) * doubleClickA #B
-	Global.godlySodaMoney += Global.godlyFavor
-	#Sets new stat values
-	Global.ttlZapSodaMoney += (((zapSodaClickPower - 1) * zapSodaAutoClick) + (newAge * 1.5)) * doubleClickA #A
-	Global.ttlTrueMoney += ((zapSodaClickPower - 1) * zapSodaAutoClick) * doubleClickA #B
-	#Resets double click
-	doubleClickA = 1
+	if Global.zsRain == true:
+		weatherMultiplier = 1.5
+	elif (Global.rainbowStart == true):
+		weatherMultiplier = 3
+	sodaMoneyAuto += FuncGlobal.process_auto_click(Global.zapSodaClickPower, Global.zapSodaAutoClick, weatherMultiplier)
+	Global.zapSodaMoney = sodaMoneyAuto
+	Global.ttlZapSodaMoney = sodaMoneyAuto
 		#Time in a soda bottle Upgrade
 	if Global.timeInSoda > 0:
 		var newTime = (1 - (float(Global.timeInSoda) / 100))

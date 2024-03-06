@@ -13,10 +13,12 @@ config_version=5
 config/name="Idle Energy"
 run/main_scene="res://Scenes/main.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
+boot_splash/image="res://LoadingScreen.png"
 
 [autoload]
 
 Global="*res://global.gd"
+OverLay="*res://UI/over_lay.tscn"
 
 [display]
 

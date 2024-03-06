@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b56r0drnfyeq3"]
+[gd_scene load_steps=26 format=3 uid="uid://b56r0drnfyeq3"]
 
 [ext_resource type="PackedScene" uid="uid://cgespow2hwr4k" path="res://Sodas/doubleplus_soda.tscn" id="1_8elwk"]
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_awm87"]
@@ -8,6 +8,140 @@
 [ext_resource type="PackedScene" uid="uid://4f1g8hclro8c" path="res://UI/ui.tscn" id="5_8v3al"]
 [ext_resource type="Script" path="res://UI/SessionTimer.gd" id="6_hhxbr"]
 [ext_resource type="AudioStream" uid="uid://ct1ycfmhfoft" path="res://audio/Music/IdleEnergyMusic.mp3" id="7_l3eyg"]
+[ext_resource type="PackedScene" uid="uid://d4igo2jg8tdwv" path="res://UI/over_lay.tscn" id="9_jm58k"]
+[ext_resource type="Script" path="res://Scenes/Rainbow.gd" id="10_cnapq"]
+
+[sub_resource type="Gradient" id="Gradient_72p8k"]
+offsets = PackedFloat32Array(0.131148, 1)
+colors = PackedColorArray(0.0243546, 0.209694, 0.31231, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6kke2"]
+gradient = SubResource("Gradient_72p8k")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6ui3n"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(5, 0, 1)
+emission_shape = 3
+emission_box_extents = Vector3(100, 100, 1)
+direction = Vector3(0, 10, 0)
+spread = 5.0
+initial_velocity_min = 200.0
+initial_velocity_max = 200.0
+gravity = Vector3(0, 30, 0)
+scale_max = 3.0
+color_ramp = SubResource("GradientTexture1D_6kke2")
+
+[sub_resource type="Gradient" id="Gradient_fyksy"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.47541, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.52459, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1well"]
+gradient = SubResource("Gradient_fyksy")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2pc0a"]
+lifetime_randomness = 0.6
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(100, 100, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+gravity = Vector3(0, 0, 0)
+scale_min = 0.2
+scale_max = 2.0
+color_ramp = SubResource("GradientTexture1D_1well")
+
+[sub_resource type="Gradient" id="Gradient_j3brn"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.901639)
+colors = PackedColorArray(1, 1, 1, 1, 0.843137, 0, 0, 0.768627)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5dyk0"]
+gradient = SubResource("Gradient_j3brn")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_brg8y"]
+lifetime_randomness = 0.6
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(350, 1, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 0, 1)
+direction = Vector3(1, 1, 0)
+spread = 5.0
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, 98, 0)
+scale_min = 0.3
+scale_max = 2.5
+color = Color(0.988235, 1, 0.756863, 1)
+color_ramp = SubResource("GradientTexture1D_5dyk0")
+turbulence_noise_strength = 0.1
+turbulence_noise_scale = 0.1
+turbulence_noise_speed_random = 0.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_i0em1"]
+particle_flag_disable_z = true
+direction = Vector3(-1, -1, 0)
+spread = 0.0
+initial_velocity_min = 200.0
+initial_velocity_max = 200.0
+gravity = Vector3(0, 73, 0)
+scale_min = 30.0
+scale_max = 30.0
+color = Color(0.905882, 0, 0.00392157, 0.498039)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_i4u31"]
+particle_flag_disable_z = true
+direction = Vector3(-1, -1, 0)
+spread = 0.0
+initial_velocity_min = 200.0
+initial_velocity_max = 200.0
+gravity = Vector3(0, 74, 0)
+scale_min = 30.0
+scale_max = 30.0
+color = Color(1, 0.611765, 0, 0.498039)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1ea5n"]
+particle_flag_disable_z = true
+direction = Vector3(-1, -1, 0)
+spread = 0.0
+initial_velocity_min = 200.0
+initial_velocity_max = 200.0
+gravity = Vector3(0, 75, 0)
+scale_min = 30.0
+scale_max = 30.0
+color = Color(0.784314, 0.772549, 0, 0.498039)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lp55q"]
+particle_flag_disable_z = true
+direction = Vector3(-1, -1, 0)
+spread = 0.0
+initial_velocity_min = 200.0
+initial_velocity_max = 200.0
+gravity = Vector3(0, 76, 0)
+scale_min = 30.0
+scale_max = 30.0
+color = Color(0.662745, 0.854902, 0.4, 0.498039)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ut631"]
+particle_flag_disable_z = true
+direction = Vector3(-1, -1, 0)
+spread = 0.0
+initial_velocity_min = 200.0
+initial_velocity_max = 200.0
+gravity = Vector3(0, 77, 0)
+scale_min = 30.0
+scale_max = 30.0
+color = Color(0, 0.886275, 0.901961, 0.498039)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nmihl"]
+particle_flag_disable_z = true
+direction = Vector3(-1, -1, 0)
+spread = 0.0
+initial_velocity_min = 200.0
+initial_velocity_max = 200.0
+gravity = Vector3(0, 78, 0)
+scale_min = 30.0
+scale_max = 30.0
+color = Color(0.537255, 0, 0.635294, 0.498039)
 
 [node name="Main Control" type="Control"]
 layout_mode = 3
@@ -20,7 +154,6 @@ mouse_filter = 2
 script = ExtResource("1_awm87")
 
 [node name="UI" parent="." instance=ExtResource("5_8v3al")]
-layer = 2
 
 [node name="Sodas" type="CanvasLayer" parent="."]
 
@@ -44,6 +177,62 @@ visibility_layer = 7
 position = Vector2(1442, 850)
 scale = Vector2(1.5, 1.5)
 
+[node name="LSMultiplyLbl" type="Label" parent="Sodas"]
+unique_name_in_owner = true
+offset_left = 425.0
+offset_top = 1015.0
+offset_right = 795.0
+offset_bottom = 1288.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.831373, 0.686275, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 75
+theme_override_font_sizes/font_size = 200
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ZSMultiplyLbl" type="Label" parent="Sodas"]
+unique_name_in_owner = true
+offset_left = 770.0
+offset_top = 1015.0
+offset_right = 1140.0
+offset_bottom = 1288.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.831373, 0.686275, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 75
+theme_override_font_sizes/font_size = 200
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DPSMultiplyLbl" type="Label" parent="Sodas"]
+unique_name_in_owner = true
+offset_left = 1105.0
+offset_top = 1015.0
+offset_right = 1475.0
+offset_bottom = 1288.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.831373, 0.686275, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 75
+theme_override_font_sizes/font_size = 200
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BBSMultiplyLbl" type="Label" parent="Sodas"]
+unique_name_in_owner = true
+offset_left = 1413.0
+offset_top = 1015.0
+offset_right = 1783.0
+offset_bottom = 1288.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.831373, 0.686275, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 75
+theme_override_font_sizes/font_size = 200
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="SessionTimer" type="Timer" parent="."]
 autostart = true
 script = ExtResource("6_hhxbr")
@@ -61,6 +250,151 @@ volume_db = -20.8
 autoplay = true
 bus = &"Music"
 
+[node name="OverLay" parent="." instance=ExtResource("9_jm58k")]
+
+[node name="Rain" type="GPUParticles2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(948, -105)
+scale = Vector2(4, 4)
+emitting = false
+amount = 1000
+process_material = SubResource("ParticleProcessMaterial_6ui3n")
+lifetime = 2.1
+trail_enabled = true
+trail_lifetime = 0.1
+trail_sections = 2
+trail_section_subdivisions = 2
+
+[node name="RainTimer" type="Timer" parent="Rain"]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="RainBuildTimer" type="Timer" parent="Rain"]
+wait_time = 2.0
+
+[node name="NightStars" type="GPUParticles2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(956, 115)
+scale = Vector2(9.6, 1.2)
+emitting = false
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_2pc0a")
+lifetime = 5.0
+
+[node name="ShootingStars" type="GPUParticles2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(676, -5)
+scale = Vector2(4, 4)
+emitting = false
+amount = 15
+process_material = SubResource("ParticleProcessMaterial_brg8y")
+lifetime = 9.0
+randomness = 1.0
+trail_enabled = true
+trail_lifetime = 0.5
+trail_sections = 12
+trail_section_subdivisions = 6
+
+[node name="ShootingStarsTimer" type="Timer" parent="ShootingStars"]
+unique_name_in_owner = true
+
+[node name="Rainbow" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("10_cnapq")
+
+[node name="RainbowRed" type="GPUParticles2D" parent="Rainbow"]
+unique_name_in_owner = true
+position = Vector2(2082, 849)
+scale = Vector2(2, 2)
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_i0em1")
+lifetime = 9.6
+trail_enabled = true
+trail_lifetime = 1.81
+trail_sections = 2
+trail_section_subdivisions = 1
+
+[node name="RainbowOrange" type="GPUParticles2D" parent="Rainbow"]
+unique_name_in_owner = true
+position = Vector2(2070, 868)
+scale = Vector2(2, 2)
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_i4u31")
+lifetime = 9.6
+trail_enabled = true
+trail_lifetime = 1.81
+trail_sections = 2
+trail_section_subdivisions = 1
+
+[node name="RainbowYellow" type="GPUParticles2D" parent="Rainbow"]
+unique_name_in_owner = true
+position = Vector2(2058, 887)
+scale = Vector2(2, 2)
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_1ea5n")
+lifetime = 9.6
+trail_enabled = true
+trail_lifetime = 1.81
+trail_sections = 2
+trail_section_subdivisions = 1
+
+[node name="RainbowGreen" type="GPUParticles2D" parent="Rainbow"]
+unique_name_in_owner = true
+position = Vector2(2043, 906)
+scale = Vector2(2, 2)
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_lp55q")
+lifetime = 9.6
+trail_enabled = true
+trail_lifetime = 1.81
+trail_sections = 2
+trail_section_subdivisions = 1
+
+[node name="RainbowBlue" type="GPUParticles2D" parent="Rainbow"]
+unique_name_in_owner = true
+position = Vector2(2028, 925)
+scale = Vector2(2, 2)
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_ut631")
+lifetime = 9.6
+trail_enabled = true
+trail_lifetime = 1.81
+trail_sections = 2
+trail_section_subdivisions = 1
+
+[node name="RainbowPurple" type="GPUParticles2D" parent="Rainbow"]
+unique_name_in_owner = true
+position = Vector2(2013, 944)
+scale = Vector2(2, 2)
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_nmihl")
+lifetime = 9.6
+trail_enabled = true
+trail_lifetime = 1.81
+trail_sections = 2
+trail_section_subdivisions = 1
+
+[node name="RainbowTimer" type="Timer" parent="Rainbow"]
+unique_name_in_owner = true
+
+[node name="MainLight" type="DirectionalLight2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1944, -8)
+enabled = false
+energy = 0.4
+range_z_min = 0
+range_z_max = 0
+range_layer_min = -1
+range_layer_max = 1
+shadow_color = Color(0.145098, 0.145098, 0.145098, 0.898039)
+max_distance = 0.0
+
 [connection signal="mouse_entered" from="Sodas/DoublePlusSoda" to="Sodas/DoublePlusSoda" method="_on_mouse_entered"]
 [connection signal="timeout" from="SessionTimer" to="SessionTimer" method="_on_timeout"]
 [connection signal="timeout" from="RNGTimer" to="." method="_on_rng_timer_timeout"]
+[connection signal="timeout" from="Rain/RainTimer" to="." method="_on_rain_timer_timeout"]
+[connection signal="timeout" from="Rain/RainBuildTimer" to="." method="_on_rain_build_timer_timeout"]
+[connection signal="timeout" from="ShootingStars/ShootingStarsTimer" to="." method="_on_shooting_stars_timer_timeout"]
+[connection signal="timeout" from="Rainbow/RainbowTimer" to="Rainbow" method="_on_rainbow_timer_timeout"]
