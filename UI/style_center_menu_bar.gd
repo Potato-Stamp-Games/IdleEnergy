@@ -4,6 +4,7 @@ const POP_BUBBLE_SOUND_EFFECT = preload("res://audio/SFX/pop.wav")
 #gets item id that is pressed in the menu button and creates a callable function
 func _ready():
 	%CoolMenuButton.get_popup().id_pressed.connect(_on_item_pressed)
+	%AchievementsPopUp.min_size = %Achievements.size
 
 func _on_item_pressed(id: int):
 	#The item name variable is set using the id to find the right item
@@ -15,6 +16,7 @@ func _on_item_pressed(id: int):
 	if(item_name == "Achievements"):
 		Global.ttlAllClicks += 1
 		%AchievementsPopUp.show()
+		print(%Achievements.size)
 	if(item_name == "Your Stats"):
 		Global.ttlAllClicks += 1
 		%YourStatsPopUp.show()

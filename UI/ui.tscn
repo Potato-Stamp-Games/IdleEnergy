@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://4f1g8hclro8c"]
 
 [ext_resource type="Script" path="res://UI/UI.gd" id="1_te6a7"]
-[ext_resource type="Texture2D" uid="uid://hkus72itds8u" path="res://Scenes/MainBackground.svg" id="2_y1h6c"]
+[ext_resource type="Texture2D" uid="uid://b4gxp1105wbx2" path="res://Scenes/MainBackground.png" id="2_n7md7"]
 [ext_resource type="Texture2D" uid="uid://dtm2rg3jkbm08" path="res://Sodas/SodaSprites/SodaLightSprite_Money.png" id="3_703tr"]
 [ext_resource type="Texture2D" uid="uid://b6j2cir231g8x" path="res://Sodas/SodaSprites/TrueMoneySprite.png" id="3_qrsc5"]
 [ext_resource type="Texture2D" uid="uid://cfqoqf35wm8dr" path="res://UI/UISprites/MoneyBorder.png" id="3_wnpwg"]
@@ -31,25 +31,27 @@ func _process(_delta):
 "
 
 [node name="UI" type="CanvasLayer"]
+layer = 2
 follow_viewport_enabled = true
 script = ExtResource("1_te6a7")
 
 [node name="BackgroundImage" type="CanvasLayer" parent="."]
-layer = -2
+layer = -1
 
 [node name="Background" type="Sprite2D" parent="BackgroundImage"]
-self_modulate = Color(0.529412, 0.529412, 0.529412, 1)
+show_behind_parent = true
 position = Vector2(960, 540)
-texture = ExtResource("2_y1h6c")
+texture = ExtResource("2_n7md7")
 
 [node name="StyleCenterMenu" parent="." instance=ExtResource("11_vhvr6")]
-layer = 5
+layer = 3
 offset = Vector2(1650, 0)
 scale = Vector2(1.2, 1.2)
 transform = Transform2D(1.2, 0, 0, 1.2, 1650, 0)
 
 [node name="MainLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
+layer = 2
 follow_viewport_enabled = true
 
 [node name="Control" type="Control" parent="MainLayer"]
@@ -285,11 +287,11 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 1.0
-offset_top = -139.0
-offset_right = 264.0
-offset_bottom = 538.0
+offset_top = -138.0
+offset_right = 272.0
+offset_bottom = 540.0
 grow_vertical = 2
-color = Color(0, 0, 0, 0.760784)
+color = Color(0.0352941, 0.0352941, 0.0352941, 0.886275)
 
 [node name="GridContainer" type="GridContainer" parent="ColorRect"]
 layout_mode = 1
@@ -306,7 +308,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="AlchemyButton" type="TextureButton" parent="ColorRect/GridContainer/AlchemyBoxContainer"]
-self_modulate = Color(0.811765, 0.811765, 0.811765, 1)
 custom_minimum_size = Vector2(260, 260)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -324,7 +325,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="ShopButton" type="TextureButton" parent="ColorRect/GridContainer/ShopBoxContainer"]
-modulate = Color(0.733333, 0.733333, 0.733333, 1)
 custom_minimum_size = Vector2(260, 260)
 layout_mode = 2
 size_flags_horizontal = 4

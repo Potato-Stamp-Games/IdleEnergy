@@ -156,6 +156,7 @@ func buyUpgrade(moneyCostOfUpgrade: float, sodaCostOfUpgrade: float, sodaMoney: 
 			mLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[sodaCostOfUpgrade]))
 			sLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[moneyCostOfUpgrade]))
 			Global.ttlAllClicks += 1
+			Global.ttlUpgradesBought += 1
 			$ShopSoundEffects.stream = bubbleSfx
 			$ShopSoundEffects.play()
 			return true

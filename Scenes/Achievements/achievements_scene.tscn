@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://dpyojnqpoucji"]
+[gd_scene load_steps=17 format=3 uid="uid://dpyojnqpoucji"]
 
+[ext_resource type="Script" path="res://Scenes/Achievements/achievements_scene.gd" id="1_kqukk"]
 [ext_resource type="Texture2D" uid="uid://blo3fifvss3ud" path="res://Scenes/Achievements/AchievementsBackgorund.png" id="1_pwdu2"]
 [ext_resource type="Texture2D" uid="uid://cd28dlfx6ppyr" path="res://Scenes/Achievements/Border.png" id="2_d44sx"]
 [ext_resource type="Texture2D" uid="uid://bl7di3j6outnl" path="res://Scenes/Achievements/SpriteFrame.png" id="3_a5pky"]
@@ -8,14 +9,24 @@
 [ext_resource type="Texture2D" uid="uid://dl0xlcr0pqkj7" path="res://Scenes/Achievements/AchievementIcons/SemiAmateurClicker.png" id="6_am1u3"]
 [ext_resource type="Texture2D" uid="uid://b4uxyow1mpem5" path="res://Scenes/Achievements/AchievementIcons/ProClicker.png" id="7_g1yr0"]
 [ext_resource type="Texture2D" uid="uid://bavps5cydggrp" path="res://icon.svg" id="8_u68ih"]
+[ext_resource type="Texture2D" uid="uid://d2jx14whlrfqp" path="res://Scenes/Achievements/AchievementIcons/GodlyClicker.png" id="9_8fj27"]
+[ext_resource type="Texture2D" uid="uid://b53pfx0nwwgeu" path="res://Scenes/Achievements/AchievementIcons/ShopUpgrades1.png" id="10_aq2xe"]
+[ext_resource type="Texture2D" uid="uid://dlorhpbdlsmvp" path="res://Scenes/Achievements/AchievementIcons/ShopUpgrades2.png" id="11_wci57"]
+[ext_resource type="Texture2D" uid="uid://b3eprwofqobsp" path="res://Scenes/Achievements/AchievementIcons/ShopUpgrades3.png" id="12_1v7ob"]
+[ext_resource type="Texture2D" uid="uid://dl74doxmg7qpj" path="res://Scenes/Achievements/AchievementIcons/ShopUpgrades4.png" id="13_tgity"]
+[ext_resource type="Texture2D" uid="uid://cx040e8aefpgl" path="res://Scenes/Achievements/AchievementIcons/ShopUpgrades5.png" id="14_5db6s"]
+[ext_resource type="Texture2D" uid="uid://dlpubuwcv5efm" path="res://Scenes/Achievements/AchievementIcons/LetItRainSprite.png" id="15_peuit"]
 
 [node name="Achievements" type="ScrollContainer"]
-custom_minimum_size = Vector2(800, 1000)
-offset_right = 800.0
-offset_bottom = 1573.0
+custom_minimum_size = Vector2(1000, 0)
+offset_left = -20.0
+offset_top = 114.0
+offset_right = 980.0
+offset_bottom = 3572.0
+script = ExtResource("1_kqukk")
 
 [node name="MC" type="MarginContainer" parent="."]
-custom_minimum_size = Vector2(800, 1050)
+custom_minimum_size = Vector2(1000, 1050)
 layout_mode = 2
 
 [node name="TextureRect" type="NinePatchRect" parent="MC"]
@@ -28,14 +39,14 @@ patch_margin_bottom = 185
 [node name="MC" type="MarginContainer" parent="MC"]
 layout_mode = 2
 
-[node name="VC" type="VBoxContainer" parent="MC/MC"]
+[node name="AchievmentsBox" type="VBoxContainer" parent="MC/MC"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MC/MC/VC"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MC/MC/AchievmentsBox"]
 custom_minimum_size = Vector2(800, 160)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MC/MC/VC/VBoxContainer"]
+[node name="Label" type="Label" parent="MC/MC/AchievmentsBox/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.639216, 0.227451, 0.2, 1)
 theme_override_colors/font_shadow_color = Color(0.337255, 0.254902, 0.027451, 0.698039)
@@ -47,14 +58,14 @@ text = "ACHIEVEMENTS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="padding" type="VBoxContainer" parent="MC/MC/VC"]
+[node name="padding" type="VBoxContainer" parent="MC/MC/AchievmentsBox"]
 custom_minimum_size = Vector2(0, 140)
 layout_mode = 2
 
-[node name="AmateurClicker" type="MarginContainer" parent="MC/MC/VC"]
+[node name="AmateurClicker" type="MarginContainer" parent="MC/MC/AchievmentsBox"]
 layout_mode = 2
 
-[node name="Border" type="NinePatchRect" parent="MC/MC/VC/AmateurClicker"]
+[node name="Border" type="NinePatchRect" parent="MC/MC/AchievmentsBox/AmateurClicker"]
 layout_mode = 2
 texture = ExtResource("2_d44sx")
 region_rect = Rect2(0, 0, 640, 497)
@@ -63,24 +74,24 @@ patch_margin_top = 34
 patch_margin_right = 34
 patch_margin_bottom = 34
 
-[node name="MCMain" type="MarginContainer" parent="MC/MC/VC/AmateurClicker"]
+[node name="MCMain" type="MarginContainer" parent="MC/MC/AchievmentsBox/AmateurClicker"]
 layout_mode = 2
 theme_override_constants/margin_left = 33
 theme_override_constants/margin_top = 33
 theme_override_constants/margin_right = 33
 theme_override_constants/margin_bottom = 33
 
-[node name="ColorRect" type="ColorRect" parent="MC/MC/VC/AmateurClicker/MCMain"]
+[node name="ColorRect" type="ColorRect" parent="MC/MC/AchievmentsBox/AmateurClicker/MCMain"]
 show_behind_parent = true
 custom_minimum_size = Vector2(20, 60)
 layout_mode = 2
 color = Color(0.172549, 0.172549, 0.172549, 0.815686)
 
-[node name="GridContainer" type="GridContainer" parent="MC/MC/VC/AmateurClicker/MCMain"]
+[node name="GridContainer" type="GridContainer" parent="MC/MC/AchievmentsBox/AmateurClicker/MCMain"]
 layout_mode = 2
 columns = 2
 
-[node name="IconBorder" type="TextureRect" parent="MC/MC/VC/AmateurClicker/MCMain/GridContainer"]
+[node name="IconBorder" type="TextureRect" parent="MC/MC/AchievmentsBox/AmateurClicker/MCMain/GridContainer"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -88,7 +99,8 @@ size_flags_vertical = 4
 texture = ExtResource("3_a5pky")
 expand_mode = 1
 
-[node name="IconHere" type="TextureRect" parent="MC/MC/VC/AmateurClicker/MCMain/GridContainer/IconBorder"]
+[node name="AmClickerIcon" type="TextureRect" parent="MC/MC/AchievmentsBox/AmateurClicker/MCMain/GridContainer/IconBorder"]
+unique_name_in_owner = true
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -99,7 +111,8 @@ grow_vertical = 2
 texture = ExtResource("4_igrau")
 expand_mode = 1
 
-[node name="Completed" type="TextureRect" parent="MC/MC/VC/AmateurClicker/MCMain/GridContainer/IconBorder/IconHere"]
+[node name="AmClickerDone" type="TextureRect" parent="MC/MC/AchievmentsBox/AmateurClicker/MCMain/GridContainer/IconBorder/AmClickerIcon"]
+unique_name_in_owner = true
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -110,12 +123,12 @@ grow_vertical = 2
 texture = ExtResource("5_e7bxe")
 expand_mode = 1
 
-[node name="GridContainer" type="GridContainer" parent="MC/MC/VC/AmateurClicker/MCMain/GridContainer"]
+[node name="GridContainer" type="GridContainer" parent="MC/MC/AchievmentsBox/AmateurClicker/MCMain/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="MC/MC/VC/AmateurClicker/MCMain/GridContainer/GridContainer"]
+[node name="Label" type="Label" parent="MC/MC/AchievmentsBox/AmateurClicker/MCMain/GridContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -129,12 +142,12 @@ text = "AMATEUR CLICKER"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="MC/MC/VC/AmateurClicker/MCMain/GridContainer/GridContainer"]
+[node name="ColorRect" type="ColorRect" parent="MC/MC/AchievmentsBox/AmateurClicker/MCMain/GridContainer/GridContainer"]
 custom_minimum_size = Vector2(0, 3)
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Label2" type="Label" parent="MC/MC/VC/AmateurClicker/MCMain/GridContainer/GridContainer"]
+[node name="Label2" type="Label" parent="MC/MC/AchievmentsBox/AmateurClicker/MCMain/GridContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -148,12 +161,13 @@ text = "Click 3,000 times"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ColorRect2" type="ColorRect" parent="MC/MC/VC/AmateurClicker/MCMain/GridContainer/GridContainer"]
+[node name="ColorRect2" type="ColorRect" parent="MC/MC/AchievmentsBox/AmateurClicker/MCMain/GridContainer/GridContainer"]
 custom_minimum_size = Vector2(0, 3)
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Label3" type="Label" parent="MC/MC/VC/AmateurClicker/MCMain/GridContainer/GridContainer"]
+[node name="AmClickerReward" type="Label" parent="MC/MC/AchievmentsBox/AmateurClicker/MCMain/GridContainer/GridContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -168,10 +182,10 @@ text = "REWARD: ???"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SemiProClicker" type="MarginContainer" parent="MC/MC/VC"]
+[node name="SemiProClicker" type="MarginContainer" parent="MC/MC/AchievmentsBox"]
 layout_mode = 2
 
-[node name="Border" type="NinePatchRect" parent="MC/MC/VC/SemiProClicker"]
+[node name="Border" type="NinePatchRect" parent="MC/MC/AchievmentsBox/SemiProClicker"]
 layout_mode = 2
 texture = ExtResource("2_d44sx")
 region_rect = Rect2(0, 0, 640, 497)
@@ -180,24 +194,24 @@ patch_margin_top = 34
 patch_margin_right = 34
 patch_margin_bottom = 34
 
-[node name="MCMain" type="MarginContainer" parent="MC/MC/VC/SemiProClicker"]
+[node name="MCMain" type="MarginContainer" parent="MC/MC/AchievmentsBox/SemiProClicker"]
 layout_mode = 2
 theme_override_constants/margin_left = 33
 theme_override_constants/margin_top = 33
 theme_override_constants/margin_right = 33
 theme_override_constants/margin_bottom = 33
 
-[node name="ColorRect" type="ColorRect" parent="MC/MC/VC/SemiProClicker/MCMain"]
+[node name="ColorRect" type="ColorRect" parent="MC/MC/AchievmentsBox/SemiProClicker/MCMain"]
 show_behind_parent = true
 custom_minimum_size = Vector2(20, 60)
 layout_mode = 2
 color = Color(0.172549, 0.172549, 0.172549, 0.815686)
 
-[node name="GridContainer" type="GridContainer" parent="MC/MC/VC/SemiProClicker/MCMain"]
+[node name="GridContainer" type="GridContainer" parent="MC/MC/AchievmentsBox/SemiProClicker/MCMain"]
 layout_mode = 2
 columns = 2
 
-[node name="IconBorder" type="TextureRect" parent="MC/MC/VC/SemiProClicker/MCMain/GridContainer"]
+[node name="IconBorder" type="TextureRect" parent="MC/MC/AchievmentsBox/SemiProClicker/MCMain/GridContainer"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -205,7 +219,8 @@ size_flags_vertical = 4
 texture = ExtResource("3_a5pky")
 expand_mode = 1
 
-[node name="IconHere" type="TextureRect" parent="MC/MC/VC/SemiProClicker/MCMain/GridContainer/IconBorder"]
+[node name="SemiClickerIcon" type="TextureRect" parent="MC/MC/AchievmentsBox/SemiProClicker/MCMain/GridContainer/IconBorder"]
+unique_name_in_owner = true
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -216,7 +231,8 @@ grow_vertical = 2
 texture = ExtResource("6_am1u3")
 expand_mode = 1
 
-[node name="Completed" type="TextureRect" parent="MC/MC/VC/SemiProClicker/MCMain/GridContainer/IconBorder/IconHere"]
+[node name="SemiClickerDone" type="TextureRect" parent="MC/MC/AchievmentsBox/SemiProClicker/MCMain/GridContainer/IconBorder/SemiClickerIcon"]
+unique_name_in_owner = true
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -227,12 +243,12 @@ grow_vertical = 2
 texture = ExtResource("5_e7bxe")
 expand_mode = 1
 
-[node name="GridContainer" type="GridContainer" parent="MC/MC/VC/SemiProClicker/MCMain/GridContainer"]
+[node name="GridContainer" type="GridContainer" parent="MC/MC/AchievmentsBox/SemiProClicker/MCMain/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="MC/MC/VC/SemiProClicker/MCMain/GridContainer/GridContainer"]
+[node name="Label" type="Label" parent="MC/MC/AchievmentsBox/SemiProClicker/MCMain/GridContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -242,16 +258,16 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 20
 theme_override_constants/shadow_outline_size = 35
 theme_override_font_sizes/font_size = 39
-text = "SEMI-AMATEUR CLICKER"
+text = "SEMI-PRO CLICKER"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="MC/MC/VC/SemiProClicker/MCMain/GridContainer/GridContainer"]
+[node name="ColorRect" type="ColorRect" parent="MC/MC/AchievmentsBox/SemiProClicker/MCMain/GridContainer/GridContainer"]
 custom_minimum_size = Vector2(0, 3)
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Label2" type="Label" parent="MC/MC/VC/SemiProClicker/MCMain/GridContainer/GridContainer"]
+[node name="Label2" type="Label" parent="MC/MC/AchievmentsBox/SemiProClicker/MCMain/GridContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -265,12 +281,13 @@ text = "Click 25,000 times"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ColorRect2" type="ColorRect" parent="MC/MC/VC/SemiProClicker/MCMain/GridContainer/GridContainer"]
+[node name="ColorRect2" type="ColorRect" parent="MC/MC/AchievmentsBox/SemiProClicker/MCMain/GridContainer/GridContainer"]
 custom_minimum_size = Vector2(0, 3)
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Label3" type="Label" parent="MC/MC/VC/SemiProClicker/MCMain/GridContainer/GridContainer"]
+[node name="SemiClickerReward" type="Label" parent="MC/MC/AchievmentsBox/SemiProClicker/MCMain/GridContainer/GridContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -285,10 +302,10 @@ text = "REWARD: ???"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ProClicker" type="MarginContainer" parent="MC/MC/VC"]
+[node name="ProClicker" type="MarginContainer" parent="MC/MC/AchievmentsBox"]
 layout_mode = 2
 
-[node name="Border" type="NinePatchRect" parent="MC/MC/VC/ProClicker"]
+[node name="Border" type="NinePatchRect" parent="MC/MC/AchievmentsBox/ProClicker"]
 layout_mode = 2
 texture = ExtResource("2_d44sx")
 region_rect = Rect2(0, 0, 640, 497)
@@ -297,24 +314,24 @@ patch_margin_top = 34
 patch_margin_right = 34
 patch_margin_bottom = 34
 
-[node name="MCMain" type="MarginContainer" parent="MC/MC/VC/ProClicker"]
+[node name="MCMain" type="MarginContainer" parent="MC/MC/AchievmentsBox/ProClicker"]
 layout_mode = 2
 theme_override_constants/margin_left = 33
 theme_override_constants/margin_top = 33
 theme_override_constants/margin_right = 33
 theme_override_constants/margin_bottom = 33
 
-[node name="ColorRect" type="ColorRect" parent="MC/MC/VC/ProClicker/MCMain"]
+[node name="ColorRect" type="ColorRect" parent="MC/MC/AchievmentsBox/ProClicker/MCMain"]
 show_behind_parent = true
 custom_minimum_size = Vector2(20, 60)
 layout_mode = 2
 color = Color(0.172549, 0.172549, 0.172549, 0.815686)
 
-[node name="GridContainer" type="GridContainer" parent="MC/MC/VC/ProClicker/MCMain"]
+[node name="GridContainer" type="GridContainer" parent="MC/MC/AchievmentsBox/ProClicker/MCMain"]
 layout_mode = 2
 columns = 2
 
-[node name="IconBorder" type="TextureRect" parent="MC/MC/VC/ProClicker/MCMain/GridContainer"]
+[node name="IconBorder" type="TextureRect" parent="MC/MC/AchievmentsBox/ProClicker/MCMain/GridContainer"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -322,7 +339,8 @@ size_flags_vertical = 4
 texture = ExtResource("3_a5pky")
 expand_mode = 1
 
-[node name="IconHere" type="TextureRect" parent="MC/MC/VC/ProClicker/MCMain/GridContainer/IconBorder"]
+[node name="ProClicker" type="TextureRect" parent="MC/MC/AchievmentsBox/ProClicker/MCMain/GridContainer/IconBorder"]
+unique_name_in_owner = true
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -333,7 +351,8 @@ grow_vertical = 2
 texture = ExtResource("7_g1yr0")
 expand_mode = 1
 
-[node name="Completed" type="TextureRect" parent="MC/MC/VC/ProClicker/MCMain/GridContainer/IconBorder/IconHere"]
+[node name="ProClickerDone" type="TextureRect" parent="MC/MC/AchievmentsBox/ProClicker/MCMain/GridContainer/IconBorder/ProClicker"]
+unique_name_in_owner = true
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -344,12 +363,12 @@ grow_vertical = 2
 texture = ExtResource("5_e7bxe")
 expand_mode = 1
 
-[node name="GridContainer" type="GridContainer" parent="MC/MC/VC/ProClicker/MCMain/GridContainer"]
+[node name="GridContainer" type="GridContainer" parent="MC/MC/AchievmentsBox/ProClicker/MCMain/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="MC/MC/VC/ProClicker/MCMain/GridContainer/GridContainer"]
+[node name="Label" type="Label" parent="MC/MC/AchievmentsBox/ProClicker/MCMain/GridContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -363,12 +382,12 @@ text = "PRO CLICKER"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="MC/MC/VC/ProClicker/MCMain/GridContainer/GridContainer"]
+[node name="ColorRect" type="ColorRect" parent="MC/MC/AchievmentsBox/ProClicker/MCMain/GridContainer/GridContainer"]
 custom_minimum_size = Vector2(0, 3)
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Label2" type="Label" parent="MC/MC/VC/ProClicker/MCMain/GridContainer/GridContainer"]
+[node name="Label2" type="Label" parent="MC/MC/AchievmentsBox/ProClicker/MCMain/GridContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -378,16 +397,17 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_y = 6
 theme_override_constants/outline_size = 12
 theme_override_font_sizes/font_size = 21
-text = "Click 100,000 times"
+text = "Click 250,000 times"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ColorRect2" type="ColorRect" parent="MC/MC/VC/ProClicker/MCMain/GridContainer/GridContainer"]
+[node name="ColorRect2" type="ColorRect" parent="MC/MC/AchievmentsBox/ProClicker/MCMain/GridContainer/GridContainer"]
 custom_minimum_size = Vector2(0, 3)
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Label3" type="Label" parent="MC/MC/VC/ProClicker/MCMain/GridContainer/GridContainer"]
+[node name="ProClickerReward" type="Label" parent="MC/MC/AchievmentsBox/ProClicker/MCMain/GridContainer/GridContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -402,10 +422,10 @@ text = "REWARD: ???"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AchievementTemplate4" type="MarginContainer" parent="MC/MC/VC"]
+[node name="GodlyClicker" type="MarginContainer" parent="MC/MC/AchievmentsBox"]
 layout_mode = 2
 
-[node name="Border" type="NinePatchRect" parent="MC/MC/VC/AchievementTemplate4"]
+[node name="Border" type="NinePatchRect" parent="MC/MC/AchievmentsBox/GodlyClicker"]
 layout_mode = 2
 texture = ExtResource("2_d44sx")
 region_rect = Rect2(0, 0, 640, 497)
@@ -414,24 +434,24 @@ patch_margin_top = 34
 patch_margin_right = 34
 patch_margin_bottom = 34
 
-[node name="MCMain" type="MarginContainer" parent="MC/MC/VC/AchievementTemplate4"]
+[node name="MCMain" type="MarginContainer" parent="MC/MC/AchievmentsBox/GodlyClicker"]
 layout_mode = 2
 theme_override_constants/margin_left = 33
 theme_override_constants/margin_top = 33
 theme_override_constants/margin_right = 33
 theme_override_constants/margin_bottom = 33
 
-[node name="ColorRect" type="ColorRect" parent="MC/MC/VC/AchievementTemplate4/MCMain"]
+[node name="ColorRect" type="ColorRect" parent="MC/MC/AchievmentsBox/GodlyClicker/MCMain"]
 show_behind_parent = true
 custom_minimum_size = Vector2(20, 60)
 layout_mode = 2
 color = Color(0.172549, 0.172549, 0.172549, 0.815686)
 
-[node name="GridContainer" type="GridContainer" parent="MC/MC/VC/AchievementTemplate4/MCMain"]
+[node name="GridContainer" type="GridContainer" parent="MC/MC/AchievmentsBox/GodlyClicker/MCMain"]
 layout_mode = 2
 columns = 2
 
-[node name="IconBorder" type="TextureRect" parent="MC/MC/VC/AchievementTemplate4/MCMain/GridContainer"]
+[node name="IconBorder" type="TextureRect" parent="MC/MC/AchievmentsBox/GodlyClicker/MCMain/GridContainer"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -439,7 +459,8 @@ size_flags_vertical = 4
 texture = ExtResource("3_a5pky")
 expand_mode = 1
 
-[node name="IconHere" type="TextureRect" parent="MC/MC/VC/AchievementTemplate4/MCMain/GridContainer/IconBorder"]
+[node name="GodlyClickerIcon" type="TextureRect" parent="MC/MC/AchievmentsBox/GodlyClicker/MCMain/GridContainer/IconBorder"]
+unique_name_in_owner = true
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -447,10 +468,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("8_u68ih")
+texture = ExtResource("9_8fj27")
 expand_mode = 1
 
-[node name="Completed" type="TextureRect" parent="MC/MC/VC/AchievementTemplate4/MCMain/GridContainer/IconBorder/IconHere"]
+[node name="GodlyCLickerDone" type="TextureRect" parent="MC/MC/AchievmentsBox/GodlyClicker/MCMain/GridContainer/IconBorder/GodlyClickerIcon"]
+unique_name_in_owner = true
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -461,12 +483,850 @@ grow_vertical = 2
 texture = ExtResource("5_e7bxe")
 expand_mode = 1
 
-[node name="GridContainer" type="GridContainer" parent="MC/MC/VC/AchievementTemplate4/MCMain/GridContainer"]
+[node name="GridContainer" type="GridContainer" parent="MC/MC/AchievmentsBox/GodlyClicker/MCMain/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="MC/MC/VC/AchievementTemplate4/MCMain/GridContainer/GridContainer"]
+[node name="Label" type="Label" parent="MC/MC/AchievmentsBox/GodlyClicker/MCMain/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.913725, 0.678431, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.839216, 0.839216, 0.839216, 0.101961)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 35
+theme_override_font_sizes/font_size = 39
+text = "GODLY CLICKER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="MC/MC/AchievmentsBox/GodlyClicker/MCMain/GridContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label2" type="Label" parent="MC/MC/AchievmentsBox/GodlyClicker/MCMain/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 21
+text = "Click 1 million times"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="MC/MC/AchievmentsBox/GodlyClicker/MCMain/GridContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="GodlyClickerReward" type="Label" parent="MC/MC/AchievmentsBox/GodlyClicker/MCMain/GridContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.913725, 0.815686, 0.584314, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 0.329412)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 11
+theme_override_font_sizes/font_size = 20
+text = "REWARD: ???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShopUpgrades1" type="MarginContainer" parent="MC/MC/AchievmentsBox"]
+layout_mode = 2
+
+[node name="Border" type="NinePatchRect" parent="MC/MC/AchievmentsBox/ShopUpgrades1"]
+layout_mode = 2
+texture = ExtResource("2_d44sx")
+region_rect = Rect2(0, 0, 640, 497)
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="MCMain" type="MarginContainer" parent="MC/MC/AchievmentsBox/ShopUpgrades1"]
+layout_mode = 2
+theme_override_constants/margin_left = 33
+theme_override_constants/margin_top = 33
+theme_override_constants/margin_right = 33
+theme_override_constants/margin_bottom = 33
+
+[node name="ColorRect" type="ColorRect" parent="MC/MC/AchievmentsBox/ShopUpgrades1/MCMain"]
+show_behind_parent = true
+custom_minimum_size = Vector2(20, 60)
+layout_mode = 2
+color = Color(0.172549, 0.172549, 0.172549, 0.815686)
+
+[node name="GridContainer" type="GridContainer" parent="MC/MC/AchievmentsBox/ShopUpgrades1/MCMain"]
+layout_mode = 2
+columns = 2
+
+[node name="IconBorder" type="TextureRect" parent="MC/MC/AchievmentsBox/ShopUpgrades1/MCMain/GridContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("3_a5pky")
+expand_mode = 1
+
+[node name="ShopU1Icon" type="TextureRect" parent="MC/MC/AchievmentsBox/ShopUpgrades1/MCMain/GridContainer/IconBorder"]
+unique_name_in_owner = true
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_aq2xe")
+expand_mode = 1
+
+[node name="ShopU1Done" type="TextureRect" parent="MC/MC/AchievmentsBox/ShopUpgrades1/MCMain/GridContainer/IconBorder/ShopU1Icon"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_e7bxe")
+expand_mode = 1
+
+[node name="GridContainer" type="GridContainer" parent="MC/MC/AchievmentsBox/ShopUpgrades1/MCMain/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MC/MC/AchievmentsBox/ShopUpgrades1/MCMain/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.913725, 0.678431, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.839216, 0.839216, 0.839216, 0.101961)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 35
+theme_override_font_sizes/font_size = 39
+text = "SODA UPGRADER I"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="MC/MC/AchievmentsBox/ShopUpgrades1/MCMain/GridContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label2" type="Label" parent="MC/MC/AchievmentsBox/ShopUpgrades1/MCMain/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 21
+text = "Buy 20 upgrades00000000000000000000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="MC/MC/AchievmentsBox/ShopUpgrades1/MCMain/GridContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ShopU1Reward" type="Label" parent="MC/MC/AchievmentsBox/ShopUpgrades1/MCMain/GridContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.913725, 0.815686, 0.584314, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 0.329412)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 11
+theme_override_font_sizes/font_size = 20
+text = "REWARD: ???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShopUpgrades2" type="MarginContainer" parent="MC/MC/AchievmentsBox"]
+layout_mode = 2
+
+[node name="Border" type="NinePatchRect" parent="MC/MC/AchievmentsBox/ShopUpgrades2"]
+layout_mode = 2
+texture = ExtResource("2_d44sx")
+region_rect = Rect2(0, 0, 640, 497)
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="MCMain" type="MarginContainer" parent="MC/MC/AchievmentsBox/ShopUpgrades2"]
+layout_mode = 2
+theme_override_constants/margin_left = 33
+theme_override_constants/margin_top = 33
+theme_override_constants/margin_right = 33
+theme_override_constants/margin_bottom = 33
+
+[node name="ColorRect" type="ColorRect" parent="MC/MC/AchievmentsBox/ShopUpgrades2/MCMain"]
+show_behind_parent = true
+custom_minimum_size = Vector2(20, 60)
+layout_mode = 2
+color = Color(0.172549, 0.172549, 0.172549, 0.815686)
+
+[node name="GridContainer" type="GridContainer" parent="MC/MC/AchievmentsBox/ShopUpgrades2/MCMain"]
+layout_mode = 2
+columns = 2
+
+[node name="IconBorder" type="TextureRect" parent="MC/MC/AchievmentsBox/ShopUpgrades2/MCMain/GridContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("3_a5pky")
+expand_mode = 1
+
+[node name="ShopU2" type="TextureRect" parent="MC/MC/AchievmentsBox/ShopUpgrades2/MCMain/GridContainer/IconBorder"]
+unique_name_in_owner = true
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_wci57")
+expand_mode = 1
+
+[node name="ShopU2Done" type="TextureRect" parent="MC/MC/AchievmentsBox/ShopUpgrades2/MCMain/GridContainer/IconBorder/ShopU2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_e7bxe")
+expand_mode = 1
+
+[node name="GridContainer" type="GridContainer" parent="MC/MC/AchievmentsBox/ShopUpgrades2/MCMain/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MC/MC/AchievmentsBox/ShopUpgrades2/MCMain/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.913725, 0.678431, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.839216, 0.839216, 0.839216, 0.101961)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 35
+theme_override_font_sizes/font_size = 39
+text = "SODA UPGRADER II"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="MC/MC/AchievmentsBox/ShopUpgrades2/MCMain/GridContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label2" type="Label" parent="MC/MC/AchievmentsBox/ShopUpgrades2/MCMain/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 21
+text = "Buy 40 upgrades"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="MC/MC/AchievmentsBox/ShopUpgrades2/MCMain/GridContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ShopU2Reward" type="Label" parent="MC/MC/AchievmentsBox/ShopUpgrades2/MCMain/GridContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.913725, 0.815686, 0.584314, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 0.329412)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 11
+theme_override_font_sizes/font_size = 20
+text = "REWARD: ???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShopUpgrades3" type="MarginContainer" parent="MC/MC/AchievmentsBox"]
+layout_mode = 2
+
+[node name="Border" type="NinePatchRect" parent="MC/MC/AchievmentsBox/ShopUpgrades3"]
+layout_mode = 2
+texture = ExtResource("2_d44sx")
+region_rect = Rect2(0, 0, 640, 497)
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="MCMain" type="MarginContainer" parent="MC/MC/AchievmentsBox/ShopUpgrades3"]
+layout_mode = 2
+theme_override_constants/margin_left = 33
+theme_override_constants/margin_top = 33
+theme_override_constants/margin_right = 33
+theme_override_constants/margin_bottom = 33
+
+[node name="ColorRect" type="ColorRect" parent="MC/MC/AchievmentsBox/ShopUpgrades3/MCMain"]
+show_behind_parent = true
+custom_minimum_size = Vector2(20, 60)
+layout_mode = 2
+color = Color(0.172549, 0.172549, 0.172549, 0.815686)
+
+[node name="GridContainer" type="GridContainer" parent="MC/MC/AchievmentsBox/ShopUpgrades3/MCMain"]
+layout_mode = 2
+columns = 2
+
+[node name="IconBorder" type="TextureRect" parent="MC/MC/AchievmentsBox/ShopUpgrades3/MCMain/GridContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("3_a5pky")
+expand_mode = 1
+
+[node name="ShopU3" type="TextureRect" parent="MC/MC/AchievmentsBox/ShopUpgrades3/MCMain/GridContainer/IconBorder"]
+unique_name_in_owner = true
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_1v7ob")
+expand_mode = 1
+
+[node name="ShopU3Done" type="TextureRect" parent="MC/MC/AchievmentsBox/ShopUpgrades3/MCMain/GridContainer/IconBorder/ShopU3"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_e7bxe")
+expand_mode = 1
+
+[node name="GridContainer" type="GridContainer" parent="MC/MC/AchievmentsBox/ShopUpgrades3/MCMain/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MC/MC/AchievmentsBox/ShopUpgrades3/MCMain/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.913725, 0.678431, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.839216, 0.839216, 0.839216, 0.101961)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 35
+theme_override_font_sizes/font_size = 39
+text = "SODA UPGRADER III"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="MC/MC/AchievmentsBox/ShopUpgrades3/MCMain/GridContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label2" type="Label" parent="MC/MC/AchievmentsBox/ShopUpgrades3/MCMain/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 21
+text = "Buy 80 upgrades"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="MC/MC/AchievmentsBox/ShopUpgrades3/MCMain/GridContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ShopU3Reward" type="Label" parent="MC/MC/AchievmentsBox/ShopUpgrades3/MCMain/GridContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.913725, 0.815686, 0.584314, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 0.329412)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 11
+theme_override_font_sizes/font_size = 20
+text = "REWARD: ???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShopUpgrades4" type="MarginContainer" parent="MC/MC/AchievmentsBox"]
+layout_mode = 2
+
+[node name="Border" type="NinePatchRect" parent="MC/MC/AchievmentsBox/ShopUpgrades4"]
+layout_mode = 2
+texture = ExtResource("2_d44sx")
+region_rect = Rect2(0, 0, 640, 497)
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="MCMain" type="MarginContainer" parent="MC/MC/AchievmentsBox/ShopUpgrades4"]
+layout_mode = 2
+theme_override_constants/margin_left = 33
+theme_override_constants/margin_top = 33
+theme_override_constants/margin_right = 33
+theme_override_constants/margin_bottom = 33
+
+[node name="ColorRect" type="ColorRect" parent="MC/MC/AchievmentsBox/ShopUpgrades4/MCMain"]
+show_behind_parent = true
+custom_minimum_size = Vector2(20, 60)
+layout_mode = 2
+color = Color(0.172549, 0.172549, 0.172549, 0.815686)
+
+[node name="GridContainer" type="GridContainer" parent="MC/MC/AchievmentsBox/ShopUpgrades4/MCMain"]
+layout_mode = 2
+columns = 2
+
+[node name="IconBorder" type="TextureRect" parent="MC/MC/AchievmentsBox/ShopUpgrades4/MCMain/GridContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("3_a5pky")
+expand_mode = 1
+
+[node name="ShopU4" type="TextureRect" parent="MC/MC/AchievmentsBox/ShopUpgrades4/MCMain/GridContainer/IconBorder"]
+unique_name_in_owner = true
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_tgity")
+expand_mode = 1
+
+[node name="ShopU4Done" type="TextureRect" parent="MC/MC/AchievmentsBox/ShopUpgrades4/MCMain/GridContainer/IconBorder/ShopU4"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_e7bxe")
+expand_mode = 1
+
+[node name="GridContainer" type="GridContainer" parent="MC/MC/AchievmentsBox/ShopUpgrades4/MCMain/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MC/MC/AchievmentsBox/ShopUpgrades4/MCMain/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.913725, 0.678431, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.839216, 0.839216, 0.839216, 0.101961)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 35
+theme_override_font_sizes/font_size = 39
+text = "SODA UPGRADER IIII"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="MC/MC/AchievmentsBox/ShopUpgrades4/MCMain/GridContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label2" type="Label" parent="MC/MC/AchievmentsBox/ShopUpgrades4/MCMain/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 21
+text = "Buy 160 upgrades"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="MC/MC/AchievmentsBox/ShopUpgrades4/MCMain/GridContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ShopU4Reward" type="Label" parent="MC/MC/AchievmentsBox/ShopUpgrades4/MCMain/GridContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.913725, 0.815686, 0.584314, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 0.329412)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 11
+theme_override_font_sizes/font_size = 20
+text = "REWARD: ???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShopUpgrades5" type="MarginContainer" parent="MC/MC/AchievmentsBox"]
+layout_mode = 2
+
+[node name="Border" type="NinePatchRect" parent="MC/MC/AchievmentsBox/ShopUpgrades5"]
+layout_mode = 2
+texture = ExtResource("2_d44sx")
+region_rect = Rect2(0, 0, 640, 497)
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="MCMain" type="MarginContainer" parent="MC/MC/AchievmentsBox/ShopUpgrades5"]
+layout_mode = 2
+theme_override_constants/margin_left = 33
+theme_override_constants/margin_top = 33
+theme_override_constants/margin_right = 33
+theme_override_constants/margin_bottom = 33
+
+[node name="ColorRect" type="ColorRect" parent="MC/MC/AchievmentsBox/ShopUpgrades5/MCMain"]
+show_behind_parent = true
+custom_minimum_size = Vector2(20, 60)
+layout_mode = 2
+color = Color(0.172549, 0.172549, 0.172549, 0.815686)
+
+[node name="GridContainer" type="GridContainer" parent="MC/MC/AchievmentsBox/ShopUpgrades5/MCMain"]
+layout_mode = 2
+columns = 2
+
+[node name="IconBorder" type="TextureRect" parent="MC/MC/AchievmentsBox/ShopUpgrades5/MCMain/GridContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("3_a5pky")
+expand_mode = 1
+
+[node name="ShopU5" type="TextureRect" parent="MC/MC/AchievmentsBox/ShopUpgrades5/MCMain/GridContainer/IconBorder"]
+unique_name_in_owner = true
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_5db6s")
+expand_mode = 1
+
+[node name="ShopU5Done" type="TextureRect" parent="MC/MC/AchievmentsBox/ShopUpgrades5/MCMain/GridContainer/IconBorder/ShopU5"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_e7bxe")
+expand_mode = 1
+
+[node name="GridContainer" type="GridContainer" parent="MC/MC/AchievmentsBox/ShopUpgrades5/MCMain/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MC/MC/AchievmentsBox/ShopUpgrades5/MCMain/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.913725, 0.678431, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.839216, 0.839216, 0.839216, 0.101961)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 35
+theme_override_font_sizes/font_size = 39
+text = "SODA UPGRADER V"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="MC/MC/AchievmentsBox/ShopUpgrades5/MCMain/GridContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label2" type="Label" parent="MC/MC/AchievmentsBox/ShopUpgrades5/MCMain/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 21
+text = "Buy 320 upgrades"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="MC/MC/AchievmentsBox/ShopUpgrades5/MCMain/GridContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ShopU5Reward" type="Label" parent="MC/MC/AchievmentsBox/ShopUpgrades5/MCMain/GridContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.913725, 0.815686, 0.584314, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 0.329412)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 11
+theme_override_font_sizes/font_size = 20
+text = "REWARD: ???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LetItRain" type="MarginContainer" parent="MC/MC/AchievmentsBox"]
+layout_mode = 2
+
+[node name="Border" type="NinePatchRect" parent="MC/MC/AchievmentsBox/LetItRain"]
+layout_mode = 2
+texture = ExtResource("2_d44sx")
+region_rect = Rect2(0, 0, 640, 497)
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="MCMain" type="MarginContainer" parent="MC/MC/AchievmentsBox/LetItRain"]
+layout_mode = 2
+theme_override_constants/margin_left = 33
+theme_override_constants/margin_top = 33
+theme_override_constants/margin_right = 33
+theme_override_constants/margin_bottom = 33
+
+[node name="ColorRect" type="ColorRect" parent="MC/MC/AchievmentsBox/LetItRain/MCMain"]
+show_behind_parent = true
+custom_minimum_size = Vector2(20, 60)
+layout_mode = 2
+color = Color(0.172549, 0.172549, 0.172549, 0.815686)
+
+[node name="GridContainer" type="GridContainer" parent="MC/MC/AchievmentsBox/LetItRain/MCMain"]
+layout_mode = 2
+columns = 2
+
+[node name="IconBorder" type="TextureRect" parent="MC/MC/AchievmentsBox/LetItRain/MCMain/GridContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("3_a5pky")
+expand_mode = 1
+
+[node name="LetItRainIcon" type="TextureRect" parent="MC/MC/AchievmentsBox/LetItRain/MCMain/GridContainer/IconBorder"]
+unique_name_in_owner = true
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_peuit")
+expand_mode = 1
+
+[node name="LetItRainDone" type="TextureRect" parent="MC/MC/AchievmentsBox/LetItRain/MCMain/GridContainer/IconBorder/LetItRainIcon"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_e7bxe")
+expand_mode = 1
+
+[node name="GridContainer" type="GridContainer" parent="MC/MC/AchievmentsBox/LetItRain/MCMain/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MC/MC/AchievmentsBox/LetItRain/MCMain/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.913725, 0.678431, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.839216, 0.839216, 0.839216, 0.101961)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 35
+theme_override_font_sizes/font_size = 39
+text = "LET IT RAIN SODAS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="MC/MC/AchievmentsBox/LetItRain/MCMain/GridContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label2" type="Label" parent="MC/MC/AchievmentsBox/LetItRain/MCMain/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 21
+text = "Collect a total 10,000 Light Sodas"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="MC/MC/AchievmentsBox/LetItRain/MCMain/GridContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="LetItRainReward" type="Label" parent="MC/MC/AchievmentsBox/LetItRain/MCMain/GridContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.913725, 0.815686, 0.584314, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 0.329412)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 11
+theme_override_font_sizes/font_size = 20
+text = "REWARD: ???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AchievementTemplate" type="MarginContainer" parent="MC/MC/AchievmentsBox"]
+layout_mode = 2
+
+[node name="Border" type="NinePatchRect" parent="MC/MC/AchievmentsBox/AchievementTemplate"]
+layout_mode = 2
+texture = ExtResource("2_d44sx")
+region_rect = Rect2(0, 0, 640, 497)
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="MCMain" type="MarginContainer" parent="MC/MC/AchievmentsBox/AchievementTemplate"]
+layout_mode = 2
+theme_override_constants/margin_left = 33
+theme_override_constants/margin_top = 33
+theme_override_constants/margin_right = 33
+theme_override_constants/margin_bottom = 33
+
+[node name="ColorRect" type="ColorRect" parent="MC/MC/AchievmentsBox/AchievementTemplate/MCMain"]
+show_behind_parent = true
+custom_minimum_size = Vector2(20, 60)
+layout_mode = 2
+color = Color(0.172549, 0.172549, 0.172549, 0.815686)
+
+[node name="GridContainer" type="GridContainer" parent="MC/MC/AchievmentsBox/AchievementTemplate/MCMain"]
+layout_mode = 2
+columns = 2
+
+[node name="IconBorder" type="TextureRect" parent="MC/MC/AchievmentsBox/AchievementTemplate/MCMain/GridContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("3_a5pky")
+expand_mode = 1
+
+[node name="IconHere" type="TextureRect" parent="MC/MC/AchievmentsBox/AchievementTemplate/MCMain/GridContainer/IconBorder"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_u68ih")
+expand_mode = 1
+
+[node name="Completed" type="TextureRect" parent="MC/MC/AchievmentsBox/AchievementTemplate/MCMain/GridContainer/IconBorder/IconHere"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_e7bxe")
+expand_mode = 1
+
+[node name="GridContainer" type="GridContainer" parent="MC/MC/AchievmentsBox/AchievementTemplate/MCMain/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MC/MC/AchievmentsBox/AchievementTemplate/MCMain/GridContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -480,12 +1340,12 @@ text = "TEMPLATE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="MC/MC/VC/AchievementTemplate4/MCMain/GridContainer/GridContainer"]
+[node name="ColorRect" type="ColorRect" parent="MC/MC/AchievmentsBox/AchievementTemplate/MCMain/GridContainer/GridContainer"]
 custom_minimum_size = Vector2(0, 3)
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Label2" type="Label" parent="MC/MC/VC/AchievementTemplate4/MCMain/GridContainer/GridContainer"]
+[node name="Label2" type="Label" parent="MC/MC/AchievmentsBox/AchievementTemplate/MCMain/GridContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -499,12 +1359,12 @@ text = "THIS IS A TEMPLATE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ColorRect2" type="ColorRect" parent="MC/MC/VC/AchievementTemplate4/MCMain/GridContainer/GridContainer"]
+[node name="ColorRect2" type="ColorRect" parent="MC/MC/AchievmentsBox/AchievementTemplate/MCMain/GridContainer/GridContainer"]
 custom_minimum_size = Vector2(0, 3)
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Label3" type="Label" parent="MC/MC/VC/AchievementTemplate4/MCMain/GridContainer/GridContainer"]
+[node name="Label3" type="Label" parent="MC/MC/AchievmentsBox/AchievementTemplate/MCMain/GridContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -519,7 +1379,7 @@ text = "REWARD: ???"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="padding2" type="VBoxContainer" parent="MC/MC/VC"]
+[node name="padding2" type="VBoxContainer" parent="MC/MC/AchievmentsBox"]
 custom_minimum_size = Vector2(0, 180)
 layout_mode = 2
 size_flags_vertical = 10

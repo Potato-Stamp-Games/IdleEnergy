@@ -56,19 +56,37 @@ popup/item_4/id = 4
 unique_name_in_owner = true
 title = "Achievements"
 initial_position = 2
-size = Vector2i(800, 1000)
+size = Vector2i(500, 1000)
 visible = false
+unresizable = true
+transparent = true
+min_size = Vector2i(500, 600)
+max_size = Vector2i(0, 0)
+keep_title_visible = true
 
 [node name="Camera2D" type="Camera2D" parent="Control/AchievementsPopUp"]
 
-[node name="Achievements" parent="Control/AchievementsPopUp/Camera2D" instance=ExtResource("8_id0jg")]
+[node name="Panel" type="Panel" parent="Control/AchievementsPopUp/Camera2D"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 0.0
-offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Achievements" parent="Control/AchievementsPopUp/Camera2D/Panel" instance=ExtResource("8_id0jg")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -500.0
+offset_right = 400.0
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="YourStatsPopUp" type="Window" parent="Control"]
 unique_name_in_owner = true
@@ -86,7 +104,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="YourStatsCanvas" parent="Control/YourStatsPopUp/Camera2D/Panel" instance=ExtResource("7_88dtj")]
+[node name="YourStatsCanvas" parent="Control/YourStatsPopUp/Camera2D" instance=ExtResource("7_88dtj")]
 
 [node name="AboutUsPopUp" type="Window" parent="Control"]
 unique_name_in_owner = true
@@ -132,12 +150,12 @@ bus = &"SFX"
 [connection signal="go_back_requested" from="Control/AchievementsPopUp" to="." method="_on_your_stats_pop_up_go_back_requested"]
 [connection signal="close_requested" from="Control/YourStatsPopUp" to="." method="_on_your_stats_pop_up_close_requested"]
 [connection signal="go_back_requested" from="Control/YourStatsPopUp" to="." method="_on_your_stats_pop_up_go_back_requested"]
-[connection signal="visibility_changed" from="Control/YourStatsPopUp" to="Control/YourStatsPopUp/Camera2D/Panel/YourStatsCanvas" method="_on_your_stats_pop_up_visibility_changed"]
-[connection signal="close_requested" from="Control/AboutUsPopUp" to="." method="_on_your_stats_pop_up_close_requested"]
+[connection signal="visibility_changed" from="Control/YourStatsPopUp" to="Control/YourStatsPopUp/Camera2D/YourStatsCanvas" method="_on_your_stats_pop_up_visibility_changed"]
 [connection signal="close_requested" from="Control/AboutUsPopUp" to="." method="_on_about_us_pop_up_close_requested"]
-[connection signal="go_back_requested" from="Control/AboutUsPopUp" to="." method="_on_your_stats_pop_up_go_back_requested"]
+[connection signal="close_requested" from="Control/AboutUsPopUp" to="." method="_on_your_stats_pop_up_close_requested"]
 [connection signal="go_back_requested" from="Control/AboutUsPopUp" to="." method="_on_about_us_pop_up_go_back_requested"]
-[connection signal="close_requested" from="Control/SettingsPopUp" to="." method="_on_your_stats_pop_up_close_requested"]
+[connection signal="go_back_requested" from="Control/AboutUsPopUp" to="." method="_on_your_stats_pop_up_go_back_requested"]
 [connection signal="close_requested" from="Control/SettingsPopUp" to="." method="_on_settings_pop_up_close_requested"]
+[connection signal="close_requested" from="Control/SettingsPopUp" to="." method="_on_your_stats_pop_up_close_requested"]
 [connection signal="go_back_requested" from="Control/SettingsPopUp" to="." method="_on_your_stats_pop_up_go_back_requested"]
 [connection signal="go_back_requested" from="Control/SettingsPopUp" to="." method="_on_settings_pop_up_go_back_requested"]

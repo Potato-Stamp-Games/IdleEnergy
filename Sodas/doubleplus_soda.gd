@@ -3,18 +3,10 @@ class_name DoublePlusSoda
 
 #Audio Variables
 @onready var double_plus_soda_sfx = $DoublePlusSodaSFX
-#RNG Variables
-var rng = RandomNumberGenerator.new()
 var doubleClick = 1
 #Sprite Variables
 var DoublePlusSodaClickedSprite
 var DoublePlusSodaSprite
-#Number Variables
-var trueMoney 
-var doublePlusSodaMoney 
-var doublePlusSodaClickPower 
-var newAge = Global.newAge
-var quantumSoda
 #Particle Variables
 var timesClicked = 0
 func _process(_delta):
@@ -36,37 +28,18 @@ func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisi
 			timesClicked += 2
 			if %DPParticleTimer.is_stopped() == true:
 				%DPParticleTimer.start()
-			#Creates values based on most recent in global.gd
-			trueMoney = Global.trueMoney
-			doublePlusSodaMoney = Global.doublePlusSodaMoney
-			doublePlusSodaClickPower = Global.doublePlusSodaClickPower
-			newAge = Global.newAge
-			quantumSoda = Global.quantumSoda
-			#double click rng upgrade
-			if rng.randi_range(1, 500) <= quantumSoda :
-				doubleClick	= 3
-			#Magic Soda RNG upgrade
-			var sodaSelect = rng.randi_range(0, 3)
-			if sodaSelect == 0:
-				Global.lightSodaMoney += Global.magicSoda * 2
-			elif sodaSelect == 1:
-				Global.zapSodaMoney += Global.magicSoda * 2
-			elif sodaSelect == 2:
-				doublePlusSodaMoney += Global.magicSoda * 2
-			elif sodaSelect == 3:
-				Global.berryBurstSodaMoney += Global.magicSoda * 2
+			#Sets soda money variable
+			var sodaMoney = Global.doublePlusSodaMoney
+			var weatherMultiplier = 1
 			#Calculates the new value based on click power
-			doublePlusSodaMoney += ((doublePlusSodaClickPower + (newAge * 1.5)) * doubleClick) * Global.activePotionPower #A
-			trueMoney += ((doublePlusSodaClickPower * 3) * doubleClick) * Global.activePotionPower #B
-			
-			#Sets the new value for each money type
-			Global.doublePlusSodaMoney = doublePlusSodaMoney
-			Global.trueMoney = trueMoney
-			Global.godlySodaMoney += Global.godlyFavor
+			if Global.dpRain == true:
+				weatherMultiplier = 1.5
+			elif Global.rainbowStart == true:
+				weatherMultiplier = 3
+			sodaMoney += FuncGlobal.process_click(Global.doublePlusSodaClickPower, weatherMultiplier)
 			#Sets new stat values
-			Global.ttlDoublePlusSodaMoney += ((doublePlusSodaClickPower + (newAge * 1.5)) * doubleClick) * Global.activePotionPower #A
-			Global.ttlTrueMoney += ((doublePlusSodaClickPower * 3) * doubleClick) * Global.activePotionPower #B
-			Global.ttlAllClicks += 1
+			Global.doublePlusSodaMoney = sodaMoney
+			Global.ttlDoublePlusSodaMoney = sodaMoney
 			
 			DoublePlusSodaClickedSprite.show()
 			DoublePlusSodaSprite.hide()
@@ -77,26 +50,16 @@ func _on_mouse_exited():
 
 
 func _on_dps_auto_click_timer_timeout():
-	#Creates values based on most recent in global.gd
-	var doublePlusSodaAutoClick = Global.doublePlusSodaAutoClick
-	var doubleClickA = 1
-	trueMoney = Global.trueMoney
-	doublePlusSodaMoney = Global.doublePlusSodaMoney
-	doublePlusSodaClickPower = Global.doublePlusSodaClickPower
-	newAge = Global.newAge
-	quantumSoda = Global.quantumSoda
-#double click rng upgrade
-	if rng.randi_range(1, 500) <= quantumSoda :
-		doubleClickA = 2
+	var sodaMoneyAuto = Global.doublePlusSodaMoney
+	var weatherMultiplier = 1
 	#Sets the new value for each money type
-	Global.doublePlusSodaMoney += (((doublePlusSodaClickPower - 1) * doublePlusSodaAutoClick) + (newAge * 1.5)) * doubleClickA #A
-	Global.trueMoney += ((doublePlusSodaClickPower - 1) * doublePlusSodaAutoClick) * doubleClickA #B
-	Global.godlySodaMoney += Global.godlyFavor
-	#Sets new stat values
-	Global.ttlDoublePlusSodaMoney += (((doublePlusSodaClickPower - 1) * doublePlusSodaAutoClick) + (newAge * 1.5)) * doubleClickA #A
-	Global.ttlTrueMoney += ((doublePlusSodaClickPower - 1) * doublePlusSodaAutoClick) * doubleClickA #B
-	#resets double click
-	doubleClickA = 1
+	if Global.dpsRain == true:
+		weatherMultiplier = 1.5
+	elif (Global.rainbowStart == true):
+		weatherMultiplier = 3
+	sodaMoneyAuto += FuncGlobal.process_auto_click(Global.doublePlusSodaClickPower, Global.doublePlusSodaAutoClick, weatherMultiplier)
+	Global.doublePlusSodaMoney = sodaMoneyAuto
+	Global.ttlDoublePlusSodaMoney = sodaMoneyAuto
 	#Time in a soda bottle Upgrade
 	if Global.timeInSoda > 0:
 		var newTime = (1 - (float(Global.timeInSoda) / 100))

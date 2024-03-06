@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.2", "Mobile")
 [autoload]
 
 Global="*res://global.gd"
+OverLay="*res://UI/over_lay.tscn"
 
 [display]
 
