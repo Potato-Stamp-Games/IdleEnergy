@@ -56,11 +56,11 @@ func _on_bbs_auto_click_timer_timeout():
 	var sodaMoneyAuto = Global.berryBurstSodaMoney
 	var weatherMultiplier = 1
 	#Sets the new value for each money type
-	if Global.bbsRain == true:
+	if Global.bbRain == true:
 		weatherMultiplier = 1.5
 	elif (Global.rainbowStart == true):
 		weatherMultiplier = 3
-	sodaMoneyAuto += FuncGlobal.process_auto_click(Global.berryBurstSodaClickPower, Global.BerryBurstSodaAutoClick, weatherMultiplier)
+	sodaMoneyAuto += FuncGlobal.process_auto_click(Global.berryBurstSodaClickPower, Global.berryBurstSodaAutoClick, weatherMultiplier)
 	Global.berryBurstSodaMoney = sodaMoneyAuto
 	Global.ttlBerryBurstSodaMoney = sodaMoneyAuto
 		#Time in a soda bottle Upgrade

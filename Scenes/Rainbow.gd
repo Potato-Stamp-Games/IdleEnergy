@@ -21,7 +21,7 @@ func _on_rainbow_timer_timeout():
 	%RainbowGreen.emitting = false
 	%RainbowBlue.emitting = false
 	%RainbowPurple.emitting = false
-	%RainbowLight.enabled = false
+	%MainLight.enabled = false
 	Global.rainbowStart = false
 	%LSMultiplyLbl.text = ""
 	%ZSMultiplyLbl.text = ""

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b56r0drnfyeq3"]
+[gd_scene load_steps=26 format=3 uid="uid://b56r0drnfyeq3"]
 
 [ext_resource type="PackedScene" uid="uid://cgespow2hwr4k" path="res://Sodas/doubleplus_soda.tscn" id="1_8elwk"]
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_awm87"]
@@ -30,6 +30,52 @@ initial_velocity_max = 200.0
 gravity = Vector3(0, 30, 0)
 scale_max = 3.0
 color_ramp = SubResource("GradientTexture1D_6kke2")
+
+[sub_resource type="Gradient" id="Gradient_fyksy"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.47541, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.52459, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1well"]
+gradient = SubResource("Gradient_fyksy")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2pc0a"]
+lifetime_randomness = 0.6
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(100, 100, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+gravity = Vector3(0, 0, 0)
+scale_min = 0.2
+scale_max = 2.0
+color_ramp = SubResource("GradientTexture1D_1well")
+
+[sub_resource type="Gradient" id="Gradient_j3brn"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.901639)
+colors = PackedColorArray(1, 1, 1, 1, 0.843137, 0, 0, 0.768627)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5dyk0"]
+gradient = SubResource("Gradient_j3brn")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_brg8y"]
+lifetime_randomness = 0.6
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(350, 1, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 0, 1)
+direction = Vector3(1, 1, 0)
+spread = 5.0
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, 98, 0)
+scale_min = 0.3
+scale_max = 2.5
+color = Color(0.988235, 1, 0.756863, 1)
+color_ramp = SubResource("GradientTexture1D_5dyk0")
+turbulence_noise_strength = 0.1
+turbulence_noise_scale = 0.1
+turbulence_noise_speed_random = 0.0
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_i0em1"]
 particle_flag_disable_z = true
@@ -226,6 +272,32 @@ one_shot = true
 [node name="RainBuildTimer" type="Timer" parent="Rain"]
 wait_time = 2.0
 
+[node name="NightStars" type="GPUParticles2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(956, 115)
+scale = Vector2(9.6, 1.2)
+emitting = false
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_2pc0a")
+lifetime = 5.0
+
+[node name="ShootingStars" type="GPUParticles2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(676, -5)
+scale = Vector2(4, 4)
+emitting = false
+amount = 15
+process_material = SubResource("ParticleProcessMaterial_brg8y")
+lifetime = 9.0
+randomness = 1.0
+trail_enabled = true
+trail_lifetime = 0.5
+trail_sections = 12
+trail_section_subdivisions = 6
+
+[node name="ShootingStarsTimer" type="Timer" parent="ShootingStars"]
+unique_name_in_owner = true
+
 [node name="Rainbow" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 40.0
@@ -324,4 +396,5 @@ max_distance = 0.0
 [connection signal="timeout" from="RNGTimer" to="." method="_on_rng_timer_timeout"]
 [connection signal="timeout" from="Rain/RainTimer" to="." method="_on_rain_timer_timeout"]
 [connection signal="timeout" from="Rain/RainBuildTimer" to="." method="_on_rain_build_timer_timeout"]
+[connection signal="timeout" from="ShootingStars/ShootingStarsTimer" to="." method="_on_shooting_stars_timer_timeout"]
 [connection signal="timeout" from="Rainbow/RainbowTimer" to="Rainbow" method="_on_rainbow_timer_timeout"]

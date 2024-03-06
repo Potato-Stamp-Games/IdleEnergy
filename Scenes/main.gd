@@ -50,6 +50,7 @@ func _on_rng_timer_timeout():
 	if rng.randi_range(1, 550000) <= Global.sodaAlchemy :
 		Global.godlyChargedCaffine += 1
 		Global.ttlGodlyChargedCaffine += 1
+#RAIN
 	if Global.letItRain == true and rng.randi_range(1, 600) <= 1 and rainStart == false and Global.rainbowStart == false: #About every 10 minutes
 		rainStart = true
 		%RainTimer.wait_time = rng.randi_range(60, 240)
@@ -61,6 +62,7 @@ func _on_rng_timer_timeout():
 		%Rain/RainBuildTimer.start()
 		%RainTimer.start()
 		
+		%NightStars.emitting = true
 		%Rain.emitting = true
 		var sodaSelect = rng.randi_range(1, 4)
 		match sodaSelect:
@@ -80,7 +82,8 @@ func _on_rng_timer_timeout():
 				Global.bbRain = true
 				process_event("res://Scenes/Achievements/AchievementIcons/LetItRainSprite.png", "It's Starting to Rain","1.5x berry burst soda power")
 				%BBSMultiplyLbl.text = "x1.5"
-	if rng.randi_range(1, 1200) <= 1 and rainStart == false and Global.rainbowStart ==  false: #About every 20 minutes
+#RAINBOW
+	if rng.randi_range(1, 1800) <= 1 and rainStart == false and Global.rainbowStart ==  false: #About every 30 minutes
 		%RainbowTimer.wait_time = rng.randi_range(45, 120)
 		process_event("res://UI/UISprites/RainbowIcon.png", "A Rainbow Has Appeared!","3x all soda power")
 		%LSMultiplyLbl.text = "x3"
@@ -88,7 +91,16 @@ func _on_rng_timer_timeout():
 		%DPSMultiplyLbl.text = "x3"
 		%BBSMultiplyLbl.text = "x3"
 		Global.rainbowStart = true
-		
+#SHOOTING STARS
+	if Global.shootingStarsStart == false and rng.randi_range(1, 900) <= 1 and rainStart == false and Global.rainbowStart == false: #About every 15 minutes
+		%ShootingStarsTimer.wait_time = rng.randi_range(60, 240)
+		%ShootingStars.amount = rng.randi_range(10, 30)
+		%ShootingStars.emitting = true
+		%NightStars.emitting = true
+		$UI.get_node("BackgroundImage/Background").self_modulate = "001f42"
+		process_event("res://UI/UISprites/ShootingStarsSprite.png", "Stars Are Falling From the Sky ","How Cool!")
+		%ShootingStarsTimer.start()
+		Global.shootingStarsStart = true
 
 #Weather Control
 func _on_rain_timer_timeout():
@@ -103,6 +115,7 @@ func _on_rain_timer_timeout():
 	$UI.get_node("BackgroundImage/Background").self_modulate = "ffffff"
 	%RainTimer.stop()
 	%Rain.emitting = false
+	%NightStars.emitting = false
 
 
 func _on_rain_build_timer_timeout():
@@ -110,3 +123,16 @@ func _on_rain_build_timer_timeout():
 		%Rain.amount_ratio += 0.10
 	else:
 		$Rain/RainBuildTimer.stop()
+
+
+func _on_shooting_stars_timer_timeout():
+	%LSMultiplyLbl.text = ""
+	%ZSMultiplyLbl.text = ""
+	%DPSMultiplyLbl.text = ""
+	%BBSMultiplyLbl.text = ""
+	$UI.get_node("BackgroundImage/Background").self_modulate = "ffffff"
+	%ShootingStarsTimer.stop()
+	%ShootingStars.emitting = false
+	%NightStars.emitting = false
+	Global.shootingStarsStart = false
+	

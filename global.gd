@@ -125,3 +125,5 @@ var dpRain = false
 var bbRain = false
 #Rainbow
 var rainbowStart = false
+#Shooting Stars
+var shootingStarsStart = false

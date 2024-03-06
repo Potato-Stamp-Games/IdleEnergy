@@ -57,47 +57,47 @@ func _process(_delta):
 	zm_CP_CostEq = 40 + pow(2 * (Global.zapSodaClickPower - 1), 3)
 	zs_CP_CostEq = 20 + pow(2 * (Global.zapSodaClickPower - 1), 3)
 	#DP Soda Click Power 1
-	dpm_CP_CostEq = 160 + pow(2 * (Global.doublePlusSodaClickPower - 1), 3)
+	dpm_CP_CostEq = 80 + pow(2 * (Global.doublePlusSodaClickPower - 1), 3)
 	dps_CP_CostEq = 30 + pow(2 * (Global.doublePlusSodaClickPower - 1), 3)
 	#BB Soda Click Power
-	bbm_CP_CostEq = 640 + pow(2 * (Global.berryBurstSodaClickPower - 1), 3)
+	bbm_CP_CostEq = 160 + pow(2 * (Global.berryBurstSodaClickPower - 1), 3)
 	bbs_CP_CostEq = 40 + pow(2 * (Global.berryBurstSodaClickPower - 1), 3)
 	#Light Soda Auto Click 1
-	lm_AC_CostEq = 1500 + pow((5 * Global.lightSodaAutoClick), 3)
-	ls_AC_CostEq = 10 + pow((3 * Global.lightSodaAutoClick), 3)
+	lm_AC_CostEq = 250 + pow(5 * (Global.lightSodaAutoClick-1), 3)
+	ls_AC_CostEq = 10 + pow(3 * (Global.lightSodaAutoClick - 1), 3)
 	#Zap Soda Auto Click 1
-	zm_AC_CostEq = 2000 + pow((5 * Global.zapSodaAutoClick), 3)
-	zs_AC_CostEq = 20 + pow((3 * Global.zapSodaAutoClick), 3)
+	zm_AC_CostEq = 500 + pow(5 * (Global.zapSodaAutoClick - 1), 3)
+	zs_AC_CostEq = 20 + pow(3 * (Global.zapSodaAutoClick - 1), 3)
 	#DP Soda Auto Click 1
-	dpm_AC_CostEq = 2500 + pow((5 * Global.doublePlusSodaAutoClick), 3)
-	dps_AC_CostEq = 30 + pow((4 * Global.doublePlusSodaAutoClick), 3)
+	dpm_AC_CostEq = 750 + pow(5 * (Global.doublePlusSodaAutoClick - 1), 3)
+	dps_AC_CostEq = 30 + pow(4 * (Global.doublePlusSodaAutoClick - 1), 3)
 	#BB Soda Auto Click 1
-	bbm_AC_CostEq = 3000 + pow((5 * Global.berryBurstSodaAutoClick), 3)
-	bbs_AC_CostEq = 40 + pow((4* Global.berryBurstSodaAutoClick), 3)
+	bbm_AC_CostEq = 1000 + pow(5 * (Global.berryBurstSodaAutoClick - 1), 3)
+	bbs_AC_CostEq = 40 + pow(4* (Global.berryBurstSodaAutoClick - 1), 3)
 	#Godly Favor
-	godlyFM_CostEq = 15000 + pow(8 * Global.godlyFavor, 4)
+	godlyFM_CostEq = 1250 + pow(8 * Global.godlyFavor, 4)
 	godlyFS_CostEq = 250 + pow(6 * Global.godlyFavor, 3)
 	#NewAge
-	newAgeM_CostEq = 10000 + pow(8 * Global.newAge, 3)
+	newAgeM_CostEq = 2500 + pow(8 * Global.newAge, 3)
 	newAgeS_CostEq = 500 + pow((6 * Global.newAge), 3)
 	#Quantum Soda
-	quantumSodaM_CostEq = 12000 + pow((10 * Global.quantumSoda), 3)
+	quantumSodaM_CostEq = 800 + pow((10 * Global.quantumSoda), 3)
 	quantumSodaS_CostEq = 1200 + pow((8 * Global.quantumSoda), 3)
 	#Magic Soda
-	magicSodaM_CostEq = 12000 + pow(6 * Global.magicSoda, 3)
+	magicSodaM_CostEq = 1200 + pow(6 * Global.magicSoda, 3)
 	magicSodaS_CostEq = 650 + pow((8 * Global.magicSoda), 3)
 	#Time In Soda
-	timeInSodaM_CostEq = 15000 + pow((8 * Global.timeInSoda), 3)
+	timeInSodaM_CostEq = 1800 + pow((8 * Global.timeInSoda), 3)
 	timeInSodaS_CostEq = 2500 + pow((10 * Global.timeInSoda), 3)
 	#Time In Soda
-	sodaAlchemyM_CostEq = 50000 + pow((10 * Global.sodaAlchemy), 3)
+	sodaAlchemyM_CostEq = 5000 + pow((10 * Global.sodaAlchemy), 3)
 	sodaAlchemyS_CostEq = 3000 + pow((8 * Global.sodaAlchemy), 3)
 	#Soda of Unity
-	sodaUnityM_CostEq = 75000 + pow((10 * Global.sodaUnity), 3)
+	sodaUnityM_CostEq = 7500 + pow((10 * Global.sodaUnity), 3)
 	sodaUnityS_CostEq = 4500 + pow((8 * Global.sodaUnity), 3)
 	#Essense of time
-	essenseTimeM_CostEq = 50000 + pow((10 * Global.essenseTime), 3)
-	essenseTimeS_CostEq = 10000 + pow((8 * Global.essenseTime), 3)
+	essenseTimeM_CostEq = 5000 + pow((10 * Global.essenseTime), 3)
+	essenseTimeS_CostEq = 8000 + pow((8 * Global.essenseTime), 3)
 	#END OF: Shop Equations
 	#Light Soda Click Cost labels
 	%LM_CP_CostLabel.text = FuncGlobal.add_comma_to_float(float("%.2f" %[lm_CP_CostEq]))

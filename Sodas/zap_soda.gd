@@ -52,7 +52,7 @@ func _on_mouse_exited():
 
 func _on_zs_auto_click_timer_timeout():
 	#Creates values based on most recent in global.gd
-	var sodaMoneyAuto = Global.lightSodaMoney
+	var sodaMoneyAuto = Global.zapSodaMoney
 	var weatherMultiplier = 1
 	#Sets the new value for each money type
 	if Global.zsRain == true:
