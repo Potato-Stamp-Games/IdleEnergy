@@ -10,4 +10,4 @@ func _process(_delta):
 	%TotalClicksLbl.text = FuncGlobal.add_comma_to_float(float("%.2f" %[Global.ttlAllClicks]))
 	%TotalMoneyLbl.text = FuncGlobal.add_comma_to_float(float("%.2f" %[Global.ttlTrueMoney]))
 	%SessionTimeLbl.text = Global.sessionTime
-	%TotalSessionTimeLbl.text = str(0)
+	%TotalSessionTimeLbl.text = Global.ttlSessionTime

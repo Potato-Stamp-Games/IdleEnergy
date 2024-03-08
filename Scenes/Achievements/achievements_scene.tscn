@@ -471,7 +471,7 @@ grow_vertical = 2
 texture = ExtResource("9_8fj27")
 expand_mode = 1
 
-[node name="GodlyCLickerDone" type="TextureRect" parent="MC/MC/AchievmentsBox/GodlyClicker/MCMain/GridContainer/IconBorder/GodlyClickerIcon"]
+[node name="GodlyClickerDone" type="TextureRect" parent="MC/MC/AchievmentsBox/GodlyClicker/MCMain/GridContainer/IconBorder/GodlyClickerIcon"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
@@ -637,7 +637,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_y = 6
 theme_override_constants/outline_size = 12
 theme_override_font_sizes/font_size = 21
-text = "Buy 20 upgrades00000000000000000000"
+text = "Buy 20 upgrades"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -699,7 +699,7 @@ size_flags_vertical = 4
 texture = ExtResource("3_a5pky")
 expand_mode = 1
 
-[node name="ShopU2" type="TextureRect" parent="MC/MC/AchievmentsBox/ShopUpgrades2/MCMain/GridContainer/IconBorder"]
+[node name="ShopU2Icon" type="TextureRect" parent="MC/MC/AchievmentsBox/ShopUpgrades2/MCMain/GridContainer/IconBorder"]
 unique_name_in_owner = true
 show_behind_parent = true
 layout_mode = 1
@@ -711,7 +711,7 @@ grow_vertical = 2
 texture = ExtResource("11_wci57")
 expand_mode = 1
 
-[node name="ShopU2Done" type="TextureRect" parent="MC/MC/AchievmentsBox/ShopUpgrades2/MCMain/GridContainer/IconBorder/ShopU2"]
+[node name="ShopU2Done" type="TextureRect" parent="MC/MC/AchievmentsBox/ShopUpgrades2/MCMain/GridContainer/IconBorder/ShopU2Icon"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
@@ -1263,6 +1263,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AchievementTemplate" type="MarginContainer" parent="MC/MC/AchievmentsBox"]
+visible = false
 layout_mode = 2
 
 [node name="Border" type="NinePatchRect" parent="MC/MC/AchievmentsBox/AchievementTemplate"]

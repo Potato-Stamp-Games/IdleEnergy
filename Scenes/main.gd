@@ -69,19 +69,19 @@ func _on_rng_timer_timeout():
 			1:
 				Global.lsRain = true
 				process_event("res://Scenes/Achievements/AchievementIcons/LetItRainSprite.png", "It's Starting to Rain","1.5x light soda power")
-				%LSMultiplyLbl.text = "x1.5"
+				%LSMultiplyLbl.text = "x4"
 			2:
 				Global.zsRain = true
 				process_event("res://Scenes/Achievements/AchievementIcons/LetItRainSprite.png", "It's Starting to Rain","1.5x zap soda power")
-				%ZSMultiplyLbl.text = "x1.5"
+				%ZSMultiplyLbl.text = "x4"
 			3:
 				Global.dpRain = true
 				process_event("res://Scenes/Achievements/AchievementIcons/LetItRainSprite.png", "It's Starting to Rain","1.5x double plus soda power")
-				%DPSMultiplyLbl.text = "x1.5"
+				%DPSMultiplyLbl.text = "x4"
 			4:
 				Global.bbRain = true
 				process_event("res://Scenes/Achievements/AchievementIcons/LetItRainSprite.png", "It's Starting to Rain","1.5x berry burst soda power")
-				%BBSMultiplyLbl.text = "x1.5"
+				%BBSMultiplyLbl.text = "x4"
 #RAINBOW
 	if rng.randi_range(1, 1800) <= 1 and rainStart == false and Global.rainbowStart ==  false: #About every 30 minutes
 		%RainbowTimer.wait_time = rng.randi_range(45, 120)
@@ -98,7 +98,11 @@ func _on_rng_timer_timeout():
 		%ShootingStars.emitting = true
 		%NightStars.emitting = true
 		$UI.get_node("BackgroundImage/Background").self_modulate = "001f42"
-		process_event("res://UI/UISprites/ShootingStarsSprite.png", "Stars Are Falling From the Sky ","How Cool!")
+		process_event("res://UI/UISprites/ShootingStarsSprite.png", "Stars Are Falling From the Sky ","3.5x Money Gained")
+		%LSMultiplyLbl.text = "x3.5"
+		%ZSMultiplyLbl.text = "x3.5"
+		%DPSMultiplyLbl.text = "x3.5"
+		%BBSMultiplyLbl.text = "x3.5"
 		%ShootingStarsTimer.start()
 		Global.shootingStarsStart = true
 

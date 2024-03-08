@@ -60,12 +60,16 @@ static func process_click(clickPow, weatherMultiplier):
 		Global.doublePlusSodaMoney += Global.magicSoda * 2
 	elif sodaSelect == 3:
 		Global.berryBurstSodaMoney += Global.magicSoda * 2
+	#Weather
+	var weatherMultiplierMoney  = 0
+	if Global.shootingStarsStart == true:
+		weatherMultiplierMoney = 3.5
 	#Calculates the new value based on click power
 	sodaMoney += ((clickPow + Global.baseClickPower + newAge) * doubleClick) * (Global.activePotionPower + weatherMultiplier)#A
 	Global.trueMoney += ((clickPow + Global.baseMoneyPower) * doubleClick) * (Global.activePotionPower + weatherMultiplier)#B
 	Global.godlySodaMoney += Global.godlyFavor
 	#Sets total values
-	Global.ttlTrueMoney += ((clickPow + Global.baseMoneyPower) * doubleClick) * (Global.activePotionPower + weatherMultiplier)#B
+	Global.ttlTrueMoney += ((clickPow + Global.baseMoneyPower) * doubleClick) * (Global.activePotionPower + weatherMultiplier + weatherMultiplierMoney)#B
 	Global.ttlAllClicks += 1
 	#Reset double click value back to original value until next rng event
 	doubleClick = 1
@@ -83,10 +87,15 @@ static func process_auto_click(clickPow, autoClickPow, weatherMultiplier):
 	#double click rng upgrade
 	if rng.randi_range(1, 500) <= Global.quantumSoda:
 		doubleClickA = 2
+	#Weather
+	var weatherMultiplierMoney  = 0
+	if Global.shootingStarsStart == true:
+		weatherMultiplierMoney = 3.5
 	#Sets the new value for each money type
 	sodaMoney += ((Global.baseClickPower + clickPow ) * autoClickPow + (newAge * 1.5)* weatherMultiplier) * doubleClickA #A
-	Global.trueMoney += (((Global.baseMoneyPower + clickPow ) * autoClickPow) * weatherMultiplier) * doubleClickA #B
+	Global.trueMoney += (((Global.baseMoneyPower + clickPow ) * autoClickPow) * weatherMultiplier + weatherMultiplierMoney) * doubleClickA #B
 	Global.godlySodaMoney += Global.godlyFavor
 	#Sets new stat values
+	
 	Global.ttlTrueMoney += (((Global.baseMoneyPower + clickPow) * autoClickPow) * weatherMultiplier) * doubleClickA #B
 	return sodaMoney

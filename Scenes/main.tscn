@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b56r0drnfyeq3"]
+[gd_scene load_steps=27 format=3 uid="uid://b56r0drnfyeq3"]
 
 [ext_resource type="PackedScene" uid="uid://cgespow2hwr4k" path="res://Sodas/doubleplus_soda.tscn" id="1_8elwk"]
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_awm87"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://ct1ycfmhfoft" path="res://audio/Music/IdleEnergyMusic.mp3" id="7_l3eyg"]
 [ext_resource type="PackedScene" uid="uid://d4igo2jg8tdwv" path="res://UI/over_lay.tscn" id="9_jm58k"]
 [ext_resource type="Script" path="res://Scenes/Rainbow.gd" id="10_cnapq"]
+[ext_resource type="Script" path="res://Scenes/SaveDataTimer.gd" id="11_d6gc0"]
 
 [sub_resource type="Gradient" id="Gradient_72p8k"]
 offsets = PackedFloat32Array(0.131148, 1)
@@ -391,6 +392,11 @@ range_layer_max = 1
 shadow_color = Color(0.145098, 0.145098, 0.145098, 0.898039)
 max_distance = 0.0
 
+[node name="SaveDataTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+script = ExtResource("11_d6gc0")
+
 [connection signal="mouse_entered" from="Sodas/DoublePlusSoda" to="Sodas/DoublePlusSoda" method="_on_mouse_entered"]
 [connection signal="timeout" from="SessionTimer" to="SessionTimer" method="_on_timeout"]
 [connection signal="timeout" from="RNGTimer" to="." method="_on_rng_timer_timeout"]
@@ -398,3 +404,4 @@ max_distance = 0.0
 [connection signal="timeout" from="Rain/RainBuildTimer" to="." method="_on_rain_build_timer_timeout"]
 [connection signal="timeout" from="ShootingStars/ShootingStarsTimer" to="." method="_on_shooting_stars_timer_timeout"]
 [connection signal="timeout" from="Rainbow/RainbowTimer" to="Rainbow" method="_on_rainbow_timer_timeout"]
+[connection signal="timeout" from="SaveDataTimer" to="SaveDataTimer" method="_on_timeout"]

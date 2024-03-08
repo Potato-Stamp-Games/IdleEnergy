@@ -80,11 +80,6 @@ trail_lifetime = 2.0
 trail_sections = 5
 trail_section_subdivisions = 5
 
-[node name="BBParticleTimer" type="Timer" parent="BBSodaParticles"]
-unique_name_in_owner = true
-wait_time = 2.5
-one_shot = true
-
 [node name="BerryBurstSodaCollision" type="CollisionShape2D" parent="."]
 position = Vector2(5.5, 16.5)
 shape = SubResource("RectangleShape2D_dm6ko")
@@ -118,5 +113,4 @@ bus = &"SFX"
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
-[connection signal="timeout" from="BBSodaParticles/BBParticleTimer" to="." method="_on_bb_particle_timer_timeout"]
 [connection signal="timeout" from="BBS_AutoClickTimer" to="." method="_on_bbs_auto_click_timer_timeout"]

@@ -29,9 +29,9 @@ func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisi
 			#Audio
 			light_soda_sfx.play()
 			#Particles
-			timesClicked += 1
-			if %LParticleTimer.is_stopped() == true && %LS_AutoClickTimer.is_stopped() == true:
-				%LParticleTimer.start()
+			%LSodaParticles.amount = 20
+			%LSodaParticles.emitting = true
+			%LSodaParticles.restart()
 			#Sets variables
 			var sodaMoney = Global.lightSodaMoney
 			var weatherMultiplier = 1

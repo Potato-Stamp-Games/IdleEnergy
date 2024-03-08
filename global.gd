@@ -1,6 +1,7 @@
 #global
 extends Node
-
+#Save data
+var save_path = "user://idle.save"
 #Return to main screen when in shop
 var returnToMain = false
 var returnToMain2 = false
@@ -84,6 +85,9 @@ var ttlAllClicks = 0
 var prestiegeCounter = 0
 var sessionTime = ""
 var ttlSessionTime = ""
+var ttlSecTime = 0
+var ttlMinTime = 0
+var ttlHourTime = 0
 
 #Items- Crafted
 var ttlCrafted = 0
@@ -114,6 +118,15 @@ var ttlFizzyGodlyPotion = 0
 var baseClickPower = 1
 var ttlUpgradesBought = 0
 var baseMoneyPower = 1
+var amClicker = false
+var semiClicker = false
+var proClicker = false
+var godlyClicker = false
+var shopU1 = false
+var shopU2 = false
+var shopU3 = false
+var shopU4 = false
+var shopU5 = false
 var letItRain = false
 var rainStart = false
 

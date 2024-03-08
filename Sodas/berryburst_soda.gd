@@ -29,10 +29,10 @@ func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisi
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			$BerryBurstSodaSFX.play()
 			#Particles
-			timesClicked += 3
-			if %BBParticleTimer.is_stopped() == true:
-				%BBParticleTimer.start()
-			#Sets soda money variable
+			%BBSodaParticles.amount = 20
+			%BBSodaParticles.emitting = true
+			%BBSodaParticles.restart()
+			#Sets variables
 			var sodaMoney = Global.berryBurstSodaMoney
 			var weatherMultiplier = 1
 			#Calculates the new value based on click power
@@ -68,10 +68,3 @@ func _on_bbs_auto_click_timer_timeout():
 		var newTime = (1 - (float(Global.timeInSoda) / 100))
 		%BBS_AutoClickTimer.wait_time = newTime
 
-
-func _on_bb_particle_timer_timeout():
-	%BBSodaParticles.restart()
-	%BBSodaParticles.amount = timesClicked
-	timesClicked = 0
-	%BBSodaParticles.emitting = true
-	%BBParticleTimer.stop()
