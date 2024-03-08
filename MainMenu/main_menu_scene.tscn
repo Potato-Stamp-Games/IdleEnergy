@@ -1,0 +1,167 @@
+[gd_scene load_steps=9 format=3 uid="uid://vd8ypw2tqq3o"]
+
+[ext_resource type="Script" path="res://MainMenu/main_menu_scene.gd" id="1_iayh0"]
+[ext_resource type="Texture2D" uid="uid://mu8ojpweecb" path="res://MainMenuScreen.png" id="2_sg2cu"]
+[ext_resource type="Texture2D" uid="uid://d1niqjb07evrv" path="res://MainMenu/Continue Game.png" id="3_5dfbn"]
+[ext_resource type="Texture2D" uid="uid://dnjvlkcmfcl11" path="res://MainMenu/ContinueGamePressed.png" id="4_dj0qj"]
+[ext_resource type="Texture2D" uid="uid://b1j2r6ww28wjp" path="res://MainMenu/New Game.png" id="5_g24vb"]
+[ext_resource type="Texture2D" uid="uid://cvksdc8utdc2b" path="res://MainMenu/NewGamePressed.png" id="6_ayjkd"]
+[ext_resource type="Texture2D" uid="uid://bqfsuan6vb2k2" path="res://MainMenu/ExitGame.png" id="7_xoq2l"]
+[ext_resource type="Texture2D" uid="uid://vgpani8nt0la" path="res://MainMenu/ExitGamePressed.png" id="8_bixr3"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iayh0")
+
+[node name="ColorRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_sg2cu")
+
+[node name="GridContainer" type="GridContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -210.0
+offset_top = 515.0
+offset_right = 290.0
+offset_bottom = 1015.0
+grow_horizontal = 2
+theme_override_constants/v_separation = 15
+
+[node name="Continue" type="TextureButton" parent="ColorRect/GridContainer"]
+custom_minimum_size = Vector2(200, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("3_5dfbn")
+texture_pressed = ExtResource("4_dj0qj")
+texture_hover = ExtResource("4_dj0qj")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ContinueTimer" type="Timer" parent="ColorRect/GridContainer/Continue"]
+wait_time = 0.1
+one_shot = true
+
+[node name="NoSave" type="Window" parent="ColorRect/GridContainer/Continue"]
+initial_position = 4
+size = Vector2i(300, 100)
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/GridContainer/Continue/NoSave"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.929412, 0.709804, 1)
+
+[node name="Label" type="Label" parent="ColorRect/GridContainer/Continue/NoSave/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -11.5
+offset_right = 70.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "No save file found"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NewGame" type="TextureButton" parent="ColorRect/GridContainer"]
+custom_minimum_size = Vector2(200, 150)
+layout_mode = 2
+texture_normal = ExtResource("5_g24vb")
+texture_pressed = ExtResource("6_ayjkd")
+texture_hover = ExtResource("6_ayjkd")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="NewGameTimer" type="Timer" parent="ColorRect/GridContainer/NewGame"]
+wait_time = 0.1
+one_shot = true
+
+[node name="Popup" type="Window" parent="ColorRect/GridContainer/NewGame"]
+initial_position = 4
+size = Vector2i(325, 225)
+visible = false
+
+[node name="Background" type="ColorRect" parent="ColorRect/GridContainer/NewGame/Popup"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.941176, 0.203922, 0.168627, 1)
+
+[node name="GridContainer" type="GridContainer" parent="ColorRect/GridContainer/NewGame/Popup/Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -88.5
+offset_right = 152.0
+offset_bottom = 88.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ColorRect/GridContainer/NewGame/Popup/Background/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+text = "This will overwrite the current save file.
+Continue?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OverwriteNo" type="Button" parent="ColorRect/GridContainer/NewGame/Popup/Background/GridContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "NO"
+
+[node name="OverwriteYes" type="Button" parent="ColorRect/GridContainer/NewGame/Popup/Background/GridContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "YES"
+
+[node name="ExitGame" type="TextureButton" parent="ColorRect/GridContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+texture_normal = ExtResource("7_xoq2l")
+texture_pressed = ExtResource("8_bixr3")
+texture_hover = ExtResource("8_bixr3")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="ColorRect/GridContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="timeout" from="ColorRect/GridContainer/Continue/ContinueTimer" to="." method="_on_continue_timer_timeout"]
+[connection signal="close_requested" from="ColorRect/GridContainer/Continue/NoSave" to="." method="_on_no_save_close_requested"]
+[connection signal="pressed" from="ColorRect/GridContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="timeout" from="ColorRect/GridContainer/NewGame/NewGameTimer" to="." method="_on_new_game_timer_timeout"]
+[connection signal="close_requested" from="ColorRect/GridContainer/NewGame/Popup" to="." method="_on_popup_close_requested"]
+[connection signal="pressed" from="ColorRect/GridContainer/NewGame/Popup/Background/GridContainer/OverwriteNo" to="." method="_on_overwrite_no_pressed"]
+[connection signal="pressed" from="ColorRect/GridContainer/NewGame/Popup/Background/GridContainer/OverwriteYes" to="." method="_on_overwrite_yes_pressed"]
+[connection signal="pressed" from="ColorRect/GridContainer/ExitGame" to="." method="_on_exit_game_pressed"]

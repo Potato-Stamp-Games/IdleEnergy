@@ -13,8 +13,8 @@ angle_min = 145.6
 angle_max = 145.6
 direction = Vector3(0, -10, 0)
 spread = 90.0
-initial_velocity_min = 50.0
-initial_velocity_max = 150.0
+initial_velocity_min = 300.0
+initial_velocity_max = 500.0
 angular_velocity_min = 500.0
 angular_velocity_max = 800.0
 gravity = Vector3(0, 0, 0)
@@ -78,11 +78,6 @@ trail_lifetime = 2.0
 trail_sections = 5
 trail_section_subdivisions = 5
 
-[node name="ZParticleTimer" type="Timer" parent="ZSodaParticles"]
-unique_name_in_owner = true
-wait_time = 2.5
-one_shot = true
-
 [node name="ZapSodaCollision" type="CollisionShape2D" parent="."]
 position = Vector2(2.5, 32)
 shape = SubResource("RectangleShape2D_d476x")
@@ -115,5 +110,4 @@ bus = &"SFX"
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
-[connection signal="timeout" from="ZSodaParticles/ZParticleTimer" to="." method="_on_z_particle_timer_timeout"]
 [connection signal="timeout" from="ZS_AutoClickTimer" to="." method="_on_zs_auto_click_timer_timeout"]

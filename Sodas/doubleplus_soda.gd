@@ -25,10 +25,10 @@ func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisi
 			#Audio
 			double_plus_soda_sfx.play()
 			#Particles
-			timesClicked += 2
-			if %DPParticleTimer.is_stopped() == true:
-				%DPParticleTimer.start()
-			#Sets soda money variable
+			%DPSodaParticles.amount = 20
+			%DPSodaParticles.emitting = true
+			%DPSodaParticles.restart()
+			#Sets variables
 			var sodaMoney = Global.doublePlusSodaMoney
 			var weatherMultiplier = 1
 			#Calculates the new value based on click power
@@ -65,11 +65,3 @@ func _on_dps_auto_click_timer_timeout():
 		var newTime = (1 - (float(Global.timeInSoda) / 100))
 		%DPS_AutoClickTimer.wait_time = newTime
 
-
-
-func _on_dp_particle_timer_timeout():
-	%DPSodaParticles.restart()
-	%DPSodaParticles.amount = timesClicked
-	timesClicked = 0
-	%DPSodaParticles.emitting = true
-	%DPParticleTimer.stop()

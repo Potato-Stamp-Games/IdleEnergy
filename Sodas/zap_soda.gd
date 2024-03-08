@@ -26,10 +26,10 @@ func _on_input_event(_viewport, event, _shape_idx):#on_input_event calls collisi
 			#Audio
 			zap_soda_sfx.play()
 			#Particles
-			timesClicked += 3
-			if %ZParticleTimer.is_stopped() == true:
-				%ZParticleTimer.start()
-			#Sets soda money variable
+			%ZSodaParticles.amount = 20
+			%ZSodaParticles.emitting = true
+			%ZSodaParticles.restart()
+			#Sets variables
 			var sodaMoney = Global.zapSodaMoney
 			var weatherMultiplier = 1
 			#Calculates the new value based on click power
@@ -66,11 +66,3 @@ func _on_zs_auto_click_timer_timeout():
 	if Global.timeInSoda > 0:
 		var newTime = (1 - (float(Global.timeInSoda) / 100))
 		%ZS_AutoClickTimer.wait_time = newTime
-
-
-func _on_z_particle_timer_timeout():
-	%ZSodaParticles.restart()
-	%ZSodaParticles.amount = timesClicked
-	timesClicked = 0
-	%ZSodaParticles.emitting = true
-	%ZParticleTimer.stop()

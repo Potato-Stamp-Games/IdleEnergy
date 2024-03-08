@@ -20,7 +20,7 @@ offset_right = 1000.0
 offset_bottom = 600.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.298039, 0.298039, 0.298039, 1)
+color = Color(0, 0.0117647, 0.0470588, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="Control2"]
@@ -36,36 +36,56 @@ theme_override_constants/margin_left = 200
 theme_override_constants/margin_right = 200
 theme_override_constants/margin_bottom = 200
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control2/MarginContainer"]
+[node name="VBoxContainer" type="GridContainer" parent="Control2/MarginContainer"]
 layout_mode = 2
-alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="Control2/MarginContainer/VBoxContainer"]
+[node name="SettingsLbl" type="Label" parent="Control2/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Sound Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SoundSettings" type="GridContainer" parent="Control2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_constants/h_separation = 16
 columns = 2
 
-[node name="MusicLabel" type="Label" parent="Control2/MarginContainer/VBoxContainer/GridContainer"]
+[node name="MusicLabel" type="Label" parent="Control2/MarginContainer/VBoxContainer/SoundSettings"]
 layout_mode = 2
 text = "Music Volume"
 
-[node name="MusicSlider" type="HSlider" parent="Control2/MarginContainer/VBoxContainer/GridContainer"]
+[node name="MusicSlider" type="HSlider" parent="Control2/MarginContainer/VBoxContainer/SoundSettings"]
 layout_mode = 2
 size_flags_horizontal = 3
 max_value = 1.0
 step = 0.05
 value = 1.0
 
-[node name="SfxLabel" type="Label" parent="Control2/MarginContainer/VBoxContainer/GridContainer"]
+[node name="SfxLabel" type="Label" parent="Control2/MarginContainer/VBoxContainer/SoundSettings"]
 layout_mode = 2
 text = "Sound Volume"
 
-[node name="SfxSlider" type="HSlider" parent="Control2/MarginContainer/VBoxContainer/GridContainer"]
+[node name="SfxSlider" type="HSlider" parent="Control2/MarginContainer/VBoxContainer/SoundSettings"]
 layout_mode = 2
 size_flags_horizontal = 3
 max_value = 1.0
 step = 0.05
 value = 1.0
 
-[connection signal="value_changed" from="Control2/MarginContainer/VBoxContainer/GridContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
-[connection signal="value_changed" from="Control2/MarginContainer/VBoxContainer/GridContainer/SfxSlider" to="." method="_on_sfx_slider_value_changed"]
+[node name="SaveLoadLbl" type="Label" parent="Control2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Save/Load Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SaveLoadGame" type="GridContainer" parent="Control2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="Control2/MarginContainer/VBoxContainer/SaveLoadGame"]
+layout_mode = 2
+
+[connection signal="value_changed" from="Control2/MarginContainer/VBoxContainer/SoundSettings/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="Control2/MarginContainer/VBoxContainer/SoundSettings/SfxSlider" to="." method="_on_sfx_slider_value_changed"]

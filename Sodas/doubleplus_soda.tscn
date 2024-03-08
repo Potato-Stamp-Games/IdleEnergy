@@ -76,11 +76,6 @@ trail_lifetime = 2.0
 trail_sections = 5
 trail_section_subdivisions = 5
 
-[node name="DPParticleTimer" type="Timer" parent="DPSodaParticles"]
-unique_name_in_owner = true
-wait_time = 2.5
-one_shot = true
-
 [node name="DoublePlusSodaCollision" type="CollisionShape2D" parent="."]
 position = Vector2(3.5, 31)
 shape = SubResource("RectangleShape2D_22a5w")
@@ -113,5 +108,4 @@ bus = &"SFX"
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
-[connection signal="timeout" from="DPSodaParticles/DPParticleTimer" to="." method="_on_dp_particle_timer_timeout"]
 [connection signal="timeout" from="DPS_AutoClickTimer" to="." method="_on_dps_auto_click_timer_timeout"]
